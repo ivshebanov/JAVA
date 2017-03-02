@@ -52,7 +52,7 @@ public class Solution {
 
         @Override
         public void run() {
-            //Add your code here - добавь код тут 12 312  112dsd
+            //Add your code here - добавь код тут
 
             for (String st : steps) {
                 System.out.println(this.getName() + ":" + st);
