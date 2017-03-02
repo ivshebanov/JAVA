@@ -1,4 +1,4 @@
-package com.javarush.test.level22.lesson18.big01;
+package test.level22.lesson18.big01;
 
 /**
  * Created by iliashebanov on 31.01.17.
