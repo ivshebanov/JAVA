@@ -1,7 +1,7 @@
-package com.javarush.task.task01.task0139;
+package com.javarush.task.task01.task0105;
 
 /* 
-Лучше поздно, чем никогда: Hello world!
+Объявляем переменные
 */
 
 public class Solution {

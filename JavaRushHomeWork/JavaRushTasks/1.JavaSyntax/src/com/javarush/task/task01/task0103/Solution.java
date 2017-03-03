@@ -1,7 +1,7 @@
-package com.javarush.task.task01.task0139;
+package com.javarush.task.task01.task0103;
 
 /* 
-Лучше поздно, чем никогда: Hello world!
+Мой юный друг
 */
 
 public class Solution {
