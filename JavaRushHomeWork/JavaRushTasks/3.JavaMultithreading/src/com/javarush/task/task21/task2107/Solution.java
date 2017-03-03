@@ -13,17 +13,17 @@ public class Solution {
         solution.users.put("Hubert", new User(172, "Hubert"));
         solution.users.put("Zapp", new User(41, "Zapp"));
         Solution clone = null;
-        try {
-            clone = solution.clone();
-            System.out.println(solution);
-            System.out.println(clone);
-
-            System.out.println(solution.users);
-            System.out.println(clone.users);
-
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace(System.err);
-        }
+//        try {
+//            clone = solution.clone();
+//            System.out.println(solution);
+//            System.out.println(clone);
+//
+//            System.out.println(solution.users);
+//            System.out.println(clone.users);
+//
+//        } catch (CloneNotSupportedException e) {
+//            e.printStackTrace(System.err);
+//        }
     }
 
     protected Map<String, User> users = new LinkedHashMap();

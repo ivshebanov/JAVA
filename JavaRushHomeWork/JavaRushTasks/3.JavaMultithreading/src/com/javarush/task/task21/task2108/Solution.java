@@ -7,11 +7,11 @@ public class Solution {
     public static void main(String[] args) {
         Tree tree = new Tree("willow", new String[]{"s1", "s2", "s3", "s4"});
         Tree clone = null;
-        try {
-            clone = tree.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            clone = tree.clone();
+//        } catch (CloneNotSupportedException e) {
+//            e.printStackTrace();
+//        }
 
         System.out.println(tree);
         System.out.println(clone);
