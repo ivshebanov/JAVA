@@ -25,10 +25,27 @@ public class Cat implements Pet {
      * Мышь пищит.
      * Томас говорит мяу!
      * <p/>
+     *
      * @param i количество букв 'я' в слове мяу
      * @return экземпляр класса CatPet
      */
     public Sayable toSayable(final int i) {
-        return null;
+        class CatPet implements Sayable {
+            @Override
+            public String say() {
+                String actCat = "";
+                if (i <= 0) {
+                    actCat = name + " спит.";
+                } else {
+                    String ya = "";
+                    for (int a = 0; a < i; a++) {
+                        ya += "я";
+                    }
+                    actCat = name + " говорит м" + ya + "у!";
+                }
+                return actCat;
+            }
+        }
+        return new CatPet();
     }
 }
