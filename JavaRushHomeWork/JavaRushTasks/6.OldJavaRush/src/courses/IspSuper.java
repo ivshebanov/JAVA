@@ -14,25 +14,27 @@ package courses;
 public class IspSuper {
     public static void main(String[] args) {
         class DogH {
-            public String color;
+            final static String color = "rad";
+
             private int size;
             private int weight;
 
             public void gav() {
-                System.out.println("Гав-гав-гав size " + size);
+                System.out.println("Гав-гав-гав size " + size + " weight " + weight);
             }
 
         }
         class Spaniel extends DogH {
             boolean privivka;
 
-            Spaniel(int sizeSpaniel) {
+            Spaniel(int sizeSpaniel, int weightSpaniel) {
                 super.size = sizeSpaniel;
+                super.weight = weightSpaniel;
             }
         }
 
 
-        Spaniel spaniel = new Spaniel(45);
+        Spaniel spaniel = new Spaniel(45, 12);
         spaniel.gav();
 
     }
