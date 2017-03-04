@@ -11,33 +11,28 @@ package courses;
 /**
  * Created by iliashebanov on 04.03.17.
  */
-public class Windf {
+public class Constructor {
     public static void main(String[] args) {
-
-        class Dog4 {
-            String color;
+        class DogR {
             int size;
+            int weight;
 
-            public Dog4(String color, int size) {
-                this.color = color;
+            public DogR(int size, int weight) {
                 this.size = size;
-            }
-
-            public String getColor() {
-                return color;
-            }
-
-            public void setColor(String color) {
-                this.color = color;
-            }
-
-            public int getSize() {
-                return size;
-            }
-
-            public void setSize(int size) {
-                this.size = size;
+                this.weight = weight;
             }
         }
+
+        class SpanielR extends DogR {
+
+            public SpanielR(int size, int weight) {
+                super(size, weight);
+            }
+        }
+        DogR dogR = new DogR(50, 22);
+        System.out.println(dogR.size + " " + dogR.weight);
+
+        SpanielR spanielR = new SpanielR(50, 23);
+        System.out.println(spanielR.size + " " + spanielR.weight);
     }
 }
