@@ -22,7 +22,7 @@ interface DogU {
 
 class SpanielU implements DogU {
 
-    
+
 
     @Override
     public void eat() {
