@@ -28,8 +28,6 @@ public class FakeModel implements Model {
         ArrayList<User> users = new ArrayList<User>();
         users.add(new User("A", 1, 1));
         users.add(new User("B", 2, 2));
-        users.add(new User("C", 3, 3));
-        users.add(new User("D", 4, 4));
         modelData.setUsers(users);
     }
 }
