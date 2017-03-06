@@ -4,8 +4,6 @@ import com.javarush.task.task36.task3608.bean.User;
 import com.javarush.task.task36.task3608.model.service.UserService;
 import com.javarush.task.task36.task3608.model.service.UserServiceImpl;
 
-import java.util.List;
-
 /**
  * Created by Администратор on 06.03.2017.
  */
