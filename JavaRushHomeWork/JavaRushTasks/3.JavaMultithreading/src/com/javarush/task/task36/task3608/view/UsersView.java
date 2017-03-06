@@ -30,7 +30,6 @@ public class UsersView implements View {
         for (User users : modelData.getUsers()) {
             System.out.println("\t" + users);
         }
-        //System.out.println("==================================================");
         System.out.println("===================================================");
     }
 
@@ -40,5 +39,9 @@ public class UsersView implements View {
 
     public void fireEventShowDeletedUsers() {
         controller.onShowAllDeletedUsers();
+    }
+
+    public void fireEventOpenUserEditForm(long id) {
+        controller.onOpenUserEditForm(id);
     }
 }
