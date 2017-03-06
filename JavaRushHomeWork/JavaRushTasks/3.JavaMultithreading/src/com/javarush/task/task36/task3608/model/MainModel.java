@@ -34,4 +34,8 @@ public class MainModel implements Model {
         User user = userService.getUsersById(userId);
         modelData.setActiveUser(user);
     }
+
+    public void deleteUserById(long id){
+
+    }
 }
