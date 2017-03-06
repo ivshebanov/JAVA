@@ -12,8 +12,6 @@ import com.javarush.task.task36.task3608.bean.User;
 import com.javarush.task.task36.task3608.controller.Controller;
 import com.javarush.task.task36.task3608.model.ModelData;
 
-import java.util.List;
-
 /**
  * Created by iliashebanov on 05.03.17.
  */
@@ -26,14 +24,12 @@ public class UsersView implements View {
         this.controller = controller;
     }
 
-
     public void refresh(ModelData modelData) {
         System.out.println("All users:");
-        List<User> users = modelData.getUsers();
-        for (User user : users) {
-            System.out.println("\t\n" + user);
+        for (User user : modelData.getUsers()) {
+            System.out.println("\t" + user);
         }
-        System.out.println("\t\n==================================================");
+        System.out.println("===================================================");
     }
 
 
