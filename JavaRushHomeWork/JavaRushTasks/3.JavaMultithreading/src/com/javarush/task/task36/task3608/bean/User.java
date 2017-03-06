@@ -33,7 +33,6 @@ public class User implements Cloneable {
 
     public User clone(long newId) {
         if (this == NULL_USER) return NULL_USER;
-
         return new User(name, newId, level);
     }
 

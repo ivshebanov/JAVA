@@ -24,8 +24,12 @@ public class UsersView implements View {
         }
         System.out.println("==================================================");
     }
-    public void fireEventShowAllUsers(){
+
+    public void fireEventShowAllUsers() {
         controller.onShowAllUsers();
     }
 
+    public void fireEventShowDeletedUsers() {
+        controller.onShowAllDeletedUsers();
+    }
 }
