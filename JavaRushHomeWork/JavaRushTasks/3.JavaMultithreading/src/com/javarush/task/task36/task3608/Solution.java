@@ -16,13 +16,24 @@ public class Solution {
 
 
         usersView.setController(controller);
+        editUserView.setController(controller);
         controller.setModel(model);
         controller.setUsersView(usersView);
         controller.setEditUserView(editUserView);
 
+//        usersView.fireEventShowAllUsers();
+//        editUserView.fireEventUserDeleted(126L);
+//        usersView.fireEventShowAllUsers();
+//        usersView.fireEventOpenUserEditForm(126L);
+//        editUserView.fireEventUserDeleted(124L);
+//        usersView.fireEventShowAllUsers();
+//        usersView.fireEventShowDeletedUsers();
+
+
         usersView.fireEventShowAllUsers();
-        usersView.fireEventOpenUserEditForm(126);
-        usersView.fireEventShowDeletedUsers();
+        usersView.fireEventOpenUserEditForm(126L);
         editUserView.fireEventUserDeleted(124L);
+        usersView.fireEventShowDeletedUsers();
+
     }
 }
