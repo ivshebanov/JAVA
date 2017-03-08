@@ -39,15 +39,9 @@ public class MainModel implements Model {
     }
 
     public void deleteUserById(long id) {
-//        modelData.setUsers(getAllUsers());
-//        modelData.setActiveUser(userService.deleteUser(id));
-//        modelData.setUsers(getAllUsers());
-//        userService.deleteUser(id);
         modelData.setUsers(getAllUsers());
         userService.deleteUser(id);
-        modelData.setActiveUser(null);
-//        modelData.setUsers(getAllUsers());
-
+//        modelData.setActiveUser(userService.deleteUser(id));
 
 //        modelData.setUsers(getAllUsers());
 //        modelData.setActiveUser(userService.deleteUser(id));
