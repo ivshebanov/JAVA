@@ -1,7 +1,6 @@
 package com.javarush.task.task25.task2502;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /* 
 Машину на СТО не повезем!
@@ -19,7 +18,20 @@ public class Solution {
 
         public Car() {
             //init wheels here
-            this.wheels = Arrays.asList( loadWheelNamesFromDB());
+            wheels = new ArrayList<Wheel>();
+            String[] loadWheel = loadWheelNamesFromDB();
+            if (loadWheel.length != 4) {
+                throw new IllegalArgumentException("Это не машина");
+            }
+            for (String wheel : loadWheel) {
+                for (Wheel w : wheels) {
+                    if (wheel.equals(w.toString())) {
+                        throw new IllegalArgumentException("Это не машина");
+                    }
+                }
+
+                wheels.add(Wheel.valueOf(wheel));
+            }
         }
 
         protected String[] loadWheelNamesFromDB() {
@@ -29,7 +41,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Car myCar =new Car();
-        System.out.println(Arrays.toString(myCar.loadWheelNamesFromDB()));
+        Car car = new Car();
+        System.out.println(car.wheels);
     }
 }
