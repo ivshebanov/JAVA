@@ -1,7 +1,6 @@
 package com.javarush.task.task25.task2503;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public enum Column implements Columnable {
     Customer("Customer"),
@@ -49,17 +48,23 @@ public enum Column implements Columnable {
      * @return список колонок
      */
 
-//        for (int i = realOrder.length - 1; i >= 0; i--) {
-//            if (realOrder[i] != -1) {
-//                result.add(array[i]);
-//            }
-//        }
     public static List<Column> getVisibleColumns() {
         List<Column> result = new LinkedList<>();
         Column[] array = Column.values();
-        for (int i = array.length - 1; i >= 0; i--){
-            if (array[i].isShown()){
-                result.add(array[i]);
+        int[] realOrderArr = new int[realOrder.length];
+        System.arraycopy (realOrder, 0, realOrderArr, 0, realOrder.length);
+        Map<Integer, Integer> mapSort= new HashMap<Integer, Integer>();
+        for (int i = 0; i < realOrderArr.length; i++){
+            mapSort.put(i, realOrderArr[i]);
+        }
+        Arrays.sort(realOrderArr);
+        for (int re: realOrderArr){
+            if (re != -1){
+                for (Map.Entry<Integer,Integer> pair : mapSort.entrySet()) {
+                    if (re == pair.getValue()) {
+                        result.add(array[pair.getKey()]);
+                    }
+                }
             }
         }
         return result;
@@ -93,15 +98,15 @@ public enum Column implements Columnable {
     @Override
     public void hide() {
         realOrder[this.ordinal()] = -1;
-        int yuOrder = 0;
-        for (int i = realOrder.length - 1; i >= 0; i--) {
-            if (yuOrder == realOrder[i]) {
-                yuOrder++;
-            }
-            if (realOrder[i] != -1 && realOrder[i] != yuOrder - 1) {
-                realOrder[i] = yuOrder;
-                yuOrder++;
-            }
-        }
+//        int yuOrder = 0;
+//        for (int i = realOrder.length - 1; i >= 0; i--) {
+//            if (yuOrder == realOrder[i]) {
+//                yuOrder++;
+//            }
+//            if (realOrder[i] != -1 && realOrder[i] != yuOrder - 1) {
+//                realOrder[i] = yuOrder;
+//                yuOrder++;
+//            }
+//        }
     }
 }
