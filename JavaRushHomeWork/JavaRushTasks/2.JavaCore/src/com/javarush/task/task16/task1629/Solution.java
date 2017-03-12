@@ -13,8 +13,37 @@ public class Solution {
 
         //add your code here - добавьте код тут
 
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+
+        t1.interrupt();
+        t2.interrupt();
+
         t1.printResult();
         t2.printResult();
+    }
+
+    public static class Read3Strings extends Thread{
+        String s1 = "";
+        String s2 = "";
+        String s3 = "";
+
+        @Override
+        public void run() {
+            try {
+                s1 = reader.readLine();
+                s2 = reader.readLine();
+                s3 = reader.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public void printResult(){
+            System.out.format("%s %s %s \n", s1, s2, s3);
+        }
     }
 
     //add your code here - добавьте код тут
