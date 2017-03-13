@@ -4,9 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Created by Администратор on 13.03.2017.
- */
 public class Threa5 implements Runnable {
 
     private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
