@@ -39,7 +39,12 @@ public class Solution {
          */
         @Override
         public void run() {
-
+            while (!isStopped){
+                drugsController.buy(getRandomDrug(), getRandomCount());
+                waitAMoment();
+                waitAMoment();
+                waitAMoment();
+            }
         }
     }
 
@@ -58,14 +63,18 @@ public class Solution {
          */
         @Override
         public void run() {
+            while (!isStopped){
+                drugsController.sell(getRandomDrug(), getRandomCount());
+                waitAMoment();
+            }
         }
     }
 
-    public static int getRandomCount() {
+    public synchronized static int getRandomCount() {
         return (int) (Math.random() * 3) + 1;
     }
 
-    public static Drug getRandomDrug() {
+    public synchronized static Drug getRandomDrug() {
         int index = (int) ((Math.random() * 1000) % (drugsController.allDrugs.size()));
         List<Drug> drugs = new ArrayList<>(drugsController.allDrugs.keySet());
         return drugs.get(index);
