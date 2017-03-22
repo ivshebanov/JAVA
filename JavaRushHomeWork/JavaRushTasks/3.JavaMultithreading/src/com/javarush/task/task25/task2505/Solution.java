@@ -15,19 +15,43 @@ public class Solution {
 
         public MyThread(String secretKey) {
             this.secretKey = secretKey;
-            setUncaughtExceptionHandler((UncaughtExceptionHandler) new MyUncaughtExceptionHandler());
-            setDaemon(true);
+            setUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
+//            setDaemon(true);
         }
 
         @Override
         public void run() {
             throw new NullPointerException("it's an example");
         }
-    }
-
-    private class MyUncaughtExceptionHandler {
 
     }
+
+    private class MyUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
+
+        public MyUncaughtExceptionHandler() {
+        }
+
+        /**
+         * Method invoked when the given thread terminates due to the
+         * given uncaught exception.
+         * <p>Any exception thrown by this method will be ignored by the
+         * Java Virtual Machine.
+         *
+         * @param t the thread
+         * @param e the exception
+         */
+        @Override
+        public void uncaughtException(Thread t, Throwable e) {
+            try {
+                Thread.sleep(500);
+                System.out.println(String.format("%s, %s, %s", ((MyThread) t).secretKey, t.getName(), e.getMessage()));
+            } catch (InterruptedException e1) {
+//                e1.printStackTrace();
+            }
+
+        }
+    }
+
 
 }
 
