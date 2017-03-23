@@ -1,24 +1,25 @@
 package com.javarush.task.task25.task2506;
 
 /**
- * Created by Администратор on 22.03.2017.
+ * Created by Администратор on 23.03.2017.
  */
 public class LoggingStateThread extends Thread {
-    private Thread thread;
+    public Thread thread;
+    private State che;
 
-    public LoggingStateThread(Thread target) {
-        this.thread = target;
+    LoggingStateThread(Thread thread) {
+        this.thread = thread;
+        this.che = thread.getState();
         setDaemon(true);
-        System.out.println(State.NEW);
+        System.out.println(che);
     }
 
     @Override
     public void run() {
-        State neSte=State.NEW;
         while (!isInterrupted()) {
-            if (neSte != thread.getState()) {
-                neSte = thread.getState();
-                System.out.println(neSte);
+            if (che != thread.getState()) {
+                che = thread.getState();
+                System.out.println(che);
             }
         }
     }

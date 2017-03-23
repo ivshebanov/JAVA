@@ -46,7 +46,7 @@ public class Solution {
                 Thread.sleep(500);
                 System.out.println(String.format("%s, %s, %s", ((MyThread) t).secretKey, t.getName(), e.getMessage()));
             } catch (InterruptedException e1) {
-//                e1.printStackTrace();
+                e1.printStackTrace();
             }
 
         }

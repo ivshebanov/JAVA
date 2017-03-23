@@ -32,6 +32,7 @@ public class Solution extends Thread {
                 } else {
                     if (count > 0) {
                         //process buffer here
+                        interrupt();
                     }
                 }
             }
