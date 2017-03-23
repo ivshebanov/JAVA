@@ -5,43 +5,26 @@ import com.javarush.task.task36.task3608.controller.Controller;
 import com.javarush.task.task36.task3608.model.ModelData;
 
 /**
- * Created by Администратор on 06.03.2017.
+ * Created by Администратор on 23.03.2017.
  */
 public class UsersView implements View {
-
     private Controller controller;
+
+    @Override
+    public void refresh(ModelData modelData) {
+        System.out.println("All users:");
+        for (User user : modelData.getUsers()) {
+            System.out.println("\t" + user);
+        }
+        System.out.println("==================================================");
+    }
 
     @Override
     public void setController(Controller controller) {
         this.controller = controller;
     }
 
-    @Override
-    public void refresh(ModelData modelData) {
-
-        if (!modelData.isDisplayDeletedUserList()){
-            System.out.println("All users:");
-        }
-        if (modelData.isDisplayDeletedUserList()){
-            System.out.println("All deleted users:");
-        }
-
-
-        for (User users : modelData.getUsers()) {
-            System.out.println("\t" + users);
-        }
-        System.out.println("===================================================");
-    }
-
-    public void fireEventShowAllUsers() {
+    public void fireEventShowAllUsers(){
         controller.onShowAllUsers();
-    }
-
-    public void fireEventShowDeletedUsers() {
-        controller.onShowAllDeletedUsers();
-    }
-
-    public void fireEventOpenUserEditForm(long id) {
-        controller.onOpenUserEditForm(id);
     }
 }
