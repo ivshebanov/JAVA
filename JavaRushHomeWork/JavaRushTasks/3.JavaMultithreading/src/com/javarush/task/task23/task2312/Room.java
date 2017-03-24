@@ -2,6 +2,7 @@ package com.javarush.task.task23.task2312;
 
 
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 /**
  * Основной класс программы.
@@ -94,10 +95,75 @@ public class Room {
      * Выводим на экран текущее состояние игры
      */
     public void print() {
+/*
+        int[][] matrix = new int[height][width];
+        matrix[snake.getSections().get(0).getY()][snake.getSections().get(0).getX()] = 2;
+        for (int i = 1; i < snake.getSections().size(); i++) {
+            matrix[snake.getSections().get(i).getY()][snake.getSections().get(i).getX()] = 1;
+        }
+        matrix[mouse.getY()][mouse.getX()] = 3;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 1) System.out.print(" x ");
+                else if (matrix[i][j] == 2) System.out.print(" X ");
+                else if (matrix[i][j] == 3) System.out.print(" * ");
+                else if (matrix[i][j] == 0) System.out.print(" . ");
+            }
+            System.out.println();
+        }*/
+
         //Создаем массив, куда будем "рисовать" текущее состояние игры
+        int[][] matrix = new int[height][width];
+
+
         //Рисуем все кусочки змеи
+        ArrayList<SnakeSection> sections = new ArrayList<SnakeSection>(snake.getSections());
+        for (SnakeSection snakeSection : sections) {
+            matrix[snakeSection.getY()][snakeSection.getX()] = 1;
+        }
+        //Рисуем голову змеи (4 - если змея мертвая)
+        matrix[sections.get(0).getY()][sections.get(0).getX()] = snake.isAlive() ? 2 : 4;
         //Рисуем мышь
+        matrix[mouse.getY()][mouse.getX()] = 3;
+
         //Выводим все это на экран
+//        String[] symbols = {" . ", " x ", " X ", "^_^", "RIP"};
+//
+//        for (int y = 0; y < height; y++)
+//        {
+//            for (int x = 0; x < width; x++)
+//            {
+//                System.out.print(symbols[matrix[y][x]]);
+//            }
+//            System.out.println();
+//        }
+//
+//        System.out.println();
+//        System.out.println();
+//        System.out.println();
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                switch (matrix[i][j]) {
+                    case 0:
+                        System.out.print(" . ");
+                        break;
+                    case 1:
+                        System.out.print(" x ");
+                        break;
+                    case 2:
+                        System.out.print(" X ");
+                        break;
+                    case 3:
+                        System.out.print("^_^");
+                        break;
+                    case 4:
+                        System.out.print("RIP");
+                        break;
+                }
+            }
+            System.out.println();
+        }
     }
 
     /**
