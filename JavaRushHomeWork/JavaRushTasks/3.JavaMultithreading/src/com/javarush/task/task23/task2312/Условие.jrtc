@@ -1,4 +1,14 @@
-taskKey="com.javarush.task.task23.task2312.big02"
+taskKey="com.javarush.task.task23.task2312.big03"
+
+Змейка(3)
+
+Отлично. Я еще добавил класс KeyboardObserver на будущее.
+Изучи его внимательно. Пригодится.
+
+Начнем с самого простого - класса Mouse.
+Мышь не будет двигаться и у нее будут только координаты и все.
+Добавь два приватных поля в класс Mouse: x и y типа int.
+
 
 Змейка(2)
 
@@ -12,6 +22,7 @@ SnakeSection - кусочек змеи.
 SnakeDirection - класс (enum) будет описывать направление движения змеи.
 
 Создай классы SnakeSection и SnakeDirection.
+
 
 
 Змейка(1)
