@@ -27,7 +27,8 @@ public class Solution {
     }
 
     public void live() throws InterruptedException {
-        Thread thread = new Thread() {
+        Thread thread = new Thread(new Runnable() {
+            @Override
             public void run() {
                 try {
                     someActions();
@@ -35,13 +36,13 @@ public class Solution {
                     e.printStackTrace();
                 }
             }
-
             private void someActions() throws InterruptedException {
                 eat();
                 play();
                 sleep(1000);
             }
-        };
+
+        });
         thread.start();
         thread.join();
     }
