@@ -48,17 +48,26 @@ public class Room {
         this.mouse = mouse;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Snake snake = new Snake(1, 1);
         game = new Room(10, 10, snake);
         snake.setDirection(SnakeDirection.DOWN);
     }
 
-    public void run(){
+    public void run() {
 
     }
 
-    public void print(){
+    public void print() {
 
+    }
+
+    public void createMouse() {
+        mouse = new Mouse((int) (Math.random() * width), (int) (Math.random() * height));
+    }
+
+    public void eatMouse() {
+
+        createMouse();
     }
 }
