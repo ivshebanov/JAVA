@@ -36,8 +36,9 @@ public class MainModel implements Model {
 
     @Override
     public void deleteUserById(long id) {
-        modelData.setDisplayDeletedUserList(true);
-        modelData.setActiveUser(userService.deleteUser(id));
+        modelData.setDisplayDeletedUserList(false);
+        userService.deleteUser(id);
+        modelData.setUsers(getAllUsers());
     }
 
     private List<User> getAllUsers(){
