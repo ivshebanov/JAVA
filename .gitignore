@@ -1,4 +1,4 @@
-# Windows image file caches
+﻿# Windows image file caches
 Thumbs.db
 ehthumbs.db
 
@@ -12,7 +12,7 @@ JavaRushHomeWork/JavaRushTasks/out/
 JavaRushHomeWork/JavaRushTasks/Инструкция.png
 JavaRushHomeWork/JavaRushHomeWork/
 JavaRushHomeWork/JavaRushIdeaPlugin/
-
+JavaRushHomeWork/JavaRushTasks/JavaRushIdeaPlugin.jar
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
