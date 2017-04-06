@@ -1,15 +1,10 @@
 package com.javarush.task.task31.task3101;
 
 import java.io.*;
-import java.nio.file.FileVisitResult;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.SimpleFileVisitor;
+import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
 /*
 Проход по дереву файлов
 */
@@ -20,10 +15,12 @@ public class Solution {
         File path = new File(args[0]);
         File resultFileAbsolutePath = new File(args[1]);
 
+
+        File allFilesContent = new File(resultFileAbsolutePath.getParent() + "\\" + "allFilesContent.txt");
+        FileUtils.renameFile(resultFileAbsolutePath, allFilesContent);
         checkDirectory(path);
         collsort(fileList);
-        FileUtils.renameFile(resultFileAbsolutePath, resultFileAbsolutePath = new File(resultFileAbsolutePath.getParent() + "/allFilesContent.txt"));
-        writFile(resultFileAbsolutePath, fileList);
+        writFile(allFilesContent, fileList);
     }
 
     private static void writFile(File file, List<File> list) {
