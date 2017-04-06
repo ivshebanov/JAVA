@@ -1,7 +1,13 @@
 package com.javarush.task.task31.task3101;
 
 import java.io.*;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -36,27 +42,22 @@ public class Solution {
 
     private static void collsort(List<File> list) {
         list.sort((o1, o2) -> {
-            String s1 = o1.getName();
-            String s2 = o2.getName();
-            return s1.compareTo(s2);
+            return o1.getName().compareTo(o2.getName());
         });
     }
 
     private static void checkDirectory(File file) {
-        for (File fileW : file.listFiles()) {
-            if (fileW.isDirectory()) {
-                if (fileW.listFiles().length != 0) {
-                    checkDirectory(fileW);
-                } else {
-                    FileUtils.deleteFile(fileW);
+        try {
+            Files.walkFileTree(file.toPath(), new SimpleFileVisitor<Path>() {
+                @Override
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                    if (file.toFile().length() > 50) FileUtils.deleteFile(file.toFile());
+                    else fileList.add(file.toFile());
+                    return FileVisitResult.CONTINUE;
                 }
-            } else {
-                if (fileW.length() > 50) {
-                    FileUtils.deleteFile(fileW);
-                } else {
-                    fileList.add(fileW);
-                }
-            }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
