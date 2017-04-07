@@ -16,7 +16,6 @@ public class Solution {
     public static void main(String[] args) {
         File path = new File(args[0]);
         File resultFileAbsolutePath = new File(args[1]);
-
         try {
             if (!resultFileAbsolutePath.exists()) resultFileAbsolutePath.createNewFile();
         } catch (IOException e) {
@@ -25,62 +24,53 @@ public class Solution {
 
         File allFilesContent = new File(resultFileAbsolutePath.getParent() + "/allFilesContent.txt");
         FileUtils.renameFile(resultFileAbsolutePath, allFilesContent);
-        resultFileAbsolutePath = allFilesContent;
 
-        checkDirectory(path);
-//        fileList.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
+        BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter(allFilesContent, true));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        checkDirectory(path, allFilesContent);
+        //        fileList.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
         fileList.sort(Comparator.comparing(File::getName));
-        if (checkFi(fileList, resultFileAbsolutePath)) fileList.remove(resultFileAbsolutePath);
-        writFile(resultFileAbsolutePath, fileList);
-    }
 
-    private static boolean checkFi(List<File> list, File result) {
-        for (File s : list) {
-            if (s.equals(result.getAbsoluteFile())) {
-                return true;
-            }
+        try {
+            writFile(fileList, writer);
+            assert writer != null;
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return false;
     }
 
-    private static void writFile(File file, List<File> list) {
+    private static void writFile(List<File> list, BufferedWriter writer) throws IOException {
         for (File f : list) {
-            try (BufferedReader reader = new BufferedReader(new FileReader(f));
-                 BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))
-            ) {
-                while (reader.ready()) {
-                    writer.write(reader.readLine());
-                }
-                writer.write("\n");
-            } catch (IOException e) {
-                e.printStackTrace();
+            BufferedReader reader = new BufferedReader(new FileReader(f));
+            while (reader.ready()) {
+                writer.write(reader.readLine());
+                writer.newLine();
             }
+            reader.close();
         }
     }
 
-    private static void checkDirectory(File f) {
-//        try {
-//            Files.walkFileTree(f.toPath(), new SimpleFileVisitor<Path>() {
-//                @Override
-//                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-//                    if (file.toFile().length() > 50) FileUtils.deleteFile(file.toFile());
-//                    else fileList.add(file.toFile());
-//                    return FileVisitResult.CONTINUE;
-//                }
-//            });
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-        if(f.isDirectory()){
-            for(File ff: f.listFiles()){
-                checkDirectory(ff);
-            }
-        }
-        else if(f.isFile()){
-            if(f.length() > 50)
-                FileUtils.deleteFile(f);
-            else
-                fileList.add(f);
+    private static void checkDirectory(File f, File allFilesContent) {
+        try {
+            Files.walkFileTree(f.toPath(), new SimpleFileVisitor<Path>() {
+                @Override
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                    if (file.toFile().length() > 50 && !file.toFile().getAbsoluteFile().equals(allFilesContent.getAbsoluteFile()))
+                        FileUtils.deleteFile(file.toFile());
+                    else if (!file.toFile().getAbsoluteFile().equals(allFilesContent.getAbsoluteFile())) {
+                        fileList.add(file.toFile());
+                    }
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
