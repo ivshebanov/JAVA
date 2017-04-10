@@ -17,9 +17,9 @@ public class Solution {
         searchFileVisitor.setPartOfName("amigo");
         searchFileVisitor.setPartOfContent("programmer");
         searchFileVisitor.setMinSize(500);
-        searchFileVisitor.setMaxSize(10000);
+        searchFileVisitor.setMaxSize(2000);
 
-        Files.walkFileTree(Paths.get("D:/SecretFolder"), searchFileVisitor);
+        Files.walkFileTree(Paths.get("D:\\Hotj\\JAVA\\JavaRushHomeWork\\JavaRushTasks\\4.JavaCollections"), searchFileVisitor);
 
         List<Path> foundFiles = searchFileVisitor.getFoundFiles();
         for (Path file : foundFiles) {

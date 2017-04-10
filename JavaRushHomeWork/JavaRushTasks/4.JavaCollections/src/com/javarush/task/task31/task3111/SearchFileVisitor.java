@@ -1,21 +1,23 @@
-    package com.javarush.task.task31.task3111;
+package com.javarush.task.task31.task3111;
 
-import java.io.File;
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
 
-    public class SearchFileVisitor extends SimpleFileVisitor<Path> {
+public class SearchFileVisitor extends SimpleFileVisitor<Path> {
 
+    private List<Path> foundFiles = new ArrayList<>();
     private String partOfName;
     private String partOfContent;
     private int minSize;
     private int maxSize;
-    public List<Path> foundFiles = new ArrayList<Path>();
 
     public List<Path> getFoundFiles() {
         return foundFiles;
@@ -39,16 +41,27 @@ import java.util.List;
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        String fileName = file.getFileName().toString();
         boolean isTrue = true;
 
-        if (partOfName.isEmpty() && !(fileName.contains(partOfName))){
-            foundFiles.add(file);
-        }
-        if (partOfContent.isEmpty() ){
+        String name = file.getFileName().toString();
+        if (partOfName != null && !(name.contains(partOfName))) {
             isTrue = false;
         }
-
-        return FileVisitResult.CONTINUE;
+        if (partOfContent != null) {
+            String content = new String(Files.readAllBytes(file));
+            if (!(content.contains(partOfContent))) {
+                isTrue = false;
+            }
+        }
+        if (!(maxSize == 0) && attrs.isRegularFile() && !(attrs.size() <= maxSize)) {
+            isTrue = false;
+        }
+        if (!(minSize == 0) && attrs.isRegularFile() && !(attrs.size() >= minSize)) {
+            isTrue = false;
+        }
+        if (isTrue) {
+            foundFiles.add(file);
+        }
+        return super.visitFile(file, attrs);
     }
 }
