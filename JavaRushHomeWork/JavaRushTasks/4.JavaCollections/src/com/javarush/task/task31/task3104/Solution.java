@@ -17,7 +17,7 @@ public class Solution extends SimpleFileVisitor<Path> {
         EnumSet<FileVisitOption> options = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
         final Solution solution = new Solution();
 //        Files.walkFileTree(Paths.get("D:/"), options, 20, solution);
-        Files.walkFileTree(Paths.get("D:\\Distributive\\Keil"), options, 20, solution);
+        Files.walkFileTree(Paths.get("D:\\"), options, 20, solution);
 
         List<String> result = solution.getArchived();
         System.out.println("All archived files:");
