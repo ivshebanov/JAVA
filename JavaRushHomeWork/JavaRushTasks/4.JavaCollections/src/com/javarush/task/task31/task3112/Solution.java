@@ -1,6 +1,5 @@
 package com.javarush.task.task31.task3112;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -17,23 +16,24 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         Path passwords = downloadFile("https://yastatic.net/morda-logo/i/citylogos/yandex19-logo-ru.png", Paths.get("D:\\Hotj\\JAVA\\JavaRushHomeWork\\JavaRushTasks\\4.JavaCollections\\src\\com\\javarush\\task\\task31\\task3112"));
 
-        for (String line : Files.readAllLines(passwords)) {
-            System.out.println(line);
-        }
+//        for (String line : Files.readAllLines(passwords)) {
+//            System.out.println(line);
+//        }
     }
 
     public static Path downloadFile(String urlString, Path downloadDirectory) throws IOException {
         // implement this method
+        if (urlString == null || downloadDirectory == null)
+            return null;
+
         URL url = new URL(urlString);
         InputStream inputStream = url.openStream();
-        Path tempFile = Files.createTempFile("temp-111111", ".tmp");
+        Path tempFile = Files.createTempFile("temp-", ".tmp");
         Files.copy(inputStream, tempFile, StandardCopyOption.REPLACE_EXISTING);
-        if (Files.isRegularFile(tempFile)) {
-            String fileName = downloadDirectory + urlString.substring(urlString.lastIndexOf("/"), urlString.length());
-            Path file = Paths.get(fileName);
-            Files.move(tempFile, file);
-            return file;
-        }
-        return null;
+        inputStream.close();
+        String fileName = downloadDirectory + urlString.substring(urlString.lastIndexOf("/"));
+        Path file = Paths.get(fileName);
+        Files.move(tempFile, file);
+        return file;
     }
 }
