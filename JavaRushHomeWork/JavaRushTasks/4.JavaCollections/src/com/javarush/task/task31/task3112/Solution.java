@@ -28,8 +28,8 @@ public class Solution {
 
         URL url = new URL(urlString);
         InputStream inputStream = url.openStream();
-        Path tempFile = Files.createTempFile("temp-", ".tmp");
-        Files.copy(inputStream, tempFile, StandardCopyOption.REPLACE_EXISTING);
+        Path tempFile = Files.createTempFile("temp-", "null");
+        Files.copy(inputStream, tempFile);
         inputStream.close();
         String fileName = downloadDirectory + urlString.substring(urlString.lastIndexOf("/"));
         Path file = Paths.get(fileName);
