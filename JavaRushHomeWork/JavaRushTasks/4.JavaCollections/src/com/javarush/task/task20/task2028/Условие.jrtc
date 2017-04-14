@@ -15,3 +15,9 @@ http://info.javarush.ru/uploads/images/00/04/89/2014/03/21/ee9a9b.jpg
 Реализацию методов get(int index) и size() пока оставь стандартной.
 
 
+Требования:
+1.	Класс CustomTree должен поддерживать интерфейс Cloneable.
+2.	Класс CustomTree должен поддерживать интерфейс Serializable.
+3.	Класс CustomTree должен быть потомком класса AbstractList.
+
+
