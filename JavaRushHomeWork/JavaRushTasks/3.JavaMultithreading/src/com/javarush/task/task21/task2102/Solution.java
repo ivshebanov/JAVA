@@ -5,6 +5,7 @@ import java.lang.reflect.Modifier;
 
 /* 
 Сравниваем модификаторы
+test
 */
 public class Solution {
     public static void main(String[] args) {
