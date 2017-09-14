@@ -5,7 +5,6 @@ import java.lang.reflect.Modifier;
 
 /* 
 Сравниваем модификаторы
-test
 */
 public class Solution {
     public static void main(String[] args) {
@@ -18,7 +17,7 @@ public class Solution {
     }
 
     public static boolean isAllModifiersContainSpecificModifier(int allModifiers, int specificModifier) {
-        return false;
+        return allModifiers - specificModifier >= 0;
     }
 
     private static Method getMainMethod() {
@@ -26,7 +25,6 @@ public class Solution {
         for (Method method : methods) {
             if (method.getName().equalsIgnoreCase("main")) return method;
         }
-
         return null;
     }
 }
