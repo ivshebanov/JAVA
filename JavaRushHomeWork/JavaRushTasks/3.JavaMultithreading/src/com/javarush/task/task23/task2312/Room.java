@@ -30,6 +30,22 @@ public class Room {
 
     }
 
+    /**
+     * Метод создает мышь в случайном месте комнаты.
+     */
+    public void createMouse() {
+        int x = (int) (Math.random() * width);
+        int y = (int) (Math.random() * height);
+        this.mouse = new Mouse(x, y);
+    }
+
+    /**
+     * На случай, если мышь все-таки кто то съест.
+     */
+    public void eatMouse() {
+        createMouse();
+    }
+
     public static void main(String[] args) {
         Snake snake = new Snake(1, 1);
         game = new Room(10, 10, snake);
