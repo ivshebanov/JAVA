@@ -8,6 +8,9 @@ public class Snake {
     private SnakeDirection direction;
     private List<SnakeSection> sections;
 
+    /**
+     * Конструктор класса Snake.
+     */
     public Snake(int x, int y) {
         this.sections = new ArrayList<>();
         this.sections.add(new SnakeSection(x, y));

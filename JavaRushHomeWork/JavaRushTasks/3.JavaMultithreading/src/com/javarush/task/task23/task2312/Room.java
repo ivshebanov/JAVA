@@ -5,15 +5,35 @@ public class Room {
     private int height;
     private Snake snake;
     private Mouse mouse;
+    public static Room game;
 
+    /**
+     * Конструктор класса Room.
+     */
     public Room(int width, int height, Snake snake) {
         this.width = width;
         this.height = height;
         this.snake = snake;
     }
 
-    public static void main(String[] args) {
+    /**
+     * Процесс игры.
+     */
+    public void run() {
 
+    }
+
+    /**
+     * Отрисовка на экране.
+     */
+    public void print() {
+
+    }
+
+    public static void main(String[] args) {
+        Snake snake = new Snake(1, 1);
+        game = new Room(10, 10, snake);
+        snake.setDirection(SnakeDirection.DOWN);
     }
 
     public int getWidth() {
