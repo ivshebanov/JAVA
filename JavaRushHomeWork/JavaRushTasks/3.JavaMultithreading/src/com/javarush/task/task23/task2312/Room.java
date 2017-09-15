@@ -24,6 +24,13 @@ public class Room {
     }
 
     /**
+     * Метод увеличивает устанавливает задержку в игре. С простом змеи задержка уменьшается.
+     */
+    public void sleep(){
+
+    }
+
+    /**
      * Отрисовка на экране.
      */
     public void print() {
@@ -50,6 +57,8 @@ public class Room {
         Snake snake = new Snake(1, 1);
         game = new Room(10, 10, snake);
         snake.setDirection(SnakeDirection.DOWN);
+        game.createMouse();
+        game.run();
     }
 
     public int getWidth() {
