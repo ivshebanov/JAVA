@@ -1,5 +1,6 @@
 package com.javarush.task.task23.task2312;
 
+
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
@@ -92,32 +93,44 @@ public class Room {
 
     /**
      * Выводим на экран текущее состояние игры
-     * <p>
-     * Надо:
-     * а) вывести на экран прямоугольник из точек размером width x height.
-     * б) тело змеи отметить символом «x«-английское
-     * в) голову змеи нарисовать символом «X«-английское.
-     * <p>
-     * Подсказка:
-     * а) удобно сначала создать матрицу типа int[][] с размером (height x width)
-     * б) затем пройтись по всем объектам и отрисовать их в матрицу.
-     * Например, тело змеи — 1, голова змеи — 2, мышь — 3.
      */
     public void print() {
         //Создаем массив, куда будем "рисовать" текущее состояние игры
         int[][] matrix = new int[height][width];
+
         //Рисуем все кусочки змеи
-        ArrayList<SnakeSection> snakeSections = new ArrayList<SnakeSection>(this.snake.getSections());
+        ArrayList<SnakeSection> sections = new ArrayList<SnakeSection>(snake.getSections());
+        for (SnakeSection snakeSection : sections) {
+            matrix[snakeSection.getY()][snakeSection.getX()] = 1;
+        }
+
+        //Рисуем голову змеи (4 - если змея мертвая)
+        matrix[snake.getY()][snake.getX()] = snake.isAlive() ? 2 : 4;
+
+        //Рисуем мышь
+        matrix[mouse.getY()][mouse.getX()] = 3;
+
+        //Выводим все это на экран
+        String[] symbols = {" . ", " x ", " X ", "^_^", "RIP"};
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                System.out.print(symbols[matrix[y][x]]);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        /*
+        Моя реализация, которая принилась.
+        int[][] matrix = new int[height][width];
+        ArrayList<SnakeSection> snakeSections = new ArrayList<SnakeSection>(snake.getSections());
         for (SnakeSection element : snakeSections) {
             matrix[element.getY()][element.getX()] = 1;
         }
-        matrix[this.snake.getY()][this.snake.getX()] = this.snake.isAlive() ? 2 : 4;
-
-        //Рисуем мышь
-        matrix[this.mouse.getY()][this.mouse.getX()] = 3;
-
-        //Выводим все это на экран
-
+        matrix[snake.getY()][snake.getX()] = snake.isAlive() ? 2 : 4;
+        matrix[mouse.getY()][mouse.getX()] = 3;
         String[] arr = {".", "x", "X", "^", "R"};
         for (int i = 0; i < height; i++) {
             StringBuilder sb = new StringBuilder();
@@ -127,6 +140,7 @@ public class Room {
             System.out.println(sb.toString());
         }
         System.out.println();
+        */
     }
 
     /**
@@ -157,28 +171,18 @@ public class Room {
     }
 
 
+    private int initialDelay = 520;
+    private int delayStep = 20;
+
     /**
-     * Программа делает паузу между ходами, длинна которой зависит от длинны змеи.
-     * <p>
-     * Предлагаю тебе в этот раз написать специальный метод sleep(), который будет делать паузу в зависимости от длины змеи (количества элементов в sections).
-     * Придумай какой-нибудь хитрый алгоритм. Чтобы на первом уровне пауза была 500 миллисекунд,
-     * а к 10 уровню постепенно уменьшилась до 300. А к 15 до 200. И дальше оставалась постоянной.
-     * <p>
-     * Требования:
-     * 1. Метод sleep должен вызывать метод Thread.sleep(500) в начале игры.
-     * 2. Метод sleep должен вызывать метод Thread.sleep(300) на 11 уровне.
-     * 3. Метод sleep должен вызывать метод Thread.sleep(200) для уровней больше 15.
+     * Программа делает паузу, длинна которой зависит от длинны змеи.
      */
     public void sleep() {
-        int sizeSnake = snake.getSections().size();
         try {
-            if (sizeSnake <= 15) {
-                Thread.sleep(500 - (20 * (sizeSnake - 1)));
-            } else {
-                Thread.sleep(200);
-            }
+            int level = snake.getSections().size();
+            int delay = level < 15 ? (initialDelay - delayStep * level) : 200;
+            Thread.sleep(delay);
         } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }
