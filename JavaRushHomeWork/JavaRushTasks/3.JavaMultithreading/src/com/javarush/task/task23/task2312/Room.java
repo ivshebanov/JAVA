@@ -1,7 +1,5 @@
 package com.javarush.task.task23.task2312;
 
-
-import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
@@ -109,8 +107,27 @@ public class Room {
         //Создаем массив, куда будем "рисовать" текущее состояние игры
         int[][] matrix = new int[height][width];
         //Рисуем все кусочки змеи
+        ArrayList<SnakeSection> snakeSections = new ArrayList<SnakeSection>(this.snake.getSections());
+        for (SnakeSection element: snakeSections) {
+            matrix[element.getY()][element.getX()] = 1;
+        }
+        matrix[this.snake.getY()][this.snake.getX()] = 2;
+
         //Рисуем мышь
+        matrix[this.mouse.getY()][this.mouse.getX()] = 3;
+
         //Выводим все это на экран
+
+        String[] arr = {".", "x", "X", "^"};
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                System.out.print(arr[matrix[i][j]] + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println();
     }
 
     /**
