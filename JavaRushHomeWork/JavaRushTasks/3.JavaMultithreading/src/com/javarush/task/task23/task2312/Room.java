@@ -108,25 +108,24 @@ public class Room {
         int[][] matrix = new int[height][width];
         //Рисуем все кусочки змеи
         ArrayList<SnakeSection> snakeSections = new ArrayList<SnakeSection>(this.snake.getSections());
-        for (SnakeSection element: snakeSections) {
+        for (SnakeSection element : snakeSections) {
             matrix[element.getY()][element.getX()] = 1;
         }
-        matrix[this.snake.getY()][this.snake.getX()] = 2;
+        matrix[this.snake.getY()][this.snake.getX()] = this.snake.isAlive() ? 2 : 4;
 
         //Рисуем мышь
         matrix[this.mouse.getY()][this.mouse.getX()] = 3;
 
         //Выводим все это на экран
 
-        String[] arr = {".", "x", "X", "^"};
+        String[] arr = {".", "x", "X", "^", "R"};
         for (int i = 0; i < height; i++) {
+            StringBuilder sb = new StringBuilder();
             for (int j = 0; j < width; j++) {
-                System.out.print(arr[matrix[i][j]] + "\t");
+                sb.append(arr[matrix[i][j]]);
             }
-            System.out.println();
+            System.out.println(sb.toString());
         }
-        System.out.println();
-        System.out.println();
         System.out.println();
     }
 
