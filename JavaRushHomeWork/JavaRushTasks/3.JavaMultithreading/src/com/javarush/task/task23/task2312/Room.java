@@ -111,7 +111,7 @@ public class Room {
         matrix[mouse.getY()][mouse.getX()] = 3;
 
         //Выводим все это на экран
-        String[] symbols = {" . ", " x ", " X ", "^_^", "RIP"};
+        String[] symbols = {" . ", " x ", " X ", "^.^", "RIP"};
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 System.out.print(symbols[matrix[y][x]]);
@@ -121,26 +121,6 @@ public class Room {
         System.out.println();
         System.out.println();
         System.out.println();
-
-        /*
-        Моя реализация, которая принилась.
-        int[][] matrix = new int[height][width];
-        ArrayList<SnakeSection> snakeSections = new ArrayList<SnakeSection>(snake.getSections());
-        for (SnakeSection element : snakeSections) {
-            matrix[element.getY()][element.getX()] = 1;
-        }
-        matrix[snake.getY()][snake.getX()] = snake.isAlive() ? 2 : 4;
-        matrix[mouse.getY()][mouse.getX()] = 3;
-        String[] arr = {".", "x", "X", "^", "R"};
-        for (int i = 0; i < height; i++) {
-            StringBuilder sb = new StringBuilder();
-            for (int j = 0; j < width; j++) {
-                sb.append(arr[matrix[i][j]]);
-            }
-            System.out.println(sb.toString());
-        }
-        System.out.println();
-        */
     }
 
     /**
@@ -169,7 +149,6 @@ public class Room {
         game.createMouse();
         game.run();
     }
-
 
     private int initialDelay = 520;
     private int delayStep = 20;
