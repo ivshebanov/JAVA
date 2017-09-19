@@ -46,6 +46,38 @@ public class Canvas {
         }
     }
 
+    /**
+     * Метод очищает матрицу matrix, чтобы на ней снова можно было рисовать.
+     */
+    public void clear() {
+        this.matrix = new char[height + 2][width + 2];
+    }
+
+    /**
+     * Метод рисует матрицу на экран.
+     */
+    public void print() {
+//        int matrixWidth = this.matrix.length;
+//        int matrixHeight = this.matrix[0].length;
+//        for (int y = 0; y < matrixWidth; y++) {
+//            StringBuilder sb = new StringBuilder();
+//            for (int x = 0; x < matrixHeight; x++) {
+//                sb.append(this.matrix[y][x]).append("\t");
+//            }
+//            System.out.println(sb.toString());
+//        }
+
+        for (char[] y : matrix) {
+            for (char x : y) {
+                System.out.print(x);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println();
+    }
+
     public int getWidth() {
         return width;
     }

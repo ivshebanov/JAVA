@@ -27,7 +27,18 @@ public class Arkanoid {
     public static Arkanoid game;
 
     public static void main(String[] args) {
-
+        Canvas canvas = new Canvas(10, 10);
+        int[][] matrix = new int[12][12];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                matrix[i][j] = 1;
+            }
+        }
+        canvas.drawMatrix(0, 0, matrix, 'c');
+        canvas.print();
+        canvas.clear();
+        canvas.drawMatrix(0, 0, matrix, 'x');
+        canvas.print();
     }
 
     public int getWidth() {
