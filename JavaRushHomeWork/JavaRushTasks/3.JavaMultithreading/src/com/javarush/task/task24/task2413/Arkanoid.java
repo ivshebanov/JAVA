@@ -10,10 +10,21 @@ public class Arkanoid {
     private Stand stand;
     private List<Brick> bricks;
 
+
     public Arkanoid(int width, int height) {
         this.width = width;
         this.height = height;
     }
+
+    public void run(){
+
+    }
+
+    public void move(){
+
+    }
+
+    public static Arkanoid game;
 
     public static void main(String[] args) {
 
