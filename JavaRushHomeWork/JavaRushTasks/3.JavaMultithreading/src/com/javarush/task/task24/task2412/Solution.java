@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /* 
-Знания - сила!
+Знания - сила!t
 */
 public class Solution {
     public static void main(String[] args) {
