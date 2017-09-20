@@ -12,19 +12,37 @@ public class Solution implements Action {
         //!!!!! Changes can be here
         //!!!!! Изменения могут быть тут
 
+        FirstClass firstClass;
+        SecondClass secondClass;
+
         public void someAction() {
             //!!!!! All changes have to be here
             //!!!!! Все изменения должны быть только тут
             if (param > 0) {
-                FirstClass firstClass = new FirstClass() {
+                while (param > 0) {
+                    System.out.println(param--);
+                }
+
+                firstClass = new FirstClass() {
                     @Override
                     public Action getDependantAction() {
-                        return null;
+                        super.someAction();
+                        return new Action() {
+                            @Override
+                            public void someAction() {
+
+                            }
+                        };
                     }
                 };
-            }else {
-                SecondClass secondClass = new SecondClass();
+                firstClass.someAction();
             }
+            secondClass = new SecondClass();
+            secondClass.someAction();
+
+            System.out.print(
+                    SecondClass.SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM.substring(1));
+            System.out.println(param);
         }
     };
 
