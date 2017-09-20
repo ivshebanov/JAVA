@@ -28,6 +28,10 @@ public class Ball extends BaseObject {
         }
     }
 
+    public void checkRebound(int minx, int maxx, int miny, int maxy){
+
+    }
+
     public void start() {
         isFrozen = false;
     }
@@ -38,6 +42,13 @@ public class Ball extends BaseObject {
 
     public double getDirection() {
         return direction;
+    }
+
+    public void setDirection(double direction) {
+        this.direction = direction;
+        double angel = Math.toRadians(direction);
+        dx = Math.cos(angel) * speed;
+        dy = -Math.sin(angel) * speed;
     }
 
     public double getDx() {
