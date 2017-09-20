@@ -12,6 +12,7 @@ public class Ball extends BaseObject {
         super(x, y, 1);
         this.speed = speed;
         this.direction = direction;
+        isFrozen = true;
     }
 
     @Override
@@ -22,5 +23,21 @@ public class Ball extends BaseObject {
     @Override
     void move() {
 
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public double getDirection() {
+        return direction;
+    }
+
+    public double getDx() {
+        return dx;
+    }
+
+    public double getDy() {
+        return dy;
     }
 }
