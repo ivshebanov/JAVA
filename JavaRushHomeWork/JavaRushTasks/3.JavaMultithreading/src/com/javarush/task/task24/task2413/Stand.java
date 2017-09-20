@@ -21,14 +21,13 @@ public class Stand extends BaseObject {
         x += speed * direction;
     }
 
-    public void moveLeft(){
+    public void moveLeft() {
         direction = -1;
     }
 
-    public void moveRight(){
+    public void moveRight() {
         direction = 1;
     }
-
 
 
     public double getSpeed() {
