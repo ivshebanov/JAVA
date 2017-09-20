@@ -1,32 +1,19 @@
 package com.javarush.task.task24.task2413;
 
+/**
+ * Базовый класс для всех объектов игры.
+ */
 public abstract class BaseObject {
-
-    abstract void draw(Canvas canvas);
-
-    abstract void move();
-
+    //координаты
     protected double x;
     protected double y;
+    //радиус объекта
     protected double radius;
 
-    public BaseObject(double x, double y, double radius) {
+    protected BaseObject(double x, double y, double radius) {
         this.x = x;
         this.y = y;
         this.radius = radius;
-    }
-
-    /**
-     * Метод определяет «пересеклись» объекты или нет. Если пересеклись — возвращать true,
-     * если нет — false.
-     *
-     * @param o объект с которым проверяем пересечение текущего объекта.
-     */
-    public boolean isIntersec(BaseObject o) {
-        //дистанция_между_объектами <= max (радиус_первого_объекта, радиус_второго_объекта)
-        return Math.sqrt((this.x - o.getX()) * (this.x - o.getX())
-                + (this.y - o.getY()) * (this.y - o.getY()))
-                <= Double.max(this.radius, o.getRadius());
     }
 
     public double getX() {
@@ -51,5 +38,36 @@ public abstract class BaseObject {
 
     public void setRadius(double radius) {
         this.radius = radius;
+    }
+
+    /**
+     * Метод рисует свой объект на "канвасе".
+     */
+    abstract void draw(Canvas canvas);
+
+    /**
+     * Двигаем себя на один ход.
+     */
+    abstract void move();
+
+    /**
+     * Проверяем - не выходит ли (x,y) за границы.
+     */
+    void checkBorders(double minx, double maxx, double miny, double maxy) {
+        if (x < minx) x = minx;
+        if (x > maxx) x = maxx;
+        if (y < miny) y = miny;
+        if (y > maxy) y = maxy;
+    }
+
+    /**
+     * Проверяем - пересекаются ли переданный(o) и наш(this) объекты.
+     */
+    boolean isIntersec(BaseObject o) {
+        double dx = x - o.x;
+        double dy = y - o.y;
+        double destination = Math.sqrt(dx * dx + dy * dy);
+        double destination2 = Math.max(radius, o.radius);
+        return destination <= destination2;
     }
 }

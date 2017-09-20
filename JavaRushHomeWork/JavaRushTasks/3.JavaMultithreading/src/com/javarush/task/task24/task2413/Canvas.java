@@ -1,8 +1,13 @@
 package com.javarush.task.task24.task2413;
 
+/**
+ * Класс-холст для отрисовки.
+ */
 public class Canvas {
+    //ширина и высота
     private int width;
     private int height;
+    //матрица, где рисуем. символ - это цвет.
     private char[][] matrix;
 
     public Canvas(int width, int height) {
@@ -12,67 +17,56 @@ public class Canvas {
     }
 
     /**
-     * Метод ставит точку в координатах x, y цветом с.
-     *
-     * @param x Координата X
-     * @param y Координата Y
-     * @param c Цвет закрашивания
+     * Очищаем холст
      */
-    public void setPoint(double x, double y, char c) {
-        int xI = (int) Math.round(x);
-        int yI = (int) Math.round(y);
-        if (!(xI < 0 || yI < 0 || xI > matrix.length || yI > matrix.length)) {
-            matrix[yI][xI] = c;
-        }
-    }
-
-    /**
-     * Копирует переданную ему картинку (матрицу) в матрицу Canvas,
-     * начиная с координат x, y.
-     *
-     * @param x      Координата X
-     * @param y      Координата Y
-     * @param matrix полученная картинка для копирования
-     * @param c      Цвет закрашивания
-     */
-    public void drawMatrix(double x, double y, int[][] matrix, char c) {
-        int leng = matrix.length;
-        for (int i = 0; i < leng; i++) {
-            for (int j = 0; j < leng; j++) {
-                if (matrix[i][j] != 0) {
-                    setPoint(x + j, y + i, c);
-                }
-            }
-        }
-    }
-
-    /**
-     * Метод очищает матрицу matrix, чтобы на ней снова можно было рисовать.
-     */
-    public void clear() {
+    void clear() {
         this.matrix = new char[height + 2][width + 2];
     }
 
     /**
-     * Метод рисует матрицу на экран.
+     * Печатаем переданную фигуру в указанных координатах цветом c.
+     * Если переданный массив содержит единицы, то на холсте им будут соответствовать символы - с.
      */
-    public void print() {
-//        int matrixWidth = this.matrix.length;
-//        int matrixHeight = this.matrix[0].length;
-//        for (int y = 0; y < matrixWidth; y++) {
-//            StringBuilder sb = new StringBuilder();
-//            for (int x = 0; x < matrixHeight; x++) {
-//                sb.append(this.matrix[y][x]).append("\t");
-//            }
-//            System.out.println(sb.toString());
-//        }
+    void drawMatrix(double x, double y, int[][] matrix, char c) {
+        int height = matrix.length;
+        int width = matrix[0].length;
 
-        for (char[] y : matrix) {
-            for (char x : y) {
-                System.out.print(x);
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                if (matrix[i][j] == 1)
+                    setPoint(x + j, y + i, c);
             }
+        }
+    }
+
+    /**
+     * Ставим одну точку на холсте с координатами (x,y) и цветом - c.
+     */
+    void setPoint(double x, double y, char c) {
+        int x0 = (int) Math.round(x);
+        int y0 = (int) Math.round(y);
+        if (y0 < 0 || y0 >= matrix.length) return;
+        if (x0 < 0 || x0 >= matrix[y0].length) return;
+
+        matrix[y0][x0] = c;
+    }
+
+    /**
+     * Печатаем содержимое холста на экран.
+     */
+    void print() {
+        System.out.println();
+
+        for (int i = 0; i < height + 2; i++) {
+            for (int j = 0; j < width + 2; j++) {
+                System.out.print(" ");
+                System.out.print(matrix[i][j]);
+                System.out.print(" ");
+            }
+
             System.out.println();
         }
+
         System.out.println();
         System.out.println();
         System.out.println();
@@ -82,23 +76,11 @@ public class Canvas {
         return width;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
     public int getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
     public char[][] getMatrix() {
         return matrix;
-    }
-
-    public void setMatrix(char[][] matrix) {
-        this.matrix = matrix;
     }
 }
