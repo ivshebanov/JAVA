@@ -48,13 +48,27 @@ public class Solution {
                 Date date1 = (Date) stock1.get("date");
                 Date date2 = (Date) stock2.get("date");
 
+                Double open1 = (Double) stock1.get("open");
+                Double last1 = (Double) stock1.get("last");
+                Double change1 = (Double) stock1.get("change");
 
-                int k = name1.compareTo(name2);
-                if (k == 0) {
-                    return date2.compareTo(date1);
-                } else {
-                    return k;
+                Double open2 = (Double) stock2.get("open");
+                Double last2 = (Double) stock2.get("last");
+                Double change2 = (Double) stock2.get("change");
+
+                if (name1.length() != 0 && name2.length() != 0){
+                    return name1.compareTo(name2);
                 }
+                if (date1 != null && date2 != null){
+                    return date2.compareTo(date1);
+                }
+
+                if ((open1 != 0 && last1 != 0) | (open2 != 0 && last2 != 0)){
+                    if (change1 != 0 && change2 != 0){
+                        return change1.compareTo(change2);
+                    }
+                }
+                return 0;
             }
         });
     }
