@@ -79,14 +79,14 @@ public class Solution {
 //                }
                 if (stock1.containsKey("name") && stock2.containsKey("name")) {
                     int i = name1.compareTo(name2);
-                    if (i != 0){
+                    if (i != 0) {
                         return i;
-                    }else {
+                    } else {
                         if (stock1.containsKey("date") && stock2.containsKey("date")) {
                             int j = date2.compareTo(date1);
-                            if (j != 0){
+                            if (j != 0) {
                                 return j;
-                            }else {
+                            } else {
                                 if (stock1.containsKey("change") && stock2.containsKey("change")) {
                                     return Double.compare(change2, change1);
                                 }
