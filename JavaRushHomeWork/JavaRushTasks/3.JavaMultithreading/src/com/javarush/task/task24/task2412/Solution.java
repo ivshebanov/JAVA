@@ -50,22 +50,61 @@ public class Solution {
 
                 Double open1 = (Double) stock1.get("open");
                 Double last1 = (Double) stock1.get("last");
-                Double change1 = (Double) stock1.get("change");
-
                 Double open2 = (Double) stock2.get("open");
                 Double last2 = (Double) stock2.get("last");
                 Double change2 = (Double) stock2.get("change");
+                Double change1 = (Double) stock1.get("change");
 
-                if (name1.length() != 0 && name2.length() != 0){
-                    return name1.compareTo(name2);
-                }
-                if (date1 != null && date2 != null){
-                    return date2.compareTo(date1);
-                }
-
-                if ((open1 != 0 && last1 != 0) | (open2 != 0 && last2 != 0)){
-                    if (change1 != 0 && change2 != 0){
-                        return change1.compareTo(change2);
+//                if (stock1.containsKey("name") && stock2.containsKey("name")) {
+//                    return name1.compareTo(name2);
+//                }
+//                if (stock1.containsKey("date") && stock2.containsKey("date")) {
+//                    return date2.compareTo(date1);
+//                }
+//                if (stock1.containsKey("change") && stock2.containsKey("change")) {
+//                    return Double.compare(change2, change1);
+//                }
+//                if (stock1.containsKey("change") && !stock2.containsKey("change")) {
+//                    Double d = last2 - open2;
+//                    return Double.compare(change1, d);
+//                }
+//                if (!stock1.containsKey("change") && stock2.containsKey("change")) {
+//                    Double d = last1 - open1;
+//                    return Double.compare(change1, d);
+//                }
+//                if (!stock1.containsKey("change") && !stock2.containsKey("change")) {
+//                    Double d = last2 - open2;
+//                    Double t = last1 - open1;
+//                    return Double.compare(d, t);
+//                }
+                if (stock1.containsKey("name") && stock2.containsKey("name")) {
+                    int i = name1.compareTo(name2);
+                    if (i != 0){
+                        return i;
+                    }else {
+                        if (stock1.containsKey("date") && stock2.containsKey("date")) {
+                            int j = date2.compareTo(date1);
+                            if (j != 0){
+                                return j;
+                            }else {
+                                if (stock1.containsKey("change") && stock2.containsKey("change")) {
+                                    return Double.compare(change2, change1);
+                                }
+                                if (stock1.containsKey("change") && !stock2.containsKey("change")) {
+                                    Double d = last2 - open2;
+                                    return Double.compare(change1, d);
+                                }
+                                if (!stock1.containsKey("change") && stock2.containsKey("change")) {
+                                    Double d = last1 - open1;
+                                    return Double.compare(change1, d);
+                                }
+                                if (!stock1.containsKey("change") && !stock2.containsKey("change")) {
+                                    Double d = last2 - open2;
+                                    Double t = last1 - open1;
+                                    return Double.compare(d, t);
+                                }
+                            }
+                        }
                     }
                 }
                 return 0;
