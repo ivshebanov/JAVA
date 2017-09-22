@@ -43,7 +43,18 @@ public class Solution {
     public static void sort(List<Stock> list) {
         Collections.sort(list, new Comparator<Stock>() {
             public int compare(Stock stock1, Stock stock2) {
-                return 0;
+                String name1 = (String) stock1.get("name");
+                String name2 = (String) stock2.get("name");
+                Date date1 = (Date) stock1.get("date");
+                Date date2 = (Date) stock2.get("date");
+
+
+                int k = name1.compareTo(name2);
+                if (k == 0) {
+                    return date2.compareTo(date1);
+                } else {
+                    return k;
+                }
             }
         });
     }
