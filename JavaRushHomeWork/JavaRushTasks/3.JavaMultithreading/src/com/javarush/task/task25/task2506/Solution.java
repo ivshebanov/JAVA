@@ -9,11 +9,12 @@ public class Solution {
         LoggingStateThread loggingStateThread = new LoggingStateThread(target);
 
         loggingStateThread.start();
+        Thread.sleep(100);
         target.start();  //NEW
-        Thread.sleep(100); //RUNNABLE
+//        Thread.sleep(100); //RUNNABLE
         target.join(100);
-        Thread.sleep(400);
+//        Thread.sleep(400);
         target.interrupt(); //TERMINATED
-        Thread.sleep(500);
+//        Thread.sleep(500);
     }
 }
