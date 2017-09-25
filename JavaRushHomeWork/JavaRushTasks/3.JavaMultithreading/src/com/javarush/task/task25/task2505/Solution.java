@@ -6,7 +6,8 @@ package com.javarush.task.task25.task2505;
 public class Solution {
 
     public static void main(String[] args) {
-        MyThread myThread = new Solution().new MyThread("super secret key");
+        MyThread myThread = new Solution()
+                .new MyThread("super secret key");
         myThread.start();
     }
 
@@ -16,7 +17,6 @@ public class Solution {
         public MyThread(String secretKey) {
             this.secretKey = secretKey;
             setUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
-//            setDaemon(true);
         }
 
         @Override
@@ -24,34 +24,24 @@ public class Solution {
             throw new NullPointerException("it's an example");
         }
 
-    }
+        private class MyUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
 
-    private class MyUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
-
-        public MyUncaughtExceptionHandler() {
-        }
-
-        /**
-         * Method invoked when the given thread terminates due to the
-         * given uncaught exception.
-         * <p>Any exception thrown by this method will be ignored by the
-         * Java Virtual Machine.
-         *
-         * @param t the thread
-         * @param e the exception
-         */
-        @Override
-        public void uncaughtException(Thread t, Throwable e) {
-            try {
-                Thread.sleep(500);
-                System.out.println(String.format("%s, %s, %s", ((MyThread) t).secretKey, t.getName(), e.getMessage()));
-            } catch (InterruptedException e1) {
-                e1.printStackTrace();
+            public MyUncaughtExceptionHandler() {
+                super();
             }
 
+            @Override
+            public void uncaughtException(Thread thread, Throwable throwable) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
+                final String string = "%s, %s, %s";
+                System.out.println(String.format(string, secretKey,
+                        thread.getName(), throwable.getLocalizedMessage()));
+            }
         }
     }
-
-
 }
 
