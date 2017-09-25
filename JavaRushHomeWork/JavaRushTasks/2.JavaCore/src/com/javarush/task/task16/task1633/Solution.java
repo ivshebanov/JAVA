@@ -14,14 +14,18 @@ public class Solution {
 
         threadA.interrupt();
         threadB.interrupt();
+
+
     }
 
     public static class TestedThread extends Thread {
         public TestedThread(Thread.UncaughtExceptionHandler handler) {
-            setUncaughtExceptionHandler(handler);
+//            setUncaughtExceptionHandler(handler);
+            Thread.setDefaultUncaughtExceptionHandler(handler);
             start();
         }
 
+        @Override
         public void run() {
             try {
                 Thread.sleep(3000);

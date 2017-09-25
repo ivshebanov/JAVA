@@ -11,7 +11,7 @@ public class Solution {
     static class MyException {
     }
 
-    static class MyException2 {
+    static class MyException2 extends MyException {
     }
 
     static class MyException3 {

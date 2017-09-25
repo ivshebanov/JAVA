@@ -17,6 +17,7 @@ public class Solution {
         public MyThread(String secretKey) {
             this.secretKey = secretKey;
             setUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
+//            setDefaultUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
         }
 
         @Override
