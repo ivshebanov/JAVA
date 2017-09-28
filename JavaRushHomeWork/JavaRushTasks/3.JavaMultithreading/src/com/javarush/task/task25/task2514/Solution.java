@@ -13,10 +13,12 @@ public class Solution {
 
         public void run() {
             System.out.println("begin-" + index);
+            Thread.yield();
             System.out.println("end-" + index);
         }
     }
 
     public static void main(String[] args) {
+
     }
 }
