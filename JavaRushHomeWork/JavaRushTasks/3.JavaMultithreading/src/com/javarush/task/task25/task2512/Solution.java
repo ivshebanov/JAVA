@@ -1,10 +1,5 @@
 package com.javarush.task.task25.task2512;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.util.Arrays;
-
 /*
 Живем своим умом
 */
