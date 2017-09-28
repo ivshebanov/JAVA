@@ -1,5 +1,7 @@
 package com.javarush.task.task25.task2511;
 
+import javafx.beans.binding.StringBinding;
+
 import java.util.TimerTask;
 
 /* 
@@ -21,8 +23,19 @@ public class Solution extends TimerTask {
         class MyCaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
             @Override
             public void uncaughtException(Thread thread, Throwable throwable) {
+//                System.out.println(throwable.toString());
                 String nameThread = thread.getName().replaceAll(".", "*");
-                System.out.println(throwable.toString().replace(thread.getName(), nameThread));
+                System.out.print(throwable.toString().replace(thread.getName(), nameThread));
+//                int nameThreadLength = thread.getName().length();
+//                StringBuilder nameThread = new StringBuilder();
+//                for (int i = 0; i < nameThreadLength; i++) {
+//                    nameThread.append("*");
+//                }
+//                String[] resultArr = throwable.toString().split(" ");
+//                StringBuilder sb = new StringBuilder();
+//                sb.append(resultArr[0]).append(" ").append(resultArr[1]).append(" ")
+//                        .append(nameThread).append(" ").append(resultArr[3]);
+//                System.out.println(sb);
             }
         }//init handler here
         this.handler = new MyCaughtExceptionHandler();
