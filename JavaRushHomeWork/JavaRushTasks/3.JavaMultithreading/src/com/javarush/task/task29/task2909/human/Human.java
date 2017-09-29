@@ -18,6 +18,14 @@ public class Human implements Alive {
     public static final int FOURTH = 4;
     private int bloodGroup;
 
+
+    public Human(String name, int age) {
+        this.name = name;
+        this.age = age;
+        this.id = nextId;
+        nextId++;
+    }
+
     public void setBloodGroup(int code) {
         bloodGroup = code;
     }
@@ -26,11 +34,12 @@ public class Human implements Alive {
         return bloodGroup;
     }
 
-    public Human(String name, int age) {
-        this.name = name;
-        this.age = age;
-        this.id = nextId;
-        nextId++;
+    public String getPosition() {
+        return "Человек";
+    }
+
+    public void printData() {
+        System.out.println(getPosition() + ": " + name);
     }
 
     public int getAge() {
