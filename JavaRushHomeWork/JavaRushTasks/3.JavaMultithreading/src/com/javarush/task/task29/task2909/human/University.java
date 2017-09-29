@@ -39,17 +39,40 @@ public class University extends Human {
         this.age = age;
     }
 
-    public Student getStudentWithAverageGrade() {
-        //TODO:
+    public Student getStudentWithAverageGrade(double averageGrade) {
+        for (Student st : students) {
+            if (st.getAverageGrade() == averageGrade) {
+                return st;
+            }
+        }
         return null;
     }
 
-    public Student getStudentWithMaxAverageGrade(double averageGrade) {
-        //TODO:
-        return null;
+    public Student getStudentWithMaxAverageGrade() {
+        Student student = null;
+        double d = 0;
+        for (Student st : students) {
+            if (d < st.getAverageGrade()) {
+                d = st.getAverageGrade();
+                student = st;
+            }
+        }
+        return student;
     }
 
-    public void getStudentWithMinAverageGradeAndExpel() {
-        //TODO:
+    public Student getStudentWithMinAverageGrade() {
+        Student student = null;
+        double d = 10;
+        for (Student st : students) {
+            if (d > st.getAverageGrade()) {
+                d = st.getAverageGrade();
+                student = st;
+            }
+        }
+        return student;
+    }
+
+    public void expel(Student student) {
+        students.remove(student);
     }
 }
