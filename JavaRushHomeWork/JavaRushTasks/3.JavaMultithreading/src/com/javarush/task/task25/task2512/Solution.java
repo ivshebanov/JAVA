@@ -6,8 +6,16 @@ package com.javarush.task.task25.task2512;
 public class Solution implements Thread.UncaughtExceptionHandler {
 
     @Override
-    public void uncaughtException(Thread t, Throwable e) {
-
+    public void uncaughtException(Thread thread, Throwable throwable) {
+        if (thread != null) {
+            thread.interrupt();
+        }
+        if (throwable.getCause() != null) {
+            uncaughtException(thread, throwable.getCause());
+        }
+        String className = throwable.getClass().toString();
+        System.out.println(className.substring(6, className.length())
+                + ": " + throwable.getMessage());
     }
 
     public static void main(String[] args) {
