@@ -50,10 +50,10 @@ public class University extends Human {
 
     public Student getStudentWithMaxAverageGrade() {
         Student student = null;
-        double d = 0;
+        double maxAverageGrade = 0;
         for (Student st : students) {
-            if (d < st.getAverageGrade()) {
-                d = st.getAverageGrade();
+            if (maxAverageGrade < st.getAverageGrade()) {
+                maxAverageGrade = st.getAverageGrade();
                 student = st;
             }
         }
@@ -62,10 +62,10 @@ public class University extends Human {
 
     public Student getStudentWithMinAverageGrade() {
         Student student = null;
-        double d = 10;
+        double minAverageGrade = 10;
         for (Student st : students) {
-            if (d > st.getAverageGrade()) {
-                d = st.getAverageGrade();
+            if (minAverageGrade > st.getAverageGrade()) {
+                minAverageGrade = st.getAverageGrade();
                 student = st;
             }
         }
