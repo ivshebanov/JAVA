@@ -17,6 +17,19 @@ public class User {
         this.age = age;
     }
 
+    public void printInfo() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Имя: ").append(getName()).append("\n").append("Фамилия: ").append(getSurname());
+        System.out.println(sb);
+    }
+
+    public void printAdditionalInfo() {
+        if (getAge() < 16)
+            System.out.println("Пользователь моложе 16 лет");
+        else
+            System.out.println("Пользователь старше 16 лет");
+    }
+
     public String getName() {
         return name;
     }
