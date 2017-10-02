@@ -19,7 +19,7 @@ public class StudentsDataBase {
     public static void removeStudent(int index) {
         try {
             students.remove(index);
-        } catch (IndexOutOfBoundsException ex) {
+        }catch (IndexOutOfBoundsException ex){
             ex.printStackTrace();
         }
     }
@@ -36,5 +36,19 @@ public class StudentsDataBase {
                 break;
             }
         }
+//        boolean found = false;
+//        for (int i = 0; i < students.size(); i++) {
+//            if (!found) {
+//                if (students.get(i).getName().equals("Dima")) {
+//                    System.out.println("Студент Dima есть в базе.");
+//                    found = true;
+//                }
+//
+//                if (students.get(i).getName().equals("Sasha")) {
+//                    System.out.println("Студент Sasha есть в базе.");
+//                    found = true;
+//                }
+//            }
+//        }
     }
 }
