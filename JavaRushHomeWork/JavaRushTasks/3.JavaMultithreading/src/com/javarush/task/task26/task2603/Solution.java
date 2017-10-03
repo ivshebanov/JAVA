@@ -49,7 +49,7 @@ public class Solution {
 
         CustomizedComparator customizedComparator = new CustomizedComparator(comparable);
 
-        Set<Person> personTreeSet = new TreeSet<Person>(customizedComparator);
+        List<Person> personTreeSet = new ArrayList<>();
         personTreeSet.add(new Person(12, "q"));
         personTreeSet.add(new Person(12, "q"));
         personTreeSet.add(new Person(29, "c"));
@@ -57,7 +57,7 @@ public class Solution {
         personTreeSet.add(new Person(4, "g"));
         personTreeSet.add(new Person(29, "b"));
         personTreeSet.add(new Person(29, "a"));
-
+        Collections.sort(personTreeSet, customizedComparator);
         for (Person p : personTreeSet) {
             System.out.println(p);
         }
