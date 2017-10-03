@@ -1,8 +1,6 @@
 package com.javarush.task.task26.task2603;
 
-import java.util.Comparator;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /*
 Убежденному убеждать других не трудно
@@ -49,11 +47,9 @@ public class Solution {
         comparable[0] = new B();
         comparable[1] = new A();
 
-
         CustomizedComparator customizedComparator = new CustomizedComparator(comparable);
 
-        Set<Person> personTreeSet = new TreeSet<>(customizedComparator);
-
+        Set<Person> personTreeSet = new TreeSet<Person>(customizedComparator);
         personTreeSet.add(new Person(12, "q"));
         personTreeSet.add(new Person(12, "q"));
         personTreeSet.add(new Person(29, "c"));
@@ -68,16 +64,21 @@ public class Solution {
     }
 
     public static class CustomizedComparator<T> implements Comparator<T> {
-        private Comparator<T>[] comparator;
+        private Comparator<T>[] comparators;
 
-        public CustomizedComparator(Comparator<T>[] comparator) {
-            this.comparator = comparator;
+        //compiler didn`t accept with []
+        public CustomizedComparator(Comparator<T>... vararg) {
+            this.comparators = vararg;
         }
 
         @Override
         public int compare(T o1, T o2) {
-            comparator[0].compare(o1, o2);
-            return comparator[1].compare(o1, o2);
+            int result = 0;
+            result = comparators[0].compare(o1, o2);
+            if (result == 0) {
+                result = comparators[1].compare(o1, o2);
+            }
+            return result;
         }
     }
 
