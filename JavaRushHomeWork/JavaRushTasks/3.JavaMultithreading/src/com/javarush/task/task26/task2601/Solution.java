@@ -1,9 +1,6 @@
 package com.javarush.task.task26.task2601;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /*
 Почитать в инете про медиану выборки
@@ -11,34 +8,23 @@ import java.util.List;
 public class Solution {
 
     public static void main(String[] args) {
-        Integer[] integers = new Integer[]{13, 8, 15, 5, 17};
-        Integer[] integers1 = sort(integers);
-        System.out.println(Arrays.toString(integers1));
+//        Integer[] integers = new Integer[]{13, 8, 15, 5, 17, 1};
+//        Integer[] integers1 = sort(integers);
+//        System.out.println(Arrays.toString(integers1));
     }
 
     public static Integer[] sort(Integer[] array) {
         //implement logic here
         List<Integer> list = Arrays.asList(array);
         Collections.sort(list);
-        System.out.println(list);
-        Integer median;
-        //правильно найти медиану
-//        if (list.size() % 2 == 0) {
-//            median = list.get((list.size() / 2) - 1);
-//        } else {
-        median = list.get(list.size() / 2);
-//        }
-        System.out.println(median);
-        assert median != null;
-        List<Integer> list1 = list.subList(list.indexOf(median), list.size());
-        System.out.println(list1);
-        List<Integer> list2 = list.subList(0, list.indexOf(median));
-        System.out.println(list2);
-        Collections.reverse(list2);
-        ArrayList<Integer> result = new ArrayList<>(list1);
-        result.addAll(list2);
-        Integer[] integers = new Integer[result.size()];
-        result.toArray(new Integer[result.size()]);
+        int listSize = list.size();
+        Integer median = listSize % 2 != 0
+                ? list.get(listSize / 2)
+                : (list.get(listSize / 2) + list.get((listSize / 2) - 1)) / 2;
+        Comparator<Integer> compare = (o1, o2) -> Math.abs(o1 - median) - Math.abs(o2 - median);
+        list.sort(compare);
+        Integer[] integers = new Integer[listSize];
+        list.toArray(integers);
         return integers;
     }
 }
