@@ -14,21 +14,20 @@ public class Connection implements Closeable {
 
     public Connection(Socket socket) throws IOException {
         this.socket = socket;
-        this.out = (ObjectOutputStream) socket.getOutputStream();
-        this.in = (ObjectInputStream) socket.getInputStream();
+        this.out = new ObjectOutputStream(socket.getOutputStream());
+        this.in = new ObjectInputStream(socket.getInputStream());
     }
 
-    private void send(Message message) throws IOException {
-        synchronized (socket) {
-            //должен сериализовать message
+    public void send(Message message) throws IOException {
+        synchronized (out) {
+            out.writeObject(message);
         }
     }
 
-    private Message receive() throws IOException, ClassNotFoundException {
-        synchronized (socket) {
-            //должен десериализовать данные из ObjectInputStream
+    public Message receive() throws IOException, ClassNotFoundException {
+        synchronized (in) {
+            return (Message) in.readObject();
         }
-        return new Message(MessageType.NAME_ACCEPTED);
     }
 
     public SocketAddress getRemoteSocketAddress() {
