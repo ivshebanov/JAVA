@@ -17,7 +17,7 @@ public class Server {
         try {
             serverSocket = new ServerSocket(port);
         } catch (Exception e) {
-            ConsoleHelper.writeMessage("Не создался ServerSocket");
+            ConsoleHelper.writeMessage("Не создался ServerSocket.");
         }
         ConsoleHelper.writeMessage("Сервер запушен!");
         assert serverSocket != null;
@@ -28,7 +28,7 @@ public class Server {
                 handler.start();
             }
         } catch (Exception e) {
-            ConsoleHelper.writeMessage("Не создался Socket");
+            ConsoleHelper.writeMessage("Не создался Socket.");
             try {
                 serverSocket.close();
             } catch (IOException e1) {
@@ -64,9 +64,20 @@ public class Server {
         }
 
         private void sendListOfUsers(Connection connection, String userName) throws IOException {
-            for (Map.Entry<String, Connection> cM : connectionMap.entrySet()){
-                if (!cM.getKey().equals(userName)){
+            for (Map.Entry<String, Connection> cM : connectionMap.entrySet()) {
+                if (!cM.getKey().equals(userName)) {
                     connection.send(new Message(MessageType.USER_ADDED, cM.getKey()));
+                }
+            }
+        }
+
+        private void serverMainLoop(Connection connection, String userName) throws IOException, ClassNotFoundException {
+            while (true) {
+                Message answer = connection.receive();
+                if (answer != null && answer.getType() == MessageType.TEXT) {
+                    sendBroadcastMessage(new Message(MessageType.TEXT, userName + ": " + answer.getData()));
+                } else {
+                    ConsoleHelper.writeMessage("Сообщение не является текстом.");
                 }
             }
         }
