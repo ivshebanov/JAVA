@@ -11,7 +11,7 @@ public class Server {
 
 
     public static void main(String[] args) {
-        System.out.println("Введите порт: ");
+        ConsoleHelper.writeMessage("Введите порт: ");
         int port = ConsoleHelper.readInt();
         ServerSocket serverSocket = null;
         try {
@@ -19,7 +19,7 @@ public class Server {
         } catch (Exception e) {
             ConsoleHelper.writeMessage("Не создался ServerSocket");
         }
-        System.out.println("Сервер запушен!");
+        ConsoleHelper.writeMessage("Сервер запушен!");
         assert serverSocket != null;
         try {
             while (true) {
@@ -47,6 +47,20 @@ public class Server {
         @Override
         public void run() {
             super.run();
+        }
+
+        private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
+            while (true) {
+                connection.send(new Message(MessageType.NAME_REQUEST));
+                Message answer = connection.receive();
+                if (answer.getType() == MessageType.USER_NAME
+                        && !answer.getData().isEmpty()
+                        && !connectionMap.containsKey(answer.getData())) {
+                    connectionMap.put(answer.getData(), connection);
+                    connection.send(new Message(MessageType.NAME_ACCEPTED));
+                    return answer.getData();
+                }
+            }
         }
     }
 
