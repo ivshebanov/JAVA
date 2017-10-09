@@ -1,5 +1,6 @@
 package com.javarush.task.task30.task3008;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -42,7 +43,24 @@ public class Server {
 
         @Override
         public void run() {
-
+            if (socket != null && socket.getRemoteSocketAddress() != null) {
+                ConsoleHelper.writeMessage("Установлено новое соединение с удаленным адресом: " + socket.getRemoteSocketAddress());
+            }
+            String name = null;
+            try (Connection connection = new Connection(socket)) {
+                name = serverHandshake(connection);
+                sendBroadcastMessage(new Message(MessageType.USER_ADDED, name));
+                sendListOfUsers(connection, name);
+                serverMainLoop(connection, name);
+            } catch (IOException | ClassNotFoundException e) {
+                ConsoleHelper.writeMessage("Произошла ошибка при обмене данными с удаленным адресом.");
+            } finally {
+                if (name != null) {
+                    connectionMap.remove(name);
+                    sendBroadcastMessage(new Message(MessageType.USER_REMOVED, name));
+                    ConsoleHelper.writeMessage("Соединение с удаленным адресом закрыто: " + socket.getRemoteSocketAddress());
+                }
+            }
         }
 
         private void serverMainLoop(Connection connection, String userName)
