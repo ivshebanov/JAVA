@@ -45,7 +45,22 @@ public class Server {
 
         }
 
-        private void sendListOfUsers(Connection connection, String userName) throws IOException {
+        private void serverMainLoop(Connection connection, String userName)
+                throws IOException, ClassNotFoundException {
+            while (true) {
+                Message message = connection.receive();
+                if (message.getType() == MessageType.TEXT
+                        && !message.getData().isEmpty()) {
+                    sendBroadcastMessage(new Message(MessageType.TEXT,
+                            userName + ": " + message.getData()));
+                } else {
+                    ConsoleHelper.writeMessage("Сообщение не является текстом.");
+                }
+            }
+        }
+
+        private void sendListOfUsers(Connection connection, String userName)
+                throws IOException {
             for (Map.Entry<String, Connection> el : connectionMap.entrySet()) {
                 if (!el.getKey().equals(userName)) {
                     connection.send(new Message(MessageType.USER_ADDED, el.getKey()));
@@ -53,7 +68,8 @@ public class Server {
             }
         }
 
-        private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
+        private String serverHandshake(Connection connection)
+                throws IOException, ClassNotFoundException {
             while (true) {
                 connection.send(new Message(MessageType.NAME_REQUEST));
                 Message answer = connection.receive();
