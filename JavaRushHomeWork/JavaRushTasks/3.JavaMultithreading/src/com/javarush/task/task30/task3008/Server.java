@@ -45,6 +45,14 @@ public class Server {
 
         }
 
+        private void sendListOfUsers(Connection connection, String userName) throws IOException {
+            for (Map.Entry<String, Connection> el : connectionMap.entrySet()) {
+                if (!el.getKey().equals(userName)) {
+                    connection.send(new Message(MessageType.USER_ADDED, el.getKey()));
+                }
+            }
+        }
+
         private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
             while (true) {
                 connection.send(new Message(MessageType.NAME_REQUEST));
