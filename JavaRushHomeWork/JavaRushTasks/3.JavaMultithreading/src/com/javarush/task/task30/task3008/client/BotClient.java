@@ -37,6 +37,10 @@ public class BotClient extends Client {
 
         @Override
         protected void processIncomingMessage(String message) {
+//            ConsoleHelper.writeMessage(message);
+//            SimpleDateFormat format = null;
+//            String nameUser = message.substring(0, message.indexOf(": "));
+//            String text = message.substring(message.indexOf(": ") + 2, message.length());
             if (message != null) {
                 ConsoleHelper.writeMessage(message);
                 SimpleDateFormat format = null;
