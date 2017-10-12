@@ -5,8 +5,8 @@ package com.javarush.task.task27.task2707;
 */
 public class Solution {
     public void someMethodWithSynchronizedBlocks(Object obj1, Object obj2) {
-        synchronized (obj2) {
-            synchronized (obj1) {
+        synchronized (obj1) {
+            synchronized (obj2) {
                 System.out.println(obj1 + " " + obj2);
             }
         }
@@ -30,32 +30,22 @@ public class Solution {
                 @Override
                 public void run() {
                     synchronized (o2) {
-                        solution.someMethodWithSynchronizedBlocks(o1, o2);
                         try {
-                            Thread.sleep(1000);
+                            solution.someMethodWithSynchronizedBlocks(o1, o2);
+                            Thread.sleep(20);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
                 }
             });
-
-            System.out.println(thread1.getState());
             thread1.start();
-            System.out.println(thread1.getState());
-
-            System.out.println(thread2.getState());
+            Thread.sleep(5);
             thread2.start();
-            System.out.println(thread2.getState());
-            Thread.sleep(20);
-            System.out.println(thread2.getState());
+            Thread.sleep(5);
         }
         Thread.sleep(5);
-        System.out.println(thread1.getState());
-        System.out.println(thread2.getState());
-        boolean bol = thread1.getState().equals(Thread.State.BLOCKED);
-
-        return bol;
+        return thread1.getState().equals(Thread.State.BLOCKED);
     }
 
     public static void main(String[] args) throws Exception {
