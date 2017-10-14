@@ -5,6 +5,9 @@ import java.io.InputStreamReader;
 import java.nio.file.Paths;
 
 public class Archiver {
+    ///Users/iliashebanov/Documents/JAVA/JavaRushHomeWork/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task31/task3110/arh.zip
+    ///Users/iliashebanov/Documents/JAVA/JavaRushHomeWork/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task31/task3110/Archiver.docx
+
     public static void main(String[] args) {
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.println("Введите полный пусть для архива.");
