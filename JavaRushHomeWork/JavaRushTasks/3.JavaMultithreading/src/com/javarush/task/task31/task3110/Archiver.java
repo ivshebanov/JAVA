@@ -3,43 +3,35 @@ package com.javarush.task.task31.task3110;
 import com.javarush.task.task31.task3110.exception.WrongZipFileException;
 
 import java.io.IOException;
-import java.nio.file.Paths;
 
 public class Archiver {
-    public static void main(String[] args) {
-        try {
-            ConsoleHelper.writeMessage("Введите полный пусть для архива.");
-            ZipFileManager zipFileManager = new ZipFileManager(Paths.get(ConsoleHelper.readString()));
-            ConsoleHelper.writeMessage("Введите путь к файлу, который будем архивировать.");
-            zipFileManager.createZip(Paths.get(ConsoleHelper.readString()));
-            Operation operation = null;
-            while (operation != Operation.EXIT) {
-                try {
-                    operation = askOperation();
-                    CommandExecutor.execute(operation);
-                } catch (WrongZipFileException ex) {
-                    ConsoleHelper.writeMessage("Вы не выбрали файл архива или выбрали неверный файл.");
-                } catch (Exception ex) {
-                    ConsoleHelper.writeMessage("Произошла ошибка. Проверьте введенные данные.");
-                }
+    public static void main(String[] args) throws IOException {
+//        FileManager fm = new FileManager(Paths.get(
+//                "D:\\hotj\\JAVA\\JavaRushHomeWork\\JavaRushTasks\\3.JavaMultithreading\\src\\com\\javarush\\task\\task31\\task3110"));
+        Operation operation = null;
+        do {
+            try {
+                operation = askOperation();
+                CommandExecutor.execute(operation);
+            } catch (WrongZipFileException e) {
+                ConsoleHelper.writeMessage("Вы не выбрали файл архива или выбрали неверный файл.");
+            } catch (Exception e) {
+                ConsoleHelper.writeMessage("Произошла ошибка. Проверьте введенные данные.");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+        } while (operation != Operation.EXIT);
     }
 
     public static Operation askOperation() throws IOException {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Выберите операцию:\n").
-                append(Operation.CREATE.ordinal()).append(" - упаковать файлы в архив\n").
-                append(Operation.ADD.ordinal()).append(" - добавить файл в архив\n").
-                append(Operation.REMOVE.ordinal()).append(" - удалить файл из архива\n").
-                append(Operation.EXTRACT.ordinal()).append(" - распаковать архив\n").
-                append(Operation.CONTENT.ordinal()).append(" - просмотреть содержимое архива\n").
-                append(Operation.EXIT.ordinal()).append(" – выход");
-        ConsoleHelper.writeMessage(sb.toString());
-        int numberOperation = ConsoleHelper.readInt();
-        Operation[] operation = Operation.values();
-        return operation[numberOperation];
+        ConsoleHelper.writeMessage("");
+        ConsoleHelper.writeMessage("Выберите операцию:");
+        ConsoleHelper.writeMessage(String.format("\t %d - упаковать файлы в архив", Operation.CREATE.ordinal()));
+        ConsoleHelper.writeMessage(String.format("\t %d - добавить файл в архив", Operation.ADD.ordinal()));
+        ConsoleHelper.writeMessage(String.format("\t %d - удалить файл из архива", Operation.REMOVE.ordinal()));
+        ConsoleHelper.writeMessage(String.format("\t %d - распаковать архив", Operation.EXTRACT.ordinal()));
+        ConsoleHelper.writeMessage(String.format("\t %d - просмотреть содержимое архива", Operation.CONTENT.ordinal()));
+        ConsoleHelper.writeMessage(String.format("\t %d - выход", Operation.EXIT.ordinal()));
+
+        return Operation.values()[ConsoleHelper.readInt()];
     }
 }
