@@ -19,7 +19,7 @@ public class ZipFileManager {
         ) {
             ZipEntry zipEntry = new ZipEntry(source.getFileName().toString());
             zipOutputStream.putNextEntry(zipEntry);
-            //            Files.copy(source, zipOutputStream);
+//            Files.copy(source, zipOutputStream);
             while (inputStream.available() > 0) {
                 zipOutputStream.write(inputStream.read());
             }
