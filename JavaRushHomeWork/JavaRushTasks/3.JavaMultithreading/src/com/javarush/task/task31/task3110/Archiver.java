@@ -1,25 +1,31 @@
 package com.javarush.task.task31.task3110;
 
-import com.javarush.task.task31.task3110.exception.WrongZipFileException;
-
 import java.io.IOException;
+import java.nio.file.Paths;
 
 public class Archiver {
     public static void main(String[] args) throws IOException {
-//        FileManager fm = new FileManager(Paths.get(
-//                "D:\\hotj\\JAVA\\JavaRushHomeWork\\JavaRushTasks\\3.JavaMultithreading\\src\\com\\javarush\\task\\task31\\task3110"));
-        Operation operation = null;
-        do {
-            try {
-                operation = askOperation();
-                CommandExecutor.execute(operation);
-            } catch (WrongZipFileException e) {
-                ConsoleHelper.writeMessage("Вы не выбрали файл архива или выбрали неверный файл.");
-            } catch (Exception e) {
-                ConsoleHelper.writeMessage("Произошла ошибка. Проверьте введенные данные.");
-            }
 
-        } while (operation != Operation.EXIT);
+        String s = "/Users/iliashebanov/Documents/JAVA/JavaRushHomeWork/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task31/ttt.zip";
+        String d = "/Users/iliashebanov/Documents/JAVA/JavaRushHomeWork/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task31/task3110";
+        ZipFileManager zfm = new ZipFileManager(Paths.get(s));
+        try {
+            zfm.createZip(Paths.get(d));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+//        Operation operation = null;
+//        do {
+//            try {
+//                operation = askOperation();
+//                CommandExecutor.execute(operation);
+//            } catch (WrongZipFileException e) {
+//                ConsoleHelper.writeMessage("Вы не выбрали файл архива или выбрали неверный файл.");
+//            } catch (Exception e) {
+//                ConsoleHelper.writeMessage("Произошла ошибка. Проверьте введенные данные.");
+//            }
+//
+//        } while (operation != Operation.EXIT);
     }
 
     public static Operation askOperation() throws IOException {
