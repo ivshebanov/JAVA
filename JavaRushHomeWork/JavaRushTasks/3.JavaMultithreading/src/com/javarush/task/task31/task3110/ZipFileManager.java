@@ -6,7 +6,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -26,15 +25,12 @@ public class ZipFileManager {
                 addNewZipEntry(zipOutputStream, source.getParent(), source.getFileName());
             } else if (Files.isDirectory(source)) {
                 FileManager fm = new FileManager(source);
-                List<Path> fileList = fm.getFileList();
-                for (Path p : fileList) {
-                    addNewZipEntry(zipOutputStream, p.getParent(), p.getFileName());
+                for (Path p : fm.getFileList()) {
+                    addNewZipEntry(zipOutputStream, source, p);
                 }
             } else {
                 throw new PathIsNotFoundException();
             }
-        } catch (PathIsNotFoundException ex) {
-            ConsoleHelper.writeMessage(ex.getMessage());
         }
     }
 
@@ -46,7 +42,6 @@ public class ZipFileManager {
             copyData(inputStream, zipOutputStream);
             zipOutputStream.closeEntry();
         }
-
     }
 
     private void copyData(InputStream in, OutputStream out) throws Exception {
