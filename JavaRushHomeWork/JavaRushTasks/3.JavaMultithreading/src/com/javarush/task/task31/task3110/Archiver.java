@@ -3,18 +3,9 @@ package com.javarush.task.task31.task3110;
 import com.javarush.task.task31.task3110.exception.WrongZipFileException;
 
 import java.io.IOException;
-import java.nio.file.Paths;
 
 public class Archiver {
     public static void main(String[] args) throws IOException {
-//        String s = "D:\\hotj\\JAVA\\JavaRushHomeWork\\JavaRushTasks\\3.JavaMultithreading\\src\\com\\javarush\\task\\task31\\arh.zip";
-//        String d = "D:\\hotj\\JAVA\\JavaRushHomeWork\\JavaRushTasks\\3.JavaMultithreading\\src\\com\\javarush\\task\\task31\\task3110";
-//        ZipFileManager fm = new ZipFileManager(Paths.get(s));
-//        try {
-//            fm.createZip(Paths.get(d));
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
         Operation operation = null;
         do {
             try {
