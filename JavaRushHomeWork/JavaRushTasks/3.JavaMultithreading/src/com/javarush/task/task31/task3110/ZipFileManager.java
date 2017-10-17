@@ -7,10 +7,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
@@ -23,11 +21,10 @@ public class ZipFileManager {
     }
 
     public void extractAll(Path outputFolder) throws Exception {
-        if (!Files.isRegularFile(zipFile))
+        // Проверяем существует ли zip файл
+        if (!Files.isRegularFile(zipFile)) {
             throw new WrongZipFileException();
-
-        if (!Files.isDirectory(outputFolder))
-            Files.createDirectories(outputFolder);
+        }
 
         try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(zipFile))) {
             // Создаем директорию вывода, если она не существует
@@ -53,6 +50,7 @@ public class ZipFileManager {
             }
         }
     }
+
 
     public void createZip(Path source) throws Exception {
         // Проверяем, существует ли директория, где будет создаваться архив
