@@ -14,7 +14,8 @@ public class ZipCreateCommand extends ZipCommand {
             ConsoleHelper.writeMessage("Создание архива.");
             ZipFileManager zipFileManager = getZipFileManager();
             ConsoleHelper.writeMessage("Введите полное имя файла или директории для архивации:");
-            Path sourcePath = Paths.get(ConsoleHelper.readString());
+            String s = "D:\\hotj\\JAVA\\JavaRushHomeWork\\JavaRushTasks\\3.JavaMultithreading\\src\\com\\javarush\\task\\task31\\task3110";
+            Path sourcePath = Paths.get(s);
             zipFileManager.createZip(sourcePath);
             ConsoleHelper.writeMessage("Архив создан.");
         } catch (PathIsNotFoundException e) {
