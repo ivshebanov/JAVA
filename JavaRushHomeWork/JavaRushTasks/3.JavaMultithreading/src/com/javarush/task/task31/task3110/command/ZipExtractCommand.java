@@ -14,11 +14,11 @@ public class ZipExtractCommand extends ZipCommand {
             ConsoleHelper.writeMessage("Распаковка архива.");
             ZipFileManager zipFileManager = getZipFileManager();
             ConsoleHelper.writeMessage("Введите путь для распаковки:");
-//            String s = "D:\\hotj\\JAVA\\JavaRushHomeWork\\JavaRushTasks\\3.JavaMultithreading\\src\\com\\javarush\\task\\task31\\task3110";
-            String s = "/Users/iliashebanov/Documents/JAVA/JavaRushHomeWork/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task31/";
+            String s = "D:\\hotj\\qw";
+//            String s = "/Users/iliashebanov/Documents/JAVA/JavaRushHomeWork/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task31/";
             Path destinationPath = Paths.get(ConsoleHelper.readString());
             zipFileManager.extractAll(destinationPath);
-        }catch (PathIsNotFoundException ex){
+        } catch (PathIsNotFoundException ex) {
             ConsoleHelper.writeMessage("Неверный путь для распаковки.");
         }
     }

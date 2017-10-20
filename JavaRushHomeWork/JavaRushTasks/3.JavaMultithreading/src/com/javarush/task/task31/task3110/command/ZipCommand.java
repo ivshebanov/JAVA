@@ -8,10 +8,10 @@ import java.nio.file.Paths;
 
 public abstract class ZipCommand implements Command {
 
-    public ZipFileManager getZipFileManager() throws Exception{
+    public ZipFileManager getZipFileManager() throws Exception {
         ConsoleHelper.writeMessage("Введите полный путь файла архива:");
-//        String s = "D:\\hotj\\JAVA\\JavaRushHomeWork\\JavaRushTasks\\3.JavaMultithreading\\src\\com\\javarush\\task\\task31\\arh.zip";
-        String s = "/Users/iliashebanov/Documents/JAVA/JavaRushHomeWork/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task31/arh.zip";
+        String s = "D:\\hotj\\JAVA\\JavaRushHomeWork\\JavaRushTasks\\3.JavaMultithreading\\src\\com\\javarush\\task\\task31\\arh.zip";
+//        String s = "/Users/iliashebanov/Documents/JAVA/JavaRushHomeWork/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task31/arh.zip";
         Path zipPath = Paths.get(ConsoleHelper.readString());
         return new ZipFileManager(zipPath);
     }
