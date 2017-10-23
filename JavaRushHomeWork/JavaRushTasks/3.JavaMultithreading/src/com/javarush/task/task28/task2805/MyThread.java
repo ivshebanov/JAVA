@@ -28,7 +28,9 @@ public class MyThread extends Thread {
     }
 
     public MyThread(ThreadGroup group, String name) {
-        super(group, name);
+        //3 4 5 6 7 7 7 7 1 2 3 4
+        System.out.println(1);
+
     }
 
     public MyThread(Runnable target, String name) {
