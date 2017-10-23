@@ -1,7 +1,5 @@
 package com.javarush.task.task28.task2805;
 
-import javafx.scene.layout.Priority;
-
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class MyThread extends Thread {
