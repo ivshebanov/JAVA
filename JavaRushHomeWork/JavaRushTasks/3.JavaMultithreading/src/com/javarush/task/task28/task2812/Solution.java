@@ -18,10 +18,9 @@ public class Solution {
                 }
             });
         }
-        for (Runnable r: executor.shutdownNow()){
+        for (Runnable r : executor.shutdownNow()) {
             System.out.println(r);
         }
-
     }
 
     private static void doExpensiveOperation(int localId) {
