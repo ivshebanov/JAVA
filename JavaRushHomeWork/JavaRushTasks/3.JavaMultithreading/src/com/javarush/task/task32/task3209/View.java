@@ -19,4 +19,12 @@ public class View extends JFrame implements ActionListener {
     public void setController(Controller controller) {
         this.controller = controller;
     }
+
+    public void exit(){
+        controller.exit();
+    }
+
+    public void init(){
+
+    }
 }
