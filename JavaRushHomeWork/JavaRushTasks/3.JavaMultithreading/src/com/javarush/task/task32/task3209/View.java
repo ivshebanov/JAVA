@@ -15,7 +15,6 @@ public class View extends JFrame implements ActionListener {
     private JEditorPane plainTextPane = new JEditorPane();
 
     public View() {
-        super("HTML Editor");
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ex) {
@@ -79,5 +78,13 @@ public class View extends JFrame implements ActionListener {
 
     public void selectedTabChanged() {
 
+    }
+
+    public boolean canUndo() {
+        return false;
+    }
+
+    public boolean canRedo() {
+        return false;
     }
 }
