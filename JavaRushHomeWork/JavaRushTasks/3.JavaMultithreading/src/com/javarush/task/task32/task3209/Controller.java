@@ -1,7 +1,5 @@
 package com.javarush.task.task32.task3209;
 
-import com.javarush.task.task32.task3209.listeners.UndoListener;
-
 import javax.swing.*;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
@@ -42,11 +40,11 @@ public class Controller {
     }
 
     public void resetDocument() {
-        assert (document != null);
-        UndoListener undoListener = view.getUndoListener();
-        document.removeUndoableEditListener(undoListener);
+        if (document != null) {
+            document.removeUndoableEditListener(view.getUndoListener());
+        }
         document = (HTMLDocument) new HTMLEditorKit().createDefaultDocument();
-        document.addUndoableEditListener(undoListener);
+        document.addUndoableEditListener(view.getUndoListener());
         view.update();
     }
 
@@ -68,5 +66,17 @@ public class Controller {
             ExceptionHandler.log(e);
         }
         return stringWriter.toString();
+    }
+
+    public void createNewDocument() {
+    }
+
+    public void saveDocumentAs() {
+    }
+
+    public void openDocument() {
+    }
+
+    public void saveDocument() {
     }
 }
