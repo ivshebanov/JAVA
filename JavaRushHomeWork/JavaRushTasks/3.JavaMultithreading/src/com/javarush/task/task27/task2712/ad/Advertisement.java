@@ -28,4 +28,10 @@ public class Advertisement {
     public int getDuration() {
         return duration;
     }
+
+    public void revalidate(){
+        if (hits <= 0)
+            throw new UnsupportedOperationException();
+        hits--;
+    }
 }
