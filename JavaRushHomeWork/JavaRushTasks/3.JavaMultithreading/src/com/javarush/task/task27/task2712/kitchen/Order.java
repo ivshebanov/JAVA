@@ -6,7 +6,7 @@ import com.javarush.task.task27.task2712.Tablet;
 import java.io.IOException;
 import java.util.List;
 
-public class Order{
+public class Order {
     private final Tablet tablet;
     protected List<Dish> dishes;
 
@@ -17,12 +17,26 @@ public class Order{
 
     @Override
     public String toString() {
-        if (!dishes.isEmpty())
+        if (!isEmpty())
             return "Your order:" + dishes + "of Tablet" + tablet;
         return "";
     }
 
     public List<Dish> getDishes() {
         return dishes;
+    }
+
+    public boolean isEmpty() {
+        return dishes.isEmpty();
+    }
+
+    public int getTotalCookingTime() {
+        int resultTotalCookingTime = 0;
+        if (!isEmpty()) {
+            for (Dish dish : dishes) {
+                resultTotalCookingTime += dish.getDuration();
+            }
+        }
+        return resultTotalCookingTime;
     }
 }
