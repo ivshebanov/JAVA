@@ -8,13 +8,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Tablet extends Observable {
-    private List<Observer> observers;
     private static Logger logger = Logger.getLogger(Tablet.class.getName());
     final int number;
 
     public Tablet(int number) {
         this.number = number;
-        observers = new LinkedList<>();
     }
 
     public Order createOrder() {
@@ -35,21 +33,5 @@ public class Tablet extends Observable {
         return "Tablet{" +
                 "number=" + number +
                 '}';
-    }
-
-    @Override
-    public synchronized void addObserver(Observer o) {
-        observers.add(o);
-    }
-
-    @Override
-    public synchronized void deleteObserver(Observer o) {
-        observers.remove(o);
-    }
-
-    @Override
-    public void notifyObservers(Object arg) {
-        for (Observer observer : observers)
-            observer.update(this, arg);
     }
 }
