@@ -22,6 +22,7 @@ public class Cook extends Observable implements Observer {
         Order order = (Order) arg;
         ConsoleHelper.writeMessage("Start cooking - " + order + ", cooking time "
                 + order.getTotalCookingTime() + "min");
+
         setChanged();
         notifyObservers(arg);
     }

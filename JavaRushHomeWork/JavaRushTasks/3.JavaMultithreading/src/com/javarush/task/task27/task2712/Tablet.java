@@ -5,7 +5,7 @@ import com.javarush.task.task27.task2712.ad.NoVideoAvailableException;
 import com.javarush.task.task27.task2712.kitchen.Order;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Observable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,19 +21,17 @@ public class Tablet extends Observable {
         Order orderResult = null;
         try {
             orderResult = new Order(this);
-            ConsoleHelper.writeMessage(orderResult.toString());
             if (!orderResult.isEmpty()) {
+                ConsoleHelper.writeMessage(orderResult.toString());
+                AdvertisementManager advertisementManager =
+                        new AdvertisementManager(orderResult.getTotalCookingTime() * 60);
+                advertisementManager.processVideos();
                 setChanged();
                 notifyObservers(orderResult);
-                try {
-                    AdvertisementManager advertisementManager =
-                            new AdvertisementManager(orderResult.getTotalCookingTime() * 60);
-                    advertisementManager.processVideos();
-                } catch (NoVideoAvailableException e) {
-                    logger.log(Level.INFO, "No video is available for the order " + orderResult);
-                }
             }
-        } catch (IOException e) {
+        } catch (NoVideoAvailableException e) {
+            logger.log(Level.INFO, "No video is available for the order " + orderResult);
+        }catch (IOException e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
         }
         return orderResult;

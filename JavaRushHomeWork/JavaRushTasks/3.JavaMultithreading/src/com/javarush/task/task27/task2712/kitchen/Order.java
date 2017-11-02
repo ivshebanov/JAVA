@@ -18,7 +18,7 @@ public class Order {
     @Override
     public String toString() {
         if (!isEmpty())
-            return "Your order:" + dishes + "of Tablet" + tablet;
+            return "Your order:" + dishes + " of " + tablet;
         return "";
     }
 

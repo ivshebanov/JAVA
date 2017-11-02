@@ -24,5 +24,6 @@ public enum Dish {
         }
         result.delete(result.length() - 2, result.length());
         return result.toString();
+//        return Arrays.toString(Dish.values()).substring(1, Arrays.toString(Dish.values()).length()-1);
     }
 }

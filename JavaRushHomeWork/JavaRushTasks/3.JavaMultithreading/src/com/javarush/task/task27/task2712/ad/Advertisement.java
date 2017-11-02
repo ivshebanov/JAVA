@@ -39,4 +39,9 @@ public class Advertisement {
     public int getHits() {
         return hits;
     }
+
+    @Override
+    public String toString() {
+        return name + " is displaying... " + getAmountPerOneDisplaying() + ", " + getAmountPerOneDisplaying()/duration*1000;
+    }
 }
