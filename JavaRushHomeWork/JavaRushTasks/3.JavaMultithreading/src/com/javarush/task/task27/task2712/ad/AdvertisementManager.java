@@ -1,7 +1,7 @@
 package com.javarush.task.task27.task2712.ad;
 
 import com.javarush.task.task27.task2712.ConsoleHelper;
-import com.javarush.task.task27.task2712.statistic.StatisticEventManager;
+import com.javarush.task.task27.task2712.statistic.StatisticManager;
 import com.javarush.task.task27.task2712.statistic.event.NoAvailableVideoEventDataRow;
 import com.javarush.task.task27.task2712.statistic.event.VideoSelectedEventDataRow;
 
@@ -33,7 +33,7 @@ public class AdvertisementManager {
             totalAmount += ad.getAmountPerOneDisplaying();
             totalDuration += ad.getDuration();
         }
-        StatisticEventManager.getInstance().register(new VideoSelectedEventDataRow(bestVariant, totalAmount, totalDuration));
+        StatisticManager.getInstance().register(new VideoSelectedEventDataRow(bestVariant, totalAmount, totalDuration));
     }
 
     private List<Advertisement> pickVideosToList(List<Advertisement> previousList, Advertisement previousAd, int remainingTime,
@@ -62,7 +62,7 @@ public class AdvertisementManager {
         } else if (profit == maxProfit && remainingTime == minRemainingTime && bestResult.size() > newList.size())
             bestResult = newList;
         if (bestResult.isEmpty()) {
-            StatisticEventManager.getInstance().register(new NoAvailableVideoEventDataRow(timeSeconds));
+            StatisticManager.getInstance().register(new NoAvailableVideoEventDataRow(timeSeconds));
             throw new NoVideoAvailableException();
         }
         Collections.sort(bestResult, new Comparator<Advertisement>() {

@@ -7,14 +7,14 @@ import com.javarush.task.task27.task2712.statistic.event.VideoSelectedEventDataR
 
 import java.util.*;
 
-public class StatisticEventManager {
+public class StatisticManager {
     private StatisticStorage storage = new StatisticStorage();
-    private static StatisticEventManager ourInstance = new StatisticEventManager();
+    private static final StatisticManager ourInstance = new StatisticManager();
 
-    private StatisticEventManager() {
+    private StatisticManager() {
     }
 
-    public static StatisticEventManager getInstance() {
+    public static StatisticManager getInstance() {
         return ourInstance;
     }
 
