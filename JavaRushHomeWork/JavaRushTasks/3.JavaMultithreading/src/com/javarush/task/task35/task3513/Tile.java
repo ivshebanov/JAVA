@@ -10,7 +10,7 @@ public class Tile {
     }
 
     public Tile() {
-        value = 0;
+        this.value = 0;
     }
 
     public boolean isEmpty() {
