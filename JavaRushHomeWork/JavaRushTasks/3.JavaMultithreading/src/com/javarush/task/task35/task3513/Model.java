@@ -11,6 +11,8 @@ public class Model {
 
     public Model() {
         resetGameTiles();
+        this.score = 0;
+        this.maxTile = 2;
     }
 
     public void resetGameTiles() {
@@ -48,34 +50,36 @@ public class Model {
         return emptyTiles;
     }
 
-    public Tile[] compressTiles(Tile[] tiles) {
-        for (int i = 0; i < tiles.length - 1; i++) {
-            if (tiles[i].getValue() == 0) {
-                for (int j = i; j < tiles.length - 1; j++) {
-                    tiles[j].setValue(tiles[j + 1].value);
+    private boolean compressTiles(Tile[] tiles) {
+        boolean isChanged = false;
+        Tile temp;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (tiles[j].getValue() == 0 && tiles[j + 1].getValue() != 0) {
+                    temp = tiles[j];
+                    tiles[j] = tiles[j + 1];
+                    tiles[j + 1] = temp;
+                    isChanged = true;
                 }
-                tiles[tiles.length - 1].setValue(0);
             }
         }
-        return tiles;
+        return isChanged;
     }
 
-    public void mergeTiles(Tile[] tiles) {
+    private boolean mergeTiles(Tile[] tiles) {
+        boolean isChanged = false;
         for (int i = 0; i < tiles.length - 1; i++) {
             if (tiles[i].getValue() == tiles[i + 1].getValue()) {
                 tiles[i].setValue(tiles[i].value * 2);
                 tiles[i + 1].setValue(0);
                 compressTiles(tiles);
+                if (tiles[i].getValue() > maxTile) {
+                    maxTile = tiles[i].getValue();
+                }
+                score += tiles[i].getValue();
+                isChanged = true;
             }
         }
-        System.out.println();
-        for (int i = 0; i < tiles.length; i++) {
-            System.out.print(tiles[i].getValue());
-        }
-    }
-
-
-    public void mergeTiles() {
-
+        return isChanged;
     }
 }
