@@ -25,7 +25,16 @@ public class Model {
             }
         }
         addTile();
-
+        addTile();
+        addTile();
+        addTile();
+        addTile();
+        addTile();
+        addTile();
+        addTile();
+        addTile();
+        addTile();
+        addTile();
     }
 
     public Tile[][] getGameTiles() {
@@ -44,7 +53,7 @@ public class Model {
         List<Tile> emptyTiles = new ArrayList<>();
         for (int i = 0; i < gameTiles.length; i++) {
             for (int j = 0; j < gameTiles.length; j++) {
-                if (gameTiles[i][j].value == 0) {
+                if (gameTiles[i][j].getValue() == 0) {
                     emptyTiles.add(gameTiles[i][j]);
                 }
             }
@@ -56,22 +65,18 @@ public class Model {
         boolean isChanged = false;
         LinkedList<Tile> temporaryList = new LinkedList<>();
         for (Tile tile : tiles) {
-            if (tile.getValue() != 0){
+            if (tile.getValue() != 0) {
                 temporaryList.addLast(tile);
             }
         }
-
         if (temporaryList.size() != 0) {
             while (temporaryList.size() != tiles.length) {
                 temporaryList.add(new Tile());
             }
-
             List<Tile> checkChangesList = Arrays.asList(tiles);
-
             if (!temporaryList.equals(checkChangesList)) {
                 isChanged = true;
             }
-
             for (int i = 0; i < tiles.length; i++) {
                 tiles[i] = temporaryList.removeFirst();
             }
@@ -83,13 +88,13 @@ public class Model {
         boolean isChanged = false;
         for (int i = 0; i < tiles.length - 1; i++) {
             if (tiles[i].getValue() == tiles[i + 1].getValue() & tiles[i].getValue() != 0) {
-                tiles[i].setValue(tiles[i].value * 2);
+                tiles[i].setValue(tiles[i].getValue() * 2);
                 tiles[i + 1].setValue(0);
                 compressTiles(tiles);
                 if (tiles[i].getValue() > maxTile) {
-                    maxTile = tiles[i].getValue();
+                    this.maxTile = tiles[i].getValue();
                 }
-                score += tiles[i].getValue();
+                this.score += tiles[i].getValue();
                 isChanged = true;
             }
         }
@@ -103,19 +108,46 @@ public class Model {
                 isChanged = true;
             }
         }
-
         if (isChanged) {
             addTile();
         }
-
-        System.out.println();
-        for (Tile[] gameTile : gameTiles) {
-            for (int j = 0; j < gameTiles.length; j++) {
-                System.out.print(gameTile[j].getValue());
-            }
-            System.out.println();
-        }
     }
 
+    public void up() {
+        rotateGameTiles90();
+        rotateGameTiles90();
+        rotateGameTiles90();
+        left();
+        rotateGameTiles90();
+    }
 
+    public void right() {
+        rotateGameTiles90();
+        rotateGameTiles90();
+        left();
+        rotateGameTiles90();
+        rotateGameTiles90();
+    }
+
+    public void down() {
+        rotateGameTiles90();
+        left();
+        rotateGameTiles90();
+        rotateGameTiles90();
+        rotateGameTiles90();
+    }
+
+    private void rotateGameTiles90() {
+        Tile[][] newTiles = new Tile[gameTiles[0].length][gameTiles.length];
+        int retArrI = 0;
+        int retArrJ = gameTiles.length - 1;
+        for (Tile[] srI : gameTiles) {
+            for (Tile srJ : srI) {
+                newTiles[retArrI++][retArrJ] = srJ;
+            }
+            retArrI = 0;
+            retArrJ--;
+        }
+        System.arraycopy(newTiles, 0, gameTiles, 0, newTiles.length);
+    }
 }
