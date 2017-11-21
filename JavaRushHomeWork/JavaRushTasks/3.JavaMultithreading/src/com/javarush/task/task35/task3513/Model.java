@@ -25,13 +25,7 @@ public class Model {
             }
         }
         addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
+
     }
 
     public Tile[][] getGameTiles() {
@@ -61,16 +55,19 @@ public class Model {
     private boolean compressTiles(Tile[] tiles) {
         boolean isChanged = false;
         LinkedList<Tile> temporaryList = new LinkedList<>();
-        for (int i = 0; i < tiles.length; i++) {
-            if (tiles[i].getValue() != 0)
-                temporaryList.addLast(tiles[i]);
+        for (Tile tile : tiles) {
+            if (tile.getValue() != 0){
+                temporaryList.addLast(tile);
+            }
         }
+
         if (temporaryList.size() != 0) {
             while (temporaryList.size() != tiles.length) {
                 temporaryList.add(new Tile());
             }
 
             List<Tile> checkChangesList = Arrays.asList(tiles);
+
             if (!temporaryList.equals(checkChangesList)) {
                 isChanged = true;
             }
@@ -84,8 +81,8 @@ public class Model {
 
     private boolean mergeTiles(Tile[] tiles) {
         boolean isChanged = false;
-        for (int i = 0; i < tiles.length-1; i++) {
-            if (tiles[i].getValue() == tiles[i + 1].getValue()) {
+        for (int i = 0; i < tiles.length - 1; i++) {
+            if (tiles[i].getValue() == tiles[i + 1].getValue() & tiles[i].getValue() != 0) {
                 tiles[i].setValue(tiles[i].value * 2);
                 tiles[i + 1].setValue(0);
                 compressTiles(tiles);
@@ -101,22 +98,24 @@ public class Model {
 
     public void left() {
         boolean isChanged = false;
-        for (int i = 0; i < gameTiles.length; i++) {
-            if (compressTiles(gameTiles[i]) | mergeTiles(gameTiles[i])) {
+        for (Tile[] gameTile : gameTiles) {
+            if (compressTiles(gameTile) | mergeTiles(gameTile)) {
                 isChanged = true;
             }
         }
 
-//        if (isChanged) {
-//            addTile();
-//        }
+        if (isChanged) {
+            addTile();
+        }
 
         System.out.println();
-        for (int i = 0; i < gameTiles.length; i++) {
+        for (Tile[] gameTile : gameTiles) {
             for (int j = 0; j < gameTiles.length; j++) {
-                System.out.print(gameTiles[i][j].getValue());
+                System.out.print(gameTile[j].getValue());
             }
             System.out.println();
         }
     }
+
+
 }
