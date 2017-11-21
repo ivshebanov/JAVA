@@ -1,6 +1,8 @@
 package com.javarush.task.task35.task3513;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Model {
@@ -22,6 +24,12 @@ public class Model {
                 gameTiles[i][j] = new Tile();
             }
         }
+        addTile();
+        addTile();
+        addTile();
+        addTile();
+        addTile();
+        addTile();
         addTile();
         addTile();
     }
@@ -52,15 +60,23 @@ public class Model {
 
     private boolean compressTiles(Tile[] tiles) {
         boolean isChanged = false;
-        Tile temp;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (tiles[j].getValue() == 0 && tiles[j + 1].getValue() != 0) {
-                    temp = tiles[j];
-                    tiles[j] = tiles[j + 1];
-                    tiles[j + 1] = temp;
-                    isChanged = true;
-                }
+        LinkedList<Tile> temporaryList = new LinkedList<>();
+        for (int i = 0; i < tiles.length; i++) {
+            if (tiles[i].getValue() != 0)
+                temporaryList.addLast(tiles[i]);
+        }
+        if (temporaryList.size() != 0) {
+            while (temporaryList.size() != tiles.length) {
+                temporaryList.add(new Tile());
+            }
+
+            List<Tile> checkChangesList = Arrays.asList(tiles);
+            if (!temporaryList.equals(checkChangesList)) {
+                isChanged = true;
+            }
+
+            for (int i = 0; i < tiles.length; i++) {
+                tiles[i] = temporaryList.removeFirst();
             }
         }
         return isChanged;
@@ -68,7 +84,7 @@ public class Model {
 
     private boolean mergeTiles(Tile[] tiles) {
         boolean isChanged = false;
-        for (int i = 0; i < tiles.length - 1; i++) {
+        for (int i = 0; i < tiles.length-1; i++) {
             if (tiles[i].getValue() == tiles[i + 1].getValue()) {
                 tiles[i].setValue(tiles[i].value * 2);
                 tiles[i + 1].setValue(0);
@@ -81,5 +97,26 @@ public class Model {
             }
         }
         return isChanged;
+    }
+
+    public void left() {
+        boolean isChanged = false;
+        for (int i = 0; i < gameTiles.length; i++) {
+            if (compressTiles(gameTiles[i]) | mergeTiles(gameTiles[i])) {
+                isChanged = true;
+            }
+        }
+
+//        if (isChanged) {
+//            addTile();
+//        }
+
+        System.out.println();
+        for (int i = 0; i < gameTiles.length; i++) {
+            for (int j = 0; j < gameTiles.length; j++) {
+                System.out.print(gameTiles[i][j].getValue());
+            }
+            System.out.println();
+        }
     }
 }
