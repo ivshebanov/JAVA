@@ -27,14 +27,6 @@ public class Model {
         addTile();
         addTile();
         addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
     }
 
     public Tile[][] getGameTiles() {
