@@ -34,10 +34,10 @@ public class Controller extends KeyAdapter {
 
         if (!view.isGameLost & !view.isGameLost){
             switch (e.getKeyCode()){
-                case KeyEvent.VK_LEFT : model.left();
-                case KeyEvent.VK_RIGHT : model.right();
-                case KeyEvent.VK_UP : model.up();
-                case KeyEvent.VK_DOWN : model.down();
+                case KeyEvent.VK_LEFT : model.left(); break;
+                case KeyEvent.VK_RIGHT : model.right(); break;
+                case KeyEvent.VK_UP : model.up(); break;
+                case KeyEvent.VK_DOWN : model.down(); break;
             }
         }
 
@@ -54,5 +54,9 @@ public class Controller extends KeyAdapter {
 
     public int getScore() {
         return model.score;
+    }
+
+    public View getView() {
+        return view;
     }
 }

@@ -1,30 +1,22 @@
 package com.javarush.task.task35.task3513;
 
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
         Model model = new Model();
-        Tile[][] tile = model.getGameTiles();
-        for (int i = 0; i <= 3; i++) {
-            for (int j = 0; j <= 3; j++) {
-                System.out.print(tile[i][j].getValue() + "\t");
-            }
-            System.out.println();
-        }
+        Controller controller = new Controller(model);
+        JFrame game = new JFrame();
 
-        Tile[] tiles = {new Tile(2), new Tile(2), new Tile(2), new Tile(2)};
-        model.left();
+        game.setTitle("2048");
+        game.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        game.setSize(450, 500);
+        game.setResizable(false);
 
+        game.add(controller.getView());
 
 
-        System.out.println();
-        Tile[][] til1e = model.getGameTiles();
-        for (int i = 0; i <= 3; i++) {
-            for (int j = 0; j <= 3; j++) {
-                System.out.print(til1e[i][j].getValue() + "\t");
-            }
-            System.out.println();
-        }
-
-        System.out.println(model.canMove());
+        game.setLocationRelativeTo(null);
+        game.setVisible(true);
     }
 }
