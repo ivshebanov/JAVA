@@ -14,7 +14,7 @@ public class Controller extends KeyAdapter {
         this.view = new View(this);
     }
 
-    public void resetGame(){
+    public void resetGame() {
         this.model.score = 0;
         this.model.maxTile = 2;
         this.view.isGameLost = false;
@@ -24,24 +24,32 @@ public class Controller extends KeyAdapter {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
             resetGame();
         }
 
-        if (!model.canMove()){
+        if (!model.canMove()) {
             view.isGameLost = true;
         }
 
-        if (!view.isGameLost & !view.isGameLost){
-            switch (e.getKeyCode()){
-                case KeyEvent.VK_LEFT : model.left(); break;
-                case KeyEvent.VK_RIGHT : model.right(); break;
-                case KeyEvent.VK_UP : model.up(); break;
-                case KeyEvent.VK_DOWN : model.down(); break;
+        if (!view.isGameLost & !view.isGameLost) {
+            switch (e.getKeyCode()) {
+                case KeyEvent.VK_LEFT:
+                    model.left();
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    model.right();
+                    break;
+                case KeyEvent.VK_UP:
+                    model.up();
+                    break;
+                case KeyEvent.VK_DOWN:
+                    model.down();
+                    break;
             }
         }
 
-        if (model.maxTile == WINNING_TILE){
+        if (model.maxTile == WINNING_TILE) {
             view.isGameWon = true;
         }
 

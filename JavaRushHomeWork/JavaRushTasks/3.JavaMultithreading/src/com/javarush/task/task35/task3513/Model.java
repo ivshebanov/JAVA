@@ -1,20 +1,42 @@
 package com.javarush.task.task35.task3513;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Model {
     private static final int FIELD_WIDTH = 4;
     private Tile[][] gameTiles;
-    public int score; //текущий счет
-    public int maxTile; //макс вес плитки
+    int score; //текущий счет
+    int maxTile; //макс вес плитки
+    private Stack<Tile[][]> previousStates = new Stack<>();
+    private Stack<Integer> previousScores = new Stack<>();
+    private boolean isSaveNeeded = true;
 
     public Model() {
         resetGameTiles();
         this.score = 0;
         this.maxTile = 2;
+    }
+
+    private void saveState(Tile[][] tiles) {
+        int scoreSave = score;
+        this.previousScores.push(scoreSave);
+        Tile[][] gameTilesSave = new Tile[gameTiles[0].length][gameTiles.length];
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            for (int j = 0; j < FIELD_WIDTH; j++) {
+                gameTilesSave[i][j] = new Tile(gameTiles[i][j].getValue());
+            }
+        }
+        this.previousStates.push(gameTilesSave);
+        this.isSaveNeeded = false;
+    }
+
+    public void rollback() {
+        if (!previousStates.empty()) {
+            this.gameTiles = previousStates.pop();
+        }
+        if (!previousScores.empty()) {
+            this.score = previousScores.pop();
+        }
     }
 
     public void resetGameTiles() {
@@ -144,7 +166,8 @@ public class Model {
     }
 
     public boolean canMove() {
-        if (!getEmptyTiles().isEmpty()){
+
+        if (!getEmptyTiles().isEmpty()) {
             return true;
         }
 
@@ -166,4 +189,6 @@ public class Model {
 
         return false;
     }
+
+
 }
