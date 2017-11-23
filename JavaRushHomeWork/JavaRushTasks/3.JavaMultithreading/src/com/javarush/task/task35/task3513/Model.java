@@ -142,4 +142,29 @@ public class Model {
         }
         System.arraycopy(newTiles, 0, gameTiles, 0, newTiles.length);
     }
+
+    private boolean canMove() {
+
+        if (!getEmptyTiles().isEmpty()){
+            return true;
+        }
+
+        for (int i = 0; i < gameTiles[0].length; i++) {
+            for (int j = 0; j < gameTiles.length - 1; j++) {
+                if (gameTiles[i][j].getValue() == gameTiles[i][j + 1].getValue()) {
+                    return true;
+                }
+            }
+        }
+
+        for (int i = 0; i < gameTiles[0].length - 1; i++) {
+            for (int j = 0; j < gameTiles.length; j++) {
+                if (gameTiles[i][j].getValue() == gameTiles[i + 1][j].getValue()) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 }

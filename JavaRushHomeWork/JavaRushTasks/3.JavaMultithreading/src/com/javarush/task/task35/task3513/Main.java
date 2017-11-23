@@ -13,9 +13,7 @@ public class Main {
 
         Tile[] tiles = {new Tile(2), new Tile(2), new Tile(2), new Tile(2)};
         model.left();
-        model.up();
-        model.right();
-        model.down();
+
 
 
         System.out.println();
