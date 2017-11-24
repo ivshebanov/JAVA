@@ -21,14 +21,24 @@ public class MoveEfficiency implements Comparable<MoveEfficiency> {
         final int EQUAL = 0;
         final int AFTER = 1;
 
-        if (this == that) return EQUAL;
+        if (this == that) {
+            return EQUAL;
+        }
 
-        if (this.numberOfEmptyTiles > that.numberOfEmptyTiles) return AFTER;
-        if (this.numberOfEmptyTiles < that.numberOfEmptyTiles) return BEFORE;
+        if (this.numberOfEmptyTiles > that.numberOfEmptyTiles) {
+            return AFTER;
+        }
+        if (this.numberOfEmptyTiles < that.numberOfEmptyTiles) {
+            return BEFORE;
+        }
 
         if (this.numberOfEmptyTiles == that.numberOfEmptyTiles) {
-            if (this.score > that.score) return AFTER;
-            if (this.score < that.score) return BEFORE;
+            if (this.score > that.score) {
+                return AFTER;
+            }
+            if (this.score < that.score) {
+                return BEFORE;
+            }
         }
         return EQUAL;
     }

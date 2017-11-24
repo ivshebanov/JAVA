@@ -9,6 +9,9 @@ public class Controller extends KeyAdapter {
     private Model model;
     private View view;
 
+    /**
+     * Конструктор.
+     */
     public Controller(Model model) {
         this.model = model;
         this.view = new View(this);
@@ -23,8 +26,8 @@ public class Controller extends KeyAdapter {
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+    public void keyPressed(KeyEvent keyEvent) {
+        if (keyEvent.getKeyCode() == KeyEvent.VK_ESCAPE) {
             resetGame();
         }
 
@@ -33,7 +36,7 @@ public class Controller extends KeyAdapter {
         }
 
         if (!view.isGameLost & !view.isGameLost) {
-            switch (e.getKeyCode()) {
+            switch (keyEvent.getKeyCode()) {
                 case KeyEvent.VK_LEFT:
                     model.left();
                     break;
@@ -54,6 +57,8 @@ public class Controller extends KeyAdapter {
                     break;
                 case KeyEvent.VK_A:
                     model.autoMove();
+                    break;
+                default:
                     break;
             }
         }

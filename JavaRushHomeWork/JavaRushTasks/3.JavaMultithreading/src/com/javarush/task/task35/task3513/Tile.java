@@ -18,7 +18,9 @@ public class Tile {
     }
 
     public Color getFontColor() {
-        if (value < 10) return new Color(0x776e65);
+        if (value < 10) {
+            return new Color(0x776e65);
+        }
         return new Color(0xf9f6f2);
     }
 
@@ -62,12 +64,16 @@ public class Tile {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Tile)) return false;
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
 
-        Tile tile = (Tile) o;
+        if (!(obj instanceof Tile)) {
+            return false;
+        }
 
+        Tile tile = (Tile) obj;
         return getValue() == tile.getValue();
     }
 

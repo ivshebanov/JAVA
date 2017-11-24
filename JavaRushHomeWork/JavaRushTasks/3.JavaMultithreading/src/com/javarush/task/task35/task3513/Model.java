@@ -11,6 +11,9 @@ public class Model {
     private Stack<Integer> previousScores = new Stack<>();
     private boolean isSaveNeeded = true;
 
+    /**
+     * Конструктор.
+     */
     public Model() {
         resetGameTiles();
         this.score = 0;
@@ -65,10 +68,10 @@ public class Model {
 
     private List<Tile> getEmptyTiles() {
         List<Tile> emptyTiles = new ArrayList<>();
-        for (int i = 0; i < gameTiles.length; i++) {
+        for (Tile[] gameTile : gameTiles) {
             for (int j = 0; j < gameTiles.length; j++) {
-                if (gameTiles[i][j].getValue() == 0) {
-                    emptyTiles.add(gameTiles[i][j]);
+                if (gameTile[j].getValue() == 0) {
+                    emptyTiles.add(gameTile[j]);
                 }
             }
         }
@@ -172,7 +175,7 @@ public class Model {
         System.arraycopy(newTiles, 0, gameTiles, 0, newTiles.length);
     }
 
-    public boolean canMove() {
+    boolean canMove() {
 
         if (!getEmptyTiles().isEmpty()) {
             return true;
@@ -198,8 +201,8 @@ public class Model {
     }
 
     void randomMove() {
-        int n = ((int) (Math.random() * 100)) % 4;
-        switch (n) {
+        int randomNumber = ((int) (Math.random() * 100)) % 4;
+        switch (randomNumber) {
             case 0:
                 left();
                 break;
@@ -211,6 +214,8 @@ public class Model {
                 break;
             case 3:
                 down();
+                break;
+            default:
                 break;
         }
     }
@@ -233,14 +238,19 @@ public class Model {
     private MoveEfficiency getMoveEfficiency(Move move) {
         MoveEfficiency moveEfficiency;
         move.move();
-        if (hasBoardChanged()) moveEfficiency = new MoveEfficiency(getEmptyTiles().size(), score, move);
-        else moveEfficiency = new MoveEfficiency(-1, 0, move);
+        if (hasBoardChanged()) {
+            moveEfficiency =
+                    new MoveEfficiency(getEmptyTiles().size(), score, move);
+        } else {
+            moveEfficiency = new MoveEfficiency(-1, 0, move);
+        }
         rollback();
         return moveEfficiency;
     }
 
-    public void autoMove(){
-        PriorityQueue<MoveEfficiency> queue = new PriorityQueue(4, Collections.reverseOrder());
+    void autoMove() {
+        PriorityQueue<MoveEfficiency> queue =
+                new PriorityQueue(4, Collections.reverseOrder());
         queue.add(getMoveEfficiency(this::left));
         queue.add(getMoveEfficiency(this::right));
         queue.add(getMoveEfficiency(this::up));

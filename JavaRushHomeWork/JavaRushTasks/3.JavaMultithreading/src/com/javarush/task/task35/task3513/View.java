@@ -14,6 +14,9 @@ public class View extends JPanel {
     boolean isGameWon = false;
     boolean isGameLost = false;
 
+    /**
+     * Констректор.
+     */
     public View(Controller controller) {
         setFocusable(true);
         this.controller = controller;
@@ -21,17 +24,17 @@ public class View extends JPanel {
     }
 
     @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        g.setColor(BG_COLOR);
-        g.fillRect(0, 0, this.getSize().width, this.getSize().height);
+    public void paint(Graphics graphics) {
+        super.paint(graphics);
+        graphics.setColor(BG_COLOR);
+        graphics.fillRect(0, 0, this.getSize().width, this.getSize().height);
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < 4; y++) {
-                drawTile(g, controller.getGameTiles()[y][x], x, y);
+                drawTile(graphics, controller.getGameTiles()[y][x], x, y);
             }
         }
 
-        g.drawString("Score: " + controller.getScore(), 140, 465);
+        graphics.drawString("Score: " + controller.getScore(), 140, 465);
 
         if (isGameWon) {
             JOptionPane.showMessageDialog(this, "You've won!");
@@ -40,27 +43,31 @@ public class View extends JPanel {
         }
     }
 
-    private void drawTile(Graphics g2, Tile tile, int x, int y) {
-        Graphics2D g = ((Graphics2D) g2);
-        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+    private void drawTile(Graphics graphics, Tile tile, int x, int y) {
+        Graphics2D graphics2D = ((Graphics2D) graphics);
+        graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON);
         int value = tile.value;
-        int xOffset = offsetCoors(x);
-        int yOffset = offsetCoors(y);
-        g.setColor(tile.getTileColor());
-        g.fillRoundRect(xOffset, yOffset, TILE_SIZE, TILE_SIZE, 8, 8);
-        g.setColor(tile.getFontColor());
+        int xOffSet = offsetCoors(x);
+        int yOffSet = offsetCoors(y);
+        graphics2D.setColor(tile.getTileColor());
+        graphics2D.fillRoundRect(xOffSet, yOffSet, TILE_SIZE, TILE_SIZE, 8, 8);
+        graphics2D.setColor(tile.getFontColor());
         final int size = value < 100 ? 36 : value < 1000 ? 32 : 24;
         final Font font = new Font(FONT_NAME, Font.BOLD, size);
-        g.setFont(font);
+        graphics2D.setFont(font);
 
-        String s = String.valueOf(value);
+        String stringValue = String.valueOf(value);
         final FontMetrics fm = getFontMetrics(font);
 
-        final int w = fm.stringWidth(s);
-        final int h = -(int) fm.getLineMetrics(s, g).getBaselineOffsets()[2];
+        final int w = fm.stringWidth(stringValue);
+        final int h = -(int) fm.getLineMetrics(stringValue, graphics2D).getBaselineOffsets()[2];
 
-        if (value != 0)
-            g.drawString(s, xOffset + (TILE_SIZE - w) / 2, yOffset + TILE_SIZE - (TILE_SIZE - h) / 2 - 2);
+        if (value != 0) {
+            graphics2D.drawString(stringValue,
+                    xOffSet + (TILE_SIZE - w) / 2,
+                    yOffSet + TILE_SIZE - (TILE_SIZE - h) / 2 - 2);
+        }
     }
 
     private static int offsetCoors(int arg) {
