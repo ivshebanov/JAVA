@@ -12,10 +12,7 @@ public class Main {
         game.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         game.setSize(450, 500);
         game.setResizable(false);
-
         game.add(controller.getView());
-
-
         game.setLocationRelativeTo(null);
         game.setVisible(true);
     }

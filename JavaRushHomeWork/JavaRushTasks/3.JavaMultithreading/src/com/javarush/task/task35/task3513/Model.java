@@ -30,7 +30,7 @@ public class Model {
         this.isSaveNeeded = false;
     }
 
-    public void rollback() {
+    void rollback() {
         if (!previousStates.empty()) {
             this.gameTiles = previousStates.pop();
         }
@@ -39,7 +39,7 @@ public class Model {
         }
     }
 
-    public void resetGameTiles() {
+    void resetGameTiles() {
         this.gameTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
         for (int i = 0; i < FIELD_WIDTH; i++) {
             for (int j = 0; j < FIELD_WIDTH; j++) {
@@ -115,8 +115,8 @@ public class Model {
         return isChanged;
     }
 
-    public void left() {
-        if (isSaveNeeded){
+    void left() {
+        if (isSaveNeeded) {
             saveState(gameTiles);
         }
         boolean isChanged = false;
@@ -140,7 +140,7 @@ public class Model {
         rotateGameTiles90();
     }
 
-    public void right() {
+    void right() {
         saveState(gameTiles);
         rotateGameTiles90();
         rotateGameTiles90();
@@ -149,7 +149,7 @@ public class Model {
         rotateGameTiles90();
     }
 
-    public void down() {
+    void down() {
         saveState(gameTiles);
         rotateGameTiles90();
         left();
@@ -197,5 +197,21 @@ public class Model {
         return false;
     }
 
-
+    void randomMove() {
+        int n = ((int) (Math.random() * 100)) % 4;
+        switch (n) {
+            case 0:
+                left();
+                break;
+            case 1:
+                right();
+                break;
+            case 2:
+                up();
+                break;
+            case 3:
+                down();
+                break;
+        }
+    }
 }
