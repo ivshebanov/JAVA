@@ -215,7 +215,7 @@ public class Model {
         }
     }
 
-    boolean hasBoardChanged() {
+    private boolean hasBoardChanged() {
         int weightGameTiles = 0;
         int weightPreviousStates = 0;
 
@@ -230,12 +230,22 @@ public class Model {
         return weightGameTiles != weightPreviousStates;
     }
 
-    MoveEfficiency getMoveEfficiency(Move move) {
+    private MoveEfficiency getMoveEfficiency(Move move) {
         MoveEfficiency moveEfficiency;
         move.move();
         if (hasBoardChanged()) moveEfficiency = new MoveEfficiency(getEmptyTiles().size(), score, move);
         else moveEfficiency = new MoveEfficiency(-1, 0, move);
         rollback();
         return moveEfficiency;
+    }
+
+    public void autoMove(){
+        PriorityQueue<MoveEfficiency> queue = new PriorityQueue(4, Collections.reverseOrder());
+        queue.add(getMoveEfficiency(this::left));
+        queue.add(getMoveEfficiency(this::right));
+        queue.add(getMoveEfficiency(this::up));
+        queue.add(getMoveEfficiency(this::down));
+        Move move = queue.peek().getMove();
+        move.move();
     }
 }
