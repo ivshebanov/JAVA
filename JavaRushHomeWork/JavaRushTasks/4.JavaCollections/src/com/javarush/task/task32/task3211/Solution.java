@@ -19,7 +19,13 @@ public class Solution {
     }
 
     public static boolean compareMD5(ByteArrayOutputStream byteArrayOutputStream, String md5) throws Exception {
-
-        return false;
+        MessageDigest digest = MessageDigest.getInstance("MD5");
+        byte[] bytesMd5 = digest.digest(byteArrayOutputStream.toByteArray());
+        StringBuilder sb = new StringBuilder();
+        for (byte b : bytesMd5){
+            sb.append(String.format("%02x", b));
+        }
+        String stringMd5 = sb.toString();
+        return md5.equals(stringMd5);
     }
 }
