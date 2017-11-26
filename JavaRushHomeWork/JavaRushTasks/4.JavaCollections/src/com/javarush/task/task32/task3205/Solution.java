@@ -1,6 +1,8 @@
 package com.javarush.task.task32.task3205;
 
-/* 
+import java.lang.reflect.Proxy;
+
+/*
 Создание прокси-объекта
 */
 public class Solution {
@@ -21,6 +23,8 @@ public class Solution {
     }
 
     public static SomeInterfaceWithMethods getProxy() {
-        return null;
+        return (SomeInterfaceWithMethods) Proxy.newProxyInstance(
+                SomeInterfaceWithMethodsImpl.class.getClassLoader(),
+                SomeInterfaceWithMethodsImpl.class.getInterfaces(), new CustomInvocationHandler(new SomeInterfaceWithMethodsImpl()));
     }
 }
