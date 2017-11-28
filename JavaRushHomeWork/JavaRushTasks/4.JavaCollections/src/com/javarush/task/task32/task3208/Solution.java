@@ -37,11 +37,11 @@ public class Solution {
         @Override
         public void run() {
             try {
-                Cat cat = new Cat("Nastya");
-                Dog dog = new Dog("Ilya");
+                final Cat cat = new Cat("Nastya");
+                final Dog dog = new Dog("Ilya");
                 registry = LocateRegistry.createRegistry(2099);
-                Remote catRemote = UnicastRemoteObject.exportObject(cat, 0);
-                Remote dogRemote = UnicastRemoteObject.exportObject(dog, 0);
+                Remote catRemote = UnicastRemoteObject.exportObject(cat, 2099);
+                Remote dogRemote = UnicastRemoteObject.exportObject(dog, 2099);
                 registry.bind(CAT_BINDING_NAME, catRemote);
                 registry.bind(DOG_BINDING_NAME, dogRemote);
             } catch (RemoteException | AlreadyBoundException e) {
