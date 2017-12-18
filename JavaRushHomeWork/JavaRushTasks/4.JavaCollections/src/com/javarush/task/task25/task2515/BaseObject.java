@@ -5,14 +5,29 @@ public abstract class BaseObject {
     private double y;
     private double radius;
     private boolean isAlive;
-//    abstract void move();
-//    abstract void draw();
 
     public BaseObject(double x, double y, double radius) {
         this.x = x;
         this.y = y;
         this.radius = radius;
         this.isAlive = true;
+    }
+
+    public void draw() {
+
+    }
+
+    public void move() {
+
+    }
+
+    public void die() {
+        this.isAlive = false;
+    }
+
+    public boolean isIntersect(BaseObject o) {
+        return Math.sqrt((this.x - o.x) * (this.x - o.x) + (this.y - o.y) * (this.y - o.y))
+                < Math.max(this.radius, o.radius);
     }
 
     public boolean isAlive() {
