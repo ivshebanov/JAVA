@@ -29,6 +29,25 @@ public class Canvas {
         }
     }
 
+    public void clear(){
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                setPoint(i, j, ' ');
+            }
+        }
+    }
+
+    public void print(){
+        for (char[] aMatrix : matrix) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(aMatrix[j]);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+    }
+
     public int getWidth() {
         return width;
     }
