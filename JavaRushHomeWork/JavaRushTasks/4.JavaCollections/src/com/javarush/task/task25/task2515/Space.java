@@ -6,6 +6,7 @@ public class Space {
     private int width;
     private int height;
     private SpaceShip ship;
+    public static Space game;
 
     private ArrayList<Ufo> ufos;
     private ArrayList<Rocket> rockets;
