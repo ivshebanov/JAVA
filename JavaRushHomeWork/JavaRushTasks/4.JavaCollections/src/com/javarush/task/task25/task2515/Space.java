@@ -227,7 +227,7 @@ public class Space {
         return rockets;
     }
 
-    public static Space game;
+     public static Space game;
 
     public static void main(String[] args) throws Exception {
         game = new Space(20, 20);
