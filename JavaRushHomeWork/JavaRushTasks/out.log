@@ -1,0 +1,733 @@
+2018-01-19 15:33:10 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+
+2018-01-19 15:33:10 INFO  ApacheHttpClient.createAsyncHttpClient(125) - Выбрано 1 прокси.
+2018-01-19 15:33:10 INFO  ApacheHttpClient.<init>(85) - ApacheHttpClient проинстанциирован успешно.
+2018-01-19 15:33:15 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-19 15:33:15 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-19 15:33:15 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-19 15:33:15 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-19 15:33:15 INFO  ApacheHttpClient.login(213) - responseCode200
+2018-01-19 15:33:15 INFO  ApacheHttpClient.login(244) - JSESSIONID=51BC581D0094E021226CE2E21C1D27A8
+2018-01-19 15:33:16 INFO  ApacheHttpClient.refreshUserInfo(272) - responseCode = 200
+2018-01-19 15:33:16 INFO  ApacheHttpClient.refreshUserInfo(278) - Информация о пользователе получена.
+2018-01-19 15:33:16 INFO  ApacheHttpClient.startGA(32) - GAService запущен.
+2018-01-19 15:33:16 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-01-19 15:33:39 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-01-19 15:33:41 INFO  ApacheHttpClient.getFilteredTasks(307) - responseCode = 200
+2018-01-19 15:34:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:34:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:35:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:35:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:36:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:36:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:36:17 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-01-19 15:36:18 INFO  ApacheHttpClient.getFilteredTasks(307) - responseCode = 200
+2018-01-19 15:36:25 INFO  ApacheHttpClient.getTaskTemplateInfo(324) - responseCode = 200
+2018-01-19 15:36:27 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-19 15:36:27 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-19 15:36:30 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-19 15:36:30 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-19 15:36:34 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-01-19 15:37:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:38:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:39:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:40:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:41:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:42:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:43:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:44:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:45:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:46:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:47:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:48:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:49:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:50:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:51:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:52:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:53:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:54:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:55:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:56:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:57:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:58:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 15:59:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:00:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:01:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:02:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:03:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:04:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:05:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:06:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:07:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:08:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:09:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:10:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:11:17 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:12:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:13:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:14:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:15:17 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:16:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:17:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:18:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:19:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:20:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:21:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:22:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:23:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:24:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:25:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:26:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:27:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:28:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:29:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:30:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:31:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:32:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:33:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:34:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:35:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:36:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:37:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:38:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:39:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:40:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:41:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:42:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:43:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:44:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:45:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:46:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:47:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:48:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:49:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:50:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:51:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:52:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:53:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:54:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:55:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:56:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:57:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:58:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 16:59:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:00:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:01:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:02:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:03:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:04:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:05:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:06:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:07:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:08:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:09:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:10:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:11:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:12:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:13:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:14:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:15:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:16:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:17:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:18:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:19:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:20:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:21:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:22:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:23:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:24:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:25:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:26:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:27:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:28:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:29:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:30:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:31:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:32:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:33:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:34:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:35:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:36:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:37:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:38:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:39:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:40:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:41:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-19 17:42:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:43:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:44:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:45:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:46:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:47:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:48:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:49:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:50:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:51:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:52:25 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-19 17:53:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:54:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:55:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:56:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:57:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:58:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 17:59:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:00:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:01:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:02:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:03:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:04:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:05:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:06:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:07:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:08:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:09:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:10:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:11:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:12:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:13:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:14:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:15:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:16:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:17:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:18:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:19:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:20:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:21:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:22:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:23:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:24:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:25:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:26:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:27:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:28:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:29:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:30:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:31:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:32:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:33:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:34:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:35:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:36:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:37:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:38:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:39:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:40:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:41:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-19 18:41:51 INFO  JavaRushTasksProjectComponent.projectClosing(157) - ---------- Project JavaRushTasks closed ----------
+
+2018-01-19 18:41:52 INFO  ApacheHttpClient.getTask(405) - responseCode = 200
+2018-01-19 18:41:52 INFO  ApacheHttpClient.getTask(405) - responseCode = 200
+2018-01-19 18:41:52 INFO  ApacheHttpClient.getTask(405) - responseCode = 200
+2018-01-22 14:11:21 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+
+2018-01-22 14:11:22 INFO  ApacheHttpClient.createAsyncHttpClient(125) - Выбрано 1 прокси.
+2018-01-22 14:11:25 INFO  ApacheHttpClient.<init>(85) - ApacheHttpClient проинстанциирован успешно.
+2018-01-22 14:11:54 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-22 14:11:54 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-22 14:11:54 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-22 14:11:54 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-22 14:11:54 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-22 14:11:55 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-22 14:11:55 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-22 14:11:55 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-22 14:11:55 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-22 14:11:55 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-22 14:11:55 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-22 14:11:55 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-22 14:11:55 INFO  ApacheHttpClient.login(213) - responseCode200
+2018-01-22 14:11:55 INFO  ApacheHttpClient.login(244) - JSESSIONID=96651E6ABC1A2CB22B7214060D4512B5
+2018-01-22 14:12:02 INFO  ApacheHttpClient.refreshUserInfo(272) - responseCode = 200
+2018-01-22 14:12:03 INFO  ApacheHttpClient.refreshUserInfo(278) - Информация о пользователе получена.
+2018-01-22 14:12:03 INFO  ApacheHttpClient.startGA(32) - GAService запущен.
+2018-01-22 14:12:03 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-01-22 14:12:39 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-22 14:12:39 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-22 14:13:05 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:14:09 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:15:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:16:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:17:04 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:18:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:19:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:20:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:21:04 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:22:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:23:05 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:24:04 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:25:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:26:04 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:27:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:28:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:29:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:30:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:31:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:32:03 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-22 14:33:16 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+
+2018-01-22 14:33:16 INFO  ApacheHttpClient.createAsyncHttpClient(125) - Выбрано 1 прокси.
+2018-01-22 14:33:16 INFO  ApacheHttpClient.<init>(85) - ApacheHttpClient проинстанциирован успешно.
+2018-01-22 14:34:39 INFO  ApacheHttpClient.testConnection(185) - result = false
+2018-01-22 14:34:39 ERROR HttpsURLConnectionClient.<init>(74) - Ошибка получения логина прокси из HttpConfigurable.
+2018-01-22 14:34:50 INFO  HttpsURLConnectionClient.login(180) - responseCode = 200
+2018-01-22 14:34:50 INFO  HttpsURLConnectionClient.login(219) - JSESSIONID=D82AC3F691D575FC38DFDA922C362D40
+2018-01-22 14:34:54 INFO  HttpsURLConnectionClient.refreshUserInfo(652) - responseCode = 200
+2018-01-22 14:34:55 INFO  HttpsURLConnectionClient.refreshUserInfo(670) - Информация о пользователе получена.
+2018-01-22 14:34:55 INFO  HttpsURLConnectionClient.startGA(32) - GAService запущен.
+2018-01-22 14:34:55 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-01-22 14:34:59 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = false
+2018-01-22 14:35:08 INFO  HttpsURLConnectionClient.testConnection(137) - Using proxy = false
+2018-01-22 14:35:08 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = true
+2018-01-22 14:35:10 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = false
+2018-01-22 14:35:44 INFO  HttpsURLConnectionClient.testConnection(137) - Using proxy = false
+2018-01-22 14:35:44 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = true
+2018-01-22 14:35:59 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:36:01 INFO  HttpsURLConnectionClient.getWebResourceAsStream(524) - responseCode = 200
+2018-01-22 14:36:01 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = false
+2018-01-22 14:36:06 INFO  HttpsURLConnectionClient.testConnection(137) - Using proxy = false
+2018-01-22 14:36:06 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = true
+2018-01-22 14:36:07 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = false
+2018-01-22 14:36:14 INFO  HttpsURLConnectionClient.testConnection(137) - Using proxy = false
+2018-01-22 14:36:14 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = true
+2018-01-22 14:36:25 INFO  HttpsURLConnectionClient.getWebResourceAsStream(524) - responseCode = 200
+2018-01-22 14:37:01 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:37:10 INFO  HttpsURLConnectionClient.getFilteredTasks(265) - responseCode = 200
+2018-01-22 14:37:58 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:39:16 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:39:58 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:40:46 INFO  HttpsURLConnectionClient.getTaskTemplateInfo(291) - responseCode = 200
+2018-01-22 14:40:48 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = false
+2018-01-22 14:40:58 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:41:08 INFO  HttpsURLConnectionClient.testConnection(137) - Using proxy = false
+2018-01-22 14:41:08 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = true
+2018-01-22 14:41:09 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = false
+2018-01-22 14:41:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:42:00 INFO  HttpsURLConnectionClient.testConnection(137) - Using proxy = false
+2018-01-22 14:42:00 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = true
+2018-01-22 14:42:13 INFO  HttpsURLConnectionClient.getWebResourceAsStream(524) - responseCode = 200
+2018-01-22 14:42:56 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:43:18 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = false
+2018-01-22 14:43:35 INFO  HttpsURLConnectionClient.testConnection(137) - Using proxy = false
+2018-01-22 14:43:35 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = true
+2018-01-22 14:43:38 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = false
+2018-01-22 14:43:57 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:43:58 INFO  HttpsURLConnectionClient.testConnection(137) - Using proxy = false
+2018-01-22 14:43:58 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = true
+2018-01-22 14:44:40 INFO  HttpsURLConnectionClient.getWebResourceAsStream(524) - responseCode = 200
+2018-01-22 14:47:25 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:47:26 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:47:26 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:47:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:48:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:49:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:50:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:51:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:52:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:53:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:54:56 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:55:58 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:57:00 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:57:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 14:58:58 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:00:00 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:00:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:01:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:02:47 INFO  HttpsURLConnectionClient.getWebResourceAsStream(524) - responseCode = 200
+2018-01-22 15:02:48 INFO  HttpsURLConnectionClient.getTask(481) - responseCode = 200
+2018-01-22 15:02:49 INFO  HttpsURLConnectionClient.getTask(481) - responseCode = 200
+2018-01-22 15:02:52 INFO  HttpsURLConnectionClient.manualComplete(33) - responseCode = 400
+2018-01-22 15:02:52 WARN  TaskCompleted.run(66) - Задача "Факториал с помощью рекурсии" уже решена
+2018-01-22 15:02:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:03:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:04:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:05:40 INFO  HttpsURLConnectionClient.getWebResourceAsStream(524) - responseCode = 200
+2018-01-22 15:05:40 INFO  HttpsURLConnectionClient.getTask(481) - responseCode = 200
+2018-01-22 15:05:41 INFO  HttpsURLConnectionClient.getTask(481) - responseCode = 200
+2018-01-22 15:05:43 INFO  HttpsURLConnectionClient.manualComplete(33) - responseCode = 400
+2018-01-22 15:05:43 WARN  TaskCompleted.run(66) - Задача "Факториал с помощью рекурсии" уже решена
+2018-01-22 15:05:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.error(130) - null
+java.lang.NullPointerException
+	at com.javarush.plugin.JavaRushUtil.isJRFile(JavaRushUtil.java:708)
+	at com.javarush.plugin.JavaRushTasksProjectComponent.startFileTimeTracking(JavaRushTasksProjectComponent.java:211)
+	at com.javarush.plugin.JavaRushTasksProjectComponent.access$600(JavaRushTasksProjectComponent.java:33)
+	at com.javarush.plugin.JavaRushTasksProjectComponent$1$1.selectionChanged(JavaRushTasksProjectComponent.java:105)
+	at sun.reflect.GeneratedMethodAccessor39.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.util.messages.impl.MessageBusConnectionImpl.deliverMessage(MessageBusConnectionImpl.java:117)
+	at com.intellij.util.messages.impl.MessageBusImpl.doPumpMessages(MessageBusImpl.java:448)
+	at com.intellij.util.messages.impl.MessageBusImpl.pumpWaitingBuses(MessageBusImpl.java:409)
+	at com.intellij.util.messages.impl.MessageBusImpl.pumpMessages(MessageBusImpl.java:398)
+	at com.intellij.util.messages.impl.MessageBusImpl.pumpMessages(MessageBusImpl.java:386)
+	at com.intellij.util.messages.impl.MessageBusImpl.sendMessage(MessageBusImpl.java:379)
+	at com.intellij.util.messages.impl.MessageBusImpl.access$200(MessageBusImpl.java:45)
+	at com.intellij.util.messages.impl.MessageBusImpl$2.invoke(MessageBusImpl.java:231)
+	at com.sun.proxy.$Proxy102.selectionChanged(Unknown Source)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:1548)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$5$1.run(FileEditorManagerImpl.java:1031)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:640)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:491)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:643)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:463)
+	at com.intellij.util.ui.UIUtil.invokeLaterIfNeeded(UIUtil.java:2760)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:456)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:489)
+	at com.intellij.openapi.wm.impl.IdeFocusManagerImpl.doWhenFocusSettlesDown(IdeFocusManagerImpl.java:71)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$5.run(FileEditorManagerImpl.java:1028)
+	at com.intellij.openapi.util.BusyObject$Impl$Simple.execute(BusyObject.java:122)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.notifyPublisher(FileEditorManagerImpl.java:1024)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.fireSelectionChanged(FileEditorManagerImpl.java:1548)
+	at com.intellij.openapi.fileEditor.impl.EditorsSplitters.a(EditorsSplitters.java:615)
+	at com.intellij.openapi.fileEditor.impl.EditorsSplitters.setCurrentWindow(EditorsSplitters.java:624)
+	at com.intellij.openapi.fileEditor.impl.EditorWindow.setEditor(EditorWindow.java:692)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:892)
+	at com.intellij.openapi.application.impl.ApplicationImpl.invokeAndWait(ApplicationImpl.java:653)
+	at com.intellij.openapi.application.impl.ApplicationImpl.invokeAndWait(ApplicationImpl.java:666)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl4(FileEditorManagerImpl.java:959)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl3(FileEditorManagerImpl.java:786)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:768)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:149)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl2(FileEditorManagerImpl.java:768)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileWithProviders(FileEditorManagerImpl.java:699)
+	at com.intellij.openapi.fileEditor.ex.FileEditorManagerEx.openFile(FileEditorManagerEx.java:149)
+	at com.intellij.uml.core.actions.ShowDiagram.lambda$null$1(ShowDiagram.java:88)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:315)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.a(LaterInvocator.java:424)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:407)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:762)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:732)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:650)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at com.intellij.ide.IdeEventQueue.pumpEventsForHierarchy(IdeEventQueue.java:924)
+	at com.intellij.openapi.progress.util.ProgressWindow.startBlocking(ProgressWindow.java:217)
+	at com.intellij.openapi.progress.util.ProgressWindow.startBlocking(ProgressWindow.java:203)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runProcessWithProgressSynchronously(ApplicationImpl.java:589)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcessWithProgressSynchronously(CoreProgressManager.java:400)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.runProcessWithProgressSynchronously(ProgressManagerImpl.java:117)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcessWithProgressSynchronously(CoreProgressManager.java:250)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcessWithProgressSynchronously(CoreProgressManager.java:203)
+	at com.intellij.uml.core.actions.ShowDiagramBase.showUnderProgress(ShowDiagramBase.java:199)
+	at com.intellij.uml.core.actions.ShowDiagramBase.actionPerformed(ShowDiagramBase.java:159)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil$1.run(ActionUtil.java:220)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAware(ActionUtil.java:237)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem$ActionTransmitter.a(ActionMenuItem.java:321)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.runOnOwnContext(FocusManagerImpl.java:911)
+	at com.intellij.openapi.wm.impl.IdeFocusManagerImpl.runOnOwnContext(IdeFocusManagerImpl.java:136)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem$ActionTransmitter.actionPerformed(ActionMenuItem.java:311)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.a(ActionMenuItem.java:130)
+	at com.intellij.openapi.application.TransactionGuardImpl.a(TransactionGuardImpl.java:88)
+	at com.intellij.openapi.application.TransactionGuardImpl.a(TransactionGuardImpl.java:111)
+	at com.intellij.openapi.application.TransactionGuardImpl.submitTransaction(TransactionGuardImpl.java:120)
+	at com.intellij.openapi.application.TransactionGuard.submitTransaction(TransactionGuard.java:122)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.fireActionPerformed(ActionMenuItem.java:130)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI.a(BegMenuItemUI.java:521)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI.access$300(BegMenuItemUI.java:48)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI$MyMouseInputHandler.mouseReleased(BegMenuItemUI.java:541)
+	at java.awt.Component.processMouseEvent(Component.java:6541)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6306)
+	at java.awt.Container.processEvent(Container.java:2237)
+	at java.awt.Component.dispatchEventImpl(Component.java:4897)
+	at java.awt.Container.dispatchEventImpl(Container.java:2295)
+	at java.awt.Component.dispatchEvent(Component.java:4719)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4889)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4526)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4467)
+	at java.awt.Container.dispatchEventImpl(Container.java:2281)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4719)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:764)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:90)
+	at java.awt.EventQueue$4.run(EventQueue.java:737)
+	at java.awt.EventQueue$4.run(EventQueue.java:735)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:734)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:646)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(138) - IntelliJ IDEA 2017.3  Build #IU-173.3727.127
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(145) - JDK: 1.8.0_152-release
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(146) - VM: OpenJDK 64-Bit Server VM
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(147) - Vendor: JetBrains s.r.o
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(148) - OS: Windows 7
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(154) - Last Action: ShowUmlDiagram
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(161) - Current Command: 
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.error(130) - null
+java.lang.NullPointerException
+	at com.javarush.plugin.JavaRushUtil.isJRFile(JavaRushUtil.java:708)
+	at com.javarush.plugin.JavaRushTasksProjectComponent.startFileTimeTracking(JavaRushTasksProjectComponent.java:211)
+	at com.javarush.plugin.JavaRushTasksProjectComponent.access$600(JavaRushTasksProjectComponent.java:33)
+	at com.javarush.plugin.JavaRushTasksProjectComponent$1$1.fileOpened(JavaRushTasksProjectComponent.java:86)
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.util.messages.impl.MessageBusConnectionImpl.deliverMessage(MessageBusConnectionImpl.java:117)
+	at com.intellij.util.messages.impl.MessageBusImpl.doPumpMessages(MessageBusImpl.java:448)
+	at com.intellij.util.messages.impl.MessageBusImpl.pumpWaitingBuses(MessageBusImpl.java:409)
+	at com.intellij.util.messages.impl.MessageBusImpl.pumpMessages(MessageBusImpl.java:398)
+	at com.intellij.util.messages.impl.MessageBusImpl.pumpMessages(MessageBusImpl.java:386)
+	at com.intellij.util.messages.impl.MessageBusImpl.sendMessage(MessageBusImpl.java:379)
+	at com.intellij.util.messages.impl.MessageBusImpl.access$200(MessageBusImpl.java:45)
+	at com.intellij.util.messages.impl.MessageBusImpl$2.invoke(MessageBusImpl.java:231)
+	at com.sun.proxy.$Proxy102.fileOpened(Unknown Source)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:938)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$5$1.run(FileEditorManagerImpl.java:1031)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:640)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:491)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:643)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:463)
+	at com.intellij.util.ui.UIUtil.invokeLaterIfNeeded(UIUtil.java:2760)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:456)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:489)
+	at com.intellij.openapi.wm.impl.IdeFocusManagerImpl.doWhenFocusSettlesDown(IdeFocusManagerImpl.java:71)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$5.run(FileEditorManagerImpl.java:1028)
+	at com.intellij.openapi.util.BusyObject$Impl$Simple.execute(BusyObject.java:122)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.notifyPublisher(FileEditorManagerImpl.java:1024)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:935)
+	at com.intellij.openapi.application.impl.ApplicationImpl.invokeAndWait(ApplicationImpl.java:653)
+	at com.intellij.openapi.application.impl.ApplicationImpl.invokeAndWait(ApplicationImpl.java:666)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl4(FileEditorManagerImpl.java:959)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl3(FileEditorManagerImpl.java:786)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:768)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:149)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl2(FileEditorManagerImpl.java:768)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileWithProviders(FileEditorManagerImpl.java:699)
+	at com.intellij.openapi.fileEditor.ex.FileEditorManagerEx.openFile(FileEditorManagerEx.java:149)
+	at com.intellij.uml.core.actions.ShowDiagram.lambda$null$1(ShowDiagram.java:88)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:315)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.a(LaterInvocator.java:424)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:407)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:762)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:732)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:650)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at com.intellij.ide.IdeEventQueue.pumpEventsForHierarchy(IdeEventQueue.java:924)
+	at com.intellij.openapi.progress.util.ProgressWindow.startBlocking(ProgressWindow.java:217)
+	at com.intellij.openapi.progress.util.ProgressWindow.startBlocking(ProgressWindow.java:203)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runProcessWithProgressSynchronously(ApplicationImpl.java:589)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcessWithProgressSynchronously(CoreProgressManager.java:400)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.runProcessWithProgressSynchronously(ProgressManagerImpl.java:117)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcessWithProgressSynchronously(CoreProgressManager.java:250)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcessWithProgressSynchronously(CoreProgressManager.java:203)
+	at com.intellij.uml.core.actions.ShowDiagramBase.showUnderProgress(ShowDiagramBase.java:199)
+	at com.intellij.uml.core.actions.ShowDiagramBase.actionPerformed(ShowDiagramBase.java:159)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil$1.run(ActionUtil.java:220)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAware(ActionUtil.java:237)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem$ActionTransmitter.a(ActionMenuItem.java:321)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.runOnOwnContext(FocusManagerImpl.java:911)
+	at com.intellij.openapi.wm.impl.IdeFocusManagerImpl.runOnOwnContext(IdeFocusManagerImpl.java:136)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem$ActionTransmitter.actionPerformed(ActionMenuItem.java:311)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.a(ActionMenuItem.java:130)
+	at com.intellij.openapi.application.TransactionGuardImpl.a(TransactionGuardImpl.java:88)
+	at com.intellij.openapi.application.TransactionGuardImpl.a(TransactionGuardImpl.java:111)
+	at com.intellij.openapi.application.TransactionGuardImpl.submitTransaction(TransactionGuardImpl.java:120)
+	at com.intellij.openapi.application.TransactionGuard.submitTransaction(TransactionGuard.java:122)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.fireActionPerformed(ActionMenuItem.java:130)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI.a(BegMenuItemUI.java:521)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI.access$300(BegMenuItemUI.java:48)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI$MyMouseInputHandler.mouseReleased(BegMenuItemUI.java:541)
+	at java.awt.Component.processMouseEvent(Component.java:6541)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6306)
+	at java.awt.Container.processEvent(Container.java:2237)
+	at java.awt.Component.dispatchEventImpl(Component.java:4897)
+	at java.awt.Container.dispatchEventImpl(Container.java:2295)
+	at java.awt.Component.dispatchEvent(Component.java:4719)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4889)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4526)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4467)
+	at java.awt.Container.dispatchEventImpl(Container.java:2281)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4719)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:764)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:90)
+	at java.awt.EventQueue$4.run(EventQueue.java:737)
+	at java.awt.EventQueue$4.run(EventQueue.java:735)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:734)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:646)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(138) - IntelliJ IDEA 2017.3  Build #IU-173.3727.127
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(145) - JDK: 1.8.0_152-release
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(146) - VM: OpenJDK 64-Bit Server VM
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(147) - Vendor: JetBrains s.r.o
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(148) - OS: Windows 7
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(154) - Last Action: ShowUmlDiagram
+2018-01-22 15:05:57 ERROR MessageBusConnectionImpl.a(161) - Current Command: 
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.error(130) - null
+java.lang.NullPointerException
+	at com.javarush.plugin.JavaRushUtil.isJRFile(JavaRushUtil.java:708)
+	at com.javarush.plugin.JavaRushTasksProjectComponent.endFileTimeTracking(JavaRushTasksProjectComponent.java:199)
+	at com.javarush.plugin.JavaRushTasksProjectComponent.endFileTimeTracking(JavaRushTasksProjectComponent.java:195)
+	at com.javarush.plugin.JavaRushTasksProjectComponent.access$800(JavaRushTasksProjectComponent.java:33)
+	at com.javarush.plugin.JavaRushTasksProjectComponent$1$1.fileClosed(JavaRushTasksProjectComponent.java:93)
+	at sun.reflect.GeneratedMethodAccessor102.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.util.messages.impl.MessageBusConnectionImpl.deliverMessage(MessageBusConnectionImpl.java:117)
+	at com.intellij.util.messages.impl.MessageBusImpl.doPumpMessages(MessageBusImpl.java:448)
+	at com.intellij.util.messages.impl.MessageBusImpl.pumpWaitingBuses(MessageBusImpl.java:409)
+	at com.intellij.util.messages.impl.MessageBusImpl.pumpMessages(MessageBusImpl.java:398)
+	at com.intellij.util.messages.impl.MessageBusImpl.pumpMessages(MessageBusImpl.java:386)
+	at com.intellij.util.messages.impl.MessageBusImpl.sendMessage(MessageBusImpl.java:379)
+	at com.intellij.util.messages.impl.MessageBusImpl.access$200(MessageBusImpl.java:45)
+	at com.intellij.util.messages.impl.MessageBusImpl$2.invoke(MessageBusImpl.java:231)
+	at com.sun.proxy.$Proxy102.fileClosed(Unknown Source)
+	at com.intellij.openapi.fileEditor.impl.EditorWindow.a(EditorWindow.java:298)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$5$1.run(FileEditorManagerImpl.java:1031)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:640)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:491)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:643)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:463)
+	at com.intellij.util.ui.UIUtil.invokeLaterIfNeeded(UIUtil.java:2760)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:456)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:489)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:495)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:315)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.a(LaterInvocator.java:424)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:407)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:762)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:732)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:650)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.a(138) - IntelliJ IDEA 2017.3  Build #IU-173.3727.127
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.a(145) - JDK: 1.8.0_152-release
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.a(146) - VM: OpenJDK 64-Bit Server VM
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.a(147) - Vendor: JetBrains s.r.o
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.a(148) - OS: Windows 7
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.a(154) - Last Action: ShowUmlDiagram
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.error(130) - null
+java.lang.NullPointerException
+	at com.javarush.plugin.JavaRushUtil.isJRFile(JavaRushUtil.java:708)
+	at com.javarush.plugin.JavaRushTasksProjectComponent.endFileTimeTracking(JavaRushTasksProjectComponent.java:199)
+	at com.javarush.plugin.JavaRushTasksProjectComponent.endFileTimeTracking(JavaRushTasksProjectComponent.java:195)
+	at com.javarush.plugin.JavaRushTasksProjectComponent.access$800(JavaRushTasksProjectComponent.java:33)
+	at com.javarush.plugin.JavaRushTasksProjectComponent$1$1.selectionChanged(JavaRushTasksProjectComponent.java:101)
+	at sun.reflect.GeneratedMethodAccessor39.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.util.messages.impl.MessageBusConnectionImpl.deliverMessage(MessageBusConnectionImpl.java:117)
+	at com.intellij.util.messages.impl.MessageBusImpl.doPumpMessages(MessageBusImpl.java:448)
+	at com.intellij.util.messages.impl.MessageBusImpl.pumpWaitingBuses(MessageBusImpl.java:409)
+	at com.intellij.util.messages.impl.MessageBusImpl.pumpMessages(MessageBusImpl.java:398)
+	at com.intellij.util.messages.impl.MessageBusImpl.pumpMessages(MessageBusImpl.java:386)
+	at com.intellij.util.messages.impl.MessageBusImpl.sendMessage(MessageBusImpl.java:379)
+	at com.intellij.util.messages.impl.MessageBusImpl.access$200(MessageBusImpl.java:45)
+	at com.intellij.util.messages.impl.MessageBusImpl$2.invoke(MessageBusImpl.java:231)
+	at com.sun.proxy.$Proxy102.selectionChanged(Unknown Source)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:1548)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$5$1.run(FileEditorManagerImpl.java:1031)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:640)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:491)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:643)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:463)
+	at com.intellij.util.ui.UIUtil.invokeLaterIfNeeded(UIUtil.java:2760)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:456)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:489)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:495)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:315)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.a(LaterInvocator.java:424)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:407)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:762)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:732)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:650)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.a(138) - IntelliJ IDEA 2017.3  Build #IU-173.3727.127
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.a(145) - JDK: 1.8.0_152-release
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.a(146) - VM: OpenJDK 64-Bit Server VM
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.a(147) - Vendor: JetBrains s.r.o
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.a(148) - OS: Windows 7
+2018-01-22 15:06:00 ERROR MessageBusConnectionImpl.a(154) - Last Action: ShowUmlDiagram
+2018-01-22 15:06:43 INFO  HttpsURLConnectionClient.getWebResourceAsStream(524) - responseCode = 200
+2018-01-22 15:06:44 INFO  HttpsURLConnectionClient.getTask(481) - responseCode = 200
+2018-01-22 15:06:47 INFO  HttpsURLConnectionClient.manualComplete(33) - responseCode = 200
+2018-01-22 15:06:48 INFO  HttpsURLConnectionClient.getTask(481) - responseCode = 200
+2018-01-22 15:06:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:06:56 INFO  HttpsURLConnectionClient.getTask(481) - responseCode = 200
+2018-01-22 15:07:57 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:08:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:09:59 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:10:56 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:11:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:12:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:13:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:14:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:15:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:16:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:17:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:18:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:19:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
+2018-01-22 15:20:55 INFO  HttpsURLConnectionClient.sendEvent(572) - responseCode = 200
