@@ -21,8 +21,8 @@ public class Solution {
         //before GC
         helper.checkListWithReferences(list, "before");
 
-//        referenceThread.setDaemon(true);
-//        referenceThread.start();
+        thread.setDaemon(true);
+        thread.start();
 
         helper.callGC();
         helper.heapConsuming();
@@ -33,16 +33,16 @@ public class Solution {
         helper.finish();
     }
 
-//    private static Thread referenceThread = new Thread(() -> {
-//        while (true){
-//            try {
-//                PhantomReference<Monkey> ref = (PhantomReference<Monkey>) helper.getQueue().remove();
-//                ref.clear();
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    });
+    private static Thread thread = new Thread(() -> {
+        while (true) {
+            try {
+                PhantomReference<Monkey> pr = (PhantomReference<Monkey>) helper.queue.remove();
+                pr.clear();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    });
 
     public static class Helper {
         private ReferenceQueue<Monkey> queue = new ReferenceQueue<>();
@@ -91,7 +91,7 @@ public class Solution {
         public List<PhantomReference<Monkey>> getFilledList() {
             ArrayList<PhantomReference<Monkey>> list = new ArrayList<>();
             for (int i = 0; i < 200; i++) {
-                list.add(new PhantomReference<>(new Monkey(), helper.getQueue()));
+                list.add(new PhantomReference<Monkey>(new Monkey(), helper.getQueue()));
             }
             return list;
         }
