@@ -7,6 +7,10 @@ Desktop.ini
 IDEA_CRACK/
 learning/
 NetBeans/
+slf4j-1.7.25/
+jackson-annotations-2.9.2.jar
+jackson-core-2.9.2.jar
+jackson-databind-2.9.2.jar
 JavaRushHomeWork/JavaRushTasks/.idea/
 JavaRushHomeWork/JavaRushTasks/out/
 JavaRushHomeWork/JavaRushTasks/Инструкция.png
@@ -27,9 +31,6 @@ $RECYCLE.BIN/
 *.xml
 *.jar
 *.log
-
-
-# Windows shortcuts
 *.lnk
 
 # =========================
