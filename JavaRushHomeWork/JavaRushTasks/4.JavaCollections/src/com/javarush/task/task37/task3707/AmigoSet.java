@@ -1,9 +1,6 @@
 package com.javarush.task.task37.task3707;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.util.*;
 
 public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneable, Set<E> {
@@ -92,7 +89,7 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
 
     @Override
     public Object clone() {
-        AmigoSet<E> amigoSet = null;
+        AmigoSet<E> amigoSet;
         try {
             amigoSet = new AmigoSet<>();
             amigoSet.map = (HashMap<E, Object>) map.clone();
@@ -104,11 +101,15 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
 
     private void writeObject(ObjectOutputStream out) {
         try {
+
             float loadFactor = HashMapReflectionHelper.callHiddenMethod(map, "loadFactor");
             int capacity = HashMapReflectionHelper.callHiddenMethod(map, "capacity");
             out.defaultWriteObject();
             out.writeInt(capacity);
             out.writeFloat(loadFactor);
+            out.writeInt(map.size());
+            for (E e : map.keySet())
+                out.writeObject(e);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -117,9 +118,32 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
     private void readObject(ObjectInputStream in) {
         try {
             in.defaultReadObject();
+
             int capacity = in.readInt();
+            if (capacity < 0) {
+                throw new InvalidObjectException("Illegal capacity: " +
+                        capacity);
+            }
+
             float loadFactor = in.readFloat();
-            this.map = new HashMap<>(capacity, loadFactor);
+            if (loadFactor <= 0 || Float.isNaN(loadFactor)) {
+                throw new InvalidObjectException("Illegal load factor: " +
+                        loadFactor);
+            }
+
+            int size = in.readInt();
+            if (size < 0) {
+                throw new InvalidObjectException("Illegal size: " +
+                        size);
+            }
+
+            map = new HashMap<>(capacity, loadFactor);
+
+            for (int i = 0; i < size; i++) {
+                @SuppressWarnings("unchecked")
+                E e = (E) in.readObject();
+                map.put(e, PRESENT);
+            }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
