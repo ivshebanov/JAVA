@@ -2468,3 +2468,1297 @@ org.xmlpull.v1.XmlPullParserException: only whitespace content allowed before st
 2018-01-24 14:48:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
 2018-01-24 14:49:11 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
 2018-01-24 14:49:11 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-24 14:49:30 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 14:50:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 14:51:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 14:51:56 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-24 14:51:56 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-24 14:52:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 14:53:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 14:54:30 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 14:55:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 14:56:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 14:56:59 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-24 14:56:59 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-24 14:57:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 14:58:33 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 14:59:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:00:05 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-24 15:00:05 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-24 15:00:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:01:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:02:30 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:03:35 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:04:44 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:05:33 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:06:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:07:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:08:30 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:09:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:10:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:11:30 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:12:30 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:13:32 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:14:33 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:15:30 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:16:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:17:24 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-24 15:17:24 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-24 15:17:35 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:18:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:19:40 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:20:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:21:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:22:33 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:23:30 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:24:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:25:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:26:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:27:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:28:33 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:29:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:30:32 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:31:34 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:32:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:33:33 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:34:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:35:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:36:30 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:37:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:38:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:39:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:40:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:41:31 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:41:39 INFO  JavaRushTasksProjectComponent.projectClosing(157) - ---------- Project JavaRushTasks closed ----------
+
+2018-01-24 15:41:40 INFO  ApacheHttpClient.getTask(405) - responseCode = 200
+2018-01-24 15:41:43 INFO  ApacheHttpClient.getTask(405) - responseCode = 200
+2018-01-24 15:44:48 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+
+2018-01-24 15:44:48 INFO  ApacheHttpClient.createAsyncHttpClient(125) - Выбрано 1 прокси.
+2018-01-24 15:44:48 INFO  ApacheHttpClient.<init>(85) - ApacheHttpClient проинстанциирован успешно.
+2018-01-24 15:44:49 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-24 15:44:49 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-24 15:44:49 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-24 15:44:50 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-24 15:44:50 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-24 15:44:50 INFO  ApacheHttpClient.login(213) - responseCode = 200
+2018-01-24 15:44:50 INFO  ApacheHttpClient.login(244) - JSESSIONID=4700A0D0E0DCED70129D7884A19E4AD2
+2018-01-24 15:44:50 INFO  ApacheHttpClient.refreshUserInfo(272) - responseCode = 200
+2018-01-24 15:44:50 INFO  ApacheHttpClient.refreshUserInfo(278) - Информация о пользователе получена.
+2018-01-24 15:44:50 INFO  ApacheHttpClient.startGA(32) - GAService запущен.
+2018-01-24 15:44:50 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-01-24 15:44:52 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-24 15:44:52 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-24 15:44:52 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-24 15:44:52 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-24 15:44:53 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-01-24 15:44:55 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-24 15:44:55 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-24 15:44:58 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-24 15:44:58 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-24 15:44:59 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-24 15:44:59 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-24 15:45:56 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:46:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:47:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:48:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:49:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:50:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:51:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:52:11 ERROR DocumentImpl.error(130) - Document is locked by write PSI operations. Use PsiDocumentManager.doPostponedOperationsAndUnblockDocument() to commit PSI changes to the document.
+Unprocessed elements: EXPRESSION_STATEMENT(1137,1144), WHITE_SPACE(1128,1137)
+java.lang.RuntimeException: Document is locked by write PSI operations. Use PsiDocumentManager.doPostponedOperationsAndUnblockDocument() to commit PSI changes to the document.
+Unprocessed elements: EXPRESSION_STATEMENT(1137,1144), WHITE_SPACE(1128,1137)
+	at com.intellij.psi.impl.source.PostprocessReformattingAspect.assertDocumentChangeIsAllowed(PostprocessReformattingAspect.java:275)
+	at com.intellij.psi.impl.PsiDocumentManagerImpl.beforeDocumentChangeOnUnlockedDocument(PsiDocumentManagerImpl.java:147)
+	at com.intellij.psi.impl.PsiDocumentManagerBase.beforeDocumentChange(PsiDocumentManagerBase.java:808)
+	at sun.reflect.GeneratedMethodAccessor143.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.util.EventDispatcher.dispatch(EventDispatcher.java:99)
+	at com.intellij.util.EventDispatcher.access$200(EventDispatcher.java:35)
+	at com.intellij.util.EventDispatcher$2.invoke(EventDispatcher.java:79)
+	at com.sun.proxy.$Proxy27.beforeDocumentChange(Unknown Source)
+	at com.intellij.openapi.editor.impl.DocumentImpl.a(DocumentImpl.java:741)
+	at com.intellij.openapi.editor.impl.DocumentImpl.a(DocumentImpl.java:707)
+	at com.intellij.openapi.editor.impl.DocumentImpl.deleteString(DocumentImpl.java:495)
+	at com.intellij.codeInsight.template.TemplateBuilderImpl.buildInlineTemplate(TemplateBuilderImpl.java:195)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.a(InplaceRefactoring.java:391)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.access$000(InplaceRefactoring.java:95)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring$2.run(InplaceRefactoring.java:346)
+	at com.intellij.openapi.application.RunResult.run(RunResult.java:35)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$null$1(WriteCommandAction.java:171)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1003)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$performWriteCommandAction$2(WriteCommandAction.java:170)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$doExecuteCommand$4(WriteCommandAction.java:210)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:119)
+	at com.intellij.openapi.command.WriteCommandAction.doExecuteCommand(WriteCommandAction.java:212)
+	at com.intellij.openapi.command.WriteCommandAction.performWriteCommandAction(WriteCommandAction.java:168)
+	at com.intellij.openapi.command.WriteCommandAction.execute(WriteCommandAction.java:151)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.buildTemplateAndStart(InplaceRefactoring.java:348)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.performInplaceRefactoring(InplaceRefactoring.java:213)
+	at com.intellij.refactoring.introduce.inplace.AbstractInplaceIntroducer.a(AbstractInplaceIntroducer.java:201)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.refactoring.introduce.inplace.AbstractInplaceIntroducer.startInplaceIntroduceTemplate(AbstractInplaceIntroducer.java:186)
+	at com.intellij.refactoring.introduceField.IntroduceFieldHandler.showRefactoringDialog(IntroduceFieldHandler.java:126)
+	at com.intellij.refactoring.introduceField.BaseExpressionToFieldHandler.a(BaseExpressionToFieldHandler.java:187)
+	at com.intellij.refactoring.introduceField.BaseExpressionToFieldHandler.invokeImpl(BaseExpressionToFieldHandler.java:125)
+	at com.intellij.refactoring.IntroduceHandlerBase.invoke(IntroduceHandlerBase.java:73)
+	at com.intellij.codeInsight.template.postfix.templates.IntroduceFieldPostfixTemplate.expandForChooseExpression(IntroduceFieldPostfixTemplate.java:38)
+	at com.intellij.codeInsight.template.postfix.templates.IntroduceFieldPostfixTemplate.prepareAndExpandForChooseExpression(IntroduceFieldPostfixTemplate.java:63)
+	at com.intellij.codeInsight.template.postfix.templates.PostfixTemplateWithExpressionSelector.expand(PostfixTemplateWithExpressionSelector.java:69)
+	at com.intellij.codeInsight.template.postfix.templates.PostfixLiveTemplate.a(PostfixLiveTemplate.java:225)
+	at com.intellij.codeInsight.template.postfix.templates.PostfixLiveTemplate.expand(PostfixLiveTemplate.java:127)
+	at com.intellij.codeInsight.template.impl.CustomLiveTemplateLookupElement.expandTemplate(CustomLiveTemplateLookupElement.java:67)
+	at com.intellij.codeInsight.template.impl.CustomLiveTemplateLookupElement.handleInsert(CustomLiveTemplateLookupElement.java:63)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.a(CodeCompletionHandlerBase.java:656)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1003)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.a(CodeCompletionHandlerBase.java:645)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.access$100(CodeCompletionHandlerBase.java:74)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase$2.perform(CodeCompletionHandlerBase.java:589)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.a(CaretModelImpl.java:363)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.doWithCaretMerging(CaretModelImpl.java:452)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.runForEachCaret(CaretModelImpl.java:355)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.runForEachCaret(CaretModelImpl.java:346)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.a(CodeCompletionHandlerBase.java:577)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.lookupItemSelected(CodeCompletionHandlerBase.java:550)
+	at com.intellij.codeInsight.completion.CompletionProgressIndicator.itemSelected(CompletionProgressIndicator.java:186)
+	at com.intellij.codeInsight.completion.CompletionLookupArranger.itemSelected(CompletionLookupArranger.java:171)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.fireItemSelected(LookupImpl.java:847)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.finishLookupInWritableFile(LookupImpl.java:533)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.a(LookupImpl.java:490)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.finishLookup(LookupImpl.java:490)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.finishLookup(LookupImpl.java:474)
+	at com.intellij.codeInsight.lookup.impl.actions.ChooseItemAction$Handler.execute(ChooseItemAction.java:81)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.doExecute(EditorActionHandler.java:173)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.lambda$execute$4(EditorActionHandler.java:207)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.doIfEnabled(EditorActionHandler.java:110)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.execute(EditorActionHandler.java:206)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.lambda$actionPerformed$0(EditorAction.java:98)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:149)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.actionPerformed(EditorAction.java:107)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.actionPerformed(EditorAction.java:86)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil$1.run(ActionUtil.java:220)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAware(ActionUtil.java:237)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher$1.performAction(IdeKeyEventDispatcher.java:576)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.a(IdeKeyEventDispatcher.java:625)
+	at com.intellij.openapi.application.TransactionGuardImpl.performUserActivity(TransactionGuardImpl.java:195)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.processAction(IdeKeyEventDispatcher.java:624)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.d(IdeKeyEventDispatcher.java:479)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.dispatchKeyEvent(IdeKeyEventDispatcher.java:213)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:622)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-24 15:52:11 ERROR DocumentImpl.a(138) - IntelliJ IDEA 2017.3  Build #IU-173.3727.127
+2018-01-24 15:52:11 ERROR DocumentImpl.a(145) - JDK: 1.8.0_152-release
+2018-01-24 15:52:11 ERROR DocumentImpl.a(146) - VM: OpenJDK 64-Bit Server VM
+2018-01-24 15:52:11 ERROR DocumentImpl.a(147) - Vendor: JetBrains s.r.o
+2018-01-24 15:52:11 ERROR DocumentImpl.a(148) - OS: Windows 7
+2018-01-24 15:52:11 ERROR DocumentImpl.a(154) - Last Action: EditorChooseLookupItem
+2018-01-24 15:52:11 ERROR DocumentImpl.a(161) - Current Command: Choose Lookup Item
+2018-01-24 15:52:11 ERROR DocumentImpl.error(130) - Document is locked by write PSI operations. Use PsiDocumentManager.doPostponedOperationsAndUnblockDocument() to commit PSI changes to the document.
+Unprocessed elements: EXPRESSION_STATEMENT(1137,1144), WHITE_SPACE(1128,1137)
+java.lang.RuntimeException: Document is locked by write PSI operations. Use PsiDocumentManager.doPostponedOperationsAndUnblockDocument() to commit PSI changes to the document.
+Unprocessed elements: EXPRESSION_STATEMENT(1137,1144), WHITE_SPACE(1128,1137)
+	at com.intellij.psi.impl.source.PostprocessReformattingAspect.assertDocumentChangeIsAllowed(PostprocessReformattingAspect.java:275)
+	at com.intellij.psi.impl.PsiDocumentManagerImpl.beforeDocumentChangeOnUnlockedDocument(PsiDocumentManagerImpl.java:147)
+	at com.intellij.psi.impl.PsiDocumentManagerBase.beforeDocumentChange(PsiDocumentManagerBase.java:808)
+	at sun.reflect.GeneratedMethodAccessor143.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.util.EventDispatcher.dispatch(EventDispatcher.java:99)
+	at com.intellij.util.EventDispatcher.access$200(EventDispatcher.java:35)
+	at com.intellij.util.EventDispatcher$2.invoke(EventDispatcher.java:79)
+	at com.sun.proxy.$Proxy27.beforeDocumentChange(Unknown Source)
+	at com.intellij.openapi.editor.impl.DocumentImpl.a(DocumentImpl.java:741)
+	at com.intellij.openapi.editor.impl.DocumentImpl.a(DocumentImpl.java:707)
+	at com.intellij.openapi.editor.impl.DocumentImpl.deleteString(DocumentImpl.java:495)
+	at com.intellij.codeInsight.template.TemplateBuilderImpl.buildInlineTemplate(TemplateBuilderImpl.java:195)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.a(InplaceRefactoring.java:391)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.access$000(InplaceRefactoring.java:95)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring$2.run(InplaceRefactoring.java:346)
+	at com.intellij.openapi.application.RunResult.run(RunResult.java:35)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$null$1(WriteCommandAction.java:171)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1003)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$performWriteCommandAction$2(WriteCommandAction.java:170)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$doExecuteCommand$4(WriteCommandAction.java:210)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:119)
+	at com.intellij.openapi.command.WriteCommandAction.doExecuteCommand(WriteCommandAction.java:212)
+	at com.intellij.openapi.command.WriteCommandAction.performWriteCommandAction(WriteCommandAction.java:168)
+	at com.intellij.openapi.command.WriteCommandAction.execute(WriteCommandAction.java:151)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.buildTemplateAndStart(InplaceRefactoring.java:348)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.performInplaceRefactoring(InplaceRefactoring.java:213)
+	at com.intellij.refactoring.introduce.inplace.AbstractInplaceIntroducer.a(AbstractInplaceIntroducer.java:201)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.refactoring.introduce.inplace.AbstractInplaceIntroducer.startInplaceIntroduceTemplate(AbstractInplaceIntroducer.java:186)
+	at com.intellij.refactoring.introduceField.IntroduceFieldHandler.showRefactoringDialog(IntroduceFieldHandler.java:126)
+	at com.intellij.refactoring.introduceField.BaseExpressionToFieldHandler.a(BaseExpressionToFieldHandler.java:187)
+	at com.intellij.refactoring.introduceField.BaseExpressionToFieldHandler.invokeImpl(BaseExpressionToFieldHandler.java:125)
+	at com.intellij.refactoring.IntroduceHandlerBase.invoke(IntroduceHandlerBase.java:73)
+	at com.intellij.codeInsight.template.postfix.templates.IntroduceFieldPostfixTemplate.expandForChooseExpression(IntroduceFieldPostfixTemplate.java:38)
+	at com.intellij.codeInsight.template.postfix.templates.IntroduceFieldPostfixTemplate.prepareAndExpandForChooseExpression(IntroduceFieldPostfixTemplate.java:63)
+	at com.intellij.codeInsight.template.postfix.templates.PostfixTemplateWithExpressionSelector.expand(PostfixTemplateWithExpressionSelector.java:69)
+	at com.intellij.codeInsight.template.postfix.templates.PostfixLiveTemplate.a(PostfixLiveTemplate.java:225)
+	at com.intellij.codeInsight.template.postfix.templates.PostfixLiveTemplate.expand(PostfixLiveTemplate.java:127)
+	at com.intellij.codeInsight.template.impl.CustomLiveTemplateLookupElement.expandTemplate(CustomLiveTemplateLookupElement.java:67)
+	at com.intellij.codeInsight.template.impl.CustomLiveTemplateLookupElement.handleInsert(CustomLiveTemplateLookupElement.java:63)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.a(CodeCompletionHandlerBase.java:656)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1003)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.a(CodeCompletionHandlerBase.java:645)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.access$100(CodeCompletionHandlerBase.java:74)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase$2.perform(CodeCompletionHandlerBase.java:589)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.a(CaretModelImpl.java:363)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.doWithCaretMerging(CaretModelImpl.java:452)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.runForEachCaret(CaretModelImpl.java:355)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.runForEachCaret(CaretModelImpl.java:346)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.a(CodeCompletionHandlerBase.java:577)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.lookupItemSelected(CodeCompletionHandlerBase.java:550)
+	at com.intellij.codeInsight.completion.CompletionProgressIndicator.itemSelected(CompletionProgressIndicator.java:186)
+	at com.intellij.codeInsight.completion.CompletionLookupArranger.itemSelected(CompletionLookupArranger.java:171)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.fireItemSelected(LookupImpl.java:847)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.finishLookupInWritableFile(LookupImpl.java:533)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.a(LookupImpl.java:490)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.finishLookup(LookupImpl.java:490)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.finishLookup(LookupImpl.java:474)
+	at com.intellij.codeInsight.lookup.impl.actions.ChooseItemAction$Handler.execute(ChooseItemAction.java:81)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.doExecute(EditorActionHandler.java:173)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.lambda$execute$4(EditorActionHandler.java:207)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.doIfEnabled(EditorActionHandler.java:110)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.execute(EditorActionHandler.java:206)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.lambda$actionPerformed$0(EditorAction.java:98)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:149)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.actionPerformed(EditorAction.java:107)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.actionPerformed(EditorAction.java:86)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil$1.run(ActionUtil.java:220)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAware(ActionUtil.java:237)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher$1.performAction(IdeKeyEventDispatcher.java:576)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.a(IdeKeyEventDispatcher.java:625)
+	at com.intellij.openapi.application.TransactionGuardImpl.performUserActivity(TransactionGuardImpl.java:195)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.processAction(IdeKeyEventDispatcher.java:624)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.d(IdeKeyEventDispatcher.java:479)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.dispatchKeyEvent(IdeKeyEventDispatcher.java:213)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:622)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-24 15:52:11 ERROR DocumentImpl.a(138) - IntelliJ IDEA 2017.3  Build #IU-173.3727.127
+2018-01-24 15:52:11 ERROR DocumentImpl.a(145) - JDK: 1.8.0_152-release
+2018-01-24 15:52:11 ERROR DocumentImpl.a(146) - VM: OpenJDK 64-Bit Server VM
+2018-01-24 15:52:11 ERROR DocumentImpl.a(147) - Vendor: JetBrains s.r.o
+2018-01-24 15:52:11 ERROR DocumentImpl.a(148) - OS: Windows 7
+2018-01-24 15:52:11 ERROR DocumentImpl.a(154) - Last Action: EditorChooseLookupItem
+2018-01-24 15:52:11 ERROR DocumentImpl.a(161) - Current Command: Choose Lookup Item
+2018-01-24 15:52:11 ERROR DocumentImpl.error(130) - Document is locked by write PSI operations. Use PsiDocumentManager.doPostponedOperationsAndUnblockDocument() to commit PSI changes to the document.
+Unprocessed elements: EXPRESSION_STATEMENT(0,7), WHITE_SPACE(1121,1130)
+java.lang.RuntimeException: Document is locked by write PSI operations. Use PsiDocumentManager.doPostponedOperationsAndUnblockDocument() to commit PSI changes to the document.
+Unprocessed elements: EXPRESSION_STATEMENT(0,7), WHITE_SPACE(1121,1130)
+	at com.intellij.psi.impl.source.PostprocessReformattingAspect.assertDocumentChangeIsAllowed(PostprocessReformattingAspect.java:275)
+	at com.intellij.psi.impl.PsiDocumentManagerImpl.beforeDocumentChangeOnUnlockedDocument(PsiDocumentManagerImpl.java:147)
+	at com.intellij.psi.impl.PsiDocumentManagerBase.beforeDocumentChange(PsiDocumentManagerBase.java:808)
+	at sun.reflect.GeneratedMethodAccessor143.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.util.EventDispatcher.dispatch(EventDispatcher.java:99)
+	at com.intellij.util.EventDispatcher.access$200(EventDispatcher.java:35)
+	at com.intellij.util.EventDispatcher$2.invoke(EventDispatcher.java:79)
+	at com.sun.proxy.$Proxy27.beforeDocumentChange(Unknown Source)
+	at com.intellij.openapi.editor.impl.DocumentImpl.a(DocumentImpl.java:741)
+	at com.intellij.openapi.editor.impl.DocumentImpl.a(DocumentImpl.java:707)
+	at com.intellij.openapi.editor.impl.DocumentImpl.a(DocumentImpl.java:580)
+	at com.intellij.openapi.editor.impl.DocumentImpl.replaceString(DocumentImpl.java:527)
+	at com.intellij.codeInsight.template.impl.TemplateState.a(TemplateState.java:882)
+	at com.intellij.codeInsight.template.impl.TemplateState.a(TemplateState.java:860)
+	at com.intellij.codeInsight.template.impl.TemplateState.b(TemplateState.java:726)
+	at com.intellij.openapi.project.DumbService.withAlternativeResolveEnabled(DumbService.java:291)
+	at com.intellij.codeInsight.template.impl.TemplateState.c(TemplateState.java:725)
+	at com.intellij.openapi.command.WriteCommandAction$1.run(WriteCommandAction.java:252)
+	at com.intellij.openapi.command.WriteCommandAction$Simple.run(WriteCommandAction.java:234)
+	at com.intellij.openapi.application.RunResult.run(RunResult.java:35)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$null$1(WriteCommandAction.java:171)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1003)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$performWriteCommandAction$2(WriteCommandAction.java:170)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$doExecuteCommand$4(WriteCommandAction.java:210)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:119)
+	at com.intellij.openapi.command.WriteCommandAction.doExecuteCommand(WriteCommandAction.java:212)
+	at com.intellij.openapi.command.WriteCommandAction.performWriteCommandAction(WriteCommandAction.java:168)
+	at com.intellij.openapi.command.WriteCommandAction.execute(WriteCommandAction.java:151)
+	at com.intellij.openapi.command.WriteCommandAction.runWriteCommandAction(WriteCommandAction.java:254)
+	at com.intellij.openapi.command.WriteCommandAction.runWriteCommandAction(WriteCommandAction.java:241)
+	at com.intellij.codeInsight.template.impl.TemplateState.calcResults(TemplateState.java:708)
+	at com.intellij.codeInsight.template.impl.TemplateState.c(TemplateState.java:433)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1003)
+	at com.intellij.codeInsight.template.impl.TemplateState.b(TemplateState.java:425)
+	at com.intellij.codeInsight.template.impl.TemplateState.start(TemplateState.java:397)
+	at com.intellij.codeInsight.template.impl.TemplateManagerImpl.a(TemplateManagerImpl.java:188)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.codeInsight.template.impl.TemplateManagerImpl.a(TemplateManagerImpl.java:191)
+	at com.intellij.codeInsight.template.impl.TemplateManagerImpl.startTemplate(TemplateManagerImpl.java:208)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.a(InplaceRefactoring.java:398)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.access$000(InplaceRefactoring.java:95)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring$2.run(InplaceRefactoring.java:346)
+	at com.intellij.openapi.application.RunResult.run(RunResult.java:35)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$null$1(WriteCommandAction.java:171)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1003)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$performWriteCommandAction$2(WriteCommandAction.java:170)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$doExecuteCommand$4(WriteCommandAction.java:210)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:119)
+	at com.intellij.openapi.command.WriteCommandAction.doExecuteCommand(WriteCommandAction.java:212)
+	at com.intellij.openapi.command.WriteCommandAction.performWriteCommandAction(WriteCommandAction.java:168)
+	at com.intellij.openapi.command.WriteCommandAction.execute(WriteCommandAction.java:151)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.buildTemplateAndStart(InplaceRefactoring.java:348)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.performInplaceRefactoring(InplaceRefactoring.java:213)
+	at com.intellij.refactoring.introduce.inplace.AbstractInplaceIntroducer.a(AbstractInplaceIntroducer.java:201)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.refactoring.introduce.inplace.AbstractInplaceIntroducer.startInplaceIntroduceTemplate(AbstractInplaceIntroducer.java:186)
+	at com.intellij.refactoring.introduceField.IntroduceFieldHandler.showRefactoringDialog(IntroduceFieldHandler.java:126)
+	at com.intellij.refactoring.introduceField.BaseExpressionToFieldHandler.a(BaseExpressionToFieldHandler.java:187)
+	at com.intellij.refactoring.introduceField.BaseExpressionToFieldHandler.invokeImpl(BaseExpressionToFieldHandler.java:125)
+	at com.intellij.refactoring.IntroduceHandlerBase.invoke(IntroduceHandlerBase.java:73)
+	at com.intellij.codeInsight.template.postfix.templates.IntroduceFieldPostfixTemplate.expandForChooseExpression(IntroduceFieldPostfixTemplate.java:38)
+	at com.intellij.codeInsight.template.postfix.templates.IntroduceFieldPostfixTemplate.prepareAndExpandForChooseExpression(IntroduceFieldPostfixTemplate.java:63)
+	at com.intellij.codeInsight.template.postfix.templates.PostfixTemplateWithExpressionSelector.expand(PostfixTemplateWithExpressionSelector.java:69)
+	at com.intellij.codeInsight.template.postfix.templates.PostfixLiveTemplate.a(PostfixLiveTemplate.java:225)
+	at com.intellij.codeInsight.template.postfix.templates.PostfixLiveTemplate.expand(PostfixLiveTemplate.java:127)
+	at com.intellij.codeInsight.template.impl.CustomLiveTemplateLookupElement.expandTemplate(CustomLiveTemplateLookupElement.java:67)
+	at com.intellij.codeInsight.template.impl.CustomLiveTemplateLookupElement.handleInsert(CustomLiveTemplateLookupElement.java:63)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.a(CodeCompletionHandlerBase.java:656)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1003)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.a(CodeCompletionHandlerBase.java:645)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.access$100(CodeCompletionHandlerBase.java:74)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase$2.perform(CodeCompletionHandlerBase.java:589)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.a(CaretModelImpl.java:363)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.doWithCaretMerging(CaretModelImpl.java:452)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.runForEachCaret(CaretModelImpl.java:355)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.runForEachCaret(CaretModelImpl.java:346)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.a(CodeCompletionHandlerBase.java:577)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.lookupItemSelected(CodeCompletionHandlerBase.java:550)
+	at com.intellij.codeInsight.completion.CompletionProgressIndicator.itemSelected(CompletionProgressIndicator.java:186)
+	at com.intellij.codeInsight.completion.CompletionLookupArranger.itemSelected(CompletionLookupArranger.java:171)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.fireItemSelected(LookupImpl.java:847)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.finishLookupInWritableFile(LookupImpl.java:533)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.a(LookupImpl.java:490)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.finishLookup(LookupImpl.java:490)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.finishLookup(LookupImpl.java:474)
+	at com.intellij.codeInsight.lookup.impl.actions.ChooseItemAction$Handler.execute(ChooseItemAction.java:81)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.doExecute(EditorActionHandler.java:173)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.lambda$execute$4(EditorActionHandler.java:207)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.doIfEnabled(EditorActionHandler.java:110)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.execute(EditorActionHandler.java:206)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.lambda$actionPerformed$0(EditorAction.java:98)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:149)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.actionPerformed(EditorAction.java:107)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.actionPerformed(EditorAction.java:86)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil$1.run(ActionUtil.java:220)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAware(ActionUtil.java:237)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher$1.performAction(IdeKeyEventDispatcher.java:576)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.a(IdeKeyEventDispatcher.java:625)
+	at com.intellij.openapi.application.TransactionGuardImpl.performUserActivity(TransactionGuardImpl.java:195)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.processAction(IdeKeyEventDispatcher.java:624)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.d(IdeKeyEventDispatcher.java:479)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.dispatchKeyEvent(IdeKeyEventDispatcher.java:213)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:622)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-24 15:52:11 ERROR DocumentImpl.a(138) - IntelliJ IDEA 2017.3  Build #IU-173.3727.127
+2018-01-24 15:52:11 ERROR DocumentImpl.a(145) - JDK: 1.8.0_152-release
+2018-01-24 15:52:11 ERROR DocumentImpl.a(146) - VM: OpenJDK 64-Bit Server VM
+2018-01-24 15:52:11 ERROR DocumentImpl.a(147) - Vendor: JetBrains s.r.o
+2018-01-24 15:52:11 ERROR DocumentImpl.a(148) - OS: Windows 7
+2018-01-24 15:52:11 ERROR DocumentImpl.a(154) - Last Action: EditorChooseLookupItem
+2018-01-24 15:52:11 ERROR DocumentImpl.a(161) - Current Command: Choose Lookup Item
+2018-01-24 15:52:11 ERROR DocumentImpl.error(130) - Document is locked by write PSI operations. Use PsiDocumentManager.doPostponedOperationsAndUnblockDocument() to commit PSI changes to the document.
+Unprocessed elements: EXPRESSION_STATEMENT(0,7), WHITE_SPACE(1121,1130)
+java.lang.RuntimeException: Document is locked by write PSI operations. Use PsiDocumentManager.doPostponedOperationsAndUnblockDocument() to commit PSI changes to the document.
+Unprocessed elements: EXPRESSION_STATEMENT(0,7), WHITE_SPACE(1121,1130)
+	at com.intellij.psi.impl.source.PostprocessReformattingAspect.assertDocumentChangeIsAllowed(PostprocessReformattingAspect.java:275)
+	at com.intellij.psi.impl.PsiDocumentManagerImpl.beforeDocumentChangeOnUnlockedDocument(PsiDocumentManagerImpl.java:147)
+	at com.intellij.psi.impl.PsiDocumentManagerBase.beforeDocumentChange(PsiDocumentManagerBase.java:808)
+	at sun.reflect.GeneratedMethodAccessor143.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.util.EventDispatcher.dispatch(EventDispatcher.java:99)
+	at com.intellij.util.EventDispatcher.access$200(EventDispatcher.java:35)
+	at com.intellij.util.EventDispatcher$2.invoke(EventDispatcher.java:79)
+	at com.sun.proxy.$Proxy27.beforeDocumentChange(Unknown Source)
+	at com.intellij.openapi.editor.impl.DocumentImpl.a(DocumentImpl.java:741)
+	at com.intellij.openapi.editor.impl.DocumentImpl.a(DocumentImpl.java:707)
+	at com.intellij.openapi.editor.impl.DocumentImpl.a(DocumentImpl.java:580)
+	at com.intellij.openapi.editor.impl.DocumentImpl.replaceString(DocumentImpl.java:527)
+	at com.intellij.codeInsight.template.impl.TemplateState.a(TemplateState.java:882)
+	at com.intellij.codeInsight.template.impl.TemplateState.a(TemplateState.java:860)
+	at com.intellij.codeInsight.template.impl.TemplateState.b(TemplateState.java:726)
+	at com.intellij.openapi.project.DumbService.withAlternativeResolveEnabled(DumbService.java:291)
+	at com.intellij.codeInsight.template.impl.TemplateState.c(TemplateState.java:725)
+	at com.intellij.openapi.command.WriteCommandAction$1.run(WriteCommandAction.java:252)
+	at com.intellij.openapi.command.WriteCommandAction$Simple.run(WriteCommandAction.java:234)
+	at com.intellij.openapi.application.RunResult.run(RunResult.java:35)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$null$1(WriteCommandAction.java:171)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1003)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$performWriteCommandAction$2(WriteCommandAction.java:170)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$doExecuteCommand$4(WriteCommandAction.java:210)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:119)
+	at com.intellij.openapi.command.WriteCommandAction.doExecuteCommand(WriteCommandAction.java:212)
+	at com.intellij.openapi.command.WriteCommandAction.performWriteCommandAction(WriteCommandAction.java:168)
+	at com.intellij.openapi.command.WriteCommandAction.execute(WriteCommandAction.java:151)
+	at com.intellij.openapi.command.WriteCommandAction.runWriteCommandAction(WriteCommandAction.java:254)
+	at com.intellij.openapi.command.WriteCommandAction.runWriteCommandAction(WriteCommandAction.java:241)
+	at com.intellij.codeInsight.template.impl.TemplateState.calcResults(TemplateState.java:708)
+	at com.intellij.codeInsight.template.impl.TemplateState.c(TemplateState.java:433)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1003)
+	at com.intellij.codeInsight.template.impl.TemplateState.b(TemplateState.java:425)
+	at com.intellij.codeInsight.template.impl.TemplateState.start(TemplateState.java:397)
+	at com.intellij.codeInsight.template.impl.TemplateManagerImpl.a(TemplateManagerImpl.java:188)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.codeInsight.template.impl.TemplateManagerImpl.a(TemplateManagerImpl.java:191)
+	at com.intellij.codeInsight.template.impl.TemplateManagerImpl.startTemplate(TemplateManagerImpl.java:208)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.a(InplaceRefactoring.java:398)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.access$000(InplaceRefactoring.java:95)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring$2.run(InplaceRefactoring.java:346)
+	at com.intellij.openapi.application.RunResult.run(RunResult.java:35)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$null$1(WriteCommandAction.java:171)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1003)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$performWriteCommandAction$2(WriteCommandAction.java:170)
+	at com.intellij.openapi.command.WriteCommandAction.lambda$doExecuteCommand$4(WriteCommandAction.java:210)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:119)
+	at com.intellij.openapi.command.WriteCommandAction.doExecuteCommand(WriteCommandAction.java:212)
+	at com.intellij.openapi.command.WriteCommandAction.performWriteCommandAction(WriteCommandAction.java:168)
+	at com.intellij.openapi.command.WriteCommandAction.execute(WriteCommandAction.java:151)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.buildTemplateAndStart(InplaceRefactoring.java:348)
+	at com.intellij.refactoring.rename.inplace.InplaceRefactoring.performInplaceRefactoring(InplaceRefactoring.java:213)
+	at com.intellij.refactoring.introduce.inplace.AbstractInplaceIntroducer.a(AbstractInplaceIntroducer.java:201)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.refactoring.introduce.inplace.AbstractInplaceIntroducer.startInplaceIntroduceTemplate(AbstractInplaceIntroducer.java:186)
+	at com.intellij.refactoring.introduceField.IntroduceFieldHandler.showRefactoringDialog(IntroduceFieldHandler.java:126)
+	at com.intellij.refactoring.introduceField.BaseExpressionToFieldHandler.a(BaseExpressionToFieldHandler.java:187)
+	at com.intellij.refactoring.introduceField.BaseExpressionToFieldHandler.invokeImpl(BaseExpressionToFieldHandler.java:125)
+	at com.intellij.refactoring.IntroduceHandlerBase.invoke(IntroduceHandlerBase.java:73)
+	at com.intellij.codeInsight.template.postfix.templates.IntroduceFieldPostfixTemplate.expandForChooseExpression(IntroduceFieldPostfixTemplate.java:38)
+	at com.intellij.codeInsight.template.postfix.templates.IntroduceFieldPostfixTemplate.prepareAndExpandForChooseExpression(IntroduceFieldPostfixTemplate.java:63)
+	at com.intellij.codeInsight.template.postfix.templates.PostfixTemplateWithExpressionSelector.expand(PostfixTemplateWithExpressionSelector.java:69)
+	at com.intellij.codeInsight.template.postfix.templates.PostfixLiveTemplate.a(PostfixLiveTemplate.java:225)
+	at com.intellij.codeInsight.template.postfix.templates.PostfixLiveTemplate.expand(PostfixLiveTemplate.java:127)
+	at com.intellij.codeInsight.template.impl.CustomLiveTemplateLookupElement.expandTemplate(CustomLiveTemplateLookupElement.java:67)
+	at com.intellij.codeInsight.template.impl.CustomLiveTemplateLookupElement.handleInsert(CustomLiveTemplateLookupElement.java:63)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.a(CodeCompletionHandlerBase.java:656)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1003)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.a(CodeCompletionHandlerBase.java:645)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.access$100(CodeCompletionHandlerBase.java:74)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase$2.perform(CodeCompletionHandlerBase.java:589)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.a(CaretModelImpl.java:363)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.doWithCaretMerging(CaretModelImpl.java:452)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.runForEachCaret(CaretModelImpl.java:355)
+	at com.intellij.openapi.editor.impl.CaretModelImpl.runForEachCaret(CaretModelImpl.java:346)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.a(CodeCompletionHandlerBase.java:577)
+	at com.intellij.codeInsight.completion.CodeCompletionHandlerBase.lookupItemSelected(CodeCompletionHandlerBase.java:550)
+	at com.intellij.codeInsight.completion.CompletionProgressIndicator.itemSelected(CompletionProgressIndicator.java:186)
+	at com.intellij.codeInsight.completion.CompletionLookupArranger.itemSelected(CompletionLookupArranger.java:171)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.fireItemSelected(LookupImpl.java:847)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.finishLookupInWritableFile(LookupImpl.java:533)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.a(LookupImpl.java:490)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:141)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.finishLookup(LookupImpl.java:490)
+	at com.intellij.codeInsight.lookup.impl.LookupImpl.finishLookup(LookupImpl.java:474)
+	at com.intellij.codeInsight.lookup.impl.actions.ChooseItemAction$Handler.execute(ChooseItemAction.java:81)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.doExecute(EditorActionHandler.java:173)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.lambda$execute$4(EditorActionHandler.java:207)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.doIfEnabled(EditorActionHandler.java:110)
+	at com.intellij.openapi.editor.actionSystem.EditorActionHandler.execute(EditorActionHandler.java:206)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.lambda$actionPerformed$0(EditorAction.java:98)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:149)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.actionPerformed(EditorAction.java:107)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.actionPerformed(EditorAction.java:86)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil$1.run(ActionUtil.java:220)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAware(ActionUtil.java:237)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher$1.performAction(IdeKeyEventDispatcher.java:576)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.a(IdeKeyEventDispatcher.java:625)
+	at com.intellij.openapi.application.TransactionGuardImpl.performUserActivity(TransactionGuardImpl.java:195)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.processAction(IdeKeyEventDispatcher.java:624)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.d(IdeKeyEventDispatcher.java:479)
+	at com.intellij.openapi.keymap.impl.IdeKeyEventDispatcher.dispatchKeyEvent(IdeKeyEventDispatcher.java:213)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:622)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-24 15:52:11 ERROR DocumentImpl.a(138) - IntelliJ IDEA 2017.3  Build #IU-173.3727.127
+2018-01-24 15:52:11 ERROR DocumentImpl.a(145) - JDK: 1.8.0_152-release
+2018-01-24 15:52:11 ERROR DocumentImpl.a(146) - VM: OpenJDK 64-Bit Server VM
+2018-01-24 15:52:11 ERROR DocumentImpl.a(147) - Vendor: JetBrains s.r.o
+2018-01-24 15:52:11 ERROR DocumentImpl.a(148) - OS: Windows 7
+2018-01-24 15:52:11 ERROR DocumentImpl.a(154) - Last Action: EditorChooseLookupItem
+2018-01-24 15:52:11 ERROR DocumentImpl.a(161) - Current Command: Choose Lookup Item
+2018-01-24 15:52:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:53:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:54:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:55:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:56:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:57:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:58:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 15:59:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:00:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:01:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:02:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:03:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:04:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:05:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:06:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:07:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:08:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:09:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:10:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:11:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:12:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:27:28 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-24 16:27:28 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-24 16:42:21 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:24 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:42:53 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 16:43:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:44:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:45:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:46:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:47:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:48:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:49:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:50:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:51:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:52:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:53:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:54:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:55:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:56:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:57:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:58:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 16:59:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:00:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:01:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:02:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:03:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:04:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:05:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:06:52 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:07:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:08:52 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:09:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:10:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:11:52 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 504
+2018-01-24 17:12:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:13:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:14:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:15:52 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:16:52 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:17:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:18:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:19:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:20:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:21:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:22:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:23:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:24:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:25:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:26:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:27:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:28:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:29:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:30:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:31:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:32:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:33:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:34:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:35:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:36:56 ERROR ApacheHttpClient.processExceptionSendEvent(103) - (super) Ошибка во время отправки ивента на сервер.
+2018-01-24 17:37:51 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:38:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:39:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:40:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:41:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:42:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:43:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:44:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:45:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:46:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:47:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:48:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:49:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:50:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:51:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:52:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:53:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:54:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:55:50 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:56:52 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-24 17:57:47 INFO  JavaRushTasksProjectComponent.projectClosing(157) - ---------- Project JavaRushTasks closed ----------
+
+2018-01-24 17:57:47 INFO  ApacheHttpClient.getTask(405) - responseCode = 200
+2018-01-25 10:27:05 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+
+2018-01-25 10:27:05 INFO  ApacheHttpClient.createAsyncHttpClient(125) - Выбрано 1 прокси.
+2018-01-25 10:27:05 INFO  ApacheHttpClient.<init>(85) - ApacheHttpClient проинстанциирован успешно.
+2018-01-25 10:28:13 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-25 10:28:13 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-25 10:28:14 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-25 10:28:14 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-25 10:28:14 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-25 10:28:14 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-25 10:28:14 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-25 10:28:14 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-25 10:28:14 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-25 10:28:14 INFO  ApacheHttpClient.login(213) - responseCode = 200
+2018-01-25 10:28:14 INFO  ApacheHttpClient.login(244) - JSESSIONID=33F888E73CC82637A5B42442BA0A2127
+2018-01-25 10:28:15 INFO  ApacheHttpClient.refreshUserInfo(272) - responseCode = 200
+2018-01-25 10:28:15 INFO  ApacheHttpClient.refreshUserInfo(278) - Информация о пользователе получена.
+2018-01-25 10:28:15 INFO  ApacheHttpClient.startGA(32) - GAService запущен.
+2018-01-25 10:28:16 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-01-25 10:28:43 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-25 10:28:43 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-25 10:30:21 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-25 10:30:21 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-25 10:30:38 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-01-25 10:30:55 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-25 10:30:55 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-25 10:31:17 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:31:39 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-25 10:31:39 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-25 10:32:17 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:33:17 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:34:17 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:35:37 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:36:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:37:17 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:38:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:39:17 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:40:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:41:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:42:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:43:17 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:44:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:45:22 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:46:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:47:18 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:48:16 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:49:23 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-25 10:49:23 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-25 10:49:26 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:50:18 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-01-25 10:50:26 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-25 10:50:26 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-25 10:51:05 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-25 10:51:05 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-25 11:24:43 INFO  JavaRushTasksProjectComponent.projectClosing(157) - ---------- Project JavaRushTasks closed ----------
+
+2018-01-25 11:26:35 ERROR ApacheHttpClient.getTask(410) - Ошибка во время выгрузки задачи. Убедитесь в доступности сети и попробуйте снова. : java.util.concurrent.ExecutionException
+2018-01-25 11:26:54 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+
+2018-01-25 11:26:54 INFO  ApacheHttpClient.createAsyncHttpClient(125) - Выбрано 1 прокси.
+2018-01-25 11:26:54 INFO  ApacheHttpClient.<init>(85) - ApacheHttpClient проинстанциирован успешно.
+2018-01-25 11:26:56 INFO  ApacheHttpClient.testConnection(185) - result = false
+2018-01-25 11:26:56 ERROR HttpsURLConnectionClient.<init>(74) - Ошибка получения логина прокси из HttpConfigurable.
+2018-01-25 11:26:56 ERROR HttpsURLConnectionClient.login(222) - Ошибка во время логина. Убедитесь в доступности сети и попробуйте снова. : java.net.UnknownHostException
+2018-01-25 11:27:06 ERROR HttpsURLConnectionClient.testConnection(118) - Ошибка проверки соединения с сервером по HTTP
+java.net.UnknownHostException: javarush.ru
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at com.javarush.plugin.client.HttpsURLConnectionClient.testConnection(HttpsURLConnectionClient.java:114)
+	at com.javarush.plugin.TestEditorProvider.accept(TestEditorProvider.java:45)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.a(FileEditorProviderManagerImpl.java:89)
+	at com.intellij.openapi.application.ReadAction.compute(ReadAction.java:47)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.getProviders(FileEditorProviderManagerImpl.java:85)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl4(FileEditorManagerImpl.java:811)
+	at com.intellij.openapi.fileEditor.impl.EditorsSplitters$UIBuilder.processFiles(EditorsSplitters.java:860)
+	at com.intellij.openapi.fileEditor.impl.EditorsSplitters$UIBuilder.processFiles(EditorsSplitters.java:825)
+	at com.intellij.openapi.fileEditor.impl.EditorsSplitters$ConfigTreeReader.process(EditorsSplitters.java:816)
+	at com.intellij.openapi.fileEditor.impl.EditorsSplitters.openFiles(EditorsSplitters.java:237)
+	at com.intellij.openapi.fileEditor.impl.OpenFilesActivity.runActivity(OpenFilesActivity.java:35)
+	at com.intellij.ide.startup.impl.StartupManagerImpl.a(StartupManagerImpl.java:176)
+	at com.intellij.ide.startup.impl.StartupManagerImpl.a(StartupManagerImpl.java:162)
+	at com.intellij.ide.startup.impl.StartupManagerImpl.b(StartupManagerImpl.java:150)
+	at com.intellij.ide.startup.impl.StartupManagerImpl.b(StartupManagerImpl.java:367)
+	at com.intellij.ide.startup.impl.StartupManagerImpl.runPostStartupActivitiesFromExtensions(StartupManagerImpl.java:152)
+	at com.intellij.openapi.project.impl.ProjectManagerImpl.g(ProjectManagerImpl.java:411)
+	at com.intellij.openapi.project.impl.ProjectManagerImpl.a(ProjectManagerImpl.java:448)
+	at com.intellij.openapi.project.impl.ProjectManagerImpl.openProject(ProjectManagerImpl.java:431)
+	at com.intellij.openapi.project.impl.ProjectManagerImpl$2.compute(ProjectManagerImpl.java:508)
+	at com.intellij.openapi.project.impl.ProjectManagerImpl$2.compute(ProjectManagerImpl.java:499)
+	at com.intellij.openapi.progress.Task$WithResult.run(Task.java:326)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:704)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$5.run(CoreProgressManager.java:388)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.a(CoreProgressManager.java:157)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.a(CoreProgressManager.java:534)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:479)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:94)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:144)
+	at com.intellij.openapi.application.impl.ApplicationImpl.a(ApplicationImpl.java:575)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1.run(ApplicationImpl.java:315)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-01-25 11:27:06 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = false
+2018-01-25 11:27:06 ERROR HttpsURLConnectionClient.testConnection(140) - Ошибка проверки соединения с сервером по HTTPS
+java.net.UnknownHostException: javarush.ru
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:673)
+	at sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:173)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:153)
+	at com.javarush.plugin.client.HttpsURLConnectionClient.testConnection(HttpsURLConnectionClient.java:133)
+	at com.javarush.plugin.TestEditorProvider.accept(TestEditorProvider.java:45)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.a(FileEditorProviderManagerImpl.java:89)
+	at com.intellij.openapi.application.ReadAction.compute(ReadAction.java:47)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.getProviders(FileEditorProviderManagerImpl.java:85)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl4(FileEditorManagerImpl.java:811)
+	at com.intellij.openapi.fileEditor.impl.EditorsSplitters$UIBuilder.processFiles(EditorsSplitters.java:860)
+	at com.intellij.openapi.fileEditor.impl.EditorsSplitters$UIBuilder.processFiles(EditorsSplitters.java:825)
+	at com.intellij.openapi.fileEditor.impl.EditorsSplitters$ConfigTreeReader.process(EditorsSplitters.java:816)
+	at com.intellij.openapi.fileEditor.impl.EditorsSplitters.openFiles(EditorsSplitters.java:237)
+	at com.intellij.openapi.fileEditor.impl.OpenFilesActivity.runActivity(OpenFilesActivity.java:35)
+	at com.intellij.ide.startup.impl.StartupManagerImpl.a(StartupManagerImpl.java:176)
+	at com.intellij.ide.startup.impl.StartupManagerImpl.a(StartupManagerImpl.java:162)
+	at com.intellij.ide.startup.impl.StartupManagerImpl.b(StartupManagerImpl.java:150)
+	at com.intellij.ide.startup.impl.StartupManagerImpl.b(StartupManagerImpl.java:367)
+	at com.intellij.ide.startup.impl.StartupManagerImpl.runPostStartupActivitiesFromExtensions(StartupManagerImpl.java:152)
+	at com.intellij.openapi.project.impl.ProjectManagerImpl.g(ProjectManagerImpl.java:411)
+	at com.intellij.openapi.project.impl.ProjectManagerImpl.a(ProjectManagerImpl.java:448)
+	at com.intellij.openapi.project.impl.ProjectManagerImpl.openProject(ProjectManagerImpl.java:431)
+	at com.intellij.openapi.project.impl.ProjectManagerImpl$2.compute(ProjectManagerImpl.java:508)
+	at com.intellij.openapi.project.impl.ProjectManagerImpl$2.compute(ProjectManagerImpl.java:499)
+	at com.intellij.openapi.progress.Task$WithResult.run(Task.java:326)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:704)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$5.run(CoreProgressManager.java:388)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.a(CoreProgressManager.java:157)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.a(CoreProgressManager.java:534)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:479)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:94)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:144)
+	at com.intellij.openapi.application.impl.ApplicationImpl.a(ApplicationImpl.java:575)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1.run(ApplicationImpl.java:315)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-01-25 11:27:06 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = false
+2018-01-25 11:27:13 ERROR HttpsURLConnectionClient.testConnection(118) - Ошибка проверки соединения с сервером по HTTP
+java.net.UnknownHostException: javarush.ru
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at com.javarush.plugin.client.HttpsURLConnectionClient.testConnection(HttpsURLConnectionClient.java:114)
+	at com.javarush.plugin.TestEditorProvider.accept(TestEditorProvider.java:45)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.a(FileEditorProviderManagerImpl.java:89)
+	at com.intellij.openapi.application.ReadAction.compute(ReadAction.java:47)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.getProviders(FileEditorProviderManagerImpl.java:85)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:201)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.access$300(FileEditorManagerImpl.java:109)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$2.a(FileEditorManagerImpl.java:170)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:315)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.a(LaterInvocator.java:424)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:407)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:762)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:732)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:650)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-25 11:27:13 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = false
+2018-01-25 11:27:13 ERROR HttpsURLConnectionClient.testConnection(140) - Ошибка проверки соединения с сервером по HTTPS
+java.net.UnknownHostException: javarush.ru
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:673)
+	at sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:173)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:153)
+	at com.javarush.plugin.client.HttpsURLConnectionClient.testConnection(HttpsURLConnectionClient.java:133)
+	at com.javarush.plugin.TestEditorProvider.accept(TestEditorProvider.java:45)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.a(FileEditorProviderManagerImpl.java:89)
+	at com.intellij.openapi.application.ReadAction.compute(ReadAction.java:47)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.getProviders(FileEditorProviderManagerImpl.java:85)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:201)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.access$300(FileEditorManagerImpl.java:109)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$2.a(FileEditorManagerImpl.java:170)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:315)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.a(LaterInvocator.java:424)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:407)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:762)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:732)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:650)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-25 11:27:13 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = false
+2018-01-25 11:27:13 ERROR HttpsURLConnectionClient.testConnection(118) - Ошибка проверки соединения с сервером по HTTP
+java.net.UnknownHostException: javarush.ru
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at com.javarush.plugin.client.HttpsURLConnectionClient.testConnection(HttpsURLConnectionClient.java:114)
+	at com.javarush.plugin.TestEditorProvider.accept(TestEditorProvider.java:45)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.a(FileEditorProviderManagerImpl.java:89)
+	at com.intellij.openapi.application.ReadAction.compute(ReadAction.java:47)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.getProviders(FileEditorProviderManagerImpl.java:85)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:201)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.access$300(FileEditorManagerImpl.java:109)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$2.a(FileEditorManagerImpl.java:170)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:315)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.a(LaterInvocator.java:424)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:407)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:762)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:732)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:650)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-25 11:27:13 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = false
+2018-01-25 11:27:13 ERROR HttpsURLConnectionClient.testConnection(140) - Ошибка проверки соединения с сервером по HTTPS
+java.net.UnknownHostException: javarush.ru
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:673)
+	at sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:173)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:153)
+	at com.javarush.plugin.client.HttpsURLConnectionClient.testConnection(HttpsURLConnectionClient.java:133)
+	at com.javarush.plugin.TestEditorProvider.accept(TestEditorProvider.java:45)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.a(FileEditorProviderManagerImpl.java:89)
+	at com.intellij.openapi.application.ReadAction.compute(ReadAction.java:47)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.getProviders(FileEditorProviderManagerImpl.java:85)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:201)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.access$300(FileEditorManagerImpl.java:109)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$2.a(FileEditorManagerImpl.java:170)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:315)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.a(LaterInvocator.java:424)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:407)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:762)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:732)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:650)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-25 11:27:13 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = false
+2018-01-25 11:27:13 ERROR HttpsURLConnectionClient.testConnection(118) - Ошибка проверки соединения с сервером по HTTP
+java.net.UnknownHostException: javarush.ru
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1202)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:966)
+	at com.javarush.plugin.client.HttpsURLConnectionClient.testConnection(HttpsURLConnectionClient.java:114)
+	at com.javarush.plugin.TestEditorProvider.accept(TestEditorProvider.java:45)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.a(FileEditorProviderManagerImpl.java:89)
+	at com.intellij.openapi.application.ReadAction.compute(ReadAction.java:47)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.getProviders(FileEditorProviderManagerImpl.java:85)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:201)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.access$300(FileEditorManagerImpl.java:109)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$2.a(FileEditorManagerImpl.java:170)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:315)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.a(LaterInvocator.java:424)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:407)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:762)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:732)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:650)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-25 11:27:13 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = false
+2018-01-25 11:27:13 ERROR HttpsURLConnectionClient.testConnection(140) - Ошибка проверки соединения с сервером по HTTPS
+java.net.UnknownHostException: javarush.ru
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:673)
+	at sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:173)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1138)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1032)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:153)
+	at com.javarush.plugin.client.HttpsURLConnectionClient.testConnection(HttpsURLConnectionClient.java:133)
+	at com.javarush.plugin.TestEditorProvider.accept(TestEditorProvider.java:45)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.a(FileEditorProviderManagerImpl.java:89)
+	at com.intellij.openapi.application.ReadAction.compute(ReadAction.java:47)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.getProviders(FileEditorProviderManagerImpl.java:85)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:201)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.access$300(FileEditorManagerImpl.java:109)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$2.a(FileEditorManagerImpl.java:170)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:315)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.a(LaterInvocator.java:424)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:407)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:762)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:732)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:650)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-01-25 11:27:13 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = false
+2018-01-25 11:39:04 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = true
+2018-01-25 11:40:47 ERROR HttpsURLConnectionClient.testConnection(140) - Ошибка проверки соединения с сервером по HTTPS
+javax.net.ssl.SSLHandshakeException: Remote host closed connection during handshake
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1002)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:559)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:153)
+	at com.javarush.plugin.client.HttpsURLConnectionClient.testConnection(HttpsURLConnectionClient.java:133)
+	at com.javarush.plugin.TestEditorProvider.accept(TestEditorProvider.java:45)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.a(FileEditorProviderManagerImpl.java:89)
+	at com.intellij.openapi.application.ReadAction.compute(ReadAction.java:47)
+	at com.intellij.openapi.fileEditor.impl.FileEditorProviderManagerImpl.getProviders(FileEditorProviderManagerImpl.java:85)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.a(FileEditorManagerImpl.java:201)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.access$300(FileEditorManagerImpl.java:109)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl$2.a(FileEditorManagerImpl.java:170)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:315)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.a(LaterInvocator.java:424)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:407)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:762)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:732)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:650)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:109)
+	at java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:190)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:235)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:233)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:233)
+	at java.awt.Dialog.show(Dialog.java:1084)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$MyDialog.show(DialogWrapperPeerImpl.java:734)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl.show(DialogWrapperPeerImpl.java:456)
+	at com.intellij.openapi.ui.DialogWrapper.invokeShow(DialogWrapper.java:1696)
+	at com.intellij.openapi.ui.DialogWrapper.show(DialogWrapper.java:1645)
+	at com.intellij.ide.actions.ShowStructureSettingsAction.showDialog(ShowStructureSettingsAction.java:51)
+	at com.intellij.ide.actions.ShowStructureSettingsAction.actionPerformed(ShowStructureSettingsAction.java:41)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil$1.run(ActionUtil.java:220)
+	at com.intellij.openapi.application.TransactionGuardImpl.a(TransactionGuardImpl.java:88)
+	at com.intellij.openapi.application.TransactionGuardImpl.submitTransactionAndWait(TransactionGuardImpl.java:153)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAware(ActionUtil.java:235)
+	at com.intellij.openapi.actionSystem.impl.ActionButton.a(ActionButton.java:193)
+	at com.intellij.openapi.actionSystem.impl.ActionButton.a(ActionButton.java:151)
+	at com.intellij.openapi.actionSystem.impl.ActionButton.processMouseEvent(ActionButton.java:344)
+	at java.awt.Component.processEvent(Component.java:6306)
+	at java.awt.Container.processEvent(Container.java:2237)
+	at java.awt.Component.dispatchEventImpl(Component.java:4897)
+	at java.awt.Container.dispatchEventImpl(Container.java:2295)
+	at java.awt.Component.dispatchEvent(Component.java:4719)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4889)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4526)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4467)
+	at java.awt.Container.dispatchEventImpl(Container.java:2281)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4719)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:764)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:90)
+	at java.awt.EventQueue$4.run(EventQueue.java:737)
+	at java.awt.EventQueue$4.run(EventQueue.java:735)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:734)
+	at com.intellij.ide.IdeEventQueue.h(IdeEventQueue.java:822)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:646)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:366)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: java.io.EOFException: SSL peer shut down incorrectly
+	at sun.security.ssl.InputRecord.read(InputRecord.java:505)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	... 82 more
+2018-01-25 11:40:47 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = false
+2018-01-25 11:49:05 INFO  HttpsURLConnectionClient.getWebResourceAsStream(524) - responseCode = 200
+2018-01-25 11:49:06 INFO  HttpsURLConnectionClient.refreshUserInfo(652) - responseCode = 400
+2018-01-25 11:49:10 INFO  HttpsURLConnectionClient.getFilteredTasks(265) - responseCode = 200
+2018-01-25 12:51:09 INFO  HttpsURLConnectionClient.getWebResourceAsStream(524) - responseCode = 200
+2018-01-25 12:51:10 INFO  HttpsURLConnectionClient.refreshUserInfo(652) - responseCode = 400
+2018-01-25 12:51:10 INFO  HttpsURLConnectionClient.getFilteredTasks(265) - responseCode = 200
+2018-01-25 12:55:45 INFO  HttpsURLConnectionClient.refreshUserInfo(652) - responseCode = 400
+2018-01-25 12:55:46 INFO  HttpsURLConnectionClient.getFilteredTasks(265) - responseCode = 200
+2018-01-25 12:55:47 INFO  HttpsURLConnectionClient.refreshUserInfo(652) - responseCode = 400
+2018-01-25 12:55:48 INFO  HttpsURLConnectionClient.getFilteredTasks(265) - responseCode = 200
+2018-01-25 12:55:49 INFO  HttpsURLConnectionClient.refreshUserInfo(652) - responseCode = 400
+2018-01-25 12:55:50 INFO  HttpsURLConnectionClient.getFilteredTasks(265) - responseCode = 200
+2018-01-25 12:55:54 INFO  HttpsURLConnectionClient.refreshUserInfo(652) - responseCode = 400
+2018-01-25 12:55:54 INFO  HttpsURLConnectionClient.getFilteredTasks(265) - responseCode = 200
+2018-01-25 12:55:56 INFO  HttpsURLConnectionClient.refreshUserInfo(652) - responseCode = 400
+2018-01-25 12:55:56 INFO  HttpsURLConnectionClient.getFilteredTasks(265) - responseCode = 200
+2018-01-25 13:31:45 INFO  HttpsURLConnectionClient.getWebResourceAsStream(524) - responseCode = 200
+2018-01-25 13:31:48 INFO  HttpsURLConnectionClient.refreshUserInfo(652) - responseCode = 400
+2018-01-25 13:31:51 INFO  HttpsURLConnectionClient.getFilteredTasks(265) - responseCode = 200
+2018-01-25 13:31:56 INFO  JavaRushTasksProjectComponent.projectClosing(157) - ---------- Project JavaRushTasks closed ----------
+
+2018-01-25 14:32:50 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+
+2018-01-25 14:32:50 INFO  ApacheHttpClient.createAsyncHttpClient(125) - Выбрано 1 прокси.
+2018-01-25 14:32:50 INFO  ApacheHttpClient.<init>(85) - ApacheHttpClient проинстанциирован успешно.
+2018-01-25 14:32:55 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-25 14:32:55 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-25 14:32:55 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-25 14:32:55 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-01-25 14:32:56 INFO  ApacheHttpClient.login(213) - responseCode = 200
+2018-01-25 14:32:56 INFO  ApacheHttpClient.login(244) - JSESSIONID=9DBAD312E972D27AD2AADDAE53521B5D
+2018-01-25 14:32:56 INFO  ApacheHttpClient.refreshUserInfo(272) - responseCode = 200
+2018-01-25 14:32:56 INFO  ApacheHttpClient.refreshUserInfo(278) - Информация о пользователе получена.
+2018-01-25 14:32:56 INFO  ApacheHttpClient.startGA(32) - GAService запущен.
+2018-01-25 14:32:56 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-01-25 14:33:04 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-25 14:33:04 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-25 14:33:18 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-25 14:33:18 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-01-25 14:33:46 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-01-25 14:33:46 INFO  ApacheHttpClient.testConnection(185) - result = true
