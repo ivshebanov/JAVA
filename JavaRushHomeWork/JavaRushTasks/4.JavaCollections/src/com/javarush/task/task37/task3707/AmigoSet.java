@@ -6,7 +6,7 @@ import java.util.*;
 public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneable, Set<E> {
 
     private static final Object PRESENT = new Object();
-    private transient HashMap<E,Object> map;
+    private transient HashMap<E, Object> map;
 
     public AmigoSet() {
         this.map = new HashMap<>();
@@ -17,12 +17,12 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
     }
 
     public AmigoSet(Collection<? extends E> collection) {
-        this.map = new HashMap<>(Math.max((int) (collection.size()/.75f) + 1, 16));
+        this.map = new HashMap<>(Math.max((int) (collection.size() / .75f) + 1, 16));
         addAll(collection);
     }
 
     @Override
-    public boolean add(E e){
+    public boolean add(E e) {
         return this.map.put(e, PRESENT) == null;
     }
 
@@ -85,5 +85,17 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    @Override
+    public Object clone() {
+        AmigoSet<E> amigoSet;
+        try {
+            amigoSet = new AmigoSet<>();
+            amigoSet.map = (HashMap<E, Object>) map.clone();
+        } catch (Exception e) {
+            throw new InternalError();
+        }
+        return amigoSet;
     }
 }
