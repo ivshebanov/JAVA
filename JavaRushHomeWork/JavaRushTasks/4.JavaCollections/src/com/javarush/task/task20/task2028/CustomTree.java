@@ -2,8 +2,10 @@ package com.javarush.task.task20.task2028;
 
 import java.io.Serializable;
 import java.util.AbstractList;
+import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.List;
+import java.util.Queue;
 
 /*
 Построй дерево(1)
@@ -12,14 +14,71 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
 
     Entry<String> root;
 
+    public CustomTree() {
+        this.root = new Entry<>("6");
+        this.root.parent = null;
+    }
+
+    public String getParent(String name) {
+        if (name.isEmpty()) return "not found";
+        Queue<Entry<String>> queue = new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Entry<String> el = queue.poll();
+            if (el.parent != null) {
+                if (el.elementName.equals(name)) return el.parent.elementName;
+            }
+            if (el.leftChild != null) queue.add(el.leftChild);
+            if (el.rightChild != null) queue.add(el.rightChild);
+        }
+        return "not found";
+    }
+
     @Override
-    public String get(int index) {
-        throw new UnsupportedOperationException();
+    public boolean add(String elementName) {
+        if (elementName.isEmpty()) return false;
+        Queue<Entry<String>> queue = new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Entry<String> el = queue.poll();
+            if (el.isAvailableToAddChildren()) {
+                if (el.availableToAddLeftChildren) {
+                    el.leftChild = new Entry<>(elementName);
+                    el.leftChild.parent = el;
+                    el.checkChildren();
+                    return true;
+                } else if (el.availableToAddRightChildren) {
+                    el.rightChild = new Entry<>(elementName);
+                    el.rightChild.parent = el;
+                    el.checkChildren();
+                    return true;
+                }
+            } else {
+                if (el.leftChild != null) queue.add(el.leftChild);
+                if (el.rightChild != null) queue.add(el.rightChild);
+            }
+        }
+        return false;
     }
 
     @Override
     public int size() {
-        return 0;
+        if (root == null) return 0;
+        Queue<Entry<String>> queue = new ArrayDeque<>();
+        queue.add(root);
+        int count = 0;
+        while (!queue.isEmpty()) {
+            count++;
+            Entry<String> el = queue.poll();
+            if (el.leftChild != null) queue.add(el.leftChild);
+            if (el.rightChild != null) queue.add(el.rightChild);
+        }
+        return count - 1;
+    }
+
+    @Override
+    public String get(int index) {
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -75,6 +134,19 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
 
         public boolean isAvailableToAddChildren() {
             return availableToAddLeftChildren || availableToAddRightChildren;
+        }
+
+        @Override
+        public String toString() {
+            return "Entry{" +
+                    "elementName='" + elementName + '\'' +
+                    ", lineNumber=" + lineNumber +
+                    ", availableToAddLeftChildren=" + availableToAddLeftChildren +
+                    ", availableToAddRightChildren=" + availableToAddRightChildren +
+                    ", parent=" + parent +
+                    ", leftChild=" + leftChild +
+                    ", rightChild=" + rightChild +
+                    '}';
         }
     }
 }
