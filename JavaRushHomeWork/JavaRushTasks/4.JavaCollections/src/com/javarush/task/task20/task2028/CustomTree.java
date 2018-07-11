@@ -12,11 +12,24 @@ import java.util.Queue;
 */
 public class CustomTree extends AbstractList<String> implements Cloneable, Serializable {
 
-    Entry<String> root;
+    private static Entry<String> root;
 
+    static {
+        root = new Entry<>("0");
+    }
     public CustomTree() {
-        this.root = new Entry<>("6");
-        this.root.parent = null;
+
+    }
+
+    public static void printTree() {
+        Queue<Entry> queue = new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Entry node = queue.poll();
+            System.out.print(" (" + node.elementName + ") ");
+            if (node.leftChild != null) queue.add(node.leftChild);
+            if (node.rightChild != null) queue.add(node.rightChild);
+        }
     }
 
     public String getParent(String name) {
@@ -32,6 +45,37 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
             if (el.rightChild != null) queue.add(el.rightChild);
         }
         return "not found";
+    }
+
+    public boolean remove(Object o) {
+        if (o == null) throw new UnsupportedOperationException();
+        String name;
+        try {
+            name = (String) o;
+        } catch (Exception e) {
+            throw new UnsupportedOperationException();
+        }
+        Queue<Entry<String>> queue = new ArrayDeque<>();
+        queue.add(root);
+        Entry<String> el;
+        while (!queue.isEmpty()) {
+            el = queue.poll();
+            if (!el.availableToAddLeftChildren) {
+                if (el.leftChild.elementName.equals(name)) {
+                    el.leftChild = null;
+                    el.checkChildren();
+                    return true;
+                }else queue.add(el.leftChild);
+            }
+            if (!el.availableToAddRightChildren) {
+                if (el.rightChild.elementName.equals(name)) {
+                    el.rightChild = null;
+                    el.checkChildren();
+                    return true;
+                }else queue.add(el.rightChild);
+            }
+        }
+        return false;
     }
 
     @Override
