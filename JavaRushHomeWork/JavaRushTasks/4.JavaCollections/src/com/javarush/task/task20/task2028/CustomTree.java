@@ -3,7 +3,9 @@ package com.javarush.task.task20.task2028;
 import java.io.Serializable;
 import java.util.AbstractList;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /* 
 Построй дерево(1)
@@ -12,9 +14,62 @@ public class CustomTree extends AbstractList<String> implements Serializable, Cl
 
     Entry<String> root;
 
+    public CustomTree() {
+        this.root = new Entry<>("0");
+    }
+
+    @Override
+    public boolean add(String elementName) {
+        if (elementName == null) return false;
+        Queue<Entry<String>> que = new LinkedList<>();
+        que.offer(root);
+        while (!que.isEmpty()) {
+            Entry<String> el = que.poll();
+            if (el.isAvailableToAddChildren()) {
+                if (el.availableToAddLeftChildren) {
+                    el.leftChild = new Entry<>(elementName);
+                    el.leftChild.parent = el;
+                    el.checkChildren();
+                    return true;
+                }
+                if (el.availableToAddRightChildren) {
+                    el.rightChild = new Entry<>(elementName);
+                    el.rightChild.parent = el;
+                    el.checkChildren();
+                    return true;
+                }
+            }
+            if (el.leftChild != null) que.offer(el.leftChild);
+            if (el.rightChild != null) que.offer(el.rightChild);
+        }
+        return false;
+    }
+
     @Override
     public int size() {
-        return 0;
+        Queue<Entry<String>> que = new LinkedList<>();
+        que.offer(root);
+        int count = -1;
+        while (!que.isEmpty()) {
+            Entry<String> el = que.poll();
+            count++;
+            if (el.leftChild != null) que.offer(el.leftChild);
+            if (el.rightChild != null) que.offer(el.rightChild);
+        }
+        return count;
+    }
+
+    public String getParent(String nameChild) {
+        if (nameChild == null) return "not found";
+        Queue<Entry<String>> que = new LinkedList<>();
+        que.offer(root);
+        while (!que.isEmpty()) {
+            Entry<String> el = que.poll();
+            if (el.elementName.equals(nameChild)) return el.parent.elementName;
+            if (el.leftChild != null) que.offer(el.leftChild);
+            if (el.rightChild != null) que.offer(el.rightChild);
+        }
+        return "not found";
     }
 
     static class Entry<T> implements Serializable {
@@ -29,14 +84,14 @@ public class CustomTree extends AbstractList<String> implements Serializable, Cl
             this.availableToAddRightChildren = true;
         }
 
-        public void checkChildren(){
+        public void checkChildren() {
             if (leftChild != null) availableToAddLeftChildren = false;
             else availableToAddLeftChildren = true;
             if (rightChild != null) availableToAddRightChildren = false;
             else availableToAddRightChildren = true;
         }
 
-        public boolean isAvailableToAddChildren(){
+        public boolean isAvailableToAddChildren() {
             return availableToAddLeftChildren || availableToAddRightChildren;
         }
     }
