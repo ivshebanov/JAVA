@@ -72,6 +72,39 @@ public class CustomTree extends AbstractList<String> implements Serializable, Cl
         return "not found";
     }
 
+    public boolean remove(Object o) {
+        if (o == null) throw new UnsupportedOperationException();
+        String nameObjectRemove;
+        try {
+            nameObjectRemove = (String) o;
+        } catch (Exception ex) {
+            throw new UnsupportedOperationException();
+        }
+        Queue<Entry<String>> que = new LinkedList<>();
+        que.offer(root);
+        while (!que.isEmpty()) {
+            Entry<String> el = que.poll();
+            el.checkChildren();
+            if (el.parent != null) {
+                if (el.parent.leftChild != null) {
+                    if (el.parent.leftChild.elementName.equals(nameObjectRemove)) {
+                        el.parent.leftChild = null;
+                        return true;
+                    }
+                }
+                if (el.parent.rightChild != null) {
+                    if (el.parent.rightChild.elementName.equals(nameObjectRemove)) {
+                        el.parent.rightChild = null;
+                        return true;
+                    }
+                }
+            }
+            if (el.leftChild != null) que.offer(el.leftChild);
+            if (el.rightChild != null) que.offer(el.rightChild);
+        }
+        return false;
+    }
+
     static class Entry<T> implements Serializable {
         String elementName;
         int lineNumber;
