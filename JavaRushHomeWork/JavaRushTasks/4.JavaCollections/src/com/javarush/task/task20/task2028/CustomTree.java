@@ -10,9 +10,35 @@ import java.util.List;
 */
 public class CustomTree extends AbstractList<String> implements Serializable, Cloneable {
 
+    Entry<String> root;
+
     @Override
     public int size() {
         return 0;
+    }
+
+    static class Entry<T> implements Serializable {
+        String elementName;
+        int lineNumber;
+        boolean availableToAddLeftChildren, availableToAddRightChildren;
+        Entry<T> parent, leftChild, rightChild;
+
+        public Entry(String elementName) {
+            this.elementName = elementName;
+            this.availableToAddLeftChildren = true;
+            this.availableToAddRightChildren = true;
+        }
+
+        public void checkChildren(){
+            if (leftChild != null) availableToAddLeftChildren = false;
+            else availableToAddLeftChildren = true;
+            if (rightChild != null) availableToAddRightChildren = false;
+            else availableToAddRightChildren = true;
+        }
+
+        public boolean isAvailableToAddChildren(){
+            return availableToAddLeftChildren || availableToAddRightChildren;
+        }
     }
 
     @Override
