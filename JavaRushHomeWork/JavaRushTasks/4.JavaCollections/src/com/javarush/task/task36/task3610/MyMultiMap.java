@@ -55,7 +55,7 @@ public class MyMultiMap<K, V> extends HashMap<K, V> implements Cloneable, Serial
             return null;
         } else {
             LinkedList<V> list = (LinkedList<V>) map.get(key);
-            if (list.isEmpty()){
+            if (list.isEmpty()) {
                 map.remove(keyy);
                 return null;
             } else {
@@ -70,15 +70,21 @@ public class MyMultiMap<K, V> extends HashMap<K, V> implements Cloneable, Serial
     @Override
     public Set<K> keySet() {
         //напишите тут ваш код
-
-        return new HashSet<>();
+        HashSet<K> resultSet = new HashSet<>();
+        for (Entry<K, List<V>> entry : map.entrySet()) {
+            resultSet.add(entry.getKey());
+        }
+        return resultSet;
     }
 
     @Override
     public Collection<V> values() {
         //напишите тут ваш код
-
-        return new ArrayList<>();
+        Collection<V> resultCollection = new ArrayList<>();
+        for (Entry<K, List<V>> entry : map.entrySet()) {
+            resultCollection.addAll(entry.getValue());
+        }
+        return resultCollection;
     }
 
     @Override
