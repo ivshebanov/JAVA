@@ -26,51 +26,40 @@ public class MyMultiMap<K, V> extends HashMap<K, V> implements Cloneable, Serial
     @Override
     public V put(K key, V value) {
         //напишите тут ваш код
-        if (map.containsKey(key)) {
-            LinkedList<V> list = (LinkedList<V>) map.get(key);
-            if (list.size() < repeatCount) {
-                list.addLast(value);
-                map.put(key, list);
-            } else if (list.size() == repeatCount) {
-                V el = list.getLast();
-                list.removeFirst();
-                list.addLast(value);
-                map.put(key, list);
-                return el;
-            }
+        List<V> list = map.get(key);
+        V resultElement = null;
+        if (list == null) {
+            list = new ArrayList<>();
         } else {
-            LinkedList<V> list = new LinkedList<>();
-            list.addLast(value);
-            map.put(key, list);
-            return null;
+            resultElement = list.get(list.size() - 1);
+            if (list.size() == repeatCount) {
+                list.remove(0);
+            }
         }
-        return null;
+        list.add(value);
+        map.put(key, list);
+        return resultElement;
     }
 
     @Override
     public V remove(Object key) {
         //напишите тут ваш код
-        K keyy = (K) key;
-        if (!map.containsKey(keyy)) {
+        List<V> list = map.get(key);
+        if (list == null) {
             return null;
-        } else {
-            LinkedList<V> list = (LinkedList<V>) map.get(key);
-            if (list.isEmpty()) {
-                map.remove(keyy);
-                return null;
-            } else {
-                V el = list.getFirst();
-                list.removeFirst();
-                map.put(keyy, list);
-                return el;
-            }
         }
+        V resultElement = list.get(0);
+        list.remove(0);
+        if (list.isEmpty()) {
+            map.remove(key);
+        }
+        return resultElement;
     }
 
     @Override
     public Set<K> keySet() {
         //напишите тут ваш код
-        HashSet<K> resultSet = new HashSet<>();
+        Set<K> resultSet = new HashSet<>();
         for (Entry<K, List<V>> entry : map.entrySet()) {
             resultSet.add(entry.getKey());
         }
