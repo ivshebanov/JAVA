@@ -1,7 +1,14 @@
 package com.javarush.task.task36.task3610;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 
 public class MyMultiMap<K, V> extends HashMap<K, V> implements Cloneable, Serializable {
     static final long serialVersionUID = 123456789L;
