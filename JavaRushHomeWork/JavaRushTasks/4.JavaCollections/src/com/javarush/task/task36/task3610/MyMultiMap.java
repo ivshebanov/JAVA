@@ -79,23 +79,13 @@ public class MyMultiMap<K, V> extends HashMap<K, V> implements Cloneable, Serial
     @Override
     public boolean containsKey(Object key) {
         //напишите тут ваш код
-        K keyy = (K) key;
-        return map.containsKey(keyy);
+        return map.containsKey(key);
     }
 
     @Override
     public boolean containsValue(Object value) {
         //напишите тут ваш код
-        V v = (V) value;
-        for (Entry<K, List<V>> entry : map.entrySet()) {
-            List<V> list = entry.getValue();
-            for (V el : list) {
-                if (el == v) {
-                    return true;
-                }
-            }
-        }
-        return false;
+        return values().contains(value);
     }
 
     @Override
