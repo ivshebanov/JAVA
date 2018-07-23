@@ -1,5 +1,6 @@
 package com.javarush.task.task33.task3310;
 
+import com.javarush.task.task33.task3310.strategy.DualHashBidiMapStorageStrategy;
 import com.javarush.task.task33.task3310.strategy.FileStorageStrategy;
 import com.javarush.task.task33.task3310.strategy.HashBiMapStorageStrategy;
 import com.javarush.task.task33.task3310.strategy.HashMapStorageStrategy;
@@ -18,6 +19,7 @@ public class Solution {
         testStrategy(new FileStorageStrategy(), 1000);
         testStrategy(new OurHashBiMapStorageStrategy(), 1000);
         testStrategy(new HashBiMapStorageStrategy(), 1000);
+        testStrategy(new DualHashBidiMapStorageStrategy(), 1000);
     }
 
     public static Set<Long> getIds(Shortener shortener, Set<String> strings) {
