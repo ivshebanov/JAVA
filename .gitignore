@@ -67,6 +67,7 @@ bin/
 .idea
 target/
 /out/
+out/
 .idea_modules/
 .repository/
 *.iml
