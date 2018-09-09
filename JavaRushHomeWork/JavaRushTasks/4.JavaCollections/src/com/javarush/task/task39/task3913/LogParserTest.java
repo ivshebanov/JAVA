@@ -14,8 +14,9 @@ import java.util.Set;
 
 public class LogParserTest {
 
-    private static final String dateAfter = "30.08.2012";
-    private static final String dateBefore = "19.03.2016";
+    private static final String DATE_AFTER = "30.08.2012";
+    private static final String DATE_BEFORE = "19.03.2016";
+    private static final String USER = "Eduard Petrovich Morozko";
 
     private LogParser logParser;
     private Date after;
@@ -29,8 +30,8 @@ public class LogParserTest {
 
         SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy");
         try {
-            this.after = formatForDateNow.parse(dateAfter);
-            this.before = formatForDateNow.parse(dateBefore);
+            this.after = formatForDateNow.parse(DATE_AFTER);
+            this.before = formatForDateNow.parse(DATE_BEFORE);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -55,6 +56,11 @@ public class LogParserTest {
 
     @Test
     public void getIPsForUser() {
+        Set<String> currentResult = logParser.getIPsForUser(USER, after, before);
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add("146.34.15.5");
+        correctResult.add("127.0.0.1");
+        Assert.assertEquals(correctResult, currentResult);
     }
 
     @Test

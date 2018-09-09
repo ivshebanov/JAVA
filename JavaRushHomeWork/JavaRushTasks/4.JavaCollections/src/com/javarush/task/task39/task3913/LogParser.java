@@ -21,9 +21,9 @@ import static java.util.Collections.emptySet;
 
 public class LogParser implements IPQuery {
 
-    private static final String patternGetDate = "(\\d{1})+.(\\d{1})+.\\d{4}";
-    private static final String patternGetTime = "(\\d{1})+:(\\d{1})+:(\\d{1})+";
-    private static final String patternGetIp = "((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)";
+    private static final String PATTERN_GET_DATE = "(\\d{1})+.(\\d{1})+.\\d{4}";
+    private static final String PATTERN_GET_TIME = "(\\d{1})+:(\\d{1})+:(\\d{1})+";
+    private static final String PATTERN_GET_IP = "((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)";
 
     private Path logDir;
 
@@ -54,7 +54,12 @@ public class LogParser implements IPQuery {
 
     @Override
     public Set<String> getIPsForUser(String user, Date after, Date before) {
-        return null;
+        if (logDir == null || !logDir.toFile().isFile() || user == null || user.isEmpty()) {
+            return emptySet();
+        }
+        List<OneLog> listAllLogsForPeriod = getLogsForPeriod(after, before);
+        List<OneLog> listLogsForUser = getLogForUser(listAllLogsForPeriod, user);
+        return getSetOfUniqueIPs(listLogsForUser);
     }
 
     @Override
@@ -65,6 +70,16 @@ public class LogParser implements IPQuery {
     @Override
     public Set<String> getIPsForStatus(Status status, Date after, Date before) {
         return null;
+    }
+
+    private List<OneLog> getLogForUser(List<OneLog> logs, String user) {
+        List<OneLog> resultLogs = new ArrayList<>();
+        for (OneLog log : logs) {
+            if (log.getName().equals(user)) {
+                resultLogs.add(log);
+            }
+        }
+        return resultLogs;
     }
 
     private Set<String> getSetOfUniqueIPs(List<OneLog> logs) {
@@ -150,7 +165,7 @@ public class LogParser implements IPQuery {
     }
 
     private String getIpLog(String log) {
-        String ip = patternPars(log, patternGetIp);
+        String ip = patternPars(log, PATTERN_GET_IP);
         ip = ip.substring(1);
         return ip;
     }
@@ -181,13 +196,13 @@ public class LogParser implements IPQuery {
     }
 
     private String getDateStringLog(String log) {
-        String date = patternPars(log, patternGetDate);
+        String date = patternPars(log, PATTERN_GET_DATE);
         date = date.substring(2);
         return date;
     }
 
     private String getTimeStringLog(String log) {
-        String time = patternPars(log, patternGetTime);
+        String time = patternPars(log, PATTERN_GET_TIME);
         time = time.substring(2);
         return time;
     }
