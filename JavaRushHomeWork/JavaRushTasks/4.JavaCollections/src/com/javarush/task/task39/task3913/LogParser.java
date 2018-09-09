@@ -11,6 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -30,8 +31,19 @@ public class LogParser implements IPQuery {
         String path = "/Users/iliashebanov/Documents/Java/JavaRush/JavaRushHomeWork/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task39/task3913/logs/example.log";
         Path path1 = Paths.get(path);
         LogParser logParser = new LogParser(path1);
-        String s = "146.34.15.5\tEduard Petrovich Morozko\t03.01.2014 03:45:23\tLOGIN\tOK\n";
-        OneLog status = logParser.getOneLog(s);
+        Date after = new Date();
+        Date before = new Date();
+
+        String dateAfter = "30.08.2012";
+        String dateBefore = "19.03.2016";
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy");
+        try {
+            after = formatForDateNow.parse(dateAfter);
+            before = formatForDateNow.parse(dateBefore);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        int status = logParser.getNumberOfUniqueIPs(after, before);
         System.out.println(status);
     }
 
@@ -42,8 +54,9 @@ public class LogParser implements IPQuery {
         }
 
         List<OneLog> list = getLogsForPeriod(after, before);
+        Set<String> resultNumberOfUniqueIPs = getSetOfUniqueIPs(list);
 
-        return 0;
+        return resultNumberOfUniqueIPs.size();
     }
 
     @Override
@@ -64,6 +77,17 @@ public class LogParser implements IPQuery {
     @Override
     public Set<String> getIPsForStatus(Status status, Date after, Date before) {
         return null;
+    }
+
+    private Set<String> getSetOfUniqueIPs(List<OneLog> logs) {
+        if (logs == null || logs.size() == 0) {
+            return null;
+        }
+        Set<String> resultSet = new HashSet<>();
+        for (OneLog log : logs) {
+            resultSet.add(log.getIp());
+        }
+        return resultSet;
     }
 
     private List<OneLog> getLogsForPeriod(Date after, Date before) {
@@ -106,18 +130,15 @@ public class LogParser implements IPQuery {
     }
 
     private boolean checkData(Date after, Date before, Date current) {
-        Date afterNew = after;
-        Date beforeNew = before;
-
         if (after == null) {
-            afterNew = new Date(0);
+            after = new Date(0);
         }
 
         if (before == null) {
-            beforeNew = new Date();
+            before = new Date();
         }
 
-        return (afterNew.getTime() < current.getTime()) && (beforeNew.getTime() > current.getTime());
+        return current.after(after) && current.before(before);
     }
 
     private OneLog getOneLog(String log) {
