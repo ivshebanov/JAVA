@@ -64,7 +64,12 @@ public class LogParser implements IPQuery {
 
     @Override
     public Set<String> getIPsForEvent(Event event, Date after, Date before) {
-        return null;
+        if (logDir == null || !logDir.toFile().isFile() || event == null) {
+            return emptySet();
+        }
+        List<OneLog> listAllLogsForPeriod = getLogsForPeriod(after, before);
+        List<OneLog> listLogsForUser = getLogForEvent(listAllLogsForPeriod, event);
+        return getSetOfUniqueIPs(listLogsForUser);
     }
 
     @Override
@@ -72,7 +77,23 @@ public class LogParser implements IPQuery {
         return null;
     }
 
+    private List<OneLog> getLogForEvent(List<OneLog> logs, Event event){
+        if (logs == null || logs.size() == 0 || event == null) {
+            return emptyList();
+        }
+        List<OneLog> resultLogs = new ArrayList<>();
+        for (OneLog log : logs) {
+            if (log.getEvent().equals(event)) {
+                resultLogs.add(log);
+            }
+        }
+        return resultLogs;
+    }
+
     private List<OneLog> getLogForUser(List<OneLog> logs, String user) {
+        if (logs == null || logs.size() == 0 || user == null || user.isEmpty()) {
+            return emptyList();
+        }
         List<OneLog> resultLogs = new ArrayList<>();
         for (OneLog log : logs) {
             if (log.getName().equals(user)) {

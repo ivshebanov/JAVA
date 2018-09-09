@@ -9,5 +9,6 @@ public class Solution {
         System.out.println(logParser.getNumberOfUniqueIPs(null, new Date()));
         System.out.println(logParser.getUniqueIPs(null, new Date()));
         System.out.println(logParser.getIPsForUser("Eduard Petrovich Morozko", null, new Date()));
+        System.out.println(logParser.getIPsForEvent(Event.WRITE_MESSAGE, null, new Date()));
     }
 }

@@ -65,6 +65,11 @@ public class LogParserTest {
 
     @Test
     public void getIPsForEvent() {
+        Set<String> currentResult = logParser.getIPsForEvent(Event.WRITE_MESSAGE, after, before);
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add("146.34.15.5");
+        correctResult.add("127.0.0.1");
+        Assert.assertEquals(correctResult, currentResult);
     }
 
     @Test
