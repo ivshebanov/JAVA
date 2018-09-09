@@ -109,39 +109,43 @@ public class LogParser implements IPQuery {
     }
 
     private OneLog getOneLog(String log) {
-        String[] element = log.split(" ");
+        if (log == null || log.isEmpty()){
+            return null;
+        }
 
-        String ip = getIpLog(element);
-        String name = getNameLog(element);
-        Date date = getDateLog(element);
-        Event event = getEventLog(element);
-        String parameter = getParameter(element);
-        Status status = getStatusLog(element);
+        String ip = getIpLog(log);
+        String name = getNameLog(log);
+        Date date = getDateLog(log);
+        Event event = getEventLog(log);
+        String parameter = getParameter(log);
+        Status status = getStatusLog(log);
 
         return new OneLog(ip, name, date, event, parameter, status);
     }
 
-    private String getIpLog(String[] element) {
+    private String getIpLog(String log) {
         return null;
     }
 
-    private String getNameLog(String[] log) {
+    private String getNameLog(String log) {
         return null;
     }
 
-    private Date getDateLog(String[] log) {
+    private Date getDateLog(String log) {
         return null;
     }
 
-    private Event getEventLog(String[] log) {
+    private Event getEventLog(String log) {
         return null;
     }
 
-    private String getParameter(String[] element) {
+    private String getParameter(String log) {
         return null;
     }
 
-    private Status getStatusLog(String[] element) {
-        return null;
+    private Status getStatusLog(String log) {
+        String[] element = log.split(" ");
+        String stringStatus = element[element.length];
+        return Status.valueOf(stringStatus);
     }
 }
