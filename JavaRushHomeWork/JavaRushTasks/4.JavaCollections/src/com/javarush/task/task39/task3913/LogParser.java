@@ -30,9 +30,9 @@ public class LogParser implements IPQuery {
         String path = "/Users/iliashebanov/Documents/Java/JavaRush/JavaRushHomeWork/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task39/task3913/logs/example.log";
         Path path1 = Paths.get(path);
         LogParser logParser = new LogParser(path1);
-        String s = "146.34.15.5\tEduard Petrovich Morozko\t13.09.2013 5:04:50\tDOWNLOAD_PLUGIN\tOK\n";
-        Event status = logParser.getEventLog(s);
-        System.out.println(status.name());
+        String s = "120.120.120.122\tAmigo\t29.2.2028 5:4:7\tSOLVE_TASK 18\tOK";
+        OneLog status = logParser.getOneLog(s);
+        System.out.println(status);
     }
 
     @Override
@@ -125,6 +125,11 @@ public class LogParser implements IPQuery {
             return null;
         }
 
+        log = log.replace('\t', ' ');
+        if (log.contains("\n")) {
+            log = log.replace(log.substring(log.length() - 1), "");
+        }
+
         String ip = getIpLog(log);
         String name = getNameLog(log);
         Date date = getDateLog(log);
@@ -136,9 +141,6 @@ public class LogParser implements IPQuery {
     }
 
     private String getIpLog(String log) {
-        log = log.replace('\t', ' ');
-        log = log.replace(log.substring(log.length() - 1), "");
-
         String pattern = "((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)";
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(log);
@@ -152,13 +154,10 @@ public class LogParser implements IPQuery {
     }
 
     private String getNameLog(String log) {
-        return null;
+        return "";
     }
 
     private Date getDateLog(String log) {
-        log = log.replace('\t', ' ');
-        log = log.replace(log.substring(log.length() - 1), "");
-
         String pattern = "(\\d{1})+.(\\d{1})+.\\d{4}";
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(log);
@@ -184,14 +183,12 @@ public class LogParser implements IPQuery {
     }
 
     private Event getEventLog(String log) {
-        log = log.replace('\t', ' ');
-        log = log.replace(log.substring(log.length() - 1), "");
         String[] elementLog = log.split(" ");
         Event[] events = Event.values();
 
-        for (Event element : events){
-            for (String str : elementLog){
-                if (element.name().equals(str)){
+        for (Event element : events) {
+            for (String str : elementLog) {
+                if (element.name().equals(str)) {
                     return element;
                 }
             }
@@ -200,12 +197,25 @@ public class LogParser implements IPQuery {
     }
 
     private String getParameter(String log) {
-        return null;
+        Event event = getEventLog(log);
+        if (event == null) {
+            return null;
+        }
+
+        String resultStr = "";
+        if (event.equals(Event.SOLVE_TASK) || event.equals(Event.DONE_TASK)) {
+            String[] elements = log.split(" ");
+            for (int i = 0; i < elements.length; i++) {
+                if (elements[i].equals(Event.SOLVE_TASK.name()) || elements[i].equals(Event.DONE_TASK.name())) {
+                    resultStr = elements[i + 1];
+                    break;
+                }
+            }
+        }
+        return resultStr;
     }
 
     private Status getStatusLog(String log) {
-        log = log.replace('\t', ' ');
-        log = log.replace(log.substring(log.length() - 1), "");
         String[] element = log.split(" ");
         String stringStatus = element[element.length - 1];
         return Status.valueOf(stringStatus);

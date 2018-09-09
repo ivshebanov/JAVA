@@ -42,4 +42,16 @@ public class OneLog {
     public Status getStatus() {
         return status;
     }
+
+    @Override
+    public String toString() {
+        return "OneLog{" +
+                "ip='" + ip + '\'' +
+                ", name='" + name + '\'' +
+                ", date=" + date +
+                ", event=" + event +
+                ", parameter='" + parameter + '\'' +
+                ", status=" + status +
+                '}';
+    }
 }
