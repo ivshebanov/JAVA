@@ -18,6 +18,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static java.util.Collections.emptyList;
+import static java.util.Collections.emptySet;
 
 public class LogParser implements IPQuery {
 
@@ -61,7 +62,11 @@ public class LogParser implements IPQuery {
 
     @Override
     public Set<String> getUniqueIPs(Date after, Date before) {
-        return null;
+        if (logDir == null || !logDir.toFile().isFile()) {
+            return emptySet();
+        }
+        List<OneLog> list = getLogsForPeriod(after, before);
+        return getSetOfUniqueIPs(list);
     }
 
     @Override
