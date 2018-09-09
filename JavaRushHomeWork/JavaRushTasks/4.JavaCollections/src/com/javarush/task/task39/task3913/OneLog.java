@@ -7,13 +7,15 @@ public class OneLog {
     private String name;
     private Date date;
     private Event event;
+    private String parameter;
     private Status status;
 
-    public OneLog(String ip, String name, Date date, Event event, Status status) {
+    public OneLog(String ip, String name, Date date, Event event, String parameter, Status status) {
         this.ip = ip;
         this.name = name;
         this.date = date;
         this.event = event;
+        this.parameter = parameter;
         this.status = status;
     }
 
@@ -21,39 +23,23 @@ public class OneLog {
         return ip;
     }
 
-    public void setIp(String ip) {
-        this.ip = ip;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public Event getEvent() {
         return event;
     }
 
-    public void setEvent(Event event) {
-        this.event = event;
+    public String getParameter() {
+        return parameter;
     }
 
     public Status getStatus() {
         return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
     }
 }
