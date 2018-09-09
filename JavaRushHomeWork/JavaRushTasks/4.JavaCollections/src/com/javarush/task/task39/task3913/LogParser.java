@@ -30,8 +30,8 @@ public class LogParser implements IPQuery {
         String path = "/Users/iliashebanov/Documents/Java/JavaRush/JavaRushHomeWork/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task39/task3913/logs/example.log";
         Path path1 = Paths.get(path);
         LogParser logParser = new LogParser(path1);
-        String s = "192.168.100.2\tVasya Pupkin\t30.01.2014 12:56:22\tSOLVE_TASK 18\tERROR\n";
-        Status status = logParser.getStatusLog(s);
+        String s = "146.34.15.5\tEduard Petrovich Morozko\t13.09.2013 5:04:50\tDOWNLOAD_PLUGIN\tOK\n";
+        Event status = logParser.getEventLog(s);
         System.out.println(status.name());
     }
 
@@ -184,7 +184,18 @@ public class LogParser implements IPQuery {
     }
 
     private Event getEventLog(String log) {
+        log = log.replace('\t', ' ');
+        log = log.replace(log.substring(log.length() - 1), "");
+        String[] elementLog = log.split(" ");
+        Event[] events = Event.values();
 
+        for (Event element : events){
+            for (String str : elementLog){
+                if (element.name().equals(str)){
+                    return element;
+                }
+            }
+        }
         return null;
     }
 
