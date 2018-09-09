@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static java.util.Collections.emptyList;
 
@@ -109,7 +111,7 @@ public class LogParser implements IPQuery {
     }
 
     private OneLog getOneLog(String log) {
-        if (log == null || log.isEmpty()){
+        if (log == null || log.isEmpty()) {
             return null;
         }
 
@@ -124,7 +126,8 @@ public class LogParser implements IPQuery {
     }
 
     private String getIpLog(String log) {
-        String[] element = log.split(" ");
+        //((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)
+        String[] element = log.split("\t");
         return element[0];
     }
 
@@ -133,7 +136,31 @@ public class LogParser implements IPQuery {
     }
 
     private Date getDateLog(String log) {
-        return null;
+        log = log.replace('\t', ' ');
+        log = log.replace(log.substring(log.length() - 1), "");
+
+        String pattern = "\\d{2}.\\d{2}.\\d{4}";
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(log);
+
+        String date = "";
+        while (m.find()) {
+            date = m.start() + m.group();
+        }
+
+        String pattern1 = "\\d{2}:\\d{2}:\\d{2}";
+        Pattern p1 = Pattern.compile(pattern1);
+        Matcher m1 = p1.matcher(log);
+
+        String time = "";
+        while (m1.find()) {
+            time = m1.start() + m1.group();
+        }
+
+        date = date.substring(2);
+        time = time.substring(2);
+
+        return getDateByDateAndTime(date, time);
     }
 
     private Event getEventLog(String log) {
@@ -145,8 +172,8 @@ public class LogParser implements IPQuery {
     }
 
     private Status getStatusLog(String log) {
-        String[] element = log.split(" ");
-        String stringStatus = element[element.length];
+        String[] element = log.split("\t");
+        String stringStatus = element[element.length - 1];
         return Status.valueOf(stringStatus);
     }
 }
