@@ -29,7 +29,7 @@ public class OurHashMapStorageStrategy implements StorageStrategy {
 
     @Override
     public void put(Long key, String value) {
-        addEntry(hash(key), key, value, indexFor(hash(key),table.length));
+        addEntry(hash(key), key, value, indexFor(hash(key), table.length));
     }
 
     @Override

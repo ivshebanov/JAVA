@@ -40,10 +40,8 @@ bin/
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 # ---------------------------------------------------------------------
 #
-*.iml
 #
 ## Directory-based project format:
-.idea/
 # if you remove the above rule, at least ignore the following:
 # User-specific stuff:
 # .idea/workspace.xml
@@ -54,7 +52,6 @@ bin/
 # .idea/dataSources.xml
 # .idea/sqlDataSources.xml
 # .idea/dynamic.xml
-# .idea/uiDesigner.xml
 # Gradle:
 # .idea/gradle.xml
 # .idea/libraries
@@ -65,15 +62,22 @@ bin/
 *.iws
 ## Plugin-specific files:
 # IntelliJ
+.idea/
+.idea
+target/
 /out/
-# mpeltonen/sbt-idea plugin
+out/
 .idea_modules/
+.repository/
+*.iml
+*.iws
+*.info
+*.properties
+/JavaRushPlugin.properties
 # JIRA plugin
 atlassian-ide-plugin.xml
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
 
 # ---------------------------------------------------------------------
 # Backup files
@@ -123,5 +127,3 @@ Temporary Items
 .apdisk
 
 # Folder config file
-JavaRushHomeWork/JavaRushHomeWork/
-JavaRushHomeWork/JavaRushTasks/out/
