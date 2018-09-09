@@ -154,32 +154,38 @@ public class LogParser implements IPQuery {
     }
 
     private String getNameLog(String log) {
+
         return "";
     }
 
     private Date getDateLog(String log) {
+        String date = getDateStringLog(log);
+        String time = getTimeStringLog(log);
+        return getDateByDateAndTime(date, time);
+    }
+
+    private String getDateStringLog(String log) {
         String pattern = "(\\d{1})+.(\\d{1})+.\\d{4}";
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(log);
-
         String date = "";
         while (m.find()) {
             date = m.start() + m.group();
         }
+        date = date.substring(2);
+        return date;
+    }
 
+    private String getTimeStringLog(String log) {
         String pattern1 = "(\\d{1})+:(\\d{1})+:(\\d{1})+";
         Pattern p1 = Pattern.compile(pattern1);
         Matcher m1 = p1.matcher(log);
-
         String time = "";
         while (m1.find()) {
             time = m1.start() + m1.group();
         }
-
-        date = date.substring(2);
         time = time.substring(2);
-
-        return getDateByDateAndTime(date, time);
+        return time;
     }
 
     private Event getEventLog(String log) {
