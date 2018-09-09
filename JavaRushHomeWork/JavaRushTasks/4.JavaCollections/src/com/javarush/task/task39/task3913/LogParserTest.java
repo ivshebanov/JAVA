@@ -1,10 +1,14 @@
 package com.javarush.task.task39.task3913;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class LogParserTest {
 
@@ -19,6 +23,22 @@ public class LogParserTest {
 
     @Test
     public void getNumberOfUniqueIPs() {
+        Date after = new Date();
+        Date before = new Date();
+
+        String dateAfter = "30.08.2012";
+        String dateBefore = "19.03.2016";
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy");
+        try {
+            after = formatForDateNow.parse(dateAfter);
+            before = formatForDateNow.parse(dateBefore);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        int currentResult = logParser.getNumberOfUniqueIPs(after, before);
+        int correctResult = 3;
+
+        Assert.assertEquals(correctResult, currentResult);
     }
 
     @Test
