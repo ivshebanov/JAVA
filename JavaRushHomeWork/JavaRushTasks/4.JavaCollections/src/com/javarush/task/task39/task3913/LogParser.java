@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -22,30 +21,14 @@ import static java.util.Collections.emptySet;
 
 public class LogParser implements IPQuery {
 
+    private static final String patternGetDate = "(\\d{1})+.(\\d{1})+.\\d{4}";
+    private static final String patternGetTime = "(\\d{1})+:(\\d{1})+:(\\d{1})+";
+    private static final String patternGetIp = "((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)";
+
     private Path logDir;
 
     public LogParser(Path logDir) {
         this.logDir = logDir;
-    }
-
-    public static void main(String[] args) {
-        String path = "/Users/iliashebanov/Documents/Java/JavaRush/JavaRushHomeWork/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task39/task3913/logs/example.log";
-        Path path1 = Paths.get(path);
-        LogParser logParser = new LogParser(path1);
-        Date after = new Date();
-        Date before = new Date();
-
-        String dateAfter = "30.08.2012";
-        String dateBefore = "19.03.2016";
-        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy");
-        try {
-            after = formatForDateNow.parse(dateAfter);
-            before = formatForDateNow.parse(dateBefore);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        int status = logParser.getNumberOfUniqueIPs(after, before);
-        System.out.println(status);
     }
 
     @Override
@@ -167,14 +150,7 @@ public class LogParser implements IPQuery {
     }
 
     private String getIpLog(String log) {
-        String pattern = "((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)";
-        Pattern p = Pattern.compile(pattern);
-        Matcher m = p.matcher(log);
-
-        String ip = "";
-        while (m.find()) {
-            ip = m.start() + m.group();
-        }
+        String ip = patternPars(log, patternGetIp);
         ip = ip.substring(1);
         return ip;
     }
@@ -184,7 +160,7 @@ public class LogParser implements IPQuery {
         String date = getDateStringLog(log);
         String[] element = log.split(" ");
 
-        String nameResult = "";
+        StringBuilder nameResult = new StringBuilder();
         for (String el : element) {
             if (el.equals(ip)) {
                 continue;
@@ -192,10 +168,10 @@ public class LogParser implements IPQuery {
             if (el.equals(date)) {
                 break;
             }
-            nameResult = nameResult + el + " ";
+            nameResult.append(el).append(" ");
         }
-        nameResult = nameResult.substring(0, nameResult.length() - 1);
-        return nameResult;
+        nameResult = new StringBuilder(nameResult.substring(0, nameResult.length() - 1));
+        return nameResult.toString();
     }
 
     private Date getDateLog(String log) {
@@ -205,27 +181,25 @@ public class LogParser implements IPQuery {
     }
 
     private String getDateStringLog(String log) {
-        String pattern = "(\\d{1})+.(\\d{1})+.\\d{4}";
-        Pattern p = Pattern.compile(pattern);
-        Matcher m = p.matcher(log);
-        String date = "";
-        while (m.find()) {
-            date = m.start() + m.group();
-        }
+        String date = patternPars(log, patternGetDate);
         date = date.substring(2);
         return date;
     }
 
     private String getTimeStringLog(String log) {
-        String pattern1 = "(\\d{1})+:(\\d{1})+:(\\d{1})+";
-        Pattern p1 = Pattern.compile(pattern1);
-        Matcher m1 = p1.matcher(log);
-        String time = "";
-        while (m1.find()) {
-            time = m1.start() + m1.group();
-        }
+        String time = patternPars(log, patternGetTime);
         time = time.substring(2);
         return time;
+    }
+
+    private String patternPars(String log, String pattern) {
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(log);
+        String data = "";
+        while (m.find()) {
+            data = m.start() + m.group();
+        }
+        return data;
     }
 
     private Event getEventLog(String log) {
