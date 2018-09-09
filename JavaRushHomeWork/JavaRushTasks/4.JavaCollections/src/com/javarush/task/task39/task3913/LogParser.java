@@ -36,10 +36,8 @@ public class LogParser implements IPQuery {
         if (logDir == null || !logDir.toFile().isFile()) {
             return 0;
         }
-
         List<OneLog> list = getLogsForPeriod(after, before);
         Set<String> resultNumberOfUniqueIPs = getSetOfUniqueIPs(list);
-
         return resultNumberOfUniqueIPs.size();
     }
 
@@ -68,16 +66,34 @@ public class LogParser implements IPQuery {
             return emptySet();
         }
         List<OneLog> listAllLogsForPeriod = getLogsForPeriod(after, before);
-        List<OneLog> listLogsForUser = getLogForEvent(listAllLogsForPeriod, event);
-        return getSetOfUniqueIPs(listLogsForUser);
+        List<OneLog> listLogsForEvent = getLogForEvent(listAllLogsForPeriod, event);
+        return getSetOfUniqueIPs(listLogsForEvent);
     }
 
     @Override
     public Set<String> getIPsForStatus(Status status, Date after, Date before) {
-        return null;
+        if (logDir == null || !logDir.toFile().isFile() || status == null) {
+            return emptySet();
+        }
+        List<OneLog> listAllLogsForPeriod = getLogsForPeriod(after, before);
+        List<OneLog> listLogsForStatus = getLogForStatus(listAllLogsForPeriod, status);
+        return getSetOfUniqueIPs(listLogsForStatus);
     }
 
-    private List<OneLog> getLogForEvent(List<OneLog> logs, Event event){
+    private List<OneLog> getLogForStatus(List<OneLog> logs, Status status) {
+        if (logs == null || logs.size() == 0 || status == null) {
+            return emptyList();
+        }
+        List<OneLog> resultLogs = new ArrayList<>();
+        for (OneLog log : logs) {
+            if (log.getStatus().equals(status)) {
+                resultLogs.add(log);
+            }
+        }
+        return resultLogs;
+    }
+
+    private List<OneLog> getLogForEvent(List<OneLog> logs, Event event) {
         if (logs == null || logs.size() == 0 || event == null) {
             return emptyList();
         }

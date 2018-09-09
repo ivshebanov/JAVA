@@ -74,22 +74,11 @@ public class LogParserTest {
 
     @Test
     public void getIPsForStatus() {
+        Set<String> currentResult = logParser.getIPsForStatus(Status.OK, after, before);
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add("192.168.100.2");
+        correctResult.add("146.34.15.5");
+        correctResult.add("127.0.0.1");
+        Assert.assertEquals(correctResult, currentResult);
     }
-
-//    @Test
-//    public void getDate() {
-//        String date = "30.08.2012";
-//        String time = "16:08:13";
-//        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
-//        Date testDate = null;
-//        try {
-//            testDate = formatForDateNow.parse(date + " " + time);
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
-//        Date resultDate = logParser.getDate(date, time);
-//        System.out.println(testDate);
-//        System.out.println(resultDate);
-//        Assert.assertEquals(testDate, resultDate);
-//    }
 }
