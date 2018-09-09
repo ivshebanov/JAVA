@@ -30,7 +30,7 @@ public class LogParser implements IPQuery {
         String path = "/Users/iliashebanov/Documents/Java/JavaRush/JavaRushHomeWork/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task39/task3913/logs/example.log";
         Path path1 = Paths.get(path);
         LogParser logParser = new LogParser(path1);
-        String s = "120.120.120.122\tAmigo\t29.2.2028 5:4:7\tSOLVE_TASK 18\tOK";
+        String s = "146.34.15.5\tEduard Petrovich Morozko\t03.01.2014 03:45:23\tLOGIN\tOK\n";
         OneLog status = logParser.getOneLog(s);
         System.out.println(status);
     }
@@ -127,7 +127,7 @@ public class LogParser implements IPQuery {
 
         log = log.replace('\t', ' ');
         if (log.contains("\n")) {
-            log = log.replace(log.substring(log.length() - 1), "");
+            log = log.substring(0, log.length() - 1);
         }
 
         String ip = getIpLog(log);
@@ -154,8 +154,22 @@ public class LogParser implements IPQuery {
     }
 
     private String getNameLog(String log) {
+        String ip = getIpLog(log);
+        String date = getDateStringLog(log);
+        String[] element = log.split(" ");
 
-        return "";
+        String nameResult = "";
+        for (String el : element) {
+            if (el.equals(ip)) {
+                continue;
+            }
+            if (el.equals(date)) {
+                break;
+            }
+            nameResult = nameResult + el + " ";
+        }
+        nameResult = nameResult.substring(0, nameResult.length() - 1);
+        return nameResult;
     }
 
     private Date getDateLog(String log) {
