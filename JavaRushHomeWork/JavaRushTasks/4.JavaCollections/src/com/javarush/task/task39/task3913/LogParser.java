@@ -124,7 +124,8 @@ public class LogParser implements IPQuery {
     }
 
     private String getIpLog(String log) {
-        return null;
+        String[] element = log.split(" ");
+        return element[0];
     }
 
     private String getNameLog(String log) {
