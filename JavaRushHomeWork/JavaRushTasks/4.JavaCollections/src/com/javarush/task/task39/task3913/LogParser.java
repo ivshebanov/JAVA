@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,6 +24,15 @@ public class LogParser implements IPQuery {
 
     public LogParser(Path logDir) {
         this.logDir = logDir;
+    }
+
+    public static void main(String[] args) {
+        String path = "/Users/iliashebanov/Documents/Java/JavaRush/JavaRushHomeWork/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task39/task3913/logs/example.log";
+        Path path1 = Paths.get(path);
+        LogParser logParser = new LogParser(path1);
+        String s = "192.168.100.2\tVasya Pupkin\t30.01.2014 12:56:22\tSOLVE_TASK 18\tERROR\n";
+        Status status = logParser.getStatusLog(s);
+        System.out.println(status.name());
     }
 
     @Override
@@ -126,9 +136,19 @@ public class LogParser implements IPQuery {
     }
 
     private String getIpLog(String log) {
-        //((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)
-        String[] element = log.split("\t");
-        return element[0];
+        log = log.replace('\t', ' ');
+        log = log.replace(log.substring(log.length() - 1), "");
+
+        String pattern = "((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)";
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(log);
+
+        String ip = "";
+        while (m.find()) {
+            ip = m.start() + m.group();
+        }
+        ip = ip.substring(1);
+        return ip;
     }
 
     private String getNameLog(String log) {
@@ -139,7 +159,7 @@ public class LogParser implements IPQuery {
         log = log.replace('\t', ' ');
         log = log.replace(log.substring(log.length() - 1), "");
 
-        String pattern = "\\d{2}.\\d{2}.\\d{4}";
+        String pattern = "(\\d{1})+.(\\d{1})+.\\d{4}";
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(log);
 
@@ -148,7 +168,7 @@ public class LogParser implements IPQuery {
             date = m.start() + m.group();
         }
 
-        String pattern1 = "\\d{2}:\\d{2}:\\d{2}";
+        String pattern1 = "(\\d{1})+:(\\d{1})+:(\\d{1})+";
         Pattern p1 = Pattern.compile(pattern1);
         Matcher m1 = p1.matcher(log);
 
@@ -164,6 +184,7 @@ public class LogParser implements IPQuery {
     }
 
     private Event getEventLog(String log) {
+
         return null;
     }
 
@@ -172,7 +193,9 @@ public class LogParser implements IPQuery {
     }
 
     private Status getStatusLog(String log) {
-        String[] element = log.split("\t");
+        log = log.replace('\t', ' ');
+        log = log.replace(log.substring(log.length() - 1), "");
+        String[] element = log.split(" ");
         String stringStatus = element[element.length - 1];
         return Status.valueOf(stringStatus);
     }
