@@ -2,6 +2,7 @@ package com.javarush.task.task39.task3913;
 
 import com.javarush.task.task39.task3913.query.IPQuery;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -33,9 +34,6 @@ public class LogParser implements IPQuery {
 
     @Override
     public int getNumberOfUniqueIPs(Date after, Date before) {
-        if (logDir == null || !logDir.toFile().isFile()) {
-            return 0;
-        }
         List<OneLog> list = getLogsForPeriod(after, before);
         Set<String> resultNumberOfUniqueIPs = getSetOfUniqueIPs(list);
         return resultNumberOfUniqueIPs.size();
@@ -43,16 +41,13 @@ public class LogParser implements IPQuery {
 
     @Override
     public Set<String> getUniqueIPs(Date after, Date before) {
-        if (logDir == null || !logDir.toFile().isFile()) {
-            return emptySet();
-        }
         List<OneLog> list = getLogsForPeriod(after, before);
         return getSetOfUniqueIPs(list);
     }
 
     @Override
     public Set<String> getIPsForUser(String user, Date after, Date before) {
-        if (logDir == null || !logDir.toFile().isFile() || user == null || user.isEmpty()) {
+        if (user == null || user.isEmpty()) {
             return emptySet();
         }
         List<OneLog> listAllLogsForPeriod = getLogsForPeriod(after, before);
@@ -62,7 +57,7 @@ public class LogParser implements IPQuery {
 
     @Override
     public Set<String> getIPsForEvent(Event event, Date after, Date before) {
-        if (logDir == null || !logDir.toFile().isFile() || event == null) {
+        if (event == null) {
             return emptySet();
         }
         List<OneLog> listAllLogsForPeriod = getLogsForPeriod(after, before);
@@ -72,7 +67,7 @@ public class LogParser implements IPQuery {
 
     @Override
     public Set<String> getIPsForStatus(Status status, Date after, Date before) {
-        if (logDir == null || !logDir.toFile().isFile() || status == null) {
+        if (status == null) {
             return emptySet();
         }
         List<OneLog> listAllLogsForPeriod = getLogsForPeriod(after, before);
@@ -121,7 +116,7 @@ public class LogParser implements IPQuery {
 
     private Set<String> getSetOfUniqueIPs(List<OneLog> logs) {
         if (logs == null || logs.size() == 0) {
-            return null;
+            return emptySet();
         }
         Set<String> resultSet = new HashSet<>();
         for (OneLog log : logs) {
@@ -131,31 +126,62 @@ public class LogParser implements IPQuery {
     }
 
     private List<OneLog> getLogsForPeriod(Date after, Date before) {
-
-        List<String> allLogsString = null;
-        try {
-            allLogsString = Files.readAllLines(logDir, StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        if (allLogsString == null || allLogsString.size() == 0) {
+        if (logDir == null) {
             return emptyList();
         }
 
-        List<OneLog> allOneLogs = new ArrayList<>();
-        for (String log : allLogsString) {
-            allOneLogs.add(getOneLog(log));
+        List<String> allLogsString = new ArrayList<>();
+        File file = new File(logDir.toString());
+
+        if (file.isFile() && checkFileLog(file)) {
+            allLogsString.addAll(readFileLog(file));
+        }
+
+        if (file.isDirectory()) {
+            File[] files = file.listFiles();
+            if (files == null || files.length == 0) {
+                return emptyList();
+            }
+            for (File ff : files) {
+                if (ff.isFile() && checkFileLog(ff)) {
+                    allLogsString.addAll(readFileLog(ff));
+                }
+            }
+        }
+
+        if (allLogsString.size() == 0) {
+            return emptyList();
         }
 
         List<OneLog> resultLog = new ArrayList<>();
-        for (OneLog log : allOneLogs) {
-            if (checkData(after, before, log.getDate())) {
-                resultLog.add(log);
+        for (String log : allLogsString) {
+            OneLog oneLog = getOneLog(log);
+            if (oneLog == null) {
+                return emptyList();
+            }
+            if (checkData(after, before, oneLog.getDate())) {
+                resultLog.add(oneLog);
             }
         }
 
         return resultLog;
+    }
+
+    private List<String> readFileLog(File file) {
+        if (!file.exists() && !file.isFile()) {
+            return emptyList();
+        }
+        List<String> allLogsString = null;
+        try {
+            allLogsString = Files.readAllLines(file.toPath(), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return allLogsString;
+    }
+
+    private boolean checkFileLog(File file) {
+        return file.toPath().toString().toLowerCase().endsWith(".log");
     }
 
     private Date getDateByDateAndTime(String date, String time) {
@@ -176,9 +202,16 @@ public class LogParser implements IPQuery {
 
         if (before == null) {
             before = new Date();
+//            SimpleDateFormat formatForDate = new SimpleDateFormat("dd.MM.yyyy");
+//            try {
+//                before = formatForDate.parse("01.01.2099");
+//            } catch (ParseException e) {
+//                e.printStackTrace();
+//            }
         }
 
         return current.after(after) && current.before(before);
+//        return after.getTime() <= current.getTime() && before.getTime() >= current.getTime();
     }
 
     private OneLog getOneLog(String log) {
