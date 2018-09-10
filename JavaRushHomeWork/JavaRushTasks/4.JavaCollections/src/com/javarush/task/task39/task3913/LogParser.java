@@ -130,23 +130,15 @@ public class LogParser implements IPQuery {
             return emptyList();
         }
 
-        List<String> allLogsString = new ArrayList<>();
         File file = new File(logDir.toString());
+        List<String> allLogsString = new ArrayList<>();
 
         if (file.isFile() && checkFileLog(file)) {
-            allLogsString.addAll(readFileLog(file));
+            allLogsString.addAll(loadListOfLogsFromFile(file));
         }
 
         if (file.isDirectory()) {
-            File[] files = file.listFiles();
-            if (files == null || files.length == 0) {
-                return emptyList();
-            }
-            for (File ff : files) {
-                if (ff.isFile() && checkFileLog(ff)) {
-                    allLogsString.addAll(readFileLog(ff));
-                }
-            }
+            allLogsString.addAll(getAllLogsString(allLogsString, file));
         }
 
         if (allLogsString.size() == 0) {
@@ -156,9 +148,6 @@ public class LogParser implements IPQuery {
         List<OneLog> resultLog = new ArrayList<>();
         for (String log : allLogsString) {
             OneLog oneLog = getOneLog(log);
-            if (oneLog == null) {
-                return emptyList();
-            }
             if (checkData(after, before, oneLog.getDate())) {
                 resultLog.add(oneLog);
             }
@@ -167,16 +156,34 @@ public class LogParser implements IPQuery {
         return resultLog;
     }
 
-    private List<String> readFileLog(File file) {
-        if (!file.exists() && !file.isFile()) {
+    private List<String> getAllLogsString(List<String> logs, File file) {
+        File[] folderEntries = file.listFiles();
+
+        if (folderEntries == null || folderEntries.length == 0) {
             return emptyList();
         }
+
+        for (File entry : folderEntries) {
+            if (entry.isDirectory()) {
+                getAllLogsString(logs, entry);
+            }
+
+            if (entry.isFile() && checkFileLog(entry)) {
+                logs.addAll(loadListOfLogsFromFile(entry));
+            }
+        }
+
+        return logs;
+    }
+
+    private List<String> loadListOfLogsFromFile(File file) {
         List<String> allLogsString = null;
         try {
             allLogsString = Files.readAllLines(file.toPath(), StandardCharsets.UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return allLogsString;
     }
 
@@ -185,7 +192,6 @@ public class LogParser implements IPQuery {
     }
 
     private Date getDateByDateAndTime(String date, String time) {
-//        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         SimpleDateFormat formatForDateNow = new SimpleDateFormat("d.M.y H:m:s");
         Date resultDate = null;
         try {

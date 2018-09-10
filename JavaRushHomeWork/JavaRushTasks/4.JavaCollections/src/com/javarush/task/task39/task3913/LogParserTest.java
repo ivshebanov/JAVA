@@ -27,7 +27,7 @@ public class LogParserTest {
 
     @Before
     public void beforeMethod() {
-        String path = "/Users/iliashebanov/Documents/Java/JavaRush/JavaRushHomeWork/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task39/task3913/logs/example.log";
+        String path = "/Users/iliashebanov/Documents/Java/JavaRush/JavaRushHomeWork/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task39/task3913/logs/";
         Path path1 = Paths.get(path);
         this.logParser = new LogParser(path1);
 
