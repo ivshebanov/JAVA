@@ -50,7 +50,7 @@ public class LogParserTest {
     @Test
     public void getNumberOfUniqueIPs_DATES_NULL() {
         int currentResult = logParser.getNumberOfUniqueIPs(afterNull, beforeNull);
-        int correctResult = 3;
+        int correctResult = 5;
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -77,6 +77,8 @@ public class LogParserTest {
         correctResult.add("192.168.100.2");
         correctResult.add("146.34.15.5");
         correctResult.add("127.0.0.1");
+        correctResult.add("120.120.120.122");
+        correctResult.add("12.12.12.12");
         Assert.assertEquals(correctResult, currentResult);
     }
 

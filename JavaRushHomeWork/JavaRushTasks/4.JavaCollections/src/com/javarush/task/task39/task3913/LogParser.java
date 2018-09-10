@@ -185,7 +185,8 @@ public class LogParser implements IPQuery {
     }
 
     private Date getDateByDateAndTime(String date, String time) {
-        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+//        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("d.M.y H:m:s");
         Date resultDate = null;
         try {
             resultDate = formatForDateNow.parse(date + " " + time);
@@ -196,22 +197,8 @@ public class LogParser implements IPQuery {
     }
 
     private boolean checkData(Date after, Date before, Date current) {
-        if (after == null) {
-            after = new Date(0);
-        }
-
-        if (before == null) {
-            before = new Date();
-//            SimpleDateFormat formatForDate = new SimpleDateFormat("dd.MM.yyyy");
-//            try {
-//                before = formatForDate.parse("01.01.2099");
-//            } catch (ParseException e) {
-//                e.printStackTrace();
-//            }
-        }
-
-        return current.after(after) && current.before(before);
-//        return after.getTime() <= current.getTime() && before.getTime() >= current.getTime();
+        boolean fits = before == null || current.before(before) || current.equals(before);
+        return fits && (after == null || current.after(after) || current.equals(after));
     }
 
     private OneLog getOneLog(String log) {
