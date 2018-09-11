@@ -14,8 +14,8 @@ import java.util.Set;
 
 public class LogParserTest {
 
-    private static final String DATE_AFTER = "30.08.2012";
-    private static final String DATE_BEFORE = "19.03.2016";
+    private static final String DATE_AFTER = "30.08.2012 16:08:40";
+    private static final String DATE_BEFORE = "19.03.2016 00:00:00";
     private static final String USER_EPM = "Eduard Petrovich Morozko";
     private static final String USER_VP = "Vasya Pupkin";
 
@@ -31,7 +31,7 @@ public class LogParserTest {
         Path path1 = Paths.get(path);
         this.logParser = new LogParser(path1);
 
-        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy");
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
         try {
             this.after = formatForDateNow.parse(DATE_AFTER);
             this.before = formatForDateNow.parse(DATE_BEFORE);

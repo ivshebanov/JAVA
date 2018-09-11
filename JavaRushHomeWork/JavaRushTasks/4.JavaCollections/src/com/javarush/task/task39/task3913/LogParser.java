@@ -22,9 +22,12 @@ import static java.util.Collections.emptySet;
 
 public class LogParser implements IPQuery {
 
-    private static final String PATTERN_GET_DATE = "(\\d{1})+.(\\d{1})+.\\d{4}";
+    //    private static final String PATTERN_GET_DATE = "(\\d{1})+.(\\d{1})+.\\d{4}";
+//    private static final String PATTERN_GET_DATE = "(\\d)+.(\\d)+.(\\d)+";
+    private static final String PATTERN_GET_DATE = "(0?[1-9]|[12][0-9]|3[01])[.](0?[1-9]|1?[012])[.]\\d\\d\\d\\d\\d?";
     private static final String PATTERN_GET_TIME = "(\\d{1})+:(\\d{1})+:(\\d{1})+";
     private static final String PATTERN_GET_IP = "((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)";
+    private static final String PATTERN_GET_NAME = "([A-Z][a-z]+) ?([A-Z][a-z]+)? ?([A-Z][a-z]+)?";
 
     private Path logDir;
 
@@ -34,9 +37,7 @@ public class LogParser implements IPQuery {
 
     @Override
     public int getNumberOfUniqueIPs(Date after, Date before) {
-        List<OneLog> list = getLogsForPeriod(after, before);
-        Set<String> resultNumberOfUniqueIPs = getSetOfUniqueIPs(list);
-        return resultNumberOfUniqueIPs.size();
+        return getUniqueIPs(after, before).size();
     }
 
     @Override
@@ -138,7 +139,7 @@ public class LogParser implements IPQuery {
         }
 
         if (file.isDirectory()) {
-            allLogsString.addAll(getAllLogsString(allLogsString, file));
+            getAllLogsString(allLogsString, file);
         }
 
         if (allLogsString.size() == 0) {
@@ -192,7 +193,7 @@ public class LogParser implements IPQuery {
     }
 
     private Date getDateByDateAndTime(String date, String time) {
-        SimpleDateFormat formatForDateNow = new SimpleDateFormat("d.M.y H:m:s");
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
         Date resultDate = null;
         try {
             resultDate = formatForDateNow.parse(date + " " + time);
@@ -203,8 +204,8 @@ public class LogParser implements IPQuery {
     }
 
     private boolean checkData(Date after, Date before, Date current) {
-        boolean fits = before == null || current.before(before) || current.equals(before);
-        return fits && (after == null || current.after(after) || current.equals(after));
+        return (after == null || current.after(after) || current.equals(after)) &&
+                (before == null || current.before(before) || current.equals(before));
     }
 
     private OneLog getOneLog(String log) {
