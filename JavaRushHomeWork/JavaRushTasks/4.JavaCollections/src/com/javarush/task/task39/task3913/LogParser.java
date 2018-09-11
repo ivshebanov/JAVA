@@ -193,7 +193,7 @@ public class LogParser implements IPQuery {
     }
 
     private Date getDateByDateAndTime(String date, String time) {
-        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         Date resultDate = null;
         try {
             resultDate = formatForDateNow.parse(date + " " + time);

@@ -8,12 +8,12 @@ import java.util.Date;
 public class Solution {
     public static void main(String[] args) {
         LogParser logParser = new LogParser(Paths.get("/Users/iliashebanov/Documents/Java/JavaRush/JavaRushHomeWork/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task39/task3913/logs/"));
-        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy");
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         Date after = new Date(0);
         Date before = null;
         try {
-            after = formatForDateNow.parse("30.08.2012");
-            before = formatForDateNow.parse("05.01.2021");
+            after = formatForDateNow.parse("30.08.2012 16:08:40");
+            before = formatForDateNow.parse("05.01.2021 20:22:55");
         } catch (ParseException e) {
             e.printStackTrace();
         }

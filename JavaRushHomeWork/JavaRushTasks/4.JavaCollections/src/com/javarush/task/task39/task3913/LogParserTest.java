@@ -31,7 +31,7 @@ public class LogParserTest {
         Path path1 = Paths.get(path);
         this.logParser = new LogParser(path1);
 
-        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         try {
             this.after = formatForDateNow.parse(DATE_AFTER);
             this.before = formatForDateNow.parse(DATE_BEFORE);
