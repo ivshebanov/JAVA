@@ -18,6 +18,7 @@ public class LogParserTest {
     private static final String DATE_BEFORE = "19.03.2016 00:00:00";
     private static final String USER_EPM = "Eduard Petrovich Morozko";
     private static final String USER_VP = "Vasya Pupkin";
+    private static final String USER_A = "Amigo";
 
     private LogParser logParser;
     private Date after;
@@ -158,9 +159,9 @@ public class LogParserTest {
     public void getAllUsers() {
         Set<String> currentResult = logParser.getAllUsers();
         Set<String> correctResult = new HashSet<>();
-        correctResult.add("Amigo");
-        correctResult.add("Vasya Pupkin");
-        correctResult.add("Eduard Petrovich Morozko");
+        correctResult.add(USER_A);
+        correctResult.add(USER_VP);
+        correctResult.add(USER_EPM);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -174,6 +175,13 @@ public class LogParserTest {
     public void getNumberOfUsers() {
         int currentResult = logParser.getNumberOfUsers(afterNull, beforeNull);
         int correctResult = 3;
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getNumberOfUserEvents() {
+        int currentResult = logParser.getNumberOfUserEvents(USER_VP, afterNull, beforeNull);
+        int correctResult = 5;
         Assert.assertEquals(correctResult, currentResult);
     }
 }

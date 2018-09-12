@@ -25,5 +25,6 @@ public class Solution {
 //        System.out.println(logParser.getIPsForStatus(Status.ERROR, after, before));
         System.out.println(logParser.getAllUsers());
         System.out.println(logParser.getNumberOfUsers(null, null));
+        System.out.println(logParser.getNumberOfUserEvents("Vasya Pupkin", null, null));
     }
 }
