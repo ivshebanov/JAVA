@@ -26,5 +26,6 @@ public class Solution {
         System.out.println(logParser.getAllUsers());
         System.out.println(logParser.getNumberOfUsers(null, null));
         System.out.println(logParser.getNumberOfUserEvents("Vasya Pupkin", null, null));
+        System.out.println(logParser.getUsersForIP("127.0.0.1", null, null));
     }
 }

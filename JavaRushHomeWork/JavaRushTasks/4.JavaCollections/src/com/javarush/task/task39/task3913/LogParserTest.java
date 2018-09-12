@@ -16,9 +16,16 @@ public class LogParserTest {
 
     private static final String DATE_AFTER = "30.08.2012 16:08:40";
     private static final String DATE_BEFORE = "19.03.2016 00:00:00";
+
     private static final String USER_EPM = "Eduard Petrovich Morozko";
     private static final String USER_VP = "Vasya Pupkin";
     private static final String USER_A = "Amigo";
+
+    private static final String IP_120 = "120.120.120.122";
+    private static final String IP_192 = "192.168.100.2";
+    private static final String IP_146 = "146.34.15.5";
+    private static final String IP_12 = "12.12.12.12";
+    private static final String IP_127 = "127.0.0.1";
 
     private LogParser logParser;
     private Date after;
@@ -59,9 +66,9 @@ public class LogParserTest {
     public void getUniqueIPs() {
         Set<String> currentResult = logParser.getUniqueIPs(after, before);
         Set<String> correctResult = new HashSet<>();
-        correctResult.add("192.168.100.2");
-        correctResult.add("146.34.15.5");
-        correctResult.add("127.0.0.1");
+        correctResult.add(IP_192);
+        correctResult.add(IP_146);
+        correctResult.add(IP_127);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -75,11 +82,11 @@ public class LogParserTest {
     public void getUniqueIPs_DATES_NULL() {
         Set<String> currentResult = logParser.getUniqueIPs(afterNull, beforeNull);
         Set<String> correctResult = new HashSet<>();
-        correctResult.add("192.168.100.2");
-        correctResult.add("146.34.15.5");
-        correctResult.add("127.0.0.1");
-        correctResult.add("120.120.120.122");
-        correctResult.add("12.12.12.12");
+        correctResult.add(IP_192);
+        correctResult.add(IP_146);
+        correctResult.add(IP_127);
+        correctResult.add(IP_120);
+        correctResult.add(IP_12);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -87,8 +94,8 @@ public class LogParserTest {
     public void getIPsForUser() {
         Set<String> currentResult = logParser.getIPsForUser(USER_EPM, after, before);
         Set<String> correctResult = new HashSet<>();
-        correctResult.add("146.34.15.5");
-        correctResult.add("127.0.0.1");
+        correctResult.add(IP_146);
+        correctResult.add(IP_127);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -102,8 +109,8 @@ public class LogParserTest {
     public void getIPsForUser_DATES_NULL() {
         Set<String> currentResult = logParser.getIPsForUser(USER_VP, afterNull, beforeNull);
         Set<String> correctResult = new HashSet<>();
-        correctResult.add("192.168.100.2");
-        correctResult.add("127.0.0.1");
+        correctResult.add(IP_192);
+        correctResult.add(IP_127);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -111,8 +118,8 @@ public class LogParserTest {
     public void getIPsForEvent() {
         Set<String> currentResult = logParser.getIPsForEvent(Event.WRITE_MESSAGE, after, before);
         Set<String> correctResult = new HashSet<>();
-        correctResult.add("146.34.15.5");
-        correctResult.add("127.0.0.1");
+        correctResult.add(IP_146);
+        correctResult.add(IP_127);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -126,7 +133,7 @@ public class LogParserTest {
     public void getIPsForEvent_DATES_NULL() {
         Set<String> currentResult = logParser.getIPsForEvent(Event.SOLVE_TASK, after, before);
         Set<String> correctResult = new HashSet<>();
-        correctResult.add("192.168.100.2");
+        correctResult.add(IP_192);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -135,9 +142,9 @@ public class LogParserTest {
     public void getIPsForStatus() {
         Set<String> currentResult = logParser.getIPsForStatus(Status.OK, after, before);
         Set<String> correctResult = new HashSet<>();
-        correctResult.add("192.168.100.2");
-        correctResult.add("146.34.15.5");
-        correctResult.add("127.0.0.1");
+        correctResult.add(IP_192);
+        correctResult.add(IP_146);
+        correctResult.add(IP_127);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -151,7 +158,7 @@ public class LogParserTest {
     public void getIPsForStatus_DATES_NULL() {
         Set<String> currentResult = logParser.getIPsForStatus(Status.ERROR, after, before);
         Set<String> correctResult = new HashSet<>();
-        correctResult.add("192.168.100.2");
+        correctResult.add(IP_192);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -183,5 +190,21 @@ public class LogParserTest {
         int currentResult = logParser.getNumberOfUserEvents(USER_VP, afterNull, beforeNull);
         int correctResult = 5;
         Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getUsersForIP() {
+        Set<String> currentResult = logParser.getUsersForIP(IP_127, afterNull, beforeNull);
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add(USER_A);
+        correctResult.add(USER_VP);
+        correctResult.add(USER_EPM);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getUsersForIP_NO_NULL() {
+        Set<String> currentResult = logParser.getUsersForIP(IP_127, afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
     }
 }

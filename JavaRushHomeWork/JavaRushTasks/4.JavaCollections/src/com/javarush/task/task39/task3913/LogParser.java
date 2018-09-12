@@ -99,8 +99,8 @@ public class LogParser implements IPQuery, UserQuery {
     public int getNumberOfUserEvents(String user, Date after, Date before) {
         List<OneLog> list = getLogsForPeriod(after, before);
         int resultCount = 0;
-        for (OneLog log : list){
-            if (log.getName().equals(user)){
+        for (OneLog log : list) {
+            if (log.getName().equals(user)) {
                 resultCount++;
             }
         }
@@ -109,7 +109,14 @@ public class LogParser implements IPQuery, UserQuery {
 
     @Override
     public Set<String> getUsersForIP(String ip, Date after, Date before) {
-        return null;
+        List<OneLog> list = getLogsForPeriod(after, before);
+        Set<String> resultSet = new HashSet<>();
+        for (OneLog log : list) {
+            if (log.getIp().equals(ip)) {
+                resultSet.add(log.getName());
+            }
+        }
+        return resultSet;
     }
 
     @Override
