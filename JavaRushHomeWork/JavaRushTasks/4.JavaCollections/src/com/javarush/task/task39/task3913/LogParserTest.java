@@ -153,4 +153,20 @@ public class LogParserTest {
         correctResult.add("192.168.100.2");
         Assert.assertEquals(correctResult, currentResult);
     }
+
+    @Test
+    public void getNumberOfUsers() {
+        Set<String> currentResult = logParser.getAllUsers();
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add("Amigo");
+        correctResult.add("Vasya Pupkin");
+        correctResult.add("Eduard Petrovich Morozko");
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getNumberOfUsers_NO_NULL() {
+        Set<String> currentResult = logParser.getAllUsers();
+        Assert.assertNotNull(currentResult);
+    }
 }

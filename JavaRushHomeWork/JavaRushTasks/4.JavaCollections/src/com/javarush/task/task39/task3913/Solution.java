@@ -21,7 +21,8 @@ public class Solution {
 //        System.out.println(logParser.getNumberOfUniqueIPs(after, before));
 //        System.out.println(logParser.getUniqueIPs(after, before));
 //        System.out.println(logParser.getIPsForUser("Amigo", after, before));
-        System.out.println(logParser.getIPsForEvent(Event.DONE_TASK, after, before));
+//        System.out.println(logParser.getIPsForEvent(Event.DONE_TASK, after, before));
 //        System.out.println(logParser.getIPsForStatus(Status.ERROR, after, before));
+        System.out.println(logParser.getAllUsers());
     }
 }

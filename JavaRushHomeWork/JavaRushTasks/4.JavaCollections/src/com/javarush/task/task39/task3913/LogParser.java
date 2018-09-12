@@ -1,6 +1,7 @@
 package com.javarush.task.task39.task3913;
 
 import com.javarush.task.task39.task3913.query.IPQuery;
+import com.javarush.task.task39.task3913.query.UserQuery;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,10 +21,8 @@ import java.util.regex.Pattern;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.emptySet;
 
-public class LogParser implements IPQuery {
+public class LogParser implements IPQuery, UserQuery {
 
-    //    private static final String PATTERN_GET_DATE = "(\\d{1})+.(\\d{1})+.\\d{4}";
-//    private static final String PATTERN_GET_DATE = "(\\d)+.(\\d)+.(\\d)+";
     private static final String PATTERN_GET_DATE = "(0?[1-9]|[12][0-9]|3[01])[.](0?[1-9]|1?[012])[.]\\d\\d\\d\\d\\d?";
     private static final String PATTERN_GET_TIME = "(\\d{1})+:(\\d{1})+:(\\d{1})+";
     private static final String PATTERN_GET_IP = "((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)";
@@ -74,6 +73,66 @@ public class LogParser implements IPQuery {
         List<OneLog> listAllLogsForPeriod = getLogsForPeriod(after, before);
         List<OneLog> listLogsForStatus = getLogForStatus(listAllLogsForPeriod, status);
         return getSetOfUniqueIPs(listLogsForStatus);
+    }
+
+    @Override
+    public Set<String> getAllUsers() {
+        List<OneLog> list = getLogsForPeriod(null, null);
+        Set<String> resultSet = new HashSet<>();
+        for (OneLog log : list) {
+            resultSet.add(log.getName());
+        }
+        return resultSet;
+    }
+
+    @Override
+    public int getNumberOfUsers(Date after, Date before) {
+        return getLogsForPeriod(after, before).size();
+    }
+
+    @Override
+    public int getNumberOfUserEvents(String user, Date after, Date before) {
+        return 0;
+    }
+
+    @Override
+    public Set<String> getUsersForIP(String ip, Date after, Date before) {
+        return null;
+    }
+
+    @Override
+    public Set<String> getLoggedUsers(Date after, Date before) {
+        return null;
+    }
+
+    @Override
+    public Set<String> getDownloadedPluginUsers(Date after, Date before) {
+        return null;
+    }
+
+    @Override
+    public Set<String> getWroteMessageUsers(Date after, Date before) {
+        return null;
+    }
+
+    @Override
+    public Set<String> getSolvedTaskUsers(Date after, Date before) {
+        return null;
+    }
+
+    @Override
+    public Set<String> getSolvedTaskUsers(Date after, Date before, int task) {
+        return null;
+    }
+
+    @Override
+    public Set<String> getDoneTaskUsers(Date after, Date before) {
+        return null;
+    }
+
+    @Override
+    public Set<String> getDoneTaskUsers(Date after, Date before, int task) {
+        return null;
     }
 
     private List<OneLog> getLogForStatus(List<OneLog> logs, Status status) {
