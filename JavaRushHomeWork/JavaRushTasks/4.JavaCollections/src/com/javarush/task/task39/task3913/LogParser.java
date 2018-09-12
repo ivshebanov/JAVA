@@ -87,7 +87,12 @@ public class LogParser implements IPQuery, UserQuery {
 
     @Override
     public int getNumberOfUsers(Date after, Date before) {
-        return getLogsForPeriod(after, before).size();
+        List<OneLog> list = getLogsForPeriod(after, before);
+        Set<String> resultSet = new HashSet<>();
+        for (OneLog log : list) {
+            resultSet.add(log.getName());
+        }
+        return resultSet.size();
     }
 
     @Override

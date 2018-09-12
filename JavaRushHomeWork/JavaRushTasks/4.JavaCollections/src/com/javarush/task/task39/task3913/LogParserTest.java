@@ -155,7 +155,7 @@ public class LogParserTest {
     }
 
     @Test
-    public void getNumberOfUsers() {
+    public void getAllUsers() {
         Set<String> currentResult = logParser.getAllUsers();
         Set<String> correctResult = new HashSet<>();
         correctResult.add("Amigo");
@@ -165,8 +165,15 @@ public class LogParserTest {
     }
 
     @Test
-    public void getNumberOfUsers_NO_NULL() {
+    public void getAllUsers_NO_NULL() {
         Set<String> currentResult = logParser.getAllUsers();
         Assert.assertNotNull(currentResult);
+    }
+
+    @Test
+    public void getNumberOfUsers() {
+        int currentResult = logParser.getNumberOfUsers(afterNull, beforeNull);
+        int correctResult = 3;
+        Assert.assertEquals(correctResult, currentResult);
     }
 }

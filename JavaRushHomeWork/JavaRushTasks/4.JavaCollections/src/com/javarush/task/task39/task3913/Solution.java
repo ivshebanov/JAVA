@@ -24,5 +24,6 @@ public class Solution {
 //        System.out.println(logParser.getIPsForEvent(Event.DONE_TASK, after, before));
 //        System.out.println(logParser.getIPsForStatus(Status.ERROR, after, before));
         System.out.println(logParser.getAllUsers());
+        System.out.println(logParser.getNumberOfUsers(null, null));
     }
 }
