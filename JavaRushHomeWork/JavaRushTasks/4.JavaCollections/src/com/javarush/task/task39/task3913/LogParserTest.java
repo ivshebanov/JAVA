@@ -207,4 +207,20 @@ public class LogParserTest {
         Set<String> currentResult = logParser.getUsersForIP(IP_127, afterNull, beforeNull);
         Assert.assertNotNull(currentResult);
     }
+
+    @Test
+    public void getLoggedUsers() {
+        Set<String> currentResult = logParser.getLoggedUsers(afterNull, beforeNull);
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add(USER_A);
+        correctResult.add(USER_VP);
+        correctResult.add(USER_EPM);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getLoggedUsers_NO_NULL() {
+        Set<String> currentResult = logParser.getLoggedUsers(afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
+    }
 }
