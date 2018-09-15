@@ -7,10 +7,10 @@ public class OneLog {
     private String name;
     private Date date;
     private Event event;
-    private String parameter;
+    private int parameter;
     private Status status;
 
-    public OneLog(String ip, String name, Date date, Event event, String parameter, Status status) {
+    public OneLog(String ip, String name, Date date, Event event, int parameter, Status status) {
         this.ip = ip;
         this.name = name;
         this.date = date;
@@ -35,7 +35,7 @@ public class OneLog {
         return event;
     }
 
-    public String getParameter() {
+    public int getParameter() {
         return parameter;
     }
 

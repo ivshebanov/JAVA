@@ -173,7 +173,16 @@ public class LogParser implements IPQuery, UserQuery {
 
     @Override
     public Set<String> getSolvedTaskUsers(Date after, Date before, int task) {
-        return null;
+        List<OneLog> list = getLogsForPeriod(after, before);
+        Set<String> solvedTaskUsersSet = new HashSet<>();
+        for (OneLog log : list) {
+            if (log.getEvent().equals(Event.SOLVE_TASK)
+                    && log.getParameter() == task
+                    && log.getStatus().equals(Status.OK)) {
+                solvedTaskUsersSet.add(log.getName());
+            }
+        }
+        return solvedTaskUsersSet;
     }
 
     @Override
@@ -332,7 +341,7 @@ public class LogParser implements IPQuery, UserQuery {
         String name = getNameLog(log);
         Date date = getDateLog(log);
         Event event = getEventLog(log);
-        String parameter = getParameter(log);
+        int parameter = getParameter(log);
         Status status = getStatusLog(log);
 
         return new OneLog(ip, name, date, event, parameter, status);
@@ -405,10 +414,10 @@ public class LogParser implements IPQuery, UserQuery {
         return null;
     }
 
-    private String getParameter(String log) {
+    private int getParameter(String log) {
         Event event = getEventLog(log);
         if (event == null) {
-            return null;
+            return 0;
         }
 
         String resultStr = "";
@@ -421,7 +430,15 @@ public class LogParser implements IPQuery, UserQuery {
                 }
             }
         }
-        return resultStr;
+        int result = 0;
+        if (resultStr != null && !resultStr.isEmpty()) {
+            try {
+                result = Integer.parseInt(resultStr);
+            } catch (NumberFormatException ex) {
+                ex.printStackTrace();
+            }
+        }
+        return result;
     }
 
     private Status getStatusLog(String log) {
