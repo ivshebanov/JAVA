@@ -223,4 +223,18 @@ public class LogParserTest {
         Set<String> currentResult = logParser.getLoggedUsers(afterNull, beforeNull);
         Assert.assertNotNull(currentResult);
     }
+
+    @Test
+    public void getDownloadedPluginUsers() {
+        Set<String> currentResult = logParser.getDownloadedPluginUsers(afterNull, beforeNull);
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add(USER_EPM);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getDownloadedPluginUsers_NO_NULL() {
+        Set<String> currentResult = logParser.getDownloadedPluginUsers(afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
+    }
 }
