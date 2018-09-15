@@ -34,6 +34,5 @@ public class Solution {
         System.out.println(logParser.getSolvedTaskUsers(null, null));
         System.out.println(logParser.getSolvedTaskUsers(null, null, 18));
         System.out.println(logParser.getDoneTaskUsers(null, null));
-        System.out.println(logParser.getDoneTaskUsers(null, null, 15));
     }
 }
