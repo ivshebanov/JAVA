@@ -252,4 +252,19 @@ public class LogParserTest {
         Set<String> currentResult = logParser.getWroteMessageUsers(afterNull, beforeNull);
         Assert.assertNotNull(currentResult);
     }
+
+    @Test
+    public void getSolvedTaskUsers() {
+        Set<String> currentResult = logParser.getSolvedTaskUsers(afterNull, beforeNull);
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add(USER_A);
+        correctResult.add(USER_VP);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getSolvedTaskUsers_NO_NULL() {
+        Set<String> currentResult = logParser.getSolvedTaskUsers(afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
+    }
 }

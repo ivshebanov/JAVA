@@ -160,7 +160,15 @@ public class LogParser implements IPQuery, UserQuery {
 
     @Override
     public Set<String> getSolvedTaskUsers(Date after, Date before) {
-        return null;
+        List<OneLog> list = getLogsForPeriod(after, before);
+        Set<String> solvedTaskUsersSet = new HashSet<>();
+        for (OneLog log : list) {
+            if (log.getEvent().equals(Event.SOLVE_TASK)
+                    && log.getStatus().equals(Status.OK)) {
+                solvedTaskUsersSet.add(log.getName());
+            }
+        }
+        return solvedTaskUsersSet;
     }
 
     @Override

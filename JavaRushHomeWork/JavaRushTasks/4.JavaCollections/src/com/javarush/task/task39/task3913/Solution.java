@@ -30,5 +30,6 @@ public class Solution {
         System.out.println(logParser.getLoggedUsers(null, null));
         System.out.println(logParser.getDownloadedPluginUsers(null, null));
         System.out.println(logParser.getWroteMessageUsers(null, null));
+        System.out.println(logParser.getSolvedTaskUsers(null, null));
     }
 }
