@@ -29,5 +29,6 @@ public class Solution {
         System.out.println(logParser.getUsersForIP("127.0.0.1", null, null));
         System.out.println(logParser.getLoggedUsers(null, null));
         System.out.println(logParser.getDownloadedPluginUsers(null, null));
+        System.out.println(logParser.getWroteMessageUsers(null, null));
     }
 }

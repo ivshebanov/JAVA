@@ -136,7 +136,7 @@ public class LogParser implements IPQuery, UserQuery {
     public Set<String> getDownloadedPluginUsers(Date after, Date before) {
         List<OneLog> list = getLogsForPeriod(after, before);
         Set<String> downloadedPluginSet = new HashSet<>();
-        for (OneLog log: list) {
+        for (OneLog log : list) {
             if (log.getEvent().equals(Event.DOWNLOAD_PLUGIN)
                     && log.getStatus().equals(Status.OK)) {
                 downloadedPluginSet.add(log.getName());
@@ -147,7 +147,15 @@ public class LogParser implements IPQuery, UserQuery {
 
     @Override
     public Set<String> getWroteMessageUsers(Date after, Date before) {
-        return null;
+        List<OneLog> list = getLogsForPeriod(after, before);
+        Set<String> wroteMessageUsersSet = new HashSet<>();
+        for (OneLog log : list) {
+            if (log.getEvent().equals(Event.WRITE_MESSAGE)
+                    && log.getStatus().equals(Status.OK)) {
+                wroteMessageUsersSet.add(log.getName());
+            }
+        }
+        return wroteMessageUsersSet;
     }
 
     @Override

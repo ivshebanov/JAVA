@@ -237,4 +237,19 @@ public class LogParserTest {
         Set<String> currentResult = logParser.getDownloadedPluginUsers(afterNull, beforeNull);
         Assert.assertNotNull(currentResult);
     }
+
+    @Test
+    public void getWroteMessageUsers() {
+        Set<String> currentResult = logParser.getWroteMessageUsers(afterNull, beforeNull);
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add(USER_EPM);
+        correctResult.add(USER_VP);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getWroteMessageUsers_NO_NULL() {
+        Set<String> currentResult = logParser.getWroteMessageUsers(afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
+    }
 }
