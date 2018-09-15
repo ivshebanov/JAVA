@@ -18,11 +18,12 @@ public class Solution {
             e.printStackTrace();
         }
 
-//        System.out.println(logParser.getNumberOfUniqueIPs(after, before));
-//        System.out.println(logParser.getUniqueIPs(after, before));
-//        System.out.println(logParser.getIPsForUser("Amigo", after, before));
-//        System.out.println(logParser.getIPsForEvent(Event.DONE_TASK, after, before));
-//        System.out.println(logParser.getIPsForStatus(Status.ERROR, after, before));
+        System.out.println(logParser.getNumberOfUniqueIPs(after, before));
+        System.out.println(logParser.getUniqueIPs(after, before));
+        System.out.println(logParser.getIPsForUser("Amigo", after, before));
+        System.out.println(logParser.getIPsForEvent(Event.DONE_TASK, after, before));
+        System.out.println(logParser.getIPsForStatus(Status.ERROR, after, before));
+
         System.out.println(logParser.getAllUsers());
         System.out.println(logParser.getNumberOfUsers(null, null));
         System.out.println(logParser.getNumberOfUserEvents("Vasya Pupkin", null, null));
@@ -32,5 +33,6 @@ public class Solution {
         System.out.println(logParser.getWroteMessageUsers(null, null));
         System.out.println(logParser.getSolvedTaskUsers(null, null));
         System.out.println(logParser.getSolvedTaskUsers(null, null, 18));
+        System.out.println(logParser.getDoneTaskUsers(null, null));
     }
 }
