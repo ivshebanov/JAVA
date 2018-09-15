@@ -18,21 +18,23 @@ public class Solution {
             e.printStackTrace();
         }
 
-        System.out.println(logParser.getNumberOfUniqueIPs(after, before));
-        System.out.println(logParser.getUniqueIPs(after, before));
-        System.out.println(logParser.getIPsForUser("Amigo", after, before));
-        System.out.println(logParser.getIPsForEvent(Event.DONE_TASK, after, before));
-        System.out.println(logParser.getIPsForStatus(Status.ERROR, after, before));
-
-        System.out.println(logParser.getAllUsers());
-        System.out.println(logParser.getNumberOfUsers(null, null));
-        System.out.println(logParser.getNumberOfUserEvents("Vasya Pupkin", null, null));
-        System.out.println(logParser.getUsersForIP("127.0.0.1", null, null));
-        System.out.println(logParser.getLoggedUsers(null, null));
-        System.out.println(logParser.getDownloadedPluginUsers(null, null));
-        System.out.println(logParser.getWroteMessageUsers(null, null));
-        System.out.println(logParser.getSolvedTaskUsers(null, null));
-        System.out.println(logParser.getSolvedTaskUsers(null, null, 18));
-        System.out.println(logParser.getDoneTaskUsers(null, null));
+        System.out.println("getNumberOfUniqueIPs \t" + logParser.getNumberOfUniqueIPs(after, before));
+        System.out.println("getUniqueIPs \t" + logParser.getUniqueIPs(after, before));
+        System.out.println("getIPsForUser \t" + logParser.getIPsForUser("Amigo", after, before));
+        System.out.println("getIPsForEvent \t" + logParser.getIPsForEvent(Event.DONE_TASK, after, before));
+        System.out.println("getIPsForStatus \t" + logParser.getIPsForStatus(Status.ERROR, after, before));
+        System.out.println();
+        System.out.println("getAllUsers \t" + logParser.getAllUsers());
+        System.out.println("getNumberOfUsers \t" + logParser.getNumberOfUsers(null, null));
+        System.out.println("getNumberOfUserEvents \t" + logParser.getNumberOfUserEvents("Vasya Pupkin", null, null));
+        System.out.println("getUsersForIP \t" + logParser.getUsersForIP("127.0.0.1", null, null));
+        System.out.println("getLoggedUsers \t" + logParser.getLoggedUsers(null, null));
+        System.out.println("getDownloadedPluginUsers \t" + logParser.getDownloadedPluginUsers(null, null));
+        System.out.println("getWroteMessageUsers \t" + logParser.getWroteMessageUsers(null, null));
+        System.out.println("getSolvedTaskUsers \t" + logParser.getSolvedTaskUsers(null, null));
+        System.out.println("getSolvedTaskUsers \t" + logParser.getSolvedTaskUsers(null, null, 18));
+        System.out.println("getDoneTaskUsers \t" + logParser.getDoneTaskUsers(null, null));
+        System.out.println("getDoneTaskUsers \t" + logParser.getDoneTaskUsers(null, null, 15));
+        System.out.println();
     }
 }
