@@ -242,7 +242,16 @@ public class LogParser implements IPQuery, UserQuery, DateQuery {
 
     @Override
     public Set<Date> getDatesForUserAndEvent(String user, Event event, Date after, Date before) {
-        return null;
+        Set<Date> resultSet = new HashSet<>();
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        for (OneLog log : listLogsForPeriod) {
+            if (log.getName().equals(user)
+                    && log.getEvent().equals(event)) {
+                resultSet.add(log.getDate());
+            }
+        }
+        return resultSet;
     }
 
     @Override
@@ -313,8 +322,6 @@ public class LogParser implements IPQuery, UserQuery, DateQuery {
         }
         return resultLog;
     }
-
-    //getLogsForPeriod
 
     private List<OneLog> getLogsForPeriod(List<OneLog> logs, Date after, Date before) {
         List<OneLog> resultLog = new ArrayList<>();

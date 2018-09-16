@@ -36,5 +36,6 @@ public class Solution {
         System.out.println("getDoneTaskUsers \t" + logParser.getDoneTaskUsers(null, null));
         System.out.println("getDoneTaskUsers \t" + logParser.getDoneTaskUsers(null, null, 15));
         System.out.println();
+        System.out.println("getDatesForUserAndEvent \t" + logParser.getDatesForUserAndEvent("Amigo", Event.SOLVE_TASK, null, null));
     }
 }
