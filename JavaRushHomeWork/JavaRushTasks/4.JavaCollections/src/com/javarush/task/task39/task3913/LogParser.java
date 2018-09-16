@@ -272,7 +272,15 @@ public class LogParser implements IPQuery, UserQuery, DateQuery {
 
     @Override
     public Set<Date> getDatesWhenErrorHappened(Date after, Date before) {
-        return null;
+        Set<Date> resultSet = new HashSet<>();
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        for (OneLog log : listLogsForPeriod) {
+            if (log.getStatus().equals(Status.ERROR)) {
+                resultSet.add(log.getDate());
+            }
+        }
+        return resultSet;
     }
 
     @Override

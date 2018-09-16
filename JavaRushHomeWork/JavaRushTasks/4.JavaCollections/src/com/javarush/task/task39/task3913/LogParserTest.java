@@ -20,6 +20,7 @@ public class LogParserTest {
     private static final String DATE_2028 = "29.2.2028 5:4:7";
     private static final String DATE_FAILED_11_12_2013 = "11.12.2013 10:11:12";
     private static final String DATE_FAILED_05_01_2021 = "05.01.2021 20:22:55";
+    private static final String DATE_ERROR_30_01_2014 = "30.01.2014 12:56:22";
 
     private static final String USER_EPM = "Eduard Petrovich Morozko";
     private static final String USER_VP = "Vasya Pupkin";
@@ -40,6 +41,7 @@ public class LogParserTest {
     private Date date2028;
     private Date date_failed_05_01_2021;
     private Date date_failed_11_12_2013;
+    private Date date_error_30_01_2014;
 
     @Before
     public void beforeMethod() {
@@ -55,6 +57,7 @@ public class LogParserTest {
             this.date2028 = formatForDateNow.parse(DATE_2028);
             this.date_failed_05_01_2021 = formatForDateNow.parse(DATE_FAILED_05_01_2021);
             this.date_failed_11_12_2013 = formatForDateNow.parse(DATE_FAILED_11_12_2013);
+            this.date_error_30_01_2014 = formatForDateNow.parse(DATE_ERROR_30_01_2014);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -352,6 +355,20 @@ public class LogParserTest {
     @Test
     public void getDatesWhenSomethingFailed_NO_NULL() {
         Set<Date> currentResult = logParser.getDatesWhenSomethingFailed(afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
+    }
+
+    @Test
+    public void getDatesWhenErrorHappened() {
+        Set<Date> currentResult = logParser.getDatesWhenErrorHappened(afterNull, beforeNull);
+        Set<Date> correctResult = new HashSet<>();
+        correctResult.add(date_error_30_01_2014);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getDatesWhenErrorHappened_NO_NULL() {
+        Set<Date> currentResult = logParser.getDatesWhenErrorHappened(afterNull, beforeNull);
         Assert.assertNotNull(currentResult);
     }
 }

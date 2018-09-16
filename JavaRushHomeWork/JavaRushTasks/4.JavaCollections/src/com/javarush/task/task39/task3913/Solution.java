@@ -38,5 +38,6 @@ public class Solution {
         System.out.println();
         System.out.println("getDatesForUserAndEvent \t" + logParser.getDatesForUserAndEvent("Amigo", Event.SOLVE_TASK, null, null));
         System.out.println("getDatesWhenSomethingFailed \t" + logParser.getDatesWhenSomethingFailed(null, null));
+        System.out.println("getDatesWhenErrorHappened \t" + logParser.getDatesWhenErrorHappened(null, null));
     }
 }
