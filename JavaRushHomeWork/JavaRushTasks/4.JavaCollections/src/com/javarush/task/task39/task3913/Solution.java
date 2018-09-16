@@ -40,5 +40,6 @@ public class Solution {
         System.out.println("getDatesWhenSomethingFailed \t" + logParser.getDatesWhenSomethingFailed(null, null));
         System.out.println("getDatesWhenErrorHappened \t" + logParser.getDatesWhenErrorHappened(null, null));
         System.out.println("getDateWhenUserLoggedFirstTime \t" + logParser.getDateWhenUserLoggedFirstTime("Vasya Pupkin", null, null));
+        System.out.println("getDateWhenUserSolvedTask \t" + logParser.getDateWhenUserSolvedTask("Vasya Pupkin", 18, null, null));
     }
 }

@@ -298,6 +298,15 @@ public class LogParser implements IPQuery, UserQuery, DateQuery {
 
     @Override
     public Date getDateWhenUserSolvedTask(String user, int task, Date after, Date before) {
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        for (OneLog log : listLogsForPeriod) {
+            if (log.getName().equals(user)
+                    && log.getEvent().equals(Event.SOLVE_TASK)
+                    && log.getParameter() == task) {
+                return log.getDate();
+            }
+        }
         return null;
     }
 
