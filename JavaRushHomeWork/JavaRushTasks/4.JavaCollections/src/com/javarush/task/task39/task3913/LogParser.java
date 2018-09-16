@@ -341,7 +341,16 @@ public class LogParser implements IPQuery, UserQuery, DateQuery {
 
     @Override
     public Set<Date> getDatesWhenUserDownloadedPlugin(String user, Date after, Date before) {
-        return null;
+        Set<Date> resultSet = new HashSet<>();
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        for (OneLog log : listLogsForPeriod) {
+            if (log.getName().equals(user)
+                    && log.getEvent().equals(Event.DOWNLOAD_PLUGIN)) {
+                resultSet.add(log.getDate());
+            }
+        }
+        return resultSet;
     }
 
     private Set<String> getSetOfUniqueIPs(List<OneLog> logs) {

@@ -24,6 +24,7 @@ public class LogParserTest {
     private static final String DATE_ERROR_30_01_2014 = "30.01.2014 12:56:22";
     private static final String DATE_FIRST_LOGIN_VP = "14.10.2021 11:38:21";
     private static final String DATE_FIRST_SOLVE_TASK_VP = "30.01.2014 12:56:22";
+    private static final String DATE_DOWNLOAD_PLUGIN_EPM = "13.09.2013 5:04:50";
 
     private static final String USER_EPM = "Eduard Petrovich Morozko";
     private static final String USER_VP = "Vasya Pupkin";
@@ -48,6 +49,7 @@ public class LogParserTest {
     private Date dateError_30_01_2014;
     private Date dateFirstLogin_VP;
     private Date dateFirstSolvedTask_VP;
+    private Date dateDownloadedPlugin_EPM;
 
     @Before
     public void beforeMethod() {
@@ -67,6 +69,7 @@ public class LogParserTest {
             this.dateError_30_01_2014 = formatForDateNow.parse(DATE_ERROR_30_01_2014);
             this.dateFirstLogin_VP = formatForDateNow.parse(DATE_FIRST_LOGIN_VP);
             this.dateFirstSolvedTask_VP = formatForDateNow.parse(DATE_FIRST_SOLVE_TASK_VP);
+            this.dateDownloadedPlugin_EPM = formatForDateNow.parse(DATE_DOWNLOAD_PLUGIN_EPM);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -438,11 +441,9 @@ public class LogParserTest {
         Assert.assertNull(currentResult);
     }
 
-
-
     @Test
     public void getDatesWhenUserWroteMessage() {
-        Set<Date> currentResult = logParser.getDatesWhenUserWroteMessage(USER_EPM,  afterNull, beforeNull);
+        Set<Date> currentResult = logParser.getDatesWhenUserWroteMessage(USER_EPM, afterNull, beforeNull);
         Set<Date> correctResult = new HashSet<>();
         correctResult.add(dateFailed_11_12_2013);
         correctResult.add(dateOk_11_12_2013);
@@ -451,7 +452,21 @@ public class LogParserTest {
 
     @Test
     public void getDatesWhenUserWroteMessage_NO_NULL() {
-        Set<Date> currentResult = logParser.getDatesWhenUserWroteMessage(USER_EPM,  afterNull, beforeNull);
+        Set<Date> currentResult = logParser.getDatesWhenUserWroteMessage(USER_EPM, afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
+    }
+
+    @Test
+    public void getDatesWhenUserDownloadedPlugin() {
+        Set<Date> currentResult = logParser.getDatesWhenUserDownloadedPlugin(USER_EPM, afterNull, beforeNull);
+        Set<Date> correctResult = new HashSet<>();
+        correctResult.add(dateDownloadedPlugin_EPM);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getDatesWhenUserDownloadedPlugin_NO_NULL() {
+        Set<Date> currentResult = logParser.getDatesWhenUserDownloadedPlugin(USER_EPM, afterNull, beforeNull);
         Assert.assertNotNull(currentResult);
     }
 }
