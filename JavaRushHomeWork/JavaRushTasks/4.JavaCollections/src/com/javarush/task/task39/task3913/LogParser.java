@@ -287,42 +287,44 @@ public class LogParser implements IPQuery, UserQuery, DateQuery {
     public Date getDateWhenUserLoggedFirstTime(String user, Date after, Date before) {
         List<OneLog> listAllLogs = getAllLogs();
         List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<Date> dates = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getName().equals(user)
                     && log.getEvent().equals(Event.LOGIN)) {
-                return log.getDate();
+                dates.add(log.getDate());
             }
         }
-        return null;
+        return getMinDate(dates);
     }
 
     @Override
     public Date getDateWhenUserSolvedTask(String user, int task, Date after, Date before) {
         List<OneLog> listAllLogs = getAllLogs();
         List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<Date> dates = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getName().equals(user)
                     && log.getEvent().equals(Event.SOLVE_TASK)
                     && log.getParameter() == task) {
-                return log.getDate();
+                dates.add(log.getDate());
             }
         }
-        return null;
+        return getMinDate(dates);
     }
 
     @Override
     public Date getDateWhenUserDoneTask(String user, int task, Date after, Date before) {
         List<OneLog> listAllLogs = getAllLogs();
         List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<Date> dates = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getName().equals(user)
                     && log.getEvent().equals(Event.DONE_TASK)
-                    && log.getParameter() == task
-                    && log.getStatus().equals(Status.OK)) {
-                return log.getDate();
+                    && log.getParameter() == task) {
+                dates.add(log.getDate());
             }
         }
-        return null;
+        return getMinDate(dates);
     }
 
     @Override
@@ -351,6 +353,20 @@ public class LogParser implements IPQuery, UserQuery, DateQuery {
             }
         }
         return resultSet;
+    }
+
+    private Date getMinDate(Set<Date> dates) {
+        Date resultDate = null;
+        for (Date date : dates) {
+            if (resultDate == null) {
+                resultDate = date;
+                continue;
+            }
+            if (resultDate.after(date)) {
+                resultDate = date;
+            }
+        }
+        return resultDate;
     }
 
     private Set<String> getSetOfUniqueIPs(List<OneLog> logs) {
