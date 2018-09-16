@@ -415,4 +415,23 @@ public class LogParserTest {
         Date currentResult = logParser.getDateWhenUserSolvedTask(USER_VP, 18, afterNull, dateFailed_11_12_2013);
         Assert.assertNull(currentResult);
     }
+
+    @Test
+    public void getDateWhenUserDoneTask() {
+        Date currentResult = logParser.getDateWhenUserDoneTask(USER_VP, 15, afterNull, beforeNull);
+        Date correctResult = after;
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getDateWhenUserDoneTask_NO_NULL() {
+        Date currentResult = logParser.getDateWhenUserDoneTask(USER_VP, 15, afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
+    }
+
+    @Test
+    public void getDateWhenUserDoneTask_NULL() {
+        Date currentResult = logParser.getDateWhenUserDoneTask(USER_VP, 15, dateFailed_11_12_2013, beforeNull);
+        Assert.assertNull(currentResult);
+    }
 }
