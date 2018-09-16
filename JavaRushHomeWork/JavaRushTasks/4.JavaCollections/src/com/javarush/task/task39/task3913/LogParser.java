@@ -327,7 +327,16 @@ public class LogParser implements IPQuery, UserQuery, DateQuery {
 
     @Override
     public Set<Date> getDatesWhenUserWroteMessage(String user, Date after, Date before) {
-        return null;
+        Set<Date> resultSet = new HashSet<>();
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        for (OneLog log : listLogsForPeriod) {
+            if (log.getName().equals(user)
+                    && log.getEvent().equals(Event.WRITE_MESSAGE)) {
+                resultSet.add(log.getDate());
+            }
+        }
+        return resultSet;
     }
 
     @Override

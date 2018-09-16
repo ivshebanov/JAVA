@@ -42,5 +42,6 @@ public class Solution {
         System.out.println("getDateWhenUserLoggedFirstTime \t" + logParser.getDateWhenUserLoggedFirstTime("Vasya Pupkin", null, null));
         System.out.println("getDateWhenUserSolvedTask \t" + logParser.getDateWhenUserSolvedTask("Vasya Pupkin", 18, null, null));
         System.out.println("getDateWhenUserDoneTask \t" + logParser.getDateWhenUserDoneTask("Vasya Pupkin", 15, null, null));
+        System.out.println("getDatesWhenUserWroteMessage \t" + logParser.getDatesWhenUserWroteMessage("Eduard Petrovich Morozko", null, null));
     }
 }
