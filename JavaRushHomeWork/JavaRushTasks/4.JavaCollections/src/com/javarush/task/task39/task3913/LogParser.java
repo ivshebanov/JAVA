@@ -285,6 +285,14 @@ public class LogParser implements IPQuery, UserQuery, DateQuery {
 
     @Override
     public Date getDateWhenUserLoggedFirstTime(String user, Date after, Date before) {
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        for (OneLog log : listLogsForPeriod) {
+            if (log.getName().equals(user)
+                    && log.getEvent().equals(Event.LOGIN)) {
+                return log.getDate();
+            }
+        }
         return null;
     }
 

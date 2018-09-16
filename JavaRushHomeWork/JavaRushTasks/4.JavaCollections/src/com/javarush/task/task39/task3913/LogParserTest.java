@@ -21,6 +21,7 @@ public class LogParserTest {
     private static final String DATE_FAILED_11_12_2013 = "11.12.2013 10:11:12";
     private static final String DATE_FAILED_05_01_2021 = "05.01.2021 20:22:55";
     private static final String DATE_ERROR_30_01_2014 = "30.01.2014 12:56:22";
+    private static final String DATE_FIRST_LOGIN_VP = "14.10.2021 11:38:21";
 
     private static final String USER_EPM = "Eduard Petrovich Morozko";
     private static final String USER_VP = "Vasya Pupkin";
@@ -38,10 +39,11 @@ public class LogParserTest {
     private Date afterNull = null;
     private Date beforeNull = null;
     private Date date_2021;
-    private Date date2028;
-    private Date date_failed_05_01_2021;
-    private Date date_failed_11_12_2013;
-    private Date date_error_30_01_2014;
+    private Date date_2028;
+    private Date dateFailed_05_01_2021;
+    private Date dateFailed_11_12_2013;
+    private Date dateError_30_01_2014;
+    private Date dateFirstLogin_VP;
 
     @Before
     public void beforeMethod() {
@@ -54,10 +56,11 @@ public class LogParserTest {
             this.after = formatForDateNow.parse(DATE_AFTER);
             this.before = formatForDateNow.parse(DATE_BEFORE);
             this.date_2021 = formatForDateNow.parse(DATE_2021);
-            this.date2028 = formatForDateNow.parse(DATE_2028);
-            this.date_failed_05_01_2021 = formatForDateNow.parse(DATE_FAILED_05_01_2021);
-            this.date_failed_11_12_2013 = formatForDateNow.parse(DATE_FAILED_11_12_2013);
-            this.date_error_30_01_2014 = formatForDateNow.parse(DATE_ERROR_30_01_2014);
+            this.date_2028 = formatForDateNow.parse(DATE_2028);
+            this.dateFailed_05_01_2021 = formatForDateNow.parse(DATE_FAILED_05_01_2021);
+            this.dateFailed_11_12_2013 = formatForDateNow.parse(DATE_FAILED_11_12_2013);
+            this.dateError_30_01_2014 = formatForDateNow.parse(DATE_ERROR_30_01_2014);
+            this.dateFirstLogin_VP = formatForDateNow.parse(DATE_FIRST_LOGIN_VP);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -333,7 +336,7 @@ public class LogParserTest {
         Set<Date> currentResult = logParser.getDatesForUserAndEvent("Amigo", Event.SOLVE_TASK, afterNull, beforeNull);
         Set<Date> correctResult = new HashSet<>();
         correctResult.add(date_2021);
-        correctResult.add(date2028);
+        correctResult.add(date_2028);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -347,8 +350,8 @@ public class LogParserTest {
     public void getDatesWhenSomethingFailed() {
         Set<Date> currentResult = logParser.getDatesWhenSomethingFailed(afterNull, beforeNull);
         Set<Date> correctResult = new HashSet<>();
-        correctResult.add(date_failed_05_01_2021);
-        correctResult.add(date_failed_11_12_2013);
+        correctResult.add(dateFailed_05_01_2021);
+        correctResult.add(dateFailed_11_12_2013);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -362,7 +365,7 @@ public class LogParserTest {
     public void getDatesWhenErrorHappened() {
         Set<Date> currentResult = logParser.getDatesWhenErrorHappened(afterNull, beforeNull);
         Set<Date> correctResult = new HashSet<>();
-        correctResult.add(date_error_30_01_2014);
+        correctResult.add(dateError_30_01_2014);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -370,5 +373,24 @@ public class LogParserTest {
     public void getDatesWhenErrorHappened_NO_NULL() {
         Set<Date> currentResult = logParser.getDatesWhenErrorHappened(afterNull, beforeNull);
         Assert.assertNotNull(currentResult);
+    }
+
+    @Test
+    public void getDateWhenUserLoggedFirstTime() {
+        Date currentResult = logParser.getDateWhenUserLoggedFirstTime(USER_VP, afterNull, beforeNull);
+        Date correctResult = dateFirstLogin_VP;
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getDateWhenUserLoggedFirstTime_NO_NULL() {
+        Date currentResult = logParser.getDateWhenUserLoggedFirstTime(USER_VP, afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
+    }
+
+    @Test
+    public void getDateWhenUserLoggedFirstTime_NULL() {
+        Date currentResult = logParser.getDateWhenUserLoggedFirstTime(USER_VP, afterNull, dateFailed_11_12_2013);
+        Assert.assertNull(currentResult);
     }
 }
