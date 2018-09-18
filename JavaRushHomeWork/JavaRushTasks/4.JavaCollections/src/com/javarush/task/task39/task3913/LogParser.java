@@ -401,7 +401,15 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     @Override
     public Set<Event> getFailedEvents(Date after, Date before) {
-        return null;
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<Event> resultSet = new HashSet<>();
+        for (OneLog log : listLogsForPeriod) {
+            if (log.getStatus().equals(Status.FAILED)) {
+                resultSet.add(log.getEvent());
+            }
+        }
+        return resultSet;
     }
 
     @Override

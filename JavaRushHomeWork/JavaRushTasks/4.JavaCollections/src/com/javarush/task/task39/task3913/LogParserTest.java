@@ -522,4 +522,18 @@ public class LogParserTest {
         Set<Event> currentResult = logParser.getEventsForUser(USER_EPM, after, dateOk_12_12_2013);
         Assert.assertNotNull(currentResult);
     }
+
+    @Test
+    public void getFailedEvents() {
+        Set<Event> currentResult = logParser.getFailedEvents(after, dateOk_12_12_2013);
+        Set<Event> correctResult = new HashSet<>();
+        correctResult.add(Event.WRITE_MESSAGE);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getFailedEvents_NO_NULL() {
+        Set<Event> currentResult = logParser.getFailedEvents(after, dateOk_12_12_2013);
+        Assert.assertNotNull(currentResult);
+    }
 }
