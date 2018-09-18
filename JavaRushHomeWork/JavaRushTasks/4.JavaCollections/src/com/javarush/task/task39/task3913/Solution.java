@@ -48,5 +48,6 @@ public class Solution {
         System.out.println("getDatesWhenUserDownloadedPlugin \t" + logParser.getDatesWhenUserDownloadedPlugin("Eduard Petrovich Morozko", null, null));
         System.out.println();
         System.out.println("getNumberOfAllEvents \t" + logParser.getNumberOfAllEvents(after, before2));
+        System.out.println("getAllEvents \t" + logParser.getAllEvents(after, before2));
     }
 }

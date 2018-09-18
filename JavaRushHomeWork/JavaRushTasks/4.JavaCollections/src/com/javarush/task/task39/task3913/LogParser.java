@@ -359,18 +359,18 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     @Override
     public int getNumberOfAllEvents(Date after, Date before) {
+        return getAllEvents(after, before).size();
+    }
+
+    @Override
+    public Set<Event> getAllEvents(Date after, Date before) {
         List<OneLog> listAllLogs = getAllLogs();
         List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         Set<Event> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             resultSet.add(log.getEvent());
         }
-        return resultSet.size();
-    }
-
-    @Override
-    public Set<Event> getAllEvents(Date after, Date before) {
-        return null;
+        return resultSet;
     }
 
     @Override
