@@ -11,9 +11,11 @@ public class Solution {
         SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         Date after = new Date(0);
         Date before = null;
+        Date before2 = null;
         try {
             after = formatForDateNow.parse("30.08.2012 16:08:40");
             before = formatForDateNow.parse("05.01.2021 20:22:55");
+            before2 = formatForDateNow.parse("12.12.2013 21:56:30");
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -44,5 +46,7 @@ public class Solution {
         System.out.println("getDateWhenUserDoneTask \t" + logParser.getDateWhenUserDoneTask("Vasya Pupkin", 15, null, null));
         System.out.println("getDatesWhenUserWroteMessage \t" + logParser.getDatesWhenUserWroteMessage("Eduard Petrovich Morozko", null, null));
         System.out.println("getDatesWhenUserDownloadedPlugin \t" + logParser.getDatesWhenUserDownloadedPlugin("Eduard Petrovich Morozko", null, null));
+        System.out.println();
+        System.out.println("getNumberOfAllEvents \t" + logParser.getNumberOfAllEvents(after, before2));
     }
 }

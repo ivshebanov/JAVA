@@ -247,9 +247,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
         if (user == null || user.isEmpty() || event == null) {
             return emptySet();
         }
-        Set<Date> resultSet = new HashSet<>();
         List<OneLog> listAllLogs = getAllLogs();
         List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<Date> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getName().equals(user)
                     && log.getEvent().equals(event)) {
@@ -261,9 +261,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     @Override
     public Set<Date> getDatesWhenSomethingFailed(Date after, Date before) {
-        Set<Date> resultSet = new HashSet<>();
         List<OneLog> listAllLogs = getAllLogs();
         List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<Date> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getStatus().equals(Status.FAILED)) {
                 resultSet.add(log.getDate());
@@ -274,9 +274,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     @Override
     public Set<Date> getDatesWhenErrorHappened(Date after, Date before) {
-        Set<Date> resultSet = new HashSet<>();
         List<OneLog> listAllLogs = getAllLogs();
         List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<Date> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getStatus().equals(Status.ERROR)) {
                 resultSet.add(log.getDate());
@@ -331,9 +331,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     @Override
     public Set<Date> getDatesWhenUserWroteMessage(String user, Date after, Date before) {
-        Set<Date> resultSet = new HashSet<>();
         List<OneLog> listAllLogs = getAllLogs();
         List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<Date> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getName().equals(user)
                     && log.getEvent().equals(Event.WRITE_MESSAGE)) {
@@ -345,9 +345,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     @Override
     public Set<Date> getDatesWhenUserDownloadedPlugin(String user, Date after, Date before) {
-        Set<Date> resultSet = new HashSet<>();
         List<OneLog> listAllLogs = getAllLogs();
         List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<Date> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getName().equals(user)
                     && log.getEvent().equals(Event.DOWNLOAD_PLUGIN)) {
@@ -359,7 +359,13 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     @Override
     public int getNumberOfAllEvents(Date after, Date before) {
-        return 0;
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<Event> resultSet = new HashSet<>();
+        for (OneLog log : listLogsForPeriod) {
+            resultSet.add(log.getEvent());
+        }
+        return resultSet.size();
     }
 
     @Override
