@@ -52,5 +52,6 @@ public class Solution {
         System.out.println("getEventsForIP \t" + logParser.getEventsForIP("146.34.15.5", after, before2));
         System.out.println("getEventsForUser \t" + logParser.getEventsForUser("Eduard Petrovich Morozko", after, before2));
         System.out.println("getFailedEvents \t" + logParser.getFailedEvents(after, before2));
+        System.out.println("getErrorEvents \t" + logParser.getErrorEvents(after, before2));
     }
 }

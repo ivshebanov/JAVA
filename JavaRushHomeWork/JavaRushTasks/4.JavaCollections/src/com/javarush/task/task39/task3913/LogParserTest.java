@@ -536,4 +536,17 @@ public class LogParserTest {
         Set<Event> currentResult = logParser.getFailedEvents(after, dateOk_12_12_2013);
         Assert.assertNotNull(currentResult);
     }
+
+    @Test
+    public void getErrorEvents() {
+        Set<Event> currentResult = logParser.getErrorEvents(after, dateOk_12_12_2013);
+        Set<Event> correctResult = new HashSet<>();
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getErrorEvents_NO_NULL() {
+        Set<Event> currentResult = logParser.getErrorEvents(after, dateOk_12_12_2013);
+        Assert.assertNotNull(currentResult);
+    }
 }
