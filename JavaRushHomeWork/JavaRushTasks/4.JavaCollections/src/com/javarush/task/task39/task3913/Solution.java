@@ -49,5 +49,6 @@ public class Solution {
         System.out.println();
         System.out.println("getNumberOfAllEvents \t" + logParser.getNumberOfAllEvents(after, before2));
         System.out.println("getAllEvents \t" + logParser.getAllEvents(after, before2));
+        System.out.println("getEventsForIP \t" + logParser.getEventsForIP("146.34.15.5", after, before2));
     }
 }

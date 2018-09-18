@@ -486,4 +486,25 @@ public class LogParserTest {
         correctResult.add(Event.DOWNLOAD_PLUGIN);
         Assert.assertEquals(correctResult, currentResult);
     }
+
+    @Test
+    public void getAllEvents_NO_NULL() {
+        Set<Event> currentResult = logParser.getAllEvents(after, dateOk_12_12_2013);
+        Assert.assertNotNull(currentResult);
+    }
+
+    @Test
+    public void getEventsForIP() {
+        Set<Event> currentResult = logParser.getEventsForIP(IP_146, after, dateOk_12_12_2013);
+        Set<Event> correctResult = new HashSet<>();
+        correctResult.add(Event.WRITE_MESSAGE);
+        correctResult.add(Event.DOWNLOAD_PLUGIN);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getEventsForIP_NO_NULL() {
+        Set<Event> currentResult = logParser.getEventsForIP(IP_146, after, dateOk_12_12_2013);
+        Assert.assertNotNull(currentResult);
+    }
 }
