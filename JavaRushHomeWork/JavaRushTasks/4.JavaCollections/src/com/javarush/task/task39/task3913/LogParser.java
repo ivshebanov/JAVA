@@ -379,7 +379,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
         List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         Set<Event> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
-            if (log.getIp().equals(ip)){
+            if (log.getIp().equals(ip)) {
                 resultSet.add(log.getEvent());
             }
         }
@@ -388,7 +388,15 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     @Override
     public Set<Event> getEventsForUser(String user, Date after, Date before) {
-        return null;
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<Event> resultSet = new HashSet<>();
+        for (OneLog log : listLogsForPeriod) {
+            if (log.getName().equals(user)) {
+                resultSet.add(log.getEvent());
+            }
+        }
+        return resultSet;
     }
 
     @Override
