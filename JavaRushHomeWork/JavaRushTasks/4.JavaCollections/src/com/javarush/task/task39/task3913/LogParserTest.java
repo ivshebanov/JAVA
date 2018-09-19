@@ -549,4 +549,11 @@ public class LogParserTest {
         Set<Event> currentResult = logParser.getErrorEvents(after, dateOk_12_12_2013);
         Assert.assertNotNull(currentResult);
     }
+
+    @Test
+    public void getNumberOfAttemptToSolveTask() {
+        int currentResult = logParser.getNumberOfAttemptToSolveTask(18, afterNull, beforeNull);
+        int correctResult = 3;
+        Assert.assertEquals(correctResult, currentResult);
+    }
 }

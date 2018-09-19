@@ -427,7 +427,16 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     @Override
     public int getNumberOfAttemptToSolveTask(int task, Date after, Date before) {
-        return 0;
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        int resultCount = 0;
+        for (OneLog log : listLogsForPeriod) {
+            if (log.getEvent().equals(Event.SOLVE_TASK)
+                    && log.getParameter() == task) {
+                resultCount++;
+            }
+        }
+        return resultCount;
     }
 
     @Override

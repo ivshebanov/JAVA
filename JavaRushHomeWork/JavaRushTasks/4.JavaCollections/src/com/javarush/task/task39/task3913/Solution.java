@@ -53,5 +53,6 @@ public class Solution {
         System.out.println("getEventsForUser \t" + logParser.getEventsForUser("Eduard Petrovich Morozko", after, before2));
         System.out.println("getFailedEvents \t" + logParser.getFailedEvents(after, before2));
         System.out.println("getErrorEvents \t" + logParser.getErrorEvents(after, before2));
+        System.out.println("getNumberOfAttemptToSolveTask \t" + logParser.getNumberOfAttemptToSolveTask(18, null, null));
     }
 }
