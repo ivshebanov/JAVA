@@ -556,4 +556,11 @@ public class LogParserTest {
         int correctResult = 3;
         Assert.assertEquals(correctResult, currentResult);
     }
+
+    @Test
+    public void getNumberOfSuccessfulAttemptToSolveTask() {
+        int currentResult = logParser.getNumberOfSuccessfulAttemptToSolveTask(18, afterNull, beforeNull);
+        int correctResult = 2;
+        Assert.assertEquals(correctResult, currentResult);
+    }
 }

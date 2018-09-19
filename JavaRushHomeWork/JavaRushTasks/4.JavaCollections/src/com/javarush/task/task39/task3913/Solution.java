@@ -54,5 +54,6 @@ public class Solution {
         System.out.println("getFailedEvents \t" + logParser.getFailedEvents(after, before2));
         System.out.println("getErrorEvents \t" + logParser.getErrorEvents(after, before2));
         System.out.println("getNumberOfAttemptToSolveTask \t" + logParser.getNumberOfAttemptToSolveTask(18, null, null));
+        System.out.println("getNumberOfSuccessfulAttemptToSolveTask \t" + logParser.getNumberOfSuccessfulAttemptToSolveTask(18, null, null));
     }
 }
