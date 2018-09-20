@@ -582,4 +582,20 @@ public class LogParserTest {
         Map<Integer, Integer> currentResult = logParser.getAllSolvedTasksAndTheirNumber(afterNull, beforeNull);
         Assert.assertNotNull(currentResult);
     }
+
+    @Test
+    public void getAllDoneTasksAndTheirNumber() {
+        Map<Integer, Integer> currentResult = logParser.getAllDoneTasksAndTheirNumber(afterNull, beforeNull);
+        Map<Integer, Integer> correctResult = new HashMap<>();
+        correctResult.put(1, 1);
+        correctResult.put(18, 2);
+        correctResult.put(15, 1);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getAllDoneTasksAndTheirNumber_NO_NULL() {
+        Map<Integer, Integer> currentResult = logParser.getAllDoneTasksAndTheirNumber(afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
+    }
 }

@@ -477,7 +477,22 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     @Override
     public Map<Integer, Integer> getAllDoneTasksAndTheirNumber(Date after, Date before) {
-        return null;
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Map<Integer, Integer> resultMap = new HashMap<>();
+        for (OneLog log : listLogsForPeriod) {
+            int numberTask = log.getParameter();
+            if (numberTask != 0 && log.getStatus().equals(Status.OK)) {
+                if (!resultMap.containsKey(numberTask)) {
+                    resultMap.put(numberTask, 1);
+                    continue;
+                }
+                if (resultMap.containsKey(numberTask)) {
+                    resultMap.put(numberTask, resultMap.get(numberTask) + 1);
+                }
+            }
+        }
+        return resultMap;
     }
 
     private Date getMinDate(Set<Date> dates) {
