@@ -14,6 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -456,7 +457,22 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     @Override
     public Map<Integer, Integer> getAllSolvedTasksAndTheirNumber(Date after, Date before) {
-        return null;
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Map<Integer, Integer> resultMap = new HashMap<>();
+        for (OneLog log : listLogsForPeriod) {
+            int numberTask = log.getParameter();
+            if (numberTask != 0) {
+                if (!resultMap.containsKey(numberTask)) {
+                    resultMap.put(numberTask, 1);
+                    continue;
+                }
+                if (resultMap.containsKey(numberTask)) {
+                    resultMap.put(numberTask, resultMap.get(numberTask) + 1);
+                }
+            }
+        }
+        return resultMap;
     }
 
     @Override

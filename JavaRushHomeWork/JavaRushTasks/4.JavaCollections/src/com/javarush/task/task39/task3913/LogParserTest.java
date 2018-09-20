@@ -9,7 +9,9 @@ import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class LogParserTest {
@@ -562,5 +564,22 @@ public class LogParserTest {
         int currentResult = logParser.getNumberOfSuccessfulAttemptToSolveTask(18, afterNull, beforeNull);
         int correctResult = 2;
         Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getAllSolvedTasksAndTheirNumber() {
+        Map<Integer, Integer> currentResult = logParser.getAllSolvedTasksAndTheirNumber(afterNull, beforeNull);
+        Map<Integer, Integer> correctResult = new HashMap<>();
+        correctResult.put(48, 1);
+        correctResult.put(1, 1);
+        correctResult.put(18, 3);
+        correctResult.put(15, 1);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getAllSolvedTasksAndTheirNumber_NO_NULL() {
+        Map<Integer, Integer> currentResult = logParser.getAllSolvedTasksAndTheirNumber(afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
     }
 }
