@@ -561,8 +561,8 @@ public class LogParserTest {
 
     @Test
     public void getNumberOfSuccessfulAttemptToSolveTask() {
-        int currentResult = logParser.getNumberOfSuccessfulAttemptToSolveTask(18, afterNull, beforeNull);
-        int correctResult = 2;
+        int currentResult = logParser.getNumberOfSuccessfulAttemptToSolveTask(15, afterNull, beforeNull);
+        int correctResult = 1;
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -570,10 +570,8 @@ public class LogParserTest {
     public void getAllSolvedTasksAndTheirNumber() {
         Map<Integer, Integer> currentResult = logParser.getAllSolvedTasksAndTheirNumber(afterNull, beforeNull);
         Map<Integer, Integer> correctResult = new HashMap<>();
-        correctResult.put(48, 1);
         correctResult.put(1, 1);
         correctResult.put(18, 3);
-        correctResult.put(15, 1);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -587,8 +585,7 @@ public class LogParserTest {
     public void getAllDoneTasksAndTheirNumber() {
         Map<Integer, Integer> currentResult = logParser.getAllDoneTasksAndTheirNumber(afterNull, beforeNull);
         Map<Integer, Integer> correctResult = new HashMap<>();
-        correctResult.put(1, 1);
-        correctResult.put(18, 2);
+        correctResult.put(48, 1);
         correctResult.put(15, 1);
         Assert.assertEquals(correctResult, currentResult);
     }

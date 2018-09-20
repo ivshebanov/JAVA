@@ -446,9 +446,8 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
         List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         int resultCount = 0;
         for (OneLog log : listLogsForPeriod) {
-            if (log.getEvent().equals(Event.SOLVE_TASK)
-                    && log.getParameter() == task
-                    && log.getStatus().equals(Status.OK)) {
+            if (log.getEvent().equals(Event.DONE_TASK)
+                    && log.getParameter() == task) {
                 resultCount++;
             }
         }
@@ -462,7 +461,8 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
         Map<Integer, Integer> resultMap = new HashMap<>();
         for (OneLog log : listLogsForPeriod) {
             int numberTask = log.getParameter();
-            if (numberTask != 0) {
+            if (log.getEvent().equals(Event.SOLVE_TASK)
+                    && numberTask != 0) {
                 if (!resultMap.containsKey(numberTask)) {
                     resultMap.put(numberTask, 1);
                     continue;
@@ -482,7 +482,8 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
         Map<Integer, Integer> resultMap = new HashMap<>();
         for (OneLog log : listLogsForPeriod) {
             int numberTask = log.getParameter();
-            if (numberTask != 0 && log.getStatus().equals(Status.OK)) {
+            if (log.getEvent().equals(Event.DONE_TASK)
+                    && numberTask != 0) {
                 if (!resultMap.containsKey(numberTask)) {
                     resultMap.put(numberTask, 1);
                     continue;
