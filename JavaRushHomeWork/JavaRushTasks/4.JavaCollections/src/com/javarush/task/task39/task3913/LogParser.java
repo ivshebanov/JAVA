@@ -3,6 +3,7 @@ package com.javarush.task.task39.task3913;
 import com.javarush.task.task39.task3913.query.DateQuery;
 import com.javarush.task.task39.task3913.query.EventQuery;
 import com.javarush.task.task39.task3913.query.IPQuery;
+import com.javarush.task.task39.task3913.query.QLQuery;
 import com.javarush.task.task39.task3913.query.UserQuery;
 
 import java.io.File;
@@ -25,7 +26,7 @@ import java.util.regex.Pattern;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.emptySet;
 
-public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
+public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQuery {
 
     private static final String PATTERN_GET_DATE = "(0?[1-9]|[12][0-9]|3[01])[.](0?[1-9]|1?[012])[.]\\d\\d\\d\\d\\d?";
     private static final String PATTERN_GET_TIME = "(\\d{1})+:(\\d{1})+:(\\d{1})+";
@@ -35,6 +36,11 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
 
     public LogParser(Path logDir) {
         this.logDir = logDir;
+    }
+
+    @Override
+    public Set<Object> execute(String query) {
+        return null;
     }
 
     @Override
