@@ -57,5 +57,7 @@ public class Solution {
         System.out.println("getNumberOfSuccessfulAttemptToSolveTask \t" + logParser.getNumberOfSuccessfulAttemptToSolveTask(15, null, null));
         System.out.println("getAllSolvedTasksAndTheirNumber \t" + logParser.getAllSolvedTasksAndTheirNumber(null, null));
         System.out.println("getAllDoneTasksAndTheirNumber \t" + logParser.getAllDoneTasksAndTheirNumber(null, null));
+        System.out.println();
+        System.out.println("getAllStatus \t" + logParser.getAllStatus(null, null));
     }
 }

@@ -595,4 +595,20 @@ public class LogParserTest {
         Map<Integer, Integer> currentResult = logParser.getAllDoneTasksAndTheirNumber(afterNull, beforeNull);
         Assert.assertNotNull(currentResult);
     }
+
+    @Test
+    public void getAllStatus() {
+        Set<Status> currentResult = logParser.getAllStatus(afterNull, beforeNull);
+        Set<Status> correctResult = new HashSet<>();
+        correctResult.add(Status.ERROR);
+        correctResult.add(Status.OK);
+        correctResult.add(Status.FAILED);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getAllStatus_NO_NULL() {
+        Set<Status> currentResult = logParser.getAllStatus(afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
+    }
 }
