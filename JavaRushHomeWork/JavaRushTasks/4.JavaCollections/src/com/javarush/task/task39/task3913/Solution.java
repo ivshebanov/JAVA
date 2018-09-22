@@ -85,5 +85,6 @@ public class Solution {
 
         System.out.println();
         System.out.println("execute get ip for ip = \"127.0.0.1\" \t" + logParser.execute("get ip for ip = \"127.0.0.1\""));
+        System.out.println("execute get ip for USER = \"Eduard Petrovich Morozko\"" + logParser.execute("get ip for user = \"Eduard Petrovich Morozko\""));
     }
 }

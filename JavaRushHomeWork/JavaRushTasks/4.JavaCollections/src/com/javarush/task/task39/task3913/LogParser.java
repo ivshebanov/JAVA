@@ -48,7 +48,6 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     @Override
     public Set<Object> execute(String query) {
         if (query == null || query.isEmpty()) return null;
-        query = query.toLowerCase();
         if (!checkQuery(query)) return null;
 
         Pattern pattern = Pattern.compile(PATTERN_GET_FIELD);

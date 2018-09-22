@@ -28,6 +28,7 @@ public class LogParserTest {
     private static final String QUERY_VALID_EVENT = "get event";
     private static final String QUERY_VALID_STATUS = "get status";
     private static final String QUERY_VALID_IP_IP = "get ip for ip = \"127.0.0.1\"";
+    private static final String QUERY_VALID_IP_USER = "get ip for user = \"Eduard Petrovich Morozko\"";
 
     private static final String DATE_30_08_2012_16_08_13 = "30.08.2012 16:08:13";
     private static final String DATE_30_08_2012_16_08_40 = "30.08.2012 16:08:40";
@@ -710,5 +711,12 @@ public class LogParserTest {
         Assert.assertEquals(correctResult, currentResult);
     }
 
-
+    @Test
+    public void executeGetIpsForUserAndValue() {
+        Set<Object> currentResult = logParser.execute(QUERY_VALID_IP_USER);
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add(IP_127);
+        correctResult.add(IP_146);
+        Assert.assertEquals(correctResult, currentResult);
+    }
 }
