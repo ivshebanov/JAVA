@@ -92,5 +92,6 @@ public class Solution {
         System.out.println("execute get user for ip = \"127.0.0.1\"" + logParser.execute("get user for ip = \"127.0.0.1\""));
         System.out.println("execute get user for user = \"Amigo\"" + logParser.execute("get user for user = \"Amigo\""));
         System.out.println("execute get user for date = \"11.12.2013 10:11:12\"" + logParser.execute("get user for date = \"11.12.2013 10:11:12\""));
+        System.out.println("execute get user for event = \"DONE_TASK\"" + logParser.execute("get user for event = \"DONE_TASK\""));
     }
 }
