@@ -76,11 +76,14 @@ public class Solution {
             [Amigo]*/
 
         System.out.println("execute get user for =date = \"29.02.2028 05:4:07\" \t" + logParser.execute("get user for =date = \"29.02.2028 05:4:07\""));
-        System.out.println("get =user for date = \"29.02.2028 05:4:07\" \t" + logParser.execute("get =user for date = \"29.02.2028 05:4:07\""));
-        System.out.println("get date for date = \"25.2.2028 05:4:7\" \t" + logParser.execute("get date for date = \"25.2.2028 05:4:7\""));
+        System.out.println("execute get =user for date = \"29.02.2028 05:4:07\" \t" + logParser.execute("get =user for date = \"29.02.2028 05:4:07\""));
+        System.out.println("execute get date for date = \"25.2.2028 05:4:7\" \t" + logParser.execute("get date for date = \"25.2.2028 05:4:7\""));
 
         /*[Amigo, Vasya Pupkin, Eduard Petrovich Morozko]
             null
             []*/
+
+        System.out.println();
+        System.out.println("execute get ip for ip = \"127.0.0.1\" \t" + logParser.execute("get ip for ip = \"127.0.0.1\""));
     }
 }

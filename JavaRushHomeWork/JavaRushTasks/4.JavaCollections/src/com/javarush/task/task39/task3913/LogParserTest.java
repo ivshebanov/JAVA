@@ -27,6 +27,7 @@ public class LogParserTest {
     private static final String QUERY_VALID_DATE = "get date";
     private static final String QUERY_VALID_EVENT = "get event";
     private static final String QUERY_VALID_STATUS = "get status";
+    private static final String QUERY_VALID_IP_IP = "get ip for ip = \"127.0.0.1\"";
 
     private static final String DATE_30_08_2012_16_08_13 = "30.08.2012 16:08:13";
     private static final String DATE_30_08_2012_16_08_40 = "30.08.2012 16:08:40";
@@ -700,4 +701,14 @@ public class LogParserTest {
         Set<Object> currentResult = logParser.execute(QUERY_INVALID_4);
         Assert.assertNull(currentResult);
     }
+
+    @Test
+    public void executeGetIpsForIPAndValue() {
+        Set<Object> currentResult = logParser.execute(QUERY_VALID_IP_IP);
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add(IP_127);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+
 }
