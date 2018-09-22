@@ -14,6 +14,7 @@ import java.nio.file.Path;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -53,25 +54,33 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         Pattern pattern = Pattern.compile(PATTERN_GET_FIELD);
         Matcher matcher = pattern.matcher(query);
         String field1 = "";
-        String field2 = null;
-        String value = null;
+        String field2 = "";
+        String value = "";
         if (matcher.find()) {
             field1 = matcher.group(1);
             field2 = matcher.group(3);
             value = matcher.group(4);
         }
 
+        if (field2 == null) {
+            field2 = "";
+        }
+
+        if (value == null) {
+            value = "";
+        }
+
         switch (field1) {
             case "ip":
-                return getIpsForFieldAndVelue(field2, value);
+                return getIpsForFieldAndValue(field2, value);
             case "user":
-                return getUsersForFieldAndVelue(field2, value);
+                return getUsersForFieldAndValue(field2, value);
             case "date":
-                return getDatesForFieldAndVelue(field2, value);
+                return getDatesForFieldAndValue(field2, value);
             case "event":
-                return getEventsForFieldAndVelue(field2, value);
+                return getEventsForFieldAndValue(field2, value);
             case "status":
-                return getStatusForFieldAndVelue(field2, value);
+                return getStatusForFieldAndValue(field2, value);
             default:
                 return null;
         }
@@ -818,23 +827,88 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return matcher.matches();
     }
 
-    private Set<Object> getIpsForFieldAndVelue(String field2, String value) {
-        return emptySet();
+    private Set<Object> getIpsForFieldAndValue(String field2, String value) {
+        switch (field2) {
+            case "ip":
+                return new HashSet<>(Collections.singletonList(value));
+            case "user":
+                return new HashSet<>(getIPsForUser(value, null, null));
+            case "date":
+                return emptySet();
+            case "event":
+                return new HashSet<>(getIPsForEvent(Event.valueOf(value), null, null));
+            case "status":
+                return new HashSet<>(getIPsForStatus(Status.valueOf(value), null, null));
+            default:
+                return new HashSet<>(getUniqueIPs(null, null));
+        }
     }
 
-    private Set<Object> getUsersForFieldAndVelue(String field2, String value) {
-        return emptySet();
+    private Set<Object> getUsersForFieldAndValue(String field2, String value) {
+        switch (field2) {
+            case "ip":
+                return new HashSet<>(getUsersForIP(value, null, null));
+            case "user":
+                return new HashSet<>(Collections.singletonList(value));
+            case "date":
+                return emptySet();
+            case "event":
+                return emptySet();
+            case "status":
+                return emptySet();
+            default:
+                return new HashSet<>(getAllUsers());
+        }
     }
 
-    private Set<Object> getDatesForFieldAndVelue(String field2, String value) {
-        return emptySet();
+    private Set<Object> getDatesForFieldAndValue(String field2, String value) {
+        switch (field2) {
+            case "ip":
+                return emptySet();
+            case "user":
+                return emptySet();
+            case "date":
+                return new HashSet<>(Collections.singletonList(value));
+            case "event":
+                return emptySet();
+            case "status":
+                return emptySet();
+            default:
+                return new HashSet<>(getAllDate());
+        }
     }
 
-    private Set<Object> getEventsForFieldAndVelue(String field2, String value) {
-        return emptySet();
+    private Set<Object> getEventsForFieldAndValue(String field2, String value) {
+        switch (field2) {
+            case "ip":
+                return new HashSet<>(getEventsForIP(value, null, null));
+            case "user":
+                return new HashSet<>(getEventsForUser(value, null, null));
+            case "date":
+                return emptySet();
+            case "event":
+                return new HashSet<>(Collections.singletonList(value));
+            case "status":
+                return emptySet();
+            default:
+                return new HashSet<>(getAllEvents(null, null));
+        }
     }
 
-    private Set<Object> getStatusForFieldAndVelue(String field2, String value) {
-        return emptySet();
+    private Set<Object> getStatusForFieldAndValue(String field2, String value) {
+        switch (field2) {
+            case "ip":
+                return emptySet();
+            case "user":
+                return new HashSet<>(getEventsForUser(value, null, null));
+            case "date":
+                return emptySet();
+            case "event":
+                return emptySet();
+            case "status":
+                return new HashSet<>(Collections.singletonList(value));
+            default:
+                return new HashSet<>(getAllStatus());
+        }
     }
 }
