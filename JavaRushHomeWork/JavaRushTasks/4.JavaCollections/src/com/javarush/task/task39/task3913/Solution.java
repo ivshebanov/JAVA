@@ -85,13 +85,14 @@ public class Solution {
 
         System.out.println();
         System.out.println("execute get ip for ip = \"127.0.0.1\" \t" + logParser.execute("get ip for ip = \"127.0.0.1\""));
-        System.out.println("execute get ip for USER = \"Eduard Petrovich Morozko\"" + logParser.execute("get ip for user = \"Eduard Petrovich Morozko\""));
-        System.out.println("execute get ip for event = \"SOLVE_TASK\"" + logParser.execute("get ip for event = \"SOLVE_TASK\""));
-        System.out.println("execute get ip for status = \"FAILED\"" + logParser.execute("get ip for status = \"FAILED\""));
-        System.out.println("execute get ip for date = \"30.08.2012 16:08:40\"" + logParser.execute("get ip for date = \"30.08.2012 16:08:40\""));
-        System.out.println("execute get user for ip = \"127.0.0.1\"" + logParser.execute("get user for ip = \"127.0.0.1\""));
-        System.out.println("execute get user for user = \"Amigo\"" + logParser.execute("get user for user = \"Amigo\""));
-        System.out.println("execute get user for date = \"11.12.2013 10:11:12\"" + logParser.execute("get user for date = \"11.12.2013 10:11:12\""));
-        System.out.println("execute get user for event = \"DONE_TASK\"" + logParser.execute("get user for event = \"DONE_TASK\""));
+        System.out.println("execute get ip for USER = \"Eduard Petrovich Morozko\" \t" + logParser.execute("get ip for user = \"Eduard Petrovich Morozko\""));
+        System.out.println("execute get ip for event = \"SOLVE_TASK\" \t" + logParser.execute("get ip for event = \"SOLVE_TASK\""));
+        System.out.println("execute get ip for status = \"FAILED\" \t" + logParser.execute("get ip for status = \"FAILED\""));
+        System.out.println("execute get ip for date = \"30.08.2012 16:08:40\" \t" + logParser.execute("get ip for date = \"30.08.2012 16:08:40\""));
+        System.out.println("execute get user for ip = \"127.0.0.1\" \t" + logParser.execute("get user for ip = \"127.0.0.1\""));
+        System.out.println("execute get user for user = \"Amigo\" \t" + logParser.execute("get user for user = \"Amigo\""));
+        System.out.println("execute get user for date = \"11.12.2013 10:11:12\" \t" + logParser.execute("get user for date = \"11.12.2013 10:11:12\""));
+        System.out.println("execute get user for event = \"DONE_TASK\" \t" + logParser.execute("get user for event = \"DONE_TASK\""));
+        System.out.println("execute get user for status = \"ERROR\" \t" + logParser.execute("get user for status = \"ERROR\""));
     }
 }
