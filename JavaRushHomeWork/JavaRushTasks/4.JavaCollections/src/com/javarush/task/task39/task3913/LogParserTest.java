@@ -16,17 +16,21 @@ import java.util.Set;
 
 public class LogParserTest {
 
-    private static final String DATE_AFTER = "30.08.2012 16:08:40";
-    private static final String DATE_BEFORE = "19.03.2016 00:00:00";
-    private static final String DATE_2021 = "21.10.2021 19:45:25";
-    private static final String DATE_2028 = "29.2.2028 5:4:7";
-    private static final String DATE_FAILED_11_12_2013 = "11.12.2013 10:11:12";
-    private static final String DATE_OK_12_12_2013 = "12.12.2013 21:56:30";
-    private static final String DATE_FAILED_05_01_2021 = "05.01.2021 20:22:55";
-    private static final String DATE_ERROR_30_01_2014 = "30.01.2014 12:56:22";
-    private static final String DATE_FIRST_LOGIN_VP = "14.10.2021 11:38:21";
-    private static final String DATE_FIRST_SOLVE_TASK_VP = "30.01.2014 12:56:22";
-    private static final String DATE_DOWNLOAD_PLUGIN_EPM = "13.09.2013 5:04:50";
+    private LogParser logParser;
+
+    private static final String DATE_30_08_2012_16_08_13 = "30.08.2012 16:08:13";
+    private static final String DATE_30_08_2012_16_08_40 = "30.08.2012 16:08:40";
+    private static final String DATE_13_09_2013_5_04_50 = "13.09.2013 5:04:50";
+    private static final String DATE_11_12_2013_10_11_12 = "11.12.2013 10:11:12";
+    private static final String DATE_12_12_2013_21_56_30 = "12.12.2013 21:56:30";
+    private static final String DATE_03_01_2014_03_45_23 = "03.01.2014 03:45:23";
+    private static final String DATE_30_01_2014_12_56_22 = "30.01.2014 12:56:22";
+    private static final String DATE_14_11_2015_07_08_01 = "14.11.2015 07:08:01";
+    private static final String DATE_19_03_2016_00_00_00 = "19.03.2016 00:00:00";
+    private static final String DATE_05_01_2021_20_22_55 = "05.01.2021 20:22:55";
+    private static final String DATE_14_10_2021_11_38_21 = "14.10.2021 11:38:21";
+    private static final String DATE_21_10_2021_19_45_25 = "21.10.2021 19:45:25";
+    private static final String DATE_29_2_2028_5_4_7 = "29.2.2028 5:4:7";
 
     private static final String USER_EPM = "Eduard Petrovich Morozko";
     private static final String USER_VP = "Vasya Pupkin";
@@ -38,20 +42,21 @@ public class LogParserTest {
     private static final String IP_12 = "12.12.12.12";
     private static final String IP_127 = "127.0.0.1";
 
-    private LogParser logParser;
-    private Date after;
-    private Date before;
     private Date afterNull = null;
     private Date beforeNull = null;
-    private Date date_2021;
-    private Date date_2028;
-    private Date dateFailed_05_01_2021;
-    private Date dateFailed_11_12_2013;
-    private Date dateOk_12_12_2013;
-    private Date dateError_30_01_2014;
-    private Date dateFirstLogin_VP;
-    private Date dateFirstSolvedTask_VP;
-    private Date dateDownloadedPlugin_EPM;
+    private Date date_30_08_2012_16_08_13;
+    private Date date_30_08_2012_16_08_40;
+    private Date date_13_09_2013_5_04_50;
+    private Date date_11_12_2013_10_11_12;
+    private Date date_12_12_2013_21_56_30;
+    private Date date_03_01_2014_03_45_23;
+    private Date date_30_01_2014_12_56_22;
+    private Date date_14_11_2015_07_08_01;
+    private Date date_19_03_2016_00_00_00;
+    private Date date_05_01_2021_20_22_55;
+    private Date date_14_10_2021_11_38_21;
+    private Date date_21_10_2021_19_45_25;
+    private Date date_29_2_2028_5_4_7;
 
     @Before
     public void beforeMethod() {
@@ -61,17 +66,19 @@ public class LogParserTest {
 
         SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         try {
-            this.after = formatForDateNow.parse(DATE_AFTER);
-            this.before = formatForDateNow.parse(DATE_BEFORE);
-            this.date_2021 = formatForDateNow.parse(DATE_2021);
-            this.date_2028 = formatForDateNow.parse(DATE_2028);
-            this.dateFailed_05_01_2021 = formatForDateNow.parse(DATE_FAILED_05_01_2021);
-            this.dateFailed_11_12_2013 = formatForDateNow.parse(DATE_FAILED_11_12_2013);
-            this.dateOk_12_12_2013 = formatForDateNow.parse(DATE_OK_12_12_2013);
-            this.dateError_30_01_2014 = formatForDateNow.parse(DATE_ERROR_30_01_2014);
-            this.dateFirstLogin_VP = formatForDateNow.parse(DATE_FIRST_LOGIN_VP);
-            this.dateFirstSolvedTask_VP = formatForDateNow.parse(DATE_FIRST_SOLVE_TASK_VP);
-            this.dateDownloadedPlugin_EPM = formatForDateNow.parse(DATE_DOWNLOAD_PLUGIN_EPM);
+            this.date_30_08_2012_16_08_13 = formatForDateNow.parse(DATE_30_08_2012_16_08_13);
+            this.date_30_08_2012_16_08_40 = formatForDateNow.parse(DATE_30_08_2012_16_08_40);
+            this.date_13_09_2013_5_04_50 = formatForDateNow.parse(DATE_13_09_2013_5_04_50);
+            this.date_11_12_2013_10_11_12 = formatForDateNow.parse(DATE_11_12_2013_10_11_12);
+            this.date_12_12_2013_21_56_30 = formatForDateNow.parse(DATE_12_12_2013_21_56_30);
+            this.date_03_01_2014_03_45_23 = formatForDateNow.parse(DATE_03_01_2014_03_45_23);
+            this.date_30_01_2014_12_56_22 = formatForDateNow.parse(DATE_30_01_2014_12_56_22);
+            this.date_14_11_2015_07_08_01 = formatForDateNow.parse(DATE_14_11_2015_07_08_01);
+            this.date_19_03_2016_00_00_00 = formatForDateNow.parse(DATE_19_03_2016_00_00_00);
+            this.date_05_01_2021_20_22_55 = formatForDateNow.parse(DATE_05_01_2021_20_22_55);
+            this.date_14_10_2021_11_38_21 = formatForDateNow.parse(DATE_14_10_2021_11_38_21);
+            this.date_21_10_2021_19_45_25 = formatForDateNow.parse(DATE_21_10_2021_19_45_25);
+            this.date_29_2_2028_5_4_7 = formatForDateNow.parse(DATE_29_2_2028_5_4_7);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -79,7 +86,7 @@ public class LogParserTest {
 
     @Test
     public void getNumberOfUniqueIPs() {
-        int currentResult = logParser.getNumberOfUniqueIPs(after, before);
+        int currentResult = logParser.getNumberOfUniqueIPs(date_30_08_2012_16_08_40, date_19_03_2016_00_00_00);
         int correctResult = 3;
         Assert.assertEquals(correctResult, currentResult);
     }
@@ -93,7 +100,7 @@ public class LogParserTest {
 
     @Test
     public void getUniqueIPs() {
-        Set<String> currentResult = logParser.getUniqueIPs(after, before);
+        Set<String> currentResult = logParser.getUniqueIPs(date_30_08_2012_16_08_40, date_19_03_2016_00_00_00);
         Set<String> correctResult = new HashSet<>();
         correctResult.add(IP_192);
         correctResult.add(IP_146);
@@ -103,7 +110,7 @@ public class LogParserTest {
 
     @Test
     public void getUniqueIPs_NO_NULL() {
-        Set<String> currentResult = logParser.getUniqueIPs(after, before);
+        Set<String> currentResult = logParser.getUniqueIPs(date_30_08_2012_16_08_40, date_19_03_2016_00_00_00);
         Assert.assertNotNull(currentResult);
     }
 
@@ -121,7 +128,7 @@ public class LogParserTest {
 
     @Test
     public void getIPsForUser() {
-        Set<String> currentResult = logParser.getIPsForUser(USER_EPM, after, before);
+        Set<String> currentResult = logParser.getIPsForUser(USER_EPM, date_30_08_2012_16_08_40, date_19_03_2016_00_00_00);
         Set<String> correctResult = new HashSet<>();
         correctResult.add(IP_146);
         correctResult.add(IP_127);
@@ -130,7 +137,7 @@ public class LogParserTest {
 
     @Test
     public void getIPsForUser_NO_NULL() {
-        Set<String> currentResult = logParser.getIPsForUser(USER_EPM, after, before);
+        Set<String> currentResult = logParser.getIPsForUser(USER_EPM, date_30_08_2012_16_08_40, date_19_03_2016_00_00_00);
         Assert.assertNotNull(currentResult);
     }
 
@@ -145,7 +152,7 @@ public class LogParserTest {
 
     @Test
     public void getIPsForEvent() {
-        Set<String> currentResult = logParser.getIPsForEvent(Event.WRITE_MESSAGE, after, before);
+        Set<String> currentResult = logParser.getIPsForEvent(Event.WRITE_MESSAGE, date_30_08_2012_16_08_40, date_19_03_2016_00_00_00);
         Set<String> correctResult = new HashSet<>();
         correctResult.add(IP_146);
         correctResult.add(IP_127);
@@ -154,13 +161,13 @@ public class LogParserTest {
 
     @Test
     public void getIPsForEvent_NO_NULL() {
-        Set<String> currentResult = logParser.getIPsForEvent(Event.WRITE_MESSAGE, after, before);
+        Set<String> currentResult = logParser.getIPsForEvent(Event.WRITE_MESSAGE, date_30_08_2012_16_08_40, date_19_03_2016_00_00_00);
         Assert.assertNotNull(currentResult);
     }
 
     @Test
     public void getIPsForEvent_DATES_NULL() {
-        Set<String> currentResult = logParser.getIPsForEvent(Event.SOLVE_TASK, after, before);
+        Set<String> currentResult = logParser.getIPsForEvent(Event.SOLVE_TASK, date_30_08_2012_16_08_40, date_19_03_2016_00_00_00);
         Set<String> correctResult = new HashSet<>();
         correctResult.add(IP_192);
         Assert.assertEquals(correctResult, currentResult);
@@ -169,7 +176,7 @@ public class LogParserTest {
 
     @Test
     public void getIPsForStatus() {
-        Set<String> currentResult = logParser.getIPsForStatus(Status.OK, after, before);
+        Set<String> currentResult = logParser.getIPsForStatus(Status.OK, date_30_08_2012_16_08_40, date_19_03_2016_00_00_00);
         Set<String> correctResult = new HashSet<>();
         correctResult.add(IP_192);
         correctResult.add(IP_146);
@@ -179,13 +186,13 @@ public class LogParserTest {
 
     @Test
     public void getIPsForStatus_NO_NULL() {
-        Set<String> currentResult = logParser.getIPsForStatus(Status.OK, after, before);
+        Set<String> currentResult = logParser.getIPsForStatus(Status.OK, date_30_08_2012_16_08_40, date_19_03_2016_00_00_00);
         Assert.assertNotNull(currentResult);
     }
 
     @Test
     public void getIPsForStatus_DATES_NULL() {
-        Set<String> currentResult = logParser.getIPsForStatus(Status.ERROR, after, before);
+        Set<String> currentResult = logParser.getIPsForStatus(Status.ERROR, date_30_08_2012_16_08_40, date_19_03_2016_00_00_00);
         Set<String> correctResult = new HashSet<>();
         correctResult.add(IP_192);
         Assert.assertEquals(correctResult, currentResult);
@@ -346,8 +353,8 @@ public class LogParserTest {
     public void getDatesForUserAndEvent() {
         Set<Date> currentResult = logParser.getDatesForUserAndEvent("Amigo", Event.SOLVE_TASK, afterNull, beforeNull);
         Set<Date> correctResult = new HashSet<>();
-        correctResult.add(date_2021);
-        correctResult.add(date_2028);
+        correctResult.add(date_21_10_2021_19_45_25);
+        correctResult.add(date_29_2_2028_5_4_7);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -361,8 +368,8 @@ public class LogParserTest {
     public void getDatesWhenSomethingFailed() {
         Set<Date> currentResult = logParser.getDatesWhenSomethingFailed(afterNull, beforeNull);
         Set<Date> correctResult = new HashSet<>();
-        correctResult.add(dateFailed_05_01_2021);
-        correctResult.add(dateFailed_11_12_2013);
+        correctResult.add(date_05_01_2021_20_22_55);
+        correctResult.add(date_11_12_2013_10_11_12);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -376,7 +383,7 @@ public class LogParserTest {
     public void getDatesWhenErrorHappened() {
         Set<Date> currentResult = logParser.getDatesWhenErrorHappened(afterNull, beforeNull);
         Set<Date> correctResult = new HashSet<>();
-        correctResult.add(dateError_30_01_2014);
+        correctResult.add(date_30_01_2014_12_56_22);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -389,7 +396,7 @@ public class LogParserTest {
     @Test
     public void getDateWhenUserLoggedFirstTime() {
         Date currentResult = logParser.getDateWhenUserLoggedFirstTime(USER_VP, afterNull, beforeNull);
-        Date correctResult = dateFirstLogin_VP;
+        Date correctResult = date_14_10_2021_11_38_21;
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -401,14 +408,14 @@ public class LogParserTest {
 
     @Test
     public void getDateWhenUserLoggedFirstTime_NULL() {
-        Date currentResult = logParser.getDateWhenUserLoggedFirstTime(USER_VP, afterNull, dateFailed_11_12_2013);
+        Date currentResult = logParser.getDateWhenUserLoggedFirstTime(USER_VP, afterNull, date_11_12_2013_10_11_12);
         Assert.assertNull(currentResult);
     }
 
     @Test
     public void getDateWhenUserSolvedTask() {
         Date currentResult = logParser.getDateWhenUserSolvedTask(USER_VP, 18, afterNull, beforeNull);
-        Date correctResult = dateFirstSolvedTask_VP;
+        Date correctResult = date_30_01_2014_12_56_22;
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -420,14 +427,14 @@ public class LogParserTest {
 
     @Test
     public void getDateWhenUserSolvedTask_NULL() {
-        Date currentResult = logParser.getDateWhenUserSolvedTask(USER_VP, 18, afterNull, dateFailed_11_12_2013);
+        Date currentResult = logParser.getDateWhenUserSolvedTask(USER_VP, 18, afterNull, date_11_12_2013_10_11_12);
         Assert.assertNull(currentResult);
     }
 
     @Test
     public void getDateWhenUserDoneTask() {
         Date currentResult = logParser.getDateWhenUserDoneTask(USER_VP, 15, afterNull, beforeNull);
-        Date correctResult = after;
+        Date correctResult = date_30_08_2012_16_08_40;
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -439,7 +446,7 @@ public class LogParserTest {
 
     @Test
     public void getDateWhenUserDoneTask_NULL() {
-        Date currentResult = logParser.getDateWhenUserDoneTask(USER_VP, 15, dateFailed_11_12_2013, beforeNull);
+        Date currentResult = logParser.getDateWhenUserDoneTask(USER_VP, 15, date_11_12_2013_10_11_12, beforeNull);
         Assert.assertNull(currentResult);
     }
 
@@ -447,8 +454,8 @@ public class LogParserTest {
     public void getDatesWhenUserWroteMessage() {
         Set<Date> currentResult = logParser.getDatesWhenUserWroteMessage(USER_EPM, afterNull, beforeNull);
         Set<Date> correctResult = new HashSet<>();
-        correctResult.add(dateFailed_11_12_2013);
-        correctResult.add(dateOk_12_12_2013);
+        correctResult.add(date_11_12_2013_10_11_12);
+        correctResult.add(date_12_12_2013_21_56_30);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -462,7 +469,7 @@ public class LogParserTest {
     public void getDatesWhenUserDownloadedPlugin() {
         Set<Date> currentResult = logParser.getDatesWhenUserDownloadedPlugin(USER_EPM, afterNull, beforeNull);
         Set<Date> correctResult = new HashSet<>();
-        correctResult.add(dateDownloadedPlugin_EPM);
+        correctResult.add(date_13_09_2013_5_04_50);
         Assert.assertEquals(correctResult, currentResult);
     }
 
@@ -474,14 +481,14 @@ public class LogParserTest {
 
     @Test
     public void getNumberOfAllEvents() {
-        int currentResult = logParser.getNumberOfAllEvents(after, dateOk_12_12_2013);
+        int currentResult = logParser.getNumberOfAllEvents(date_30_08_2012_16_08_40, date_12_12_2013_21_56_30);
         int correctResult = 3;
         Assert.assertEquals(correctResult, currentResult);
     }
 
     @Test
     public void getAllEvents() {
-        Set<Event> currentResult = logParser.getAllEvents(after, dateOk_12_12_2013);
+        Set<Event> currentResult = logParser.getAllEvents(date_30_08_2012_16_08_40, date_12_12_2013_21_56_30);
         Set<Event> correctResult = new HashSet<>();
         correctResult.add(Event.DONE_TASK);
         correctResult.add(Event.WRITE_MESSAGE);
@@ -491,13 +498,13 @@ public class LogParserTest {
 
     @Test
     public void getAllEvents_NO_NULL() {
-        Set<Event> currentResult = logParser.getAllEvents(after, dateOk_12_12_2013);
+        Set<Event> currentResult = logParser.getAllEvents(date_30_08_2012_16_08_40, date_12_12_2013_21_56_30);
         Assert.assertNotNull(currentResult);
     }
 
     @Test
     public void getEventsForIP() {
-        Set<Event> currentResult = logParser.getEventsForIP(IP_146, after, dateOk_12_12_2013);
+        Set<Event> currentResult = logParser.getEventsForIP(IP_146, date_30_08_2012_16_08_40, date_12_12_2013_21_56_30);
         Set<Event> correctResult = new HashSet<>();
         correctResult.add(Event.WRITE_MESSAGE);
         correctResult.add(Event.DOWNLOAD_PLUGIN);
@@ -506,13 +513,13 @@ public class LogParserTest {
 
     @Test
     public void getEventsForIP_NO_NULL() {
-        Set<Event> currentResult = logParser.getEventsForIP(IP_146, after, dateOk_12_12_2013);
+        Set<Event> currentResult = logParser.getEventsForIP(IP_146, date_30_08_2012_16_08_40, date_12_12_2013_21_56_30);
         Assert.assertNotNull(currentResult);
     }
 
     @Test
     public void getEventsForUser() {
-        Set<Event> currentResult = logParser.getEventsForUser(USER_EPM, after, dateOk_12_12_2013);
+        Set<Event> currentResult = logParser.getEventsForUser(USER_EPM, date_30_08_2012_16_08_40, date_12_12_2013_21_56_30);
         Set<Event> correctResult = new HashSet<>();
         correctResult.add(Event.WRITE_MESSAGE);
         correctResult.add(Event.DOWNLOAD_PLUGIN);
@@ -521,13 +528,13 @@ public class LogParserTest {
 
     @Test
     public void getEventsForUser_NO_NULL() {
-        Set<Event> currentResult = logParser.getEventsForUser(USER_EPM, after, dateOk_12_12_2013);
+        Set<Event> currentResult = logParser.getEventsForUser(USER_EPM, date_30_08_2012_16_08_40, date_12_12_2013_21_56_30);
         Assert.assertNotNull(currentResult);
     }
 
     @Test
     public void getFailedEvents() {
-        Set<Event> currentResult = logParser.getFailedEvents(after, dateOk_12_12_2013);
+        Set<Event> currentResult = logParser.getFailedEvents(date_30_08_2012_16_08_40, date_12_12_2013_21_56_30);
         Set<Event> correctResult = new HashSet<>();
         correctResult.add(Event.WRITE_MESSAGE);
         Assert.assertEquals(correctResult, currentResult);
@@ -535,20 +542,20 @@ public class LogParserTest {
 
     @Test
     public void getFailedEvents_NO_NULL() {
-        Set<Event> currentResult = logParser.getFailedEvents(after, dateOk_12_12_2013);
+        Set<Event> currentResult = logParser.getFailedEvents(date_30_08_2012_16_08_40, date_12_12_2013_21_56_30);
         Assert.assertNotNull(currentResult);
     }
 
     @Test
     public void getErrorEvents() {
-        Set<Event> currentResult = logParser.getErrorEvents(after, dateOk_12_12_2013);
+        Set<Event> currentResult = logParser.getErrorEvents(date_30_08_2012_16_08_40, date_12_12_2013_21_56_30);
         Set<Event> correctResult = new HashSet<>();
         Assert.assertEquals(correctResult, currentResult);
     }
 
     @Test
     public void getErrorEvents_NO_NULL() {
-        Set<Event> currentResult = logParser.getErrorEvents(after, dateOk_12_12_2013);
+        Set<Event> currentResult = logParser.getErrorEvents(date_30_08_2012_16_08_40, date_12_12_2013_21_56_30);
         Assert.assertNotNull(currentResult);
     }
 
@@ -609,6 +616,32 @@ public class LogParserTest {
     @Test
     public void getAllStatus_NO_NULL() {
         Set<Status> currentResult = logParser.getAllStatus(afterNull, beforeNull);
+        Assert.assertNotNull(currentResult);
+    }
+
+    @Test
+    public void getAllDate() {
+        Set<Date> currentResult = logParser.getAllDate(afterNull, beforeNull);
+        Set<Date> correctResult = new HashSet<>();
+        correctResult.add(date_30_08_2012_16_08_13);
+        correctResult.add(date_30_08_2012_16_08_40);
+        correctResult.add(date_13_09_2013_5_04_50);
+        correctResult.add(date_11_12_2013_10_11_12);
+        correctResult.add(date_12_12_2013_21_56_30);
+        correctResult.add(date_03_01_2014_03_45_23);
+        correctResult.add(date_30_01_2014_12_56_22);
+        correctResult.add(date_14_11_2015_07_08_01);
+        correctResult.add(date_19_03_2016_00_00_00);
+        correctResult.add(date_05_01_2021_20_22_55);
+        correctResult.add(date_14_10_2021_11_38_21);
+        correctResult.add(date_21_10_2021_19_45_25);
+        correctResult.add(date_29_2_2028_5_4_7);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void getAllDate_NO_NULL() {
+        Set<Date> currentResult = logParser.getAllDate(afterNull, beforeNull);
         Assert.assertNotNull(currentResult);
     }
 }

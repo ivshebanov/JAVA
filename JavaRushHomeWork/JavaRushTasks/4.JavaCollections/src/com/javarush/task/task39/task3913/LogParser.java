@@ -512,6 +512,16 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
+    public Set<Date> getAllDate(Date after, Date before) {
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<Date> resultSet = new HashSet<>();
+        for (OneLog log : listLogsForPeriod) {
+            resultSet.add(log.getDate());
+        }
+        return resultSet;
+    }
+
     private Date getMinDate(Set<Date> dates) {
         Date resultDate = null;
         for (Date date : dates) {

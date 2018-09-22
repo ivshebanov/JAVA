@@ -59,5 +59,6 @@ public class Solution {
         System.out.println("getAllDoneTasksAndTheirNumber \t" + logParser.getAllDoneTasksAndTheirNumber(null, null));
         System.out.println();
         System.out.println("getAllStatus \t" + logParser.getAllStatus(null, null));
+        System.out.println("getAllDate \t" + logParser.getAllDate(null, null));
     }
 }
