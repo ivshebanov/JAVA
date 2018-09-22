@@ -90,5 +90,6 @@ public class Solution {
         System.out.println("execute get ip for status = \"FAILED\"" + logParser.execute("get ip for status = \"FAILED\""));
         System.out.println("execute get ip for date = \"30.08.2012 16:08:40\"" + logParser.execute("get ip for date = \"30.08.2012 16:08:40\""));
         System.out.println("execute get user for ip = \"127.0.0.1\"" + logParser.execute("get user for ip = \"127.0.0.1\""));
+        System.out.println("execute get user for user = \"Amigo\"" + logParser.execute("get user for user = \"Amigo\""));
     }
 }
