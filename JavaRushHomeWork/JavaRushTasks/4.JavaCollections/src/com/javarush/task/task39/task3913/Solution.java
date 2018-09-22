@@ -58,7 +58,10 @@ public class Solution {
         System.out.println("getAllSolvedTasksAndTheirNumber \t" + logParser.getAllSolvedTasksAndTheirNumber(null, null));
         System.out.println("getAllDoneTasksAndTheirNumber \t" + logParser.getAllDoneTasksAndTheirNumber(null, null));
         System.out.println();
-        System.out.println("getAllStatus \t" + logParser.getAllStatus(null, null));
-        System.out.println("getAllDate \t" + logParser.getAllDate(null, null));
+        System.out.println("execute get ip \t" + logParser.execute("get ip"));
+        System.out.println("execute get user \t" + logParser.execute("get user"));
+        System.out.println("execute get date \t" + logParser.execute("get date"));
+        System.out.println("execute get event \t" + logParser.execute("get event"));
+        System.out.println("execute get status \t" + logParser.execute("get status"));
     }
 }

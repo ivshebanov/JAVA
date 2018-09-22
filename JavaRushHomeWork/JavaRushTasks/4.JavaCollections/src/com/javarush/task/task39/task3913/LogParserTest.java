@@ -604,24 +604,30 @@ public class LogParserTest {
     }
 
     @Test
-    public void getAllStatus() {
-        Set<Status> currentResult = logParser.getAllStatus(afterNull, beforeNull);
-        Set<Status> correctResult = new HashSet<>();
-        correctResult.add(Status.ERROR);
-        correctResult.add(Status.OK);
-        correctResult.add(Status.FAILED);
+    public void executeIp() {
+        Set<Object> currentResult = logParser.execute("get ip");
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add(IP_120);
+        correctResult.add(IP_146);
+        correctResult.add(IP_192);
+        correctResult.add(IP_12);
+        correctResult.add(IP_127);
         Assert.assertEquals(correctResult, currentResult);
     }
 
     @Test
-    public void getAllStatus_NO_NULL() {
-        Set<Status> currentResult = logParser.getAllStatus(afterNull, beforeNull);
-        Assert.assertNotNull(currentResult);
+    public void executeName() {
+        Set<Object> currentResult = logParser.execute("get user");
+        Set<String> correctResult = new HashSet<>();
+        correctResult.add(USER_A);
+        correctResult.add(USER_VP);
+        correctResult.add(USER_EPM);
+        Assert.assertEquals(correctResult, currentResult);
     }
 
     @Test
-    public void getAllDate() {
-        Set<Date> currentResult = logParser.getAllDate(afterNull, beforeNull);
+    public void executeDate() {
+        Set<Object> currentResult = logParser.execute("get date");
         Set<Date> correctResult = new HashSet<>();
         correctResult.add(date_30_08_2012_16_08_13);
         correctResult.add(date_30_08_2012_16_08_40);
@@ -640,8 +646,30 @@ public class LogParserTest {
     }
 
     @Test
-    public void getAllDate_NO_NULL() {
-        Set<Date> currentResult = logParser.getAllDate(afterNull, beforeNull);
+    public void executeEvent() {
+        Set<Object> currentResult = logParser.execute("get event");
+        Set<Event> correctResult = new HashSet<>();
+        correctResult.add(Event.DONE_TASK);
+        correctResult.add(Event.WRITE_MESSAGE);
+        correctResult.add(Event.LOGIN);
+        correctResult.add(Event.DOWNLOAD_PLUGIN);
+        correctResult.add(Event.SOLVE_TASK);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void executeStatus() {
+        Set<Object> currentResult = logParser.execute("get status");
+        Set<Status> correctResult = new HashSet<>();
+        correctResult.add(Status.OK);
+        correctResult.add(Status.ERROR);
+        correctResult.add(Status.FAILED);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void execute_NO_NULL() {
+        Set<Object> currentResult = logParser.execute("");
         Assert.assertNotNull(currentResult);
     }
 }

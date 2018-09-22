@@ -40,7 +40,20 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
     @Override
     public Set<Object> execute(String query) {
-        return null;
+        switch (query) {
+            case "get ip":
+                return new HashSet<>(getUniqueIPs(null, null));
+            case "get user":
+                return new HashSet<>(getAllUsers());
+            case "get date":
+                return new HashSet<>(getAllDate());
+            case "get event":
+                return new HashSet<>(getAllEvents(null, null));
+            case "get status":
+                return new HashSet<>(getAllStatus());
+            default:
+                return emptySet();
+        }
     }
 
     @Override
@@ -502,9 +515,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultMap;
     }
 
-    public Set<Status> getAllStatus(Date after, Date before) {
+    private Set<Status> getAllStatus() {
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
         Set<Status> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             resultSet.add(log.getStatus());
@@ -512,9 +525,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    public Set<Date> getAllDate(Date after, Date before) {
+    private Set<Date> getAllDate() {
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
         Set<Date> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             resultSet.add(log.getDate());
@@ -580,11 +593,11 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultLog;
     }
 
-    private List<String> getAllLogsString(List<String> logs, File file) {
+    private void getAllLogsString(List<String> logs, File file) {
         File[] folderEntries = file.listFiles();
 
         if (folderEntries == null || folderEntries.length == 0) {
-            return emptyList();
+            return;
         }
 
         for (File entry : folderEntries) {
@@ -596,8 +609,6 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
                 logs.addAll(loadListOfLogsFromFile(entry));
             }
         }
-
-        return logs;
     }
 
     private List<String> loadListOfLogsFromFile(File file) {
