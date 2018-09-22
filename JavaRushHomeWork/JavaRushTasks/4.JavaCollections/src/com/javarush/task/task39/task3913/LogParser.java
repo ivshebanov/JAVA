@@ -34,7 +34,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     private static final String PATTERN_CHECK_STATUS_QUERY = "(OK|FAILED|ERROR){1}";
     private static final String PATTERN_CHECK_EVENT_QUERY = "(LOGIN|DOWNLOAD_PLUGIN|WRITE_MESSAGE|SOLVE_TASK|DONE_TASK){1}";
     private static final String PATTERN_CHECK_SHORT_QUERY = "get (ip|user|status|event|date)";
-    private static final String PATTERN_CHECK_LONG_QUERY = "get (ip|user|status|event|date) for (ip|user|status|event|date) = \".+\"";
+    private static final String PATTERN_CHECK_LONG_QUERY = "get (ip|user|date|event|status) for (ip|user|date|event|status) = \".+\"";
+    private static final String PATTERN_GET_FIELD = "get (ip|user|date|event|status)"
+            + "( for (ip|user|date|event|status) = \"(.*?)\")?";
 
     private Path logDir;
 
@@ -46,7 +48,31 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     public Set<Object> execute(String query) {
         if (!checkQuery(query)) return null;
 
-        return emptySet();
+        Pattern pattern = Pattern.compile(PATTERN_GET_FIELD);
+        Matcher matcher = pattern.matcher(query);
+        String field1 = null;
+        String field2 = null;
+        String value = null;
+        if (matcher.find()) {
+            field1 = matcher.group(1);
+            field2 = matcher.group(3);
+            value = matcher.group(4);
+        }
+
+        switch (query) {
+            case "get ip":
+                return new HashSet<>(getUniqueIPs(null, null));
+            case "get user":
+                return new HashSet<>(getAllUsers());
+            case "get date":
+                return new HashSet<>(getAllDate());
+            case "get event":
+                return new HashSet<>(getAllEvents(null, null));
+            case "get status":
+                return new HashSet<>(getAllStatus());
+            default:
+                return emptySet();
+        }
     }
 
     private boolean checkQuery(String query) {

@@ -18,6 +18,16 @@ public class LogParserTest {
 
     private LogParser logParser;
 
+    private static final String QUERY_INVALID_1 = "";
+    private static final String QUERY_INVALID_2 = "get event for date = ";
+    private static final String QUERY_INVALID_3 = "get user for =date = \"29.02.2028 05:4:07\"";
+    private static final String QUERY_INVALID_4 = "get user for date = \"29.02:2028 05:4:07\"";
+    private static final String QUERY_VALID_IP = "get ip";
+    private static final String QUERY_VALID_USER = "get user";
+    private static final String QUERY_VALID_DATE = "get date";
+    private static final String QUERY_VALID_EVENT = "get event";
+    private static final String QUERY_VALID_STATUS = "get status";
+
     private static final String DATE_30_08_2012_16_08_13 = "30.08.2012 16:08:13";
     private static final String DATE_30_08_2012_16_08_40 = "30.08.2012 16:08:40";
     private static final String DATE_13_09_2013_5_04_50 = "13.09.2013 5:04:50";
@@ -605,7 +615,7 @@ public class LogParserTest {
 
     @Test
     public void executeAllIp() {
-        Set<Object> currentResult = logParser.execute("get ip");
+        Set<Object> currentResult = logParser.execute(QUERY_VALID_IP);
         Set<String> correctResult = new HashSet<>();
         correctResult.add(IP_120);
         correctResult.add(IP_146);
@@ -616,8 +626,8 @@ public class LogParserTest {
     }
 
     @Test
-    public void executeAllName() {
-        Set<Object> currentResult = logParser.execute("get user");
+    public void executeAllUser() {
+        Set<Object> currentResult = logParser.execute(QUERY_VALID_USER);
         Set<String> correctResult = new HashSet<>();
         correctResult.add(USER_A);
         correctResult.add(USER_VP);
@@ -627,7 +637,7 @@ public class LogParserTest {
 
     @Test
     public void executeAllDate() {
-        Set<Object> currentResult = logParser.execute("get date");
+        Set<Object> currentResult = logParser.execute(QUERY_VALID_DATE);
         Set<Date> correctResult = new HashSet<>();
         correctResult.add(date_30_08_2012_16_08_13);
         correctResult.add(date_30_08_2012_16_08_40);
@@ -647,7 +657,7 @@ public class LogParserTest {
 
     @Test
     public void executeAllEvent() {
-        Set<Object> currentResult = logParser.execute("get event");
+        Set<Object> currentResult = logParser.execute(QUERY_VALID_EVENT);
         Set<Event> correctResult = new HashSet<>();
         correctResult.add(Event.DONE_TASK);
         correctResult.add(Event.WRITE_MESSAGE);
@@ -659,7 +669,7 @@ public class LogParserTest {
 
     @Test
     public void executeAllStatus() {
-        Set<Object> currentResult = logParser.execute("get status");
+        Set<Object> currentResult = logParser.execute(QUERY_VALID_STATUS);
         Set<Status> correctResult = new HashSet<>();
         correctResult.add(Status.OK);
         correctResult.add(Status.ERROR);
@@ -668,8 +678,26 @@ public class LogParserTest {
     }
 
     @Test
-    public void execute_NO_NULL() {
-        Set<Object> currentResult = logParser.execute("");
-        Assert.assertNotNull(currentResult);
+    public void execute_1_NULL() {
+        Set<Object> currentResult = logParser.execute(QUERY_INVALID_1);
+        Assert.assertNull(currentResult);
+    }
+
+    @Test
+    public void execute_2_NULL() {
+        Set<Object> currentResult = logParser.execute(QUERY_INVALID_2);
+        Assert.assertNull(currentResult);
+    }
+
+    @Test
+    public void execute_3_NULL() {
+        Set<Object> currentResult = logParser.execute(QUERY_INVALID_3);
+        Assert.assertNull(currentResult);
+    }
+
+    @Test
+    public void execute_4_NULL() {
+        Set<Object> currentResult = logParser.execute(QUERY_INVALID_4);
+        Assert.assertNull(currentResult);
     }
 }
