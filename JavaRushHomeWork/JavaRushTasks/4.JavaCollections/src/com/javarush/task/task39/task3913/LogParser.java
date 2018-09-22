@@ -46,11 +46,13 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
     @Override
     public Set<Object> execute(String query) {
+        if (query == null || query.isEmpty()) return null;
+        query = query.toLowerCase();
         if (!checkQuery(query)) return null;
 
         Pattern pattern = Pattern.compile(PATTERN_GET_FIELD);
         Matcher matcher = pattern.matcher(query);
-        String field1 = null;
+        String field1 = "";
         String field2 = null;
         String value = null;
         if (matcher.find()) {
@@ -59,55 +61,20 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
             value = matcher.group(4);
         }
 
-        switch (query) {
-            case "get ip":
-                return new HashSet<>(getUniqueIPs(null, null));
-            case "get user":
-                return new HashSet<>(getAllUsers());
-            case "get date":
-                return new HashSet<>(getAllDate());
-            case "get event":
-                return new HashSet<>(getAllEvents(null, null));
-            case "get status":
-                return new HashSet<>(getAllStatus());
-            default:
-                return emptySet();
-        }
-    }
-
-    private boolean checkQuery(String query) {
-        if (query == null || query.isEmpty()) return false;
-
-        Pattern pattern = Pattern.compile(PATTERN_CHECK_SHORT_QUERY);
-        Matcher matcher = pattern.matcher(query);
-        if (matcher.matches()) return true;
-
-        pattern = Pattern.compile(PATTERN_CHECK_LONG_QUERY);
-        matcher = pattern.matcher(query);
-        if (!matcher.matches()) return false;
-
-        String filter = query.split(" for ")[1].split(" = ")[0];
-        String parameter = query.split(" for ")[1]
-                .split(" = ")[1]
-                .replaceAll("\"", "");
-        String patternText = ".+";
-        switch (filter) {
+        switch (field1) {
             case "ip":
-                patternText = PATTERN_GET_IP;
-                break;
-            case "status":
-                patternText = PATTERN_CHECK_STATUS_QUERY;
-                break;
-            case "event":
-                patternText = PATTERN_CHECK_EVENT_QUERY;
-                break;
+                return getIpsForFieldAndVelue(field2, value);
+            case "user":
+                return getUsersForFieldAndVelue(field2, value);
             case "date":
-                patternText = PATTERN_GET_DATE + " " + PATTERN_GET_TIME;
-                break;
+                return getDatesForFieldAndVelue(field2, value);
+            case "event":
+                return getEventsForFieldAndVelue(field2, value);
+            case "status":
+                return getStatusForFieldAndVelue(field2, value);
+            default:
+                return null;
         }
-        pattern = Pattern.compile(patternText);
-        matcher = pattern.matcher(parameter);
-        return matcher.matches();
     }
 
     @Override
@@ -814,5 +781,60 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         String[] element = log.split(" ");
         String stringStatus = element[element.length - 1];
         return Status.valueOf(stringStatus);
+    }
+
+    private boolean checkQuery(String query) {
+        if (query == null || query.isEmpty()) return false;
+
+        Pattern pattern = Pattern.compile(PATTERN_CHECK_SHORT_QUERY);
+        Matcher matcher = pattern.matcher(query);
+        if (matcher.matches()) return true;
+
+        pattern = Pattern.compile(PATTERN_CHECK_LONG_QUERY);
+        matcher = pattern.matcher(query);
+        if (!matcher.matches()) return false;
+
+        String filter = query.split(" for ")[1].split(" = ")[0];
+        String parameter = query.split(" for ")[1]
+                .split(" = ")[1]
+                .replaceAll("\"", "");
+        String patternText = ".+";
+        switch (filter) {
+            case "ip":
+                patternText = PATTERN_GET_IP;
+                break;
+            case "status":
+                patternText = PATTERN_CHECK_STATUS_QUERY;
+                break;
+            case "event":
+                patternText = PATTERN_CHECK_EVENT_QUERY;
+                break;
+            case "date":
+                patternText = PATTERN_GET_DATE + " " + PATTERN_GET_TIME;
+                break;
+        }
+        pattern = Pattern.compile(patternText);
+        matcher = pattern.matcher(parameter);
+        return matcher.matches();
+    }
+
+    private Set<Object> getIpsForFieldAndVelue(String field2, String value) {
+        return emptySet();
+    }
+
+    private Set<Object> getUsersForFieldAndVelue(String field2, String value) {
+        return emptySet();
+    }
+
+    private Set<Object> getDatesForFieldAndVelue(String field2, String value) {
+        return emptySet();
+    }
+
+    private Set<Object> getEventsForFieldAndVelue(String field2, String value) {
+        return emptySet();
+    }
+
+    private Set<Object> getStatusForFieldAndVelue(String field2, String value) {
+        return emptySet();
     }
 }
