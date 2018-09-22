@@ -88,5 +88,6 @@ public class Solution {
         System.out.println("execute get ip for USER = \"Eduard Petrovich Morozko\"" + logParser.execute("get ip for user = \"Eduard Petrovich Morozko\""));
         System.out.println("execute get ip for event = \"SOLVE_TASK\"" + logParser.execute("get ip for event = \"SOLVE_TASK\""));
         System.out.println("execute get ip for status = \"FAILED\"" + logParser.execute("get ip for status = \"FAILED\""));
+        System.out.println("execute get ip for date = \"30.08.2012 16:08:40\"" + logParser.execute("get ip for date = \"30.08.2012 16:08:40\""));
     }
 }
