@@ -31,6 +31,10 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     private static final String PATTERN_GET_DATE = "(0?[1-9]|[12][0-9]|3[01])[.](0?[1-9]|1?[012])[.]\\d\\d\\d\\d\\d?";
     private static final String PATTERN_GET_TIME = "(\\d{1})+:(\\d{1})+:(\\d{1})+";
     private static final String PATTERN_GET_IP = "((25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)";
+    private static final String PATTERN_CHECK_STATUS_QUERY = "(OK|FAILED|ERROR){1}";
+    private static final String PATTERN_CHECK_EVENT_QUERY = "(LOGIN|DOWNLOAD_PLUGIN|WRITE_MESSAGE|SOLVE_TASK|DONE_TASK){1}";
+    private static final String PATTERN_CHECK_SHORT_QUERY = "get (ip|user|status|event|date)";
+    private static final String PATTERN_CHECK_LONG_QUERY = "get (ip|user|status|event|date) for (ip|user|status|event|date) = \".+\"";
 
     private Path logDir;
 
@@ -40,20 +44,44 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
     @Override
     public Set<Object> execute(String query) {
-        switch (query) {
-            case "get ip":
-                return new HashSet<>(getUniqueIPs(null, null));
-            case "get user":
-                return new HashSet<>(getAllUsers());
-            case "get date":
-                return new HashSet<>(getAllDate());
-            case "get event":
-                return new HashSet<>(getAllEvents(null, null));
-            case "get status":
-                return new HashSet<>(getAllStatus());
-            default:
-                return emptySet();
+        if (!checkQuery(query)) return null;
+
+        return emptySet();
+    }
+
+    private boolean checkQuery(String query) {
+        if (query == null || query.isEmpty()) return false;
+
+        Pattern pattern = Pattern.compile(PATTERN_CHECK_SHORT_QUERY);
+        Matcher matcher = pattern.matcher(query);
+        if (matcher.matches()) return true;
+
+        pattern = Pattern.compile(PATTERN_CHECK_LONG_QUERY);
+        matcher = pattern.matcher(query);
+        if (!matcher.matches()) return false;
+
+        String filter = query.split(" for ")[1].split(" = ")[0];
+        String parameter = query.split(" for ")[1]
+                .split(" = ")[1]
+                .replaceAll("\"", "");
+        String patternText = ".+";
+        switch (filter) {
+            case "ip":
+                patternText = PATTERN_GET_IP;
+                break;
+            case "status":
+                patternText = PATTERN_CHECK_STATUS_QUERY;
+                break;
+            case "event":
+                patternText = PATTERN_CHECK_EVENT_QUERY;
+                break;
+            case "date":
+                patternText = PATTERN_GET_DATE + " " + PATTERN_GET_TIME;
+                break;
         }
+        pattern = Pattern.compile(patternText);
+        matcher = pattern.matcher(parameter);
+        return matcher.matches();
     }
 
     @Override

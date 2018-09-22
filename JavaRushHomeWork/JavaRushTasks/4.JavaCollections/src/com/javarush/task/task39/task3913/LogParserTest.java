@@ -604,7 +604,7 @@ public class LogParserTest {
     }
 
     @Test
-    public void executeIp() {
+    public void executeAllIp() {
         Set<Object> currentResult = logParser.execute("get ip");
         Set<String> correctResult = new HashSet<>();
         correctResult.add(IP_120);
@@ -616,7 +616,7 @@ public class LogParserTest {
     }
 
     @Test
-    public void executeName() {
+    public void executeAllName() {
         Set<Object> currentResult = logParser.execute("get user");
         Set<String> correctResult = new HashSet<>();
         correctResult.add(USER_A);
@@ -626,7 +626,7 @@ public class LogParserTest {
     }
 
     @Test
-    public void executeDate() {
+    public void executeAllDate() {
         Set<Object> currentResult = logParser.execute("get date");
         Set<Date> correctResult = new HashSet<>();
         correctResult.add(date_30_08_2012_16_08_13);
@@ -646,7 +646,7 @@ public class LogParserTest {
     }
 
     @Test
-    public void executeEvent() {
+    public void executeAllEvent() {
         Set<Object> currentResult = logParser.execute("get event");
         Set<Event> correctResult = new HashSet<>();
         correctResult.add(Event.DONE_TASK);
@@ -658,7 +658,7 @@ public class LogParserTest {
     }
 
     @Test
-    public void executeStatus() {
+    public void executeAllStatus() {
         Set<Object> currentResult = logParser.execute("get status");
         Set<Status> correctResult = new HashSet<>();
         correctResult.add(Status.OK);
