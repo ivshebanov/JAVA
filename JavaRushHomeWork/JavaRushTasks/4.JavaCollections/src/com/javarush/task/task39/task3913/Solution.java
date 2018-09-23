@@ -63,27 +63,6 @@ public class Solution {
         System.out.println("execute get date \t" + logParser.execute("get date"));
         System.out.println("execute get event \t" + logParser.execute("get event"));
         System.out.println("execute get status \t" + logParser.execute("get status"));
-        System.out.println();
-        System.out.println("execute get event for date = \"3.1.2014 3:45:23\" \t" + logParser.execute("get event for date = \"3.1.2014 3:45:23\""));
-        System.out.println("execute get event for date = \"03.01.2014 3:45:23\" \t" + logParser.execute("get event for date = \"03.01.2014 3:45:23\""));
-        System.out.println("execute get event for date = \" \t" + logParser.execute("get event for date = \""));
-        System.out.println("execute get date for date = \"29.2.2028 05:4:7\" \t" + logParser.execute("get date for date = \"29.2.2028 05:4:7\""));
-        System.out.println("execute get user for date = \"29.02.2028 05:4:07\" \t" + logParser.execute("get user for date = \"29.02.2028 05:4:07\""));
-        /*[LOGIN]
-            [LOGIN]
-            []
-            [Tue Feb 29 05:04:07 EET 2028]
-            [Amigo]*/
-
-        System.out.println("execute get user for =date = \"29.02.2028 05:4:07\" \t" + logParser.execute("get user for =date = \"29.02.2028 05:4:07\""));
-        System.out.println("execute get =user for date = \"29.02.2028 05:4:07\" \t" + logParser.execute("get =user for date = \"29.02.2028 05:4:07\""));
-        System.out.println("execute get date for date = \"25.2.2028 05:4:7\" \t" + logParser.execute("get date for date = \"25.2.2028 05:4:7\""));
-
-        /*[Amigo, Vasya Pupkin, Eduard Petrovich Morozko]
-            null
-            []*/
-
-        System.out.println();
         System.out.println("execute get ip for ip = \"127.0.0.1\" \t" + logParser.execute("get ip for ip = \"127.0.0.1\""));
         System.out.println("execute get ip for USER = \"Eduard Petrovich Morozko\" \t" + logParser.execute("get ip for user = \"Eduard Petrovich Morozko\""));
         System.out.println("execute get ip for event = \"SOLVE_TASK\" \t" + logParser.execute("get ip for event = \"SOLVE_TASK\""));
