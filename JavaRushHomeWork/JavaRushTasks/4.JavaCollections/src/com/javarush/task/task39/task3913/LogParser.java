@@ -1004,7 +1004,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
             case "date":
                 return new HashSet<>(getEventForDate(value));
             case "event":
-                return new HashSet<>(Collections.singletonList(value));
+                return new HashSet<>(Collections.singletonList(Event.valueOf(value)));
             case "status":
                 return emptySet();
             default:
