@@ -105,5 +105,6 @@ public class Solution {
         System.out.println("execute get event for date = \"30.01.2014 12:56:22\" \t" + logParser.execute("get event for date = \"30.01.2014 12:56:22\""));
         System.out.println("execute event for event = \"WRITE_MESSAGE\" \t" + logParser.execute("get event for event = \"WRITE_MESSAGE\""));
         System.out.println("execute get event for status = \"FAILED\" \t" + logParser.execute("get event for status = \"FAILED\""));
+        System.out.println("execute get status for ip = \"192.168.100.2\" \t" + logParser.execute("get status for ip = \"192.168.100.2\""));
     }
 }
