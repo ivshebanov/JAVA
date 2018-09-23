@@ -810,4 +810,12 @@ public class LogParserTest {
         correctResult.add(date_30_08_2012_16_08_13);
         Assert.assertEquals(correctResult, currentResult);
     }
+
+    @Test
+    public void executeGetDateForDateAndValue() {
+        Set<Object> currentResult = logParser.execute(QUERY_VALID_DATE_DATE);
+        Set<Date> correctResult = new HashSet<>();
+        correctResult.add(date_03_01_2014_03_45_23);
+        Assert.assertEquals(correctResult, currentResult);
+    }
 }
