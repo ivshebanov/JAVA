@@ -100,5 +100,6 @@ public class Solution {
         System.out.println("execute get date for event = \"DOWNLOAD_PLUGIN\" \t" + logParser.execute("get date for event = \"DOWNLOAD_PLUGIN\""));
         System.out.println("execute get date for status = \"FAILED\" \t" + logParser.execute("get date for status = \"FAILED\""));
         System.out.println("execute get event for ip = \"146.34.15.5\" \t" + logParser.execute("get event for ip = \"146.34.15.5\""));
+        System.out.println("execute get event for user = \"Amigo\" \t" + logParser.execute("get event for user = \"Amigo\""));
     }
 }
