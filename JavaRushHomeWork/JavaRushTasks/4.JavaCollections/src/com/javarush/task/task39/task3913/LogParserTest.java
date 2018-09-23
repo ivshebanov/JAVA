@@ -39,6 +39,7 @@ public class LogParserTest {
     private static final String QUERY_VALID_USER_STATUS = "get user for status = \"ERROR\"";
     private static final String QUERY_VALID_DATE_DATE = "get date for date = \"03.01.2014 03:45:23\"";
     private static final String QUERY_VALID_DATE_IP = "get date for ip = \"127.0.0.1\"";
+    private static final String QUERY_VALID_DATE_USER = "get date for user = \"Amigo\"";
 
     private static final String DATE_30_08_2012_16_08_13 = "30.08.2012 16:08:13";
     private static final String DATE_30_08_2012_16_08_40 = "30.08.2012 16:08:40";
@@ -816,6 +817,16 @@ public class LogParserTest {
         Set<Object> currentResult = logParser.execute(QUERY_VALID_DATE_DATE);
         Set<Date> correctResult = new HashSet<>();
         correctResult.add(date_03_01_2014_03_45_23);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void executeGetDateForUserAndValue() {
+        Set<Object> currentResult = logParser.execute(QUERY_VALID_DATE_USER);
+        Set<Date> correctResult = new HashSet<>();
+        correctResult.add(date_29_2_2028_5_4_7);
+        correctResult.add(date_21_10_2021_19_45_25);
+        correctResult.add(date_30_08_2012_16_08_13);
         Assert.assertEquals(correctResult, currentResult);
     }
 }
