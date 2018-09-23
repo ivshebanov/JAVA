@@ -46,6 +46,7 @@ public class LogParserTest {
     private static final String QUERY_VALID_EVENT_USER = "get event for user = \"Amigo\"";
     private static final String QUERY_VALID_EVENT_DATE = "get event for date = \"30.01.2014 12:56:22\"";
     private static final String QUERY_VALID_EVENT_EVENT = "get event for event = \"WRITE_MESSAGE\"";
+    private static final String QUERY_VALID_EVENT_STATUS = "get event for status = \"FAILED\"";
 
     private static final String DATE_30_08_2012_16_08_13 = "30.08.2012 16:08:13";
     private static final String DATE_30_08_2012_16_08_40 = "30.08.2012 16:08:40";
@@ -886,6 +887,15 @@ public class LogParserTest {
         Set<Object> currentResult = logParser.execute(QUERY_VALID_EVENT_EVENT);
         Set<Event> correctResult = new HashSet<>();
         correctResult.add(Event.WRITE_MESSAGE);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void executeGetEventForStatusAndValue() {
+        Set<Object> currentResult = logParser.execute(QUERY_VALID_EVENT_STATUS);
+        Set<Event> correctResult = new HashSet<>();
+        correctResult.add(Event.WRITE_MESSAGE);
+        correctResult.add(Event.DONE_TASK);
         Assert.assertEquals(correctResult, currentResult);
     }
 }
