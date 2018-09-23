@@ -89,5 +89,8 @@ public class Solution {
         System.out.println("execute get status for date = \"30.01.2014 12:56:22\" \t" + logParser.execute("get status for date = \"30.01.2014 12:56:22\""));
         System.out.println("execute get status for event = \"WRITE_MESSAGE\" \t" + logParser.execute("get status for event = \"WRITE_MESSAGE\""));
         System.out.println("execute get status for status = \"OK\" \t" + logParser.execute("get status for status = \"OK\""));
+        System.out.println();
+        System.out.println("execute get ip for user = \"Eduard Petrovich Morozko\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\" \t" + logParser.execute("get ip for user = \"Eduard Petrovich Morozko\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\""));
+        System.out.println("execute get ip for date = \"12.12.2013 21:56:30\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\" \t" + logParser.execute("get ip for date = \"12.12.2013 21:56:30\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\""));
     }
 }

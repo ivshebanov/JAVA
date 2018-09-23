@@ -36,9 +36,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     private static final String PATTERN_CHECK_EVENT_QUERY = "(LOGIN|DOWNLOAD_PLUGIN|WRITE_MESSAGE|SOLVE_TASK|DONE_TASK){1}";
     private static final String PATTERN_CHECK_SHORT_QUERY = "get (ip|user|status|event|date)";
     private static final String PATTERN_CHECK_LONG_QUERY = "get (ip|user|date|event|status) for (ip|user|date|event|status) = \".+\"";
-    private static final String PATTERN_GET_FIELD = "get (ip|user|date|event|status)"
-            + "( for (ip|user|date|event|status) = \"(.*?)\")?";
+    private static final String PATTERN_GET_FIELD = "get (ip|user|date|event|status)( for (ip|user|date|event|status) = \"(.*?)\")?( and date between \"(.*?)\" and \"(.*?)\")?";
 
+    // get ip for user = "Eduard Petrovich Morozko" and date between "11.12.2013 0:00:00" and "03.01.2014 23:59:59".
     private Path logDir;
 
     public LogParser(Path logDir) {
@@ -55,31 +55,35 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         String field1 = "";
         String field2 = "";
         String value = "";
+        String dateAfterString = null;
+        String dateBeforString = null;
+        Date afterDate = null;
+        Date beforDate = null;
+
         if (matcher.find()) {
             field1 = matcher.group(1);
             field2 = matcher.group(3);
             value = matcher.group(4);
+            dateAfterString = matcher.group(6);
+            dateBeforString = matcher.group(7);
         }
 
-        if (field2 == null) {
-            field2 = "";
-        }
-
-        if (value == null) {
-            value = "";
-        }
+        if (field2 == null) field2 = "";
+        if (value == null) value = "";
+        if (dateAfterString != null) afterDate = getDateByString(dateAfterString);
+        if (dateBeforString != null) beforDate = getDateByString(dateBeforString);
 
         switch (field1) {
             case "ip":
-                return getIpsForFieldAndValue(field2, value);
+                return getIpsForFieldAndValue(field2, value, afterDate, beforDate);
             case "user":
-                return getUsersForFieldAndValue(field2, value);
+                return getUsersForFieldAndValue(field2, value, afterDate, beforDate);
             case "date":
-                return getDatesForFieldAndValue(field2, value);
+                return getDatesForFieldAndValue(field2, value, afterDate, beforDate);
             case "event":
-                return getEventsForFieldAndValue(field2, value);
+                return getEventsForFieldAndValue(field2, value, afterDate, beforDate);
             case "status":
-                return getStatusForFieldAndValue(field2, value);
+                return getStatusForFieldAndValue(field2, value, afterDate, beforDate);
             default:
                 return null;
         }
@@ -147,13 +151,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
     @Override
     public Set<String> getAllUsers() {
-        List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
-        Set<String> resultSet = new HashSet<>();
-        for (OneLog log : listLogsForPeriod) {
-            resultSet.add(log.getName());
-        }
-        return resultSet;
+        return getAllUsers(null, null);
     }
 
     @Override
@@ -544,9 +542,19 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultMap;
     }
 
-    private Set<Status> getStatusForIp(String ip) {
+    private Set<String> getAllUsers(Date after, Date before) {
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
+        Set<String> resultSet = new HashSet<>();
+        for (OneLog log : listLogsForPeriod) {
+            resultSet.add(log.getName());
+        }
+        return resultSet;
+    }
+
+    private Set<Status> getStatusForIp(String ip, Date after, Date befor) {
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, befor);
         Set<Status> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getIp().equals(ip)) {
@@ -556,9 +564,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<Status> getStatusForUser(String user) {
+    private Set<Status> getStatusForUser(String user, Date after, Date befor) {
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, befor);
         Set<Status> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getName().equals(user)) {
@@ -568,10 +576,10 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<Status> getStatusForDate(String date) {
+    private Set<Status> getStatusForDate(String date, Date after, Date befor) {
         Date dateObject = getDateByString(date);
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, befor);
         Set<Status> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getDate().equals(dateObject)) {
@@ -581,9 +589,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<Status> getStatusForEvent(String event) {
+    private Set<Status> getStatusForEvent(String event, Date after, Date befor) {
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, befor);
         Set<Status> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getEvent().equals(Event.valueOf(event))) {
@@ -593,10 +601,10 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<Event> getEventForDate(String date) {
+    private Set<Event> getEventForDate(String date, Date after, Date befor) {
         Date dateObject = getDateByString(date);
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, befor);
         Set<Event> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getDate().equals(dateObject)) {
@@ -606,9 +614,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<Event> getEventForStatus(String status) {
+    private Set<Event> getEventForStatus(String status, Date after, Date befor) {
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, befor);
         Set<Event> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getStatus().equals(Status.valueOf(status))) {
@@ -618,9 +626,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<Date> getDateForIp(String ip) {
+    private Set<Date> getDateForIp(String ip, Date after, Date before) {
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         Set<Date> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getIp().equals(ip)) {
@@ -630,9 +638,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<Date> getDateForUser(String user) {
+    private Set<Date> getDateForUser(String user, Date after, Date before) {
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         Set<Date> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getName().equals(user)) {
@@ -642,9 +650,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<Date> getDateForEvent(String event) {
+    private Set<Date> getDateForEvent(String event, Date after, Date before) {
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         Set<Date> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getEvent().equals(Event.valueOf(event))) {
@@ -654,9 +662,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<Date> getDateForStatus(String status) {
+    private Set<Date> getDateForStatus(String status, Date after, Date before) {
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         Set<Date> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getStatus().equals(Status.valueOf(status))) {
@@ -666,10 +674,10 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<String> getIPsForDate(String date) {
+    private Set<String> getIPsForDate(String date, Date after, Date before) {
         Date dateObject = getDateByString(date);
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         Set<String> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getDate().equals(dateObject)) {
@@ -679,10 +687,10 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<String> getUsersForDate(String date) {
+    private Set<String> getUsersForDate(String date, Date after, Date before) {
         Date dateObject = getDateByString(date);
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         Set<String> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getDate().equals(dateObject)) {
@@ -692,10 +700,10 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<String> getUsersForEvent(String event) {
+    private Set<String> getUsersForEvent(String event, Date after, Date before) {
         Event eventObject = Event.valueOf(event);
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         Set<String> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getEvent().equals(eventObject)) {
@@ -705,10 +713,10 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
-    private Set<String> getUsersForStatus(String status) {
+    private Set<String> getUsersForStatus(String status, Date after, Date before) {
         Status statusObject = Status.valueOf(status);
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         Set<String> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             if (log.getStatus().equals(statusObject)) {
@@ -719,8 +727,12 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     }
 
     private Set<Status> getAllStatus() {
+        return getAllStatus(null, null);
+    }
+
+    private Set<Status> getAllStatus(Date after, Date before) {
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         Set<Status> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             resultSet.add(log.getStatus());
@@ -729,8 +741,12 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     }
 
     private Set<Date> getAllDate() {
+        return getAllDate(null, null);
+    }
+
+    private Set<Date> getAllDate(Date after, Date before) {
         List<OneLog> listAllLogs = getAllLogs();
-        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, after, before);
         Set<Date> resultSet = new HashSet<>();
         for (OneLog log : listLogsForPeriod) {
             resultSet.add(log.getDate());
@@ -981,10 +997,21 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         matcher = pattern.matcher(query);
         if (!matcher.matches()) return false;
 
-        String filter = query.split(" for ")[1].split(" = ")[0];
-        String parameter = query.split(" for ")[1]
-                .split(" = ")[1]
-                .replaceAll("\"", "");
+        String filter = "";
+        String value = "";
+        String dateAfterString = "";
+        String dateBeforString = "";
+
+        pattern = Pattern.compile(PATTERN_GET_FIELD);
+        matcher = pattern.matcher(query);
+
+        if (matcher.find()) {
+            filter = matcher.group(3);
+            value = matcher.group(4);
+            dateAfterString = matcher.group(6);
+            dateBeforString = matcher.group(7);
+        }
+
         String patternText = ".+";
         switch (filter) {
             case "ip":
@@ -1001,92 +1028,103 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
                 break;
         }
         pattern = Pattern.compile(patternText);
-        matcher = pattern.matcher(parameter);
-        return matcher.matches();
+        matcher = pattern.matcher(value);
+        if (dateAfterString == null && dateBeforString == null) return matcher.matches();
+
+        if (dateAfterString != null && dateAfterString.isEmpty()
+                || dateBeforString != null && dateBeforString.isEmpty()){
+            return false;
+        }
+
+        Pattern patternDate = Pattern.compile(PATTERN_GET_DATE + " " + PATTERN_GET_TIME);
+        matcher = patternDate.matcher(dateAfterString);
+        Matcher matcher1 = pattern.matcher(dateBeforString);
+
+        return matcher.matches() && matcher1.matches();
     }
 
-    private Set<Object> getIpsForFieldAndValue(String field2, String value) {
+    private Set<Object> getIpsForFieldAndValue(String field2, String value, Date after, Date before) {
         switch (field2) {
             case "ip":
                 return new HashSet<>(Collections.singletonList(value));
             case "user":
-                return new HashSet<>(getIPsForUser(value, null, null));
+                return new HashSet<>(getIPsForUser(value, after, before));
             case "date":
-                return new HashSet<>(getIPsForDate(value));
+                return new HashSet<>(getIPsForDate(value, after, before));
             case "event":
-                return new HashSet<>(getIPsForEvent(Event.valueOf(value), null, null));
+                return new HashSet<>(getIPsForEvent(Event.valueOf(value), after, before));
             case "status":
-                return new HashSet<>(getIPsForStatus(Status.valueOf(value), null, null));
+                return new HashSet<>(getIPsForStatus(Status.valueOf(value), after, before));
             default:
-                return new HashSet<>(getUniqueIPs(null, null));
+                return new HashSet<>(getUniqueIPs(after, before));
         }
     }
 
-    private Set<Object> getUsersForFieldAndValue(String field2, String value) {
+    private Set<Object> getUsersForFieldAndValue(String field2, String value, Date after, Date before) {
         switch (field2) {
             case "ip":
-                return new HashSet<>(getUsersForIP(value, null, null));
+                return new HashSet<>(getUsersForIP(value, after, before));
             case "user":
                 return new HashSet<>(Collections.singletonList(value));
             case "date":
-                return new HashSet<>(getUsersForDate(value));
+                return new HashSet<>(getUsersForDate(value, after, before));
             case "event":
-                return new HashSet<>(getUsersForEvent(value));
+                return new HashSet<>(getUsersForEvent(value, after, before));
             case "status":
-                return new HashSet<>(getUsersForStatus(value));
+                return new HashSet<>(getUsersForStatus(value, after, before));
             default:
-                return new HashSet<>(getAllUsers());
+                return new HashSet<>(getAllUsers(after, before));
         }
     }
 
-    private Set<Object> getDatesForFieldAndValue(String field2, String value) {
+    private Set<Object> getDatesForFieldAndValue(String field2, String value, Date after, Date before) {
         switch (field2) {
             case "ip":
-                return new HashSet<>(getDateForIp(value));
+                return new HashSet<>(getDateForIp(value, after, before));
             case "user":
-                return new HashSet<>(getDateForUser(value));
+                return new HashSet<>(getDateForUser(value, after, before));
             case "date":
                 return new HashSet<>(Collections.singletonList(getDateByString(value)));
             case "event":
-                return new HashSet<>(getDateForEvent(value));
+                return new HashSet<>(getDateForEvent(value, after, before));
             case "status":
-                return new HashSet<>(getDateForStatus(value));
+                return new HashSet<>(getDateForStatus(value, after, before));
             default:
-                return new HashSet<>(getAllDate());
+                return new HashSet<>(getAllDate(after, before));
         }
     }
 
-    private Set<Object> getEventsForFieldAndValue(String field2, String value) {
+    private Set<Object> getEventsForFieldAndValue(String field2, String value, Date after, Date before) {
         switch (field2) {
             case "ip":
-                return new HashSet<>(getEventsForIP(value, null, null));
+                return new HashSet<>(getEventsForIP(value, after, before));
             case "user":
-                return new HashSet<>(getEventsForUser(value, null, null));
+                return new HashSet<>(getEventsForUser(value, after, before));
             case "date":
-                return new HashSet<>(getEventForDate(value));
+                return new HashSet<>(getEventForDate(value, after, before));
             case "event":
                 return new HashSet<>(Collections.singletonList(Event.valueOf(value)));
             case "status":
-                return new HashSet<>(getEventForStatus(value));
+                return new HashSet<>(getEventForStatus(value, after, before));
             default:
-                return new HashSet<>(getAllEvents(null, null));
+                return new HashSet<>(getAllEvents(after, before));
         }
     }
 
-    private Set<Object> getStatusForFieldAndValue(String field2, String value) {
+    private Set<Object> getStatusForFieldAndValue(String field2, String value, Date after, Date before) {
         switch (field2) {
             case "ip":
-                return new HashSet<>(getStatusForIp(value));
+                return new HashSet<>(getStatusForIp(value, after, before));
             case "user":
-                return new HashSet<>(getStatusForUser(value));
+                return new HashSet<>(getStatusForUser(value, after, before));
             case "date":
-                return new HashSet<>(getStatusForDate(value));
+                return new HashSet<>(getStatusForDate(value, after, before));
             case "event":
-                return new HashSet<>(getStatusForEvent(value));
+                return new HashSet<>(getStatusForEvent(value, after, before));
             case "status":
                 return new HashSet<>(Collections.singletonList(Status.valueOf(value)));
             default:
-                return new HashSet<>(getAllStatus());
+                return new HashSet<>(getAllStatus(after, before));
         }
     }
 }
