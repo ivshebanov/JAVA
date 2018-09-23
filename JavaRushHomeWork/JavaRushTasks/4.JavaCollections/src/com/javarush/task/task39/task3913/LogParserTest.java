@@ -42,6 +42,7 @@ public class LogParserTest {
     private static final String QUERY_VALID_DATE_USER = "get date for user = \"Amigo\"";
     private static final String QUERY_VALID_DATE_EVENT = "get date for event = \"DOWNLOAD_PLUGIN\"";
     private static final String QUERY_VALID_DATE_STATUS = "get date for status = \"FAILED\"";
+    private static final String QUERY_VALID_EVENT_IP = "get event for ip = \"146.34.15.5\"";
 
     private static final String DATE_30_08_2012_16_08_13 = "30.08.2012 16:08:13";
     private static final String DATE_30_08_2012_16_08_40 = "30.08.2012 16:08:40";
@@ -846,6 +847,17 @@ public class LogParserTest {
         Set<Date> correctResult = new HashSet<>();
         correctResult.add(date_11_12_2013_10_11_12);
         correctResult.add(date_05_01_2021_20_22_55);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void executeGetEventForIpAndValue() {
+        Set<Object> currentResult = logParser.execute(QUERY_VALID_EVENT_IP);
+        Set<Event> correctResult = new HashSet<>();
+        correctResult.add(Event.DOWNLOAD_PLUGIN);
+        correctResult.add(Event.WRITE_MESSAGE);
+        correctResult.add(Event.LOGIN);
+        correctResult.add(Event.DONE_TASK);
         Assert.assertEquals(correctResult, currentResult);
     }
 }
