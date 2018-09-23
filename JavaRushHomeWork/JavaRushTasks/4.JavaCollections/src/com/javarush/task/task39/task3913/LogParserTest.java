@@ -37,6 +37,8 @@ public class LogParserTest {
     private static final String QUERY_VALID_USER_DATE = "get user for date = \"11.12.2013 10:11:12\"";
     private static final String QUERY_VALID_USER_EVENT = "get user for event = \"DONE_TASK\"";
     private static final String QUERY_VALID_USER_STATUS = "get user for status = \"ERROR\"";
+    private static final String QUERY_VALID_DATE_DATE = "get date for date = \"03.01.2014 03:45:23\"";
+    private static final String QUERY_VALID_DATE_IP = "get date for ip = \"127.0.0.1\"";
 
     private static final String DATE_30_08_2012_16_08_13 = "30.08.2012 16:08:13";
     private static final String DATE_30_08_2012_16_08_40 = "30.08.2012 16:08:40";
@@ -795,6 +797,17 @@ public class LogParserTest {
         Set<Object> currentResult = logParser.execute(QUERY_VALID_USER_STATUS);
         Set<String> correctResult = new HashSet<>();
         correctResult.add(USER_VP);
+        Assert.assertEquals(correctResult, currentResult);
+    }
+
+    @Test
+    public void executeGetDateForIpAndValue() {
+        Set<Object> currentResult = logParser.execute(QUERY_VALID_DATE_IP);
+        Set<Date> correctResult = new HashSet<>();
+        correctResult.add(date_14_11_2015_07_08_01);
+        correctResult.add(date_11_12_2013_10_11_12);
+        correctResult.add(date_14_10_2021_11_38_21);
+        correctResult.add(date_30_08_2012_16_08_13);
         Assert.assertEquals(correctResult, currentResult);
     }
 }

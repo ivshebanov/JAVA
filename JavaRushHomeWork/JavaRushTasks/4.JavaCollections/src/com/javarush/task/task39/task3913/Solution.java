@@ -94,5 +94,7 @@ public class Solution {
         System.out.println("execute get user for date = \"11.12.2013 10:11:12\" \t" + logParser.execute("get user for date = \"11.12.2013 10:11:12\""));
         System.out.println("execute get user for event = \"DONE_TASK\" \t" + logParser.execute("get user for event = \"DONE_TASK\""));
         System.out.println("execute get user for status = \"ERROR\" \t" + logParser.execute("get user for status = \"ERROR\""));
+        System.out.println("execute get date for ip = \"127.0.0.1\" \t" + logParser.execute("get date for ip = \"127.0.0.1\""));
+        System.out.println("execute get date for date = \"03.01.2014 03:45:23\" \t" + logParser.execute("get date for date = \"03.01.2014 03:45:23\""));
     }
 }
