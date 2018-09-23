@@ -109,5 +109,6 @@ public class Solution {
         System.out.println("execute get status for user = \"Eduard Petrovich Morozko\" \t" + logParser.execute("get status for user = \"Eduard Petrovich Morozko\""));
         System.out.println("execute get status for date = \"30.01.2014 12:56:22\" \t" + logParser.execute("get status for date = \"30.01.2014 12:56:22\""));
         System.out.println("execute get status for event = \"WRITE_MESSAGE\" \t" + logParser.execute("get status for event = \"WRITE_MESSAGE\""));
+        System.out.println("execute get status for status = \"OK\" \t" + logParser.execute("get status for status = \"OK\""));
     }
 }
