@@ -92,5 +92,9 @@ public class Solution {
         System.out.println();
         System.out.println("execute get ip for user = \"Eduard Petrovich Morozko\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\" \t" + logParser.execute("get ip for user = \"Eduard Petrovich Morozko\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\""));
         System.out.println("execute get ip for date = \"12.12.2013 21:56:30\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\" \t" + logParser.execute("get ip for date = \"12.12.2013 21:56:30\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\""));
+
+        System.out.println("execute get ip for event = \"WRITE_MESSAGE\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\" \t" + logParser.execute("get ip for event = \"WRITE_MESSAGE\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\""));
+        System.out.println("execute get ip for status = \"FAILED\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\" \t" + logParser.execute("get ip for status = \"FAILED\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\""));
+        System.out.println("execute get date for event = \"LOGIN\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\" \t" + logParser.execute("get date for event = \"LOGIN\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\""));
     }
 }

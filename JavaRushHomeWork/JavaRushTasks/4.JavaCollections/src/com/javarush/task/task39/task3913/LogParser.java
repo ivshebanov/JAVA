@@ -35,7 +35,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     private static final String PATTERN_CHECK_STATUS_QUERY = "(OK|FAILED|ERROR){1}";
     private static final String PATTERN_CHECK_EVENT_QUERY = "(LOGIN|DOWNLOAD_PLUGIN|WRITE_MESSAGE|SOLVE_TASK|DONE_TASK){1}";
     private static final String PATTERN_CHECK_SHORT_QUERY = "get (ip|user|status|event|date)";
-    private static final String PATTERN_CHECK_LONG_QUERY = "get (ip|user|date|event|status) for (ip|user|date|event|status) = \".+\"";
+    private static final String PATTERN_CHECK_LONG_QUERY = "get (ip|user|date|event|status) for (ip|user|date|event|status) = \"(.*?)\"";
     private static final String PATTERN_GET_FIELD = "get (ip|user|date|event|status)( for (ip|user|date|event|status) = \"(.*?)\")?( and date between \"(.*?)\" and \"(.*?)\")?";
 
     // get ip for user = "Eduard Petrovich Morozko" and date between "11.12.2013 0:00:00" and "03.01.2014 23:59:59".
@@ -862,8 +862,8 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     }
 
     private boolean checkData(Date after, Date before, Date current) {
-        return (after == null || current.after(after) || current.equals(after)) &&
-                (before == null || current.before(before) || current.equals(before));
+        return (after == null || current.after(after)) &&
+                (before == null || current.before(before));
     }
 
     private OneLog getOneLog(String log) {
@@ -1032,13 +1032,13 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         if (dateAfterString == null && dateBeforString == null) return matcher.matches();
 
         if (dateAfterString != null && dateAfterString.isEmpty()
-                || dateBeforString != null && dateBeforString.isEmpty()){
+                || dateBeforString != null && dateBeforString.isEmpty()) {
             return false;
         }
 
         Pattern patternDate = Pattern.compile(PATTERN_GET_DATE + " " + PATTERN_GET_TIME);
         matcher = patternDate.matcher(dateAfterString);
-        Matcher matcher1 = pattern.matcher(dateBeforString);
+        Matcher matcher1 = patternDate.matcher(dateBeforString);
 
         return matcher.matches() && matcher1.matches();
     }
