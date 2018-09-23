@@ -580,6 +580,18 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         return resultSet;
     }
 
+    private Set<Date> getDateForStatus(String status) {
+        List<OneLog> listAllLogs = getAllLogs();
+        List<OneLog> listLogsForPeriod = getLogsForPeriod(listAllLogs, null, null);
+        Set<Date> resultSet = new HashSet<>();
+        for (OneLog log : listLogsForPeriod) {
+            if (log.getStatus().equals(Status.valueOf(status))) {
+                resultSet.add(log.getDate());
+            }
+        }
+        return resultSet;
+    }
+
     private Set<String> getIPsForDate(String date) {
         Date dateObject = getDateByString(date);
         List<OneLog> listAllLogs = getAllLogs();
@@ -964,7 +976,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
             case "event":
                 return new HashSet<>(getDateForEvent(value));
             case "status":
-                return emptySet();
+                return new HashSet<>(getDateForStatus(value));
             default:
                 return new HashSet<>(getAllDate());
         }
