@@ -97,5 +97,6 @@ public class Solution {
         System.out.println("execute get date for ip = \"127.0.0.1\" \t" + logParser.execute("get date for ip = \"127.0.0.1\""));
         System.out.println("execute get date for date = \"03.01.2014 03:45:23\" \t" + logParser.execute("get date for date = \"03.01.2014 03:45:23\""));
         System.out.println("execute get date for user = \"Amigo\" \t" + logParser.execute("get date for user = \"Amigo\""));
+        System.out.println("execute get date for event = \"DOWNLOAD_PLUGIN\" \t" + logParser.execute("get date for event = \"DOWNLOAD_PLUGIN\""));
     }
 }
