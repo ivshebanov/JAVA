@@ -8,11 +8,11 @@ import java.lang.annotation.Target;
 @Target(value = ElementType.TYPE)
 @Retention(value = RetentionPolicy.RUNTIME)
 public @interface Ticket {
-    Priority priority();
+    Priority priority() default Priority.MEDIUM;
 
-    String createdBy();
+    String createdBy() default "Amigo";
 
-    String[] tags();
+    String[] tags() default {};
 
     enum Priority {
         LOW,
