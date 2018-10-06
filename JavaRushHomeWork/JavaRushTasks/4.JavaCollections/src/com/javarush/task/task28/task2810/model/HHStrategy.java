@@ -1,13 +1,14 @@
 package com.javarush.task.task28.task2810.model;
 
 import com.javarush.task.task28.task2810.vo.Vacancy;
+import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class HHStrategy implements Strategy {
@@ -16,17 +17,19 @@ public class HHStrategy implements Strategy {
 
     @Override
     public List<Vacancy> getVacancies(String searchString) {
-        List<Vacancy> resultList = new ArrayList<>();
+        List<Vacancy> resultList = new LinkedList<>();
         int pageNumber = 0;
         Document doc = null;
         while (true) {
             try {
                 doc = getDocument(searchString, pageNumber);
+            } catch (HttpStatusException e) {
+                return resultList;
             } catch (IOException e) {
                 e.printStackTrace();
             }
             if (doc == null) return null;
-            Elements elements = doc.getElementsByAttributeValue("data-qa","vacancy-serp__vacancy");
+            Elements elements = doc.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy");
             if (elements == null || elements.isEmpty()) break;
             for (Element element : elements) {
                 if (element == null) break;
@@ -36,15 +39,16 @@ public class HHStrategy implements Strategy {
                 Element companyName = element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-employer").first();
 
                 Vacancy vacancy = new Vacancy();
-                vacancy.setTitle(title.text());
+                vacancy.setTitle(title != null ? title.text() : "");
                 vacancy.setSalary(salary != null ? salary.text() : "");
-                vacancy.setCity(city.text());
-                vacancy.setCompanyName(companyName.text());
+                vacancy.setCity(city != null ? city.text() : "");
+                vacancy.setCompanyName(companyName != null ? companyName.text() : "");
                 vacancy.setSiteName(URL_FORMAT);
-                vacancy.setUrl(element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-title").attr("href"));
+                vacancy.setUrl(title != null ? title.attr("href") : "");
                 resultList.add(vacancy);
             }
             pageNumber++;
+            System.out.print(pageNumber + "\t");
         }
         return resultList;
     }
@@ -54,7 +58,7 @@ public class HHStrategy implements Strategy {
         return Jsoup.connect(url)
                 .userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36")
                 .referrer("http://google.ru")
-                .timeout(5000)
+                .timeout(20000)
                 .get();
     }
 }
