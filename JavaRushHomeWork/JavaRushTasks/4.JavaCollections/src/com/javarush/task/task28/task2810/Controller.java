@@ -30,9 +30,10 @@ public class Controller {
 
         for (Provider provider : providers) {
             try {
-                resultList.addAll(provider.getJavaVacancies("Moscow"));
+                resultList.addAll(provider.getJavaVacancies("Москва"));
             } catch (NullPointerException e) {
                 System.out.println("NPE");
+                e.getStackTrace();
             }
         }
         System.out.println(resultList.size());
