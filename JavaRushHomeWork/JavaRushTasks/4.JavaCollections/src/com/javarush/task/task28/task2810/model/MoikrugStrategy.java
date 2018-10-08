@@ -11,9 +11,11 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class HHStrategy implements Strategy {
-    private static final String URL_FORMAT = "http://hh.ru/search/vacancy?text=java+%s&page=%d";
-//    private static final String URL_FORMAT = "https://javarush.ru/testdata/big28data.html";
+public class MoikrugStrategy implements Strategy {
+
+//    private static final String URL_FORMAT = "https://moikrug.ru/vacancies?page=%d&q=java+%s&type=all";
+    private static final String URL_FORMAT = "https://moikrug.ru/vacancies?q=java+%s&page=%d";
+//    private static final String URL_FORMAT = "http://javarush.ru/testdata/big28data2.html";
 
     @Override
     public List<Vacancy> getVacancies(String searchString) {
@@ -29,14 +31,14 @@ public class HHStrategy implements Strategy {
                 e.printStackTrace();
             }
             if (doc == null) return null;
-            Elements elements = doc.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy");
+            Elements elements = doc.getElementsByClass("job");
             if (elements == null || elements.isEmpty()) break;
             for (Element element : elements) {
                 if (element == null) break;
-                Element title = element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-title").first();
-                Element salary = element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-compensation").first();
-                Element city = element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-address").first();
-                Element companyName = element.getElementsByAttributeValue("data-qa", "vacancy-serp__vacancy-employer").first();
+                Element title = element.getElementsByClass("title").first();
+                Element salary = element.getElementsByClass("count").first();
+                Element city = element.getElementsByClass("location").first();
+                Element companyName = element.getElementsByClass("company_name").first();
 
                 Vacancy vacancy = new Vacancy();
                 vacancy.setTitle(title != null ? title.text() : "");
@@ -44,13 +46,10 @@ public class HHStrategy implements Strategy {
                 vacancy.setCity(city != null ? city.text() : "");
                 vacancy.setCompanyName(companyName != null ? companyName.text() : "");
                 vacancy.setSiteName(URL_FORMAT);
-                vacancy.setUrl(title != null ? title.attr("href") : "");
+                vacancy.setUrl("https://moikrug.ru" + element.select("a[class=job_icon]").attr("href"));
                 resultList.add(vacancy);
             }
             pageNumber++;
-            if (pageNumber == 1){
-                return resultList;
-            }
             System.out.print(pageNumber + "\t");
         }
         return resultList;
