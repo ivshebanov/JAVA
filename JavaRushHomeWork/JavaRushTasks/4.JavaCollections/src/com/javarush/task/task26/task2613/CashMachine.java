@@ -5,6 +5,7 @@ import com.javarush.task.task26.task2613.exception.InterruptOperationException;
 
 import java.util.Locale;
 
+import static com.javarush.task.task26.task2613.ConsoleHelper.GOODBYE;
 import static com.javarush.task.task26.task2613.ConsoleHelper.askOperation;
 import static com.javarush.task.task26.task2613.ConsoleHelper.writeMessage;
 import static com.javarush.task.task26.task2613.Operation.EXIT;
@@ -22,8 +23,7 @@ public class CashMachine {
                 CommandExecutor.execute(operation);
             } while (operation != EXIT);
         } catch (InterruptOperationException e) {
-            writeMessage("Досвиданья.");
+            writeMessage(GOODBYE);
         }
-
     }
 }

@@ -12,8 +12,8 @@ class DepositCommand implements Command {
     @Override
     public void execute() throws InterruptOperationException {
         String currencyCode = askCurrencyCode();
-        String[] currencyValue = getValidTwoDigits(currencyCode);
         CurrencyManipulator cm = getManipulatorByCurrencyCode(currencyCode);
+        String[] currencyValue = getValidTwoDigits(currencyCode);
         cm.addAmount(Integer.valueOf(currencyValue[0]), Integer.valueOf(currencyValue[1]));
     }
 }

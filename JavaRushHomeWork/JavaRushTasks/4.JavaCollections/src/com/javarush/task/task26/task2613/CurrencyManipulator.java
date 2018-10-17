@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import static com.javarush.task.task26.task2613.ConsoleHelper.THERE_ARE_NO_BANKNOTES_IN_THE_ATM;
 import static java.util.Collections.reverse;
 import static java.util.Collections.sort;
 
@@ -85,19 +86,11 @@ public class CurrencyManipulator {
         }
 
         if (sum > 0)
-            throw new NotEnoughMoneyException();
+            throw new NotEnoughMoneyException(THERE_ARE_NO_BANKNOTES_IN_THE_ATM);
         else {
             denominations.clear();
             denominations.putAll(temp);
         }
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "CurrencyManipulator{" +
-                "currencyCode='" + currencyCode + '\'' +
-                ", denominations=" + denominations +
-                '}';
     }
 }

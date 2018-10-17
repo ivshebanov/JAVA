@@ -1,27 +1,34 @@
 package com.javarush.task.task26.task2613.command;
 
+import com.javarush.task.task26.task2613.CashMachine;
 import com.javarush.task.task26.task2613.exception.InterruptOperationException;
 
-import static com.javarush.task.task26.task2613.ConsoleHelper.readString;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import static com.javarush.task.task26.task2613.ConsoleHelper.NUMBERS_ENTERED_NOT_CORRECT;
+import static com.javarush.task.task26.task2613.ConsoleHelper.VERIFICATION_PASSED_SUCCESSFULLY;
+import static com.javarush.task.task26.task2613.ConsoleHelper.getValidNumberCardAndPin;
 import static com.javarush.task.task26.task2613.ConsoleHelper.writeMessage;
+import static java.lang.String.format;
 
 public class LoginCommand implements Command {
 
-    private static final long NUMBER_CARD = 123456789012L;
-    private static final int PIN = 1234;
+    private ResourceBundle validCreditCards = ResourceBundle.getBundle(format("%s.resources.verifiedCards", CashMachine.class.getPackage().getName()), Locale.ENGLISH);
 
     @Override
     public void execute() throws InterruptOperationException {
-        writeMessage("Введите 2 числа - номер кредитной карты, состоящий из 12 цифр, и пин - состоящий из 4 цифр.");
         while (true) {
             try {
-                long numberCard = Long.valueOf(readString());
-                int pin = Integer.valueOf(readString());
-                if (numberCard != NUMBER_CARD || pin != PIN) throw new IllegalArgumentException();
-                writeMessage("Верификация прошла успешно.");
+                String[] numberCardAndPin = getValidNumberCardAndPin();
+                String numberCard = numberCardAndPin[0];
+                String pin = numberCardAndPin[1];
+                if (!validCreditCards.containsKey(numberCard) || !validCreditCards.getString(numberCard).equals(pin))
+                    throw new IllegalArgumentException(NUMBERS_ENTERED_NOT_CORRECT);
+                writeMessage(VERIFICATION_PASSED_SUCCESSFULLY);
                 break;
             } catch (IllegalArgumentException e) {
-                writeMessage("Числа введены не корректено, попробуте еще раз.");
+                writeMessage(e.getMessage());
             }
         }
     }

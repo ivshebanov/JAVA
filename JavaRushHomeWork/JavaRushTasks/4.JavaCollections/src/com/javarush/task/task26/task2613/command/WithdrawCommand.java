@@ -6,8 +6,10 @@ import com.javarush.task.task26.task2613.exception.NotEnoughMoneyException;
 
 import java.util.Map;
 
+import static com.javarush.task.task26.task2613.ConsoleHelper.THERE_IS_NOT_ENOUGH_MONEY_IN_YOUR_ACCOUNT;
+import static com.javarush.task.task26.task2613.ConsoleHelper.TRANSACTION_WAS_COMPLETED_SUCCESSFULLY;
 import static com.javarush.task.task26.task2613.ConsoleHelper.askCurrencyCode;
-import static com.javarush.task.task26.task2613.ConsoleHelper.readString;
+import static com.javarush.task.task26.task2613.ConsoleHelper.getValidNumber;
 import static com.javarush.task.task26.task2613.ConsoleHelper.writeMessage;
 import static com.javarush.task.task26.task2613.CurrencyManipulatorFactory.getManipulatorByCurrencyCode;
 
@@ -15,38 +17,20 @@ class WithdrawCommand implements Command {
 
     @Override
     public void execute() throws InterruptOperationException {
-        String currencyCode = askCurrencyCode();
-        CurrencyManipulator cm = getManipulatorByCurrencyCode(currencyCode);
+        CurrencyManipulator cm = getManipulatorByCurrencyCode(askCurrencyCode());
         while (true) {
-            writeMessage("Введите сумму.");
-            String countMoneyString = readString();
-            int countMoney;
+            int countMoney = getValidNumber();
             try {
-                countMoney = Integer.valueOf(countMoneyString);
-            } catch (NumberFormatException e) {
-                writeMessage("Вы ввели некорректное число, попробуйте еще раз.");
-                continue;
-            }
-            if (countMoney <= 0) {
-                writeMessage("Вы ввели некорректное число, попробуйте еще раз.");
-                continue;
-            }
-            if (!cm.isAmountAvailable(countMoney)) {
-                writeMessage("На вашем счете недостаточно денег.");
-                continue;
-            }
-            Map<Integer, Integer> withdrawAmount = null;
-            try {
-                withdrawAmount = cm.withdrawAmount(countMoney);
+                if (!cm.isAmountAvailable(countMoney)) throw new NotEnoughMoneyException(THERE_IS_NOT_ENOUGH_MONEY_IN_YOUR_ACCOUNT);
+                Map<Integer, Integer> withdrawAmount = cm.withdrawAmount(countMoney);
+                for (Map.Entry<Integer, Integer> entry : withdrawAmount.entrySet()) {
+                    writeMessage("\t" + entry.getKey() + " - " + entry.getValue());
+                }
+                writeMessage(TRANSACTION_WAS_COMPLETED_SUCCESSFULLY);
+                break;
             } catch (NotEnoughMoneyException e) {
-                writeMessage("В терменале не достаточно банкнот, введите другую сумму.");
-                continue;
+                writeMessage(e.getMessage());
             }
-            for (Map.Entry<Integer, Integer> entry : withdrawAmount.entrySet()) {
-                writeMessage("\t" + entry.getKey() + " - " + entry.getValue());
-            }
-            writeMessage("Транзакция совершена успешно.");
-            break;
         }
     }
 }

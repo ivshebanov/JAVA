@@ -2,6 +2,7 @@ package com.javarush.task.task26.task2613.command;
 
 import com.javarush.task.task26.task2613.CurrencyManipulator;
 
+import static com.javarush.task.task26.task2613.ConsoleHelper.NO_MONEY_AVAILABLE;
 import static com.javarush.task.task26.task2613.ConsoleHelper.writeMessage;
 import static com.javarush.task.task26.task2613.CurrencyManipulatorFactory.getAllCurrencyManipulators;
 
@@ -17,8 +18,6 @@ class InfoCommand implements Command {
                 money = false;
             }
         }
-        if (money) {
-            writeMessage("No money available.");
-        }
+        if (money) writeMessage(NO_MONEY_AVAILABLE);
     }
 }
