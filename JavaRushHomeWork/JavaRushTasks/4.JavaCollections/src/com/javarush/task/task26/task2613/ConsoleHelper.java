@@ -14,19 +14,15 @@ public class ConsoleHelper {
     public static final String Y = "y";
     public static final String EXIT = "exit";
     public static final String GOODBYE = "Досвиданья.";
-    public static final String NO_MONEY_AVAILABLE = "No money available.";
     public static final String NUMBER_OF_ENUM_EXCEEDED = "Превышено колличество enum.";
     public static final String TRANSACTION_WAS_COMPLETED_SUCCESSFULLY = "Транзакция совершена успешно.";
     public static final String THERE_IS_NOT_ENOUGH_MONEY_IN_YOUR_ACCOUNT = "На вашем счете недостаточно денег.";
     public static final String WHAT_OPERATION_DO_YOU_WANT_TO_PERFORM = "Какую операцию вы хотите выполнить?\n1 - INFO, 2 - DEPOSIT, 3 - WITHDRAW, 4 - EXIT";
     public static final String ENTER_AMOUNT = "Введите сумму.";
     public static final String ENTER_CURRENCY_CODE = "Введите код валюты.";
-    public static final String YOU_HAVE_ENTERED_AN_EMPTY_STRING = "Вы ввели пустую строку.";
     public static final String ENTER_TWO_POSITIVE_INTEGERS = "Введите два целых положительных числа для валюты %s.\nПервое число - номинал, второе - количество банкнот.";
     public static final String REQUEST_CARD_NUMBER_AND_PIN = "Введите 2 числа - номер кредитной карты, состоящий из 12 цифр, и пин - состоящий из 4 цифр.";
-    public static final String DO_YOU_REALLY_WANT_TO_GO_OUT = "Вы дейстрительно хотите выйти? <y,n>.";
     public static final String YOU_ENTERED_AN_INCORRECT_NUMBER = "Вы ввели некорректное число, попробуйте еще раз.";
-    public static final String INVALID_NUMBER_OF_NUMBERS_ENTERED = "Введено неверное колличество числ.";
     public static final String VERIFICATION_PASSED_SUCCESSFULLY = "Верификация прошла успешно.";
     public static final String THERE_ARE_NO_BANKNOTES_IN_THE_ATM = "В терменале не достаточно банкнот, введите другую сумму.";
     public static final String YOU_HAVE_NOT_ENTERED_ONE_OF_THE_NUMBERS = "Вы не ввели одно из чисел.";
@@ -61,7 +57,7 @@ public class ConsoleHelper {
             if (!currencyCode.isEmpty() && currencyCode.toCharArray().length == 3) {
                 return currencyCode.toUpperCase();
             }
-            writeMessage(THE_ENTERED_CURRENCY_CODE_IS_NOT_CORRECT);
+            writeMessage("Please specify valid data.");
         }
     }
 
@@ -104,14 +100,14 @@ public class ConsoleHelper {
         while (true) {
             try {
                 String faceValueAndAmountBanknotes = readString();
-                if (faceValueAndAmountBanknotes.isEmpty()) throw new IllegalArgumentException(YOU_HAVE_ENTERED_AN_EMPTY_STRING);
+                if (faceValueAndAmountBanknotes.isEmpty()) throw new IllegalArgumentException("");
                 String[] resultArray = faceValueAndAmountBanknotes.split(" ");
-                if (resultArray.length != 2) throw new IllegalArgumentException(INVALID_NUMBER_OF_NUMBERS_ENTERED);
+                if (resultArray.length != 2) throw new IllegalArgumentException("");
                 Integer.valueOf(resultArray[0]);
                 Integer.valueOf(resultArray[1]);
                 return resultArray;
             } catch (NumberFormatException e) {
-                writeMessage(NUMBERS_ENTERED_NOT_CORRECT);
+                writeMessage("");
             } catch (IllegalArgumentException e) {
                 writeMessage(e.getMessage());
             }
