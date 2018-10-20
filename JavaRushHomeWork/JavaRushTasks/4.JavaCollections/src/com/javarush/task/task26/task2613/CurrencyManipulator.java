@@ -6,10 +6,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.ResourceBundle;
 import java.util.TreeMap;
 
-import static com.javarush.task.task26.task2613.ConsoleHelper.THERE_ARE_NO_BANKNOTES_IN_THE_ATM;
+import static java.lang.String.format;
 import static java.util.Collections.reverse;
 import static java.util.Collections.sort;
 
@@ -17,6 +19,8 @@ public class CurrencyManipulator {
 
     private String currencyCode;
     private Map<Integer, Integer> denominations;
+    private static ResourceBundle resWithdraw = ResourceBundle.getBundle(format("%s.resources.withdraw_en", CashMachine.class.getPackage().getName()), Locale.ENGLISH);
+
 
     public CurrencyManipulator(String currencyCode) {
         this.currencyCode = currencyCode;
@@ -86,7 +90,7 @@ public class CurrencyManipulator {
         }
 
         if (sum > 0)
-            throw new NotEnoughMoneyException(THERE_ARE_NO_BANKNOTES_IN_THE_ATM);
+            throw new NotEnoughMoneyException(resWithdraw.getString("exact.amount.not.available"));
         else {
             denominations.clear();
             denominations.putAll(temp);

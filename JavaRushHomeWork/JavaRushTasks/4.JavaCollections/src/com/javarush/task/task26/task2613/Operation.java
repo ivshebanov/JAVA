@@ -1,7 +1,5 @@
 package com.javarush.task.task26.task2613;
 
-import static com.javarush.task.task26.task2613.ConsoleHelper.NUMBER_OF_ENUM_EXCEEDED;
-
 public enum Operation {
     LOGIN,
     INFO,
@@ -16,7 +14,7 @@ public enum Operation {
             case 2: return DEPOSIT;
             case 3: return WITHDRAW;
             case 4: return EXIT;
-            default: throw new IllegalArgumentException(NUMBER_OF_ENUM_EXCEEDED);
+            default: throw new IllegalArgumentException();
         }
     }
 }
