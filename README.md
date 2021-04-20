@@ -2,4 +2,4 @@
 JavaRush
 
 
-<a href="example.com" target="_blank">New Tab</a>
+<a href="https://varmetrics.herokuapp.com/" target="_blank">varmetrics</a>
